@@ -3,18 +3,552 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cAIborg.ai - Coming Soon</title>
+    <title>Dopamine Reward Timer</title>
     <style>
-        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-        .container { transform: translateY(-50px); }
-        h1 { font-size: 3em; font-weight: 300; }
-        p { font-size: 1.2em; color: #888; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #00ff88, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timer-display {
+            text-align: center;
+            font-size: 5em;
+            font-weight: 100;
+            margin-bottom: 30px;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff88, #00cc70);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+        }
+
+        .btn-secondary {
+            background: #2a2a3e;
+            color: #e0e0e0;
+            border: 1px solid #444;
+        }
+
+        .btn-secondary:hover {
+            background: #3a3a4e;
+        }
+
+        .settings {
+            background: rgba(42, 42, 62, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .setting-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            background: #1a1a2e;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 16px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .probability-display {
+            text-align: center;
+            font-size: 24px;
+            color: #00ff88;
+            margin: 10px 0;
+        }
+
+        textarea {
+            min-height: 100px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .stats {
+            background: rgba(42, 42, 62, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 300;
+            color: #00ff88;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        #youtube-player {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            display: none;
+            width: 80%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        #youtube-player.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        .reward-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 50px rgba(0, 255, 136, 0.8);
+            z-index: 2000;
+            display: none;
+            animation: pulse 0.5s ease-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .close-video {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            padding: 10px 20px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .close-video.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>cAIborg.ai</h1>
-        <p>Coming Soon</p>
+        <h1>⚡ DOPAMINE TIMER ⚡</h1>
+        
+        <div class="timer-display" id="timer">25:00</div>
+        
+        <div class="controls">
+            <button class="btn-primary" id="startBtn">START</button>
+            <button class="btn-secondary" id="pauseBtn">PAUSE</button>
+            <button class="btn-secondary" id="resetBtn">RESET</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="completedSprints">0</div>
+                <div class="stat-label">Sprints</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="rewardsEarned">0</div>
+                <div class="stat-label">Rewards</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="winRate">0%</div>
+                <div class="stat-label">Win Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalTime">0h</div>
+                <div class="stat-label">Total Time</div>
+            </div>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label for="sprintDuration">Sprint Duration (minutes)</label>
+                <input type="number" id="sprintDuration" min="1" max="120" value="25">
+            </div>
+            
+            <div class="setting-group">
+                <label for="rewardProbability">Reward Probability</label>
+                <input type="range" id="rewardProbability" min="0" max="100" value="33">
+                <div class="probability-display" id="probabilityDisplay">33%</div>
+            </div>
+            
+            <div class="setting-group">
+                <label for="youtubeLinks">YouTube Reward Links (one per line)</label>
+                <textarea id="youtubeLinks" placeholder="Enter YouTube URLs, one per line">https://youtu.be/W50HtcPAeSs
+https://youtu.be/k8tHuoKk6z0
+https://youtu.be/7W-XvNwp2O8
+https://youtu.be/6qbVwVM8vFc</textarea>
+            </div>
+
+            <button class="btn-secondary" id="saveSettings">Save Settings</button>
+        </div>
     </div>
+
+    <div class="overlay" id="overlay"></div>
+    <button class="close-video" id="closeVideo">Close Video</button>
+    <div id="youtube-player"></div>
+    <div class="reward-notification" id="rewardNotification">🎉 REWARD! 🎉</div>
+
+    <script>
+        // Timer state
+        let timerInterval = null;
+        let remainingSeconds = 0;
+        let isRunning = false;
+        let totalSeconds = 0;
+        let audioInitialized = false;
+
+        // Stats
+        let stats = {
+            completedSprints: 0,
+            rewardsEarned: 0,
+            totalMinutes: 0
+        };
+
+        // YouTube API
+        let player = null;
+        let playerReady = false;
+
+        // Load YouTube API
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '100%',
+                width: '100%',
+                videoId: '',
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 1,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            playerReady = true;
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                closeVideoPlayer();
+            }
+        }
+
+        // Load settings
+        function loadSettings() {
+            const saved = localStorage.getItem('dopamineTimerSettings');
+            if (saved) {
+                const settings = JSON.parse(saved);
+                document.getElementById('sprintDuration').value = settings.sprintDuration || 25;
+                document.getElementById('rewardProbability').value = settings.rewardProbability || 33;
+                document.getElementById('youtubeLinks').value = settings.youtubeLinks || '';
+                updateProbabilityDisplay();
+            }
+            
+            const savedStats = localStorage.getItem('dopamineTimerStats');
+            if (savedStats) {
+                stats = JSON.parse(savedStats);
+                updateStatsDisplay();
+            }
+            
+            resetTimer();
+        }
+
+        function saveSettings() {
+            const settings = {
+                sprintDuration: document.getElementById('sprintDuration').value,
+                rewardProbability: document.getElementById('rewardProbability').value,
+                youtubeLinks: document.getElementById('youtubeLinks').value
+            };
+            localStorage.setItem('dopamineTimerSettings', JSON.stringify(settings));
+            resetTimer();
+        }
+
+        function saveStats() {
+            localStorage.setItem('dopamineTimerStats', JSON.stringify(stats));
+        }
+
+        function updateProbabilityDisplay() {
+            const value = document.getElementById('rewardProbability').value;
+            document.getElementById('probabilityDisplay').textContent = value + '%';
+        }
+
+        function updateStatsDisplay() {
+            document.getElementById('completedSprints').textContent = stats.completedSprints;
+            document.getElementById('rewardsEarned').textContent = stats.rewardsEarned;
+            
+            const winRate = stats.completedSprints > 0 
+                ? Math.round((stats.rewardsEarned / stats.completedSprints) * 100) 
+                : 0;
+            document.getElementById('winRate').textContent = winRate + '%';
+            
+            const hours = Math.floor(stats.totalMinutes / 60);
+            const minutes = stats.totalMinutes % 60;
+            document.getElementById('totalTime').textContent = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function updateTimerDisplay() {
+            document.getElementById('timer').textContent = formatTime(remainingSeconds);
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                
+                // Initialize audio on first interaction
+                if (!audioInitialized && playerReady) {
+                    player.mute();
+                    player.playVideo();
+                    setTimeout(() => {
+                        player.pauseVideo();
+                        player.unMute();
+                        audioInitialized = true;
+                    }, 100);
+                }
+                
+                if (remainingSeconds === 0) {
+                    resetTimer();
+                }
+                
+                timerInterval = setInterval(() => {
+                    if (remainingSeconds > 0) {
+                        remainingSeconds--;
+                        totalSeconds++;
+                        updateTimerDisplay();
+                    } else {
+                        completeSpring();
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            if (isRunning) {
+                isRunning = false;
+                clearInterval(timerInterval);
+            }
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            const minutes = parseInt(document.getElementById('sprintDuration').value);
+            remainingSeconds = minutes * 60;
+            totalSeconds = 0;
+            updateTimerDisplay();
+        }
+
+        function completeSpring() {
+            pauseTimer();
+            stats.completedSprints++;
+            stats.totalMinutes += Math.floor(totalSeconds / 60);
+            
+            // Check for reward
+            const probability = parseInt(document.getElementById('rewardProbability').value);
+            const roll = Math.random() * 100;
+            
+            if (roll < probability) {
+                stats.rewardsEarned++;
+                triggerReward();
+            } else {
+                showNoReward();
+            }
+            
+            updateStatsDisplay();
+            saveStats();
+            resetTimer();
+        }
+
+        function getRandomYouTubeId() {
+            const links = document.getElementById('youtubeLinks').value
+                .split('\n')
+                .filter(link => link.trim());
+            
+            if (links.length === 0) return null;
+            
+            const randomLink = links[Math.floor(Math.random() * links.length)];
+            
+            // Extract video ID from various YouTube URL formats
+            const match = randomLink.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=|youtube\.com\/embed\/)([^?&\s]+)/);
+            return match ? match[1] : null;
+        }
+
+        function triggerReward() {
+            // Show notification
+            const notification = document.getElementById('rewardNotification');
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+                
+                // Play YouTube video
+                const videoId = getRandomYouTubeId();
+                if (videoId && playerReady) {
+                    player.loadVideoById(videoId);
+                    document.getElementById('youtube-player').classList.add('active');
+                    document.getElementById('overlay').classList.add('active');
+                    document.getElementById('closeVideo').classList.add('active');
+                }
+            }, 2000);
+        }
+
+        function showNoReward() {
+            // Could add a subtle notification here
+            console.log('No reward this time. Keep going!');
+        }
+
+        function closeVideoPlayer() {
+            player.stopVideo();
+            document.getElementById('youtube-player').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            document.getElementById('closeVideo').classList.remove('active');
+        }
+
+        // Event listeners
+        document.getElementById('startBtn').addEventListener('click', startTimer);
+        document.getElementById('pauseBtn').addEventListener('click', pauseTimer);
+        document.getElementById('resetBtn').addEventListener('click', resetTimer);
+        document.getElementById('saveSettings').addEventListener('click', saveSettings);
+        document.getElementById('rewardProbability').addEventListener('input', updateProbabilityDisplay);
+        document.getElementById('closeVideo').addEventListener('click', closeVideoPlayer);
+        document.getElementById('overlay').addEventListener('click', closeVideoPlayer);
+
+        // Initialize
+        loadSettings();
+    </script>
 </body>
 </html>
