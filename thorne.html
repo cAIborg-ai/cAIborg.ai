@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cAIborg.ai - Inspired by Thorne</title>
+    <style>
+        /* CSS Reset */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Visuelt Pro', sans-serif; -webkit-font-smoothing: antialiased; color: #111; background-color: #fff; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        button { font-family: inherit; }
+
+        /* Custom Fonts */
+        @font-face {
+            font-family: 'Visuelt Pro';
+            src: url('https://www.thorne.com/_nuxt/VisueltPro-Regular.BTNeURvV.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Visuelt Pro';
+            src: url('https://www.thorne.com/_nuxt/VisueltPro-Medium.gxtKiYZs.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Visuelt Pro';
+            src: url('https://www.thorne.com/_nuxt/VisueltPro-Bold.BWtoYKv4.woff2') format('woff2');
+            font-weight: 700;
+        }
+
+        /* Main structure */
+        .container { max-width: 1344px; margin: 0 auto; padding: 0 24px; }
+        .top-bar { background-color: #111; color: #fff; text-align: center; padding: 1rem; font-size: 0.875rem; }
+        .header { border-bottom: 1px solid #eaeaea; }
+        .main-nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .logo { font-weight: 700; font-size: 1.5rem; }
+        .nav-links { display: none; } /* Hidden on mobile */
+        .nav-actions { display: flex; align-items: center; gap: 1rem; }
+        .hero { text-align: center; padding: 4rem 1rem; }
+        .hero h1 { font-size: 3rem; font-weight: 500; line-height: 1.1; margin-bottom: 1rem; }
+        .hero p { max-width: 600px; margin: 0 auto 2rem; line-height: 1.5; color: #555; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 500; transition: background-color 0.2s; }
+        .btn-primary { background-color: #111; color: #fff; }
+        .btn-primary:hover { background-color: #333; }
+        .section-title { text-align: center; font-size: 2rem; font-weight: 500; margin-bottom: 2rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .product-card { text-align: center; }
+        .product-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem; }
+        .product-card h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .product-card p { color: #555; margin-bottom: 1rem; }
+
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">Enjoy free ground shipping on all retail orders. <a href="#" style="text-decoration:underline;">Shop Now</a></div>
+    <header class="header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">cAIborg.ai</div>
+                <div class="nav-links">
+                    <a href="#">Shop</a>
+                    <a href="#">Get Started</a>
+                    <a href="#">Health Tests</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="index.html" class="btn btn-primary">Back to Timer</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Every move begins with energy.</h1>
+            <p>For optimal performance, your body and mind demand more than strength alone – they demand fuel that works where it matters. Our products deliver clinically proven, highly absorbable ingredients to power muscle, sharpen cognition, and sustain endurance.</p>
+            <a href="#" class="btn btn-primary">Explore Products</a>
+        </section>
+        <section class="container" style="padding-bottom: 4rem;">
+            <h2 class="section-title">Trending health needs</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="cai anal.jpg" alt="Product A">
+                    <h3>Magnesium Glycinate</h3>
+                    <p>Achieve restful sleep with an easy-to-take capsule form of magnesium for your bones, muscles, and heart.*</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="cai anal.jpg" alt="Product B">
+                    <h3>Creatine</h3>
+                    <p>100% pure creatine monohydrate enhances precision and strength, sharpens cognition, and sustains endurance.*</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="cai anal.jpg" alt="Product C">
+                    <h3>Creatine - Strawberry</h3>
+                    <p>Mix, sip, and move with juicy strawberry and pure, micronized creatine to power strength and sharpen thinking.*</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
