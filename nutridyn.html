@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriDyn | Clean, clinically‑effective formulas</title>
+  <meta name="description" content="NutriDyn — functional nutrition that feels like family. Clean, clinically‑effective formulas rigorously tested from research to delivery." />
+
+  <!-- Material Design 3 (Material Web) components via ESM CDN -->
+  <script type="module" src="https://esm.run/@material/web/all.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300..700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --container-max: 1200px;
+    }
+    html, body {
+      margin: 0;
+      font-family: Roboto, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .hero {
+      padding: 72px 24px 48px;
+      display: grid;
+      gap: 24px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #444;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    .hero-cta {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px;
+    }
+    .section {
+      padding: 32px 0;
+    }
+    .section h2 {
+      font-size: clamp(22px, 3vw, 28px);
+      margin: 0 0 16px;
+    }
+    .grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .icon {
+      font-family: 'Material Symbols Rounded';
+      font-variation-settings: 'wght' 400, 'opsz' 24;
+      font-size: 40px;
+      color: rgb(25 118 210);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .muted { color: #555; }
+    .bilingual { display: grid; gap: 12px; }
+    footer { border-top: 1px solid #eee; padding: 24px; color: #666; }
+    .top-app-bar-spacer { height: 64px; }
+    @media (max-width: 600px) {
+      .top-app-bar-spacer { height: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top App Bar -->
+  <md-top-app-bar>
+    <div slot="headline">NutriDyn</div>
+    <a href="#products" slot="end" aria-label="Products"><md-text-button>Products</md-text-button></a>
+    <a href="#about" slot="end" aria-label="About"><md-text-button>About</md-text-button></a>
+    <a href="#mission" slot="end" aria-label="Mission"><md-text-button>Mission</md-text-button></a>
+    <a href="index.html" slot="end" aria-label="Back to timer"><md-tonal-button>Back</md-tonal-button></a>
+  </md-top-app-bar>
+  <div class="top-app-bar-spacer"></div>
+
+  <!-- Hero -->
+  <section class="hero container" aria-label="Hero">
+    <h1>Clean, clinically‑effective formulas for all</h1>
+    <p>
+      Born from three generations of passion for nutraceuticals, NutriDyn partners with practitioners
+      worldwide to deliver rigorously tested, clinically effective nutrition—from research to delivery.
+    </p>
+    <div class="hero-cta">
+      <a href="#products" aria-label="Shop products"><md-filled-button>Shop Products</md-filled-button></a>
+      <a href="#about" aria-label="Learn more"><md-outlined-button>Learn More</md-outlined-button></a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section container" aria-label="Products">
+    <h2>Featured Products</h2>
+    <div class="grid">
+      <!-- Product A -->
+      <md-elevated-card>
+        <div style="padding:16px; display:grid; gap:8px; align-items:start;">
+          <span class="icon" aria-hidden="true">science</span>
+          <h3 style="margin:0">Product A</h3>
+          <p class="muted" style="margin:0">Clinically balanced daily support.</p>
+          <div>
+            <md-filled-button>Learn more</md-filled-button>
+          </div>
+        </div>
+      </md-elevated-card>
+
+      <!-- Product B -->
+      <md-elevated-card>
+        <div style="padding:16px; display:grid; gap:8px; align-items:start;">
+          <span class="icon" aria-hidden="true">health_and_safety</span>
+          <h3 style="margin:0">Product B</h3>
+          <p class="muted" style="margin:0">Trusted, transparent ingredients.</p>
+          <div>
+            <md-filled-button>Learn more</md-filled-button>
+          </div>
+        </div>
+      </md-elevated-card>
+
+      <!-- Product C -->
+      <md-elevated-card>
+        <div style="padding:16px; display:grid; gap:8px; align-items:start;">
+          <span class="icon" aria-hidden="true">bolt</span>
+          <h3 style="margin:0">Product C</h3>
+          <p class="muted" style="margin:0">Energy and resilience, simplified.</p>
+          <div>
+            <md-filled-button>Learn more</md-filled-button>
+          </div>
+        </div>
+      </md-elevated-card>
+
+      <!-- Product D -->
+      <md-elevated-card>
+        <div style="padding:16px; display:grid; gap:8px; align-items:start;">
+          <span class="icon" aria-hidden="true">psychology</span>
+          <h3 style="margin:0">Product D</h3>
+          <p class="muted" style="margin:0">Focus for modern cognitive demands.</p>
+          <div>
+            <md-filled-button>Learn more</md-filled-button>
+          </div>
+        </div>
+      </md-elevated-card>
+
+      <!-- Product E -->
+      <md-elevated-card>
+        <div style="padding:16px; display:grid; gap:8px; align-items:start;">
+          <span class="icon" aria-hidden="true">favorite</span>
+          <h3 style="margin:0">Product E</h3>
+          <p class="muted" style="margin:0">Heart of practitioner‑grade quality.</p>
+          <div>
+            <md-filled-button>Learn more</md-filled-button>
+          </div>
+        </div>
+      </md-elevated-card>
+
+      <!-- Product F -->
+      <md-elevated-card>
+        <div style="padding:16px; display:grid; gap:8px; align-items:start;">
+          <span class="icon" aria-hidden="true">inventory_2</span>
+          <h3 style="margin:0">Product F</h3>
+          <p class="muted" style="margin:0">Reliable, efficacious, and pure.</p>
+          <div>
+            <md-filled-button>Learn more</md-filled-button>
+          </div>
+        </div>
+      </md-elevated-card>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section container" aria-label="About NutriDyn">
+    <h2>About NutriDyn</h2>
+    <p class="muted">
+      NutriDyn was founded on our family’s passion for nutraceuticals—a passion that runs three generations deep.
+      After seeing firsthand the remarkable results of nutrition‑based interventions and other non‑pharmaceutical methods,
+      our founders David and Greg Peterson created NutriDyn to bring these innovative formulas exclusively to you—our practitioners—and your patients around the globe.
+      When you partner with NutriDyn, you’re part of the family.
+    </p>
+  </section>
+
+  <!-- Mission (bilingual) -->
+  <section id="mission" class="section container" aria-label="Mission">
+    <h2>Our Mission</h2>
+    <div class="bilingual">
+      <p class="muted">
+        In a market where healthcare practitioners are often overlooked, we strive to be a trusted, transparent source of supplements and support
+        for you and your practice, giving both you and your patients an improved quality of life.
+      </p>
+      <md-divider></md-divider>
+      <p class="muted" lang="ru">
+        На рынке, где практикующих врачей часто упускают из виду, мы стремимся быть надежным и прозрачным источником
+        пищевых добавок и поддержки для вас и вашей практики, повышая качество жизни как для вас, так и для ваших пациентов.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quality -->
+  <section class="section container" aria-label="Quality">
+    <h2>Quality You Can Trust</h2>
+    <p class="muted">
+      From initial research to production and delivery, our products are tested every step of the way to ensure they live up to
+      the impeccable standards you set for your practice. As your partner in health, we put the same level of care into ensuring
+      quality as you do in treating each of your patients.
+    </p>
+  </section>
+
+  <footer class="container" aria-label="Footer">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+      <small>© 2025 NutriDyn — Functional nutrition that feels like family.</small>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <a href="#products"><md-text-button>Products</md-text-button></a>
+        <a href="#about"><md-text-button>About</md-text-button></a>
+        <a href="#mission"><md-text-button>Mission</md-text-button></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
