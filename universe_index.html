@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Pharma - Research-Driven Dietary Supplements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#6B9F3E',
+                        'brand-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index.html" class="text-brand-dark hover:text-brand-green transition">Home</a>
+                    <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition">Products</a>
+                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
+                        <a href="universe_index.html" class="text-brand-green font-medium">EN</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_index_ru.html" class="text-gray-600 hover:text-brand-green transition">RU</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_index_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-light text-brand-dark mb-6 leading-tight">
+                Science-Backed Supplements Your Body Deserves
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                Premium European ingredients, PubMed-driven formulas, zero additives. Quality you can trust for your family.
+            </p>
+            <a href="universe_products.html" class="inline-block bg-brand-green text-white px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition">
+                Explore Products
+            </a>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Indicator 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-brand-dark mb-2">PubMed-Sourced</h3>
+                    <p class="text-sm text-gray-600">Every formula backed by published research, not marketing claims</p>
+                </div>
+
+                <!-- Indicator 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-brand-dark mb-2">Premium Ingredients</h3>
+                    <p class="text-sm text-gray-600">European-sourced MEG-3®, bioavailable forms, zero cost-cutting</p>
+                </div>
+
+                <!-- Indicator 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-brand-dark mb-2">Zero Additives</h3>
+                    <p class="text-sm text-gray-600">No sugar, fillers, or artificial ingredients. Pure nutrition only.</p>
+                </div>
+
+                <!-- Indicator 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-brand-dark mb-2">Family-First Quality</h3>
+                    <p class="text-sm text-gray-600">Formulated with standards we demand for our own children</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Introduction -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="assets/cai anal.jpg" alt="Research and Quality" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4">
+                        Built on Research, Not Hype
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        At Universe Pharma, every formula begins with PubMed research parsing, not marketing trends. We analyze published studies to identify effective ingredients in clinically-proven dosages—then source only premium forms from trusted European suppliers.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2015 on a simple principle: create supplements we'd trust for our own families. That means MEG-3® omega-3 from Swiss-Danish suppliers, bioavailable minerals like iron bisglycinate, and probiotic strains backed by peer-reviewed research. No sugar, no fillers, no compromise.
+                    </p>
+                    <a href="universe_mission.html" class="text-brand-green font-medium hover:underline">
+                        Learn More About Our Mission →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl font-light text-brand-dark text-center mb-10">
+                Internationally Certified Quality Standards
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                <!-- Certification 1: FDA -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
+                        <span class="text-xs text-gray-400">[FDA]</span>
+                    </div>
+                    <p class="text-xs text-gray-600 text-center">FDA</p>
+                </div>
+
+                <!-- Certification 2: GMP -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
+                        <span class="text-xs text-gray-400">[GMP]</span>
+                    </div>
+                    <p class="text-xs text-gray-600 text-center">GMP</p>
+                </div>
+
+                <!-- Certification 3: ISO -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
+                        <span class="text-xs text-gray-400">[ISO]</span>
+                    </div>
+                    <p class="text-xs text-gray-600 text-center">ISO</p>
+                </div>
+
+                <!-- Certification 4: TÜRKAK -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
+                        <span class="text-xs text-gray-400">[TÜRKAK]</span>
+                    </div>
+                    <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                </div>
+
+                <!-- Certification 5: Halal -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
+                        <span class="text-xs text-gray-400">[Halal]</span>
+                    </div>
+                    <p class="text-xs text-gray-600 text-center">Halal</p>
+                </div>
+
+                <!-- Certification 6: MEG-3® -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
+                        <span class="text-xs text-gray-400">[MEG-3®]</span>
+                    </div>
+                    <p class="text-xs text-gray-600 text-center">MEG-3®</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">Research-driven supplements for optimal health</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigate</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="universe_index.html" class="text-gray-400 hover:text-brand-green transition">Home</a></li>
+                        <li><a href="universe_products.html" class="text-gray-400 hover:text-brand-green transition">Products</a></li>
+                        <li><a href="universe_mission.html" class="text-gray-400 hover:text-brand-green transition">Our Mission</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm">[Email placeholder]</p>
+                    <p class="text-gray-400 text-sm">[Phone placeholder]</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 Universe Pharma. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

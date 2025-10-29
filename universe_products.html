@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Universe Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#6B9F3E',
+                        'brand-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+                    <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
+                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
+                        <a href="universe_products.html" class="text-brand-green font-medium">EN</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_products_ru.html" class="text-gray-600 hover:text-brand-green transition">RU</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_products_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-16 pb-8 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-light text-brand-dark mb-4">
+                Our Products
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Each formula crafted from the latest research, using premium European-sourced ingredients. No shortcuts. No fillers. Just science-backed nutrition your body can actually use.
+            </p>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Product 1: IROTON -->
+                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                    <div class="bg-gray-50 p-8 flex items-center justify-center">
+                        <img src="assets/iron.png" alt="Universe IROTON" class="h-80 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">UNIVERSE IROTON</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Advanced iron complex with cofactors for maximum absorption. Bioavailable forms (iron bisglycinate, methylfolate, P5P) your body recognizes instantly.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Iron + B-vitamin complex synergy</li>
+                            <li>• L-lysine for enhanced uptake</li>
+                            <li>• Energy & cognitive support</li>
+                        </ul>
+                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
+                            See the Research
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 2: OMEGA 3 -->
+                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                    <div class="bg-gray-50 p-8 flex items-center justify-center">
+                        <img src="assets/omega.png" alt="Universe OMEGA 3" class="h-80 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">UNIVERSE OMEGA 3</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Premium MEG-3® from Antarctic cold-water fish. Pharmaceutical-grade purity exceeds all international standards. No fishy taste or heavy metals.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• 1200mg EPA + DHA per serving</li>
+                            <li>• Cardiovascular & brain support</li>
+                            <li>• Swiss-Danish certified sourcing</li>
+                        </ul>
+                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
+                            See the Research
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 3: MULTIBIOTIC -->
+                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                    <div class="bg-gray-50 p-8 flex items-center justify-center">
+                        <img src="assets/probiotic.png" alt="Universe MULTIBIOTIC" class="h-80 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">UNIVERSE MULTIBIOTIC</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Multi-strain complex combining probiotics, prebiotics, and zinc picolinate. 9 beneficial strains work synergistically for comprehensive gut balance.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• 9 clinically-studied strains</li>
+                            <li>• Prebiotic fiber inclusion</li>
+                            <li>• Digestive & immune support</li>
+                        </ul>
+                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
+                            See the Research
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Product 4: LIPOSOMAL VITAMIN C -->
+                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                    <div class="bg-gray-50 p-8 flex items-center justify-center">
+                        <img src="assets/cai anal.jpg" alt="Universe LIPOSOMAL VITAMIN C" class="h-80 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-brand-dark mb-2">LIPOSOMAL VITAMIN C</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Advanced liposomal delivery protects vitamin C through digestion for superior bioavailability. Phospholipid encapsulation ensures maximum absorption.
+                        </p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Enhanced absorption technology</li>
+                            <li>• Gentle on digestive system</li>
+                            <li>• Immune & collagen synthesis</li>
+                        </ul>
+                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
+                            See the Research
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-light text-brand-dark mb-4">
+                Questions about our formulas?
+            </h2>
+            <p class="text-gray-600 mb-8">
+                Our team is here to help you find the right supplement for your health goals.
+            </p>
+            <a href="universe_mission.html" class="inline-block border-2 border-brand-green text-brand-green px-8 py-3 rounded-full font-medium hover:bg-brand-green hover:text-white transition">
+                Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">Premium dietary supplements backed by science, trusted by families.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigate</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="universe_index.html" class="text-gray-400 hover:text-brand-green transition">Home</a></li>
+                        <li><a href="universe_products.html" class="text-gray-400 hover:text-brand-green transition">Products</a></li>
+                        <li><a href="universe_mission.html" class="text-gray-400 hover:text-brand-green transition">Our Mission</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm">[Email placeholder]</p>
+                    <p class="text-gray-400 text-sm">[Phone placeholder]</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 Universe Pharma. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
