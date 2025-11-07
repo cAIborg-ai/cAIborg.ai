@@ -21,42 +21,117 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
 
-        /* Image Carousel */
-        .carousel { position: relative; overflow: hidden; cursor: pointer; }
-        .carousel-inner { display: flex; transition: transform 0.5s ease; }
-        .carousel-item { min-width: 100%; position: relative; }
-        .carousel-item img { transition: transform 0.3s ease; }
+        /* Image Gallery */
+        .thumbnail-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
 
-        /* Hover zoom effect (desktop only) */
+        .thumbnail-btn.active img {
+            border-color: #6B9F3E !important;
+        }
+
+        /* Simple 3x hover zoom (desktop only) */
+        #mainImage {
+            transition: transform 0.3s ease;
+        }
+
         @media (hover: hover) {
-            .carousel-item img:hover { transform: scale(1.5); transform-origin: center; cursor: zoom-in; }
+            #mainImage:hover {
+                transform: scale(3);
+                transform-origin: center;
+                cursor: zoom-in;
+            }
         }
 
-        /* Carousel dots - passive indicators */
-        .carousel-dots { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
-        .carousel-dots span {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #d1d5db;
-            transition: background 0.3s, transform 0.3s;
-            display: block;
+        /* Accordion Component (NOW Foods pattern with brand green) */
+        .accordion-header {
+            width: 100%;
+            background: white;
+            color: #1a1a1a;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 2px;
+            transition: all 0.2s;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: left;
         }
-        .carousel-dots span.active {
+
+        .accordion-header[aria-expanded="true"] {
             background: #6B9F3E;
-            transform: scale(1.3);
+            color: white;
+            border-color: #6B9F3E;
+        }
+
+        .accordion-header:hover {
+            border-color: #6B9F3E;
+        }
+
+        .accordion-header[aria-expanded="true"]:hover {
+            background: #5a8535;
+            border-color: #5a8535;
+        }
+
+        .accordion-icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            color: #6B9F3E;
+        }
+
+        .accordion-header[aria-expanded="true"] .accordion-icon {
+            color: white;
+        }
+
+        .accordion-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .accordion-content {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+            max-height: 5000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+        }
+
+        .accordion-content.collapsed {
+            max-height: 0;
+            padding: 0 24px;
+            margin-bottom: 0;
+            border: none;
         }
 
         /* Touch targets for mobile */
         @media (max-width: 768px) {
-            .carousel-dots { gap: 16px; padding: 8px; }
-            .carousel-dots span { width: 14px; height: 14px; }
-
             /* Ensure minimum 44x44px touch targets for buttons */
             a.inline-block, button {
                 min-height: 44px;
                 min-width: 44px;
                 padding: 12px 24px;
+            }
+
+            /* Thumbnails appear above image on mobile */
+            #imageContainer {
+                min-height: 300px !important;
+            }
+
+            .accordion-header {
+                font-size: 1.125rem;
+                padding: 16px 20px;
             }
         }
     </style>
@@ -88,34 +163,33 @@
 
     <!-- Product Hero -->
     <section class="py-12 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image Carousel -->
-                <div>
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="carousel" id="productCarousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item flex items-center justify-center">
-                                    <img src="assets/universe-vitamins/omega/Omega Front.png" alt="Universe OMEGA 3 - Front" class="max-h-96 object-contain">
-                                </div>
-                                <div class="carousel-item flex items-center justify-center">
-                                    <img src="assets/universe-vitamins/omega/Omega Right.png" alt="Universe OMEGA 3 - Right" class="max-h-96 object-contain">
-                                </div>
-                                <div class="carousel-item flex items-center justify-center">
-                                    <img src="assets/universe-vitamins/omega/Omega Left.png" alt="Universe OMEGA 3 - Left" class="max-h-96 object-contain">
-                                </div>
-                            </div>
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <!-- Thumbnails (LEFT on desktop, TOP on mobile) -->
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/omega/Omega Front.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/omega/Omega Right.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/omega/Omega Left.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/omega/Omega Front.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                    </div>
 
-                            <div class="carousel-dots">
-                                <span class="active"></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
+                    <!-- Main Image Container (center-crop) -->
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/omega/Omega Front.png" alt="Universe OMEGA 3" class="w-full h-full object-cover object-center">
                     </div>
                 </div>
 
-                <!-- Product Info -->
+                <!-- Product Info + Accordions -->
                 <div>
                     <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
                         60 Capsules • 1-Month Supply
@@ -135,44 +209,57 @@
                         </p>
                     </div>
 
-                    <p class="text-lg text-gray-600 mb-6">
+                    <p class="text-base text-gray-600 mb-6">
                         MEG-3® certified from Icelandic deep-sea fish. Premium raw material from DSM Nutritional (Switzerland). Triglyceride form for superior absorption.
                     </p>
 
-                    <div class="mb-8">
-                        <h3 class="font-semibold text-brand-dark mb-3">Research-Backed Benefits:</h3>
-                        <ul class="space-y-2 text-gray-600">
+                    <!-- Package Info Box (NOW Foods pattern) -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">60 Softgels</p>
+                            <p class="text-sm text-gray-600">30 Servings (2 caps/day)</p>
+                            <p class="text-sm text-gray-600">1-Month Supply</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON Button (Yellow CTA like NOW Foods) -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <!-- Shipping Info -->
+                    <p class="text-sm text-gray-600 text-center mb-6">
+                        Available on <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Free shipping from 3000₽
+                    </p>
+
+                    <!-- Key Benefits (Simplified to 3 points) -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Key Benefits:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
                             <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span><strong>Cardiovascular:</strong> Reduces heart disease risk by 90% (Danish study)</span>
+                                <span>Cardiovascular health & brain function</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span><strong>Brain & Vision:</strong> DHA = 60% of brain fat, protects cognitive function</span>
+                                <span>Anti-inflammatory & joint support</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span><strong>Anti-Inflammatory:</strong> Reduces chronic inflammation & joint pain</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>Neurodegenerative:</strong> May reduce Alzheimer's & Parkinson's risk</span>
+                                <span>Vision protection & skin health</span>
                             </li>
                         </ul>
                     </div>
 
-                    <a href="#composition" class="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition mb-3">
-                        See Full Research Below ↓
-                    </a>
-                    <br>
                     <a href="universe_products.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
                         ← Back to Products
                     </a>
@@ -181,126 +268,164 @@
         </div>
     </section>
 
-    <!-- Why This Formula Works -->
-    <section class="py-16 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">
-                Why This Formula Works
-            </h2>
+    <!-- Accordions Section -->
+    <section class="px-6 pb-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <!-- Left column: Content below image -->
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Why This Formula Works</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <!-- Premium Sourcing -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• MEG-3® certified from Iceland</li>
+                                <li>• Small deep-water fish (anchovies, sardines)</li>
+                                <li>• DSM Nutritional raw material (Switzerland)</li>
+                                <li>• Triglyceride form - superior absorption</li>
+                                <li>• Minimal toxin accumulation</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Why not large fish? Predatory fish accumulate mercury. Small fish = cleaner Omega-3.
+                            </p>
+                        </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Premium Sourcing -->
-                <div class="bg-white p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• MEG-3® certified from Iceland</li>
-                        <li>• Small deep-water fish (anchovies, sardines)</li>
-                        <li>• DSM Nutritional raw material (Switzerland)</li>
-                        <li>• Triglyceride form - superior absorption</li>
-                        <li>• Minimal toxin accumulation</li>
-                    </ul>
-                    <p class="text-xs text-gray-500 mt-4 italic">
-                        Why not large fish? Predatory fish accumulate mercury. Small fish = cleaner Omega-3.
-                    </p>
+                        <!-- Clinical Potency -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Clinical Potency</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• <strong>1490mg EPA+DHA</strong> per serving (lab-verified)</li>
+                                <li>• Meets therapeutic threshold (500-1000mg)</li>
+                                <li>• Optimal Omega-3 Index: 8-12%</li>
+                                <li>• Equivalent to 850g fatty fish daily</li>
+                                <li>• Research-backed dosages</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Exceeds label claim by 24% - independently verified by RAN laboratory.
+                            </p>
+                        </div>
+
+                        <!-- Safety Certified -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Safety Certified</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Heavy metals certification (Hg, Pb, Cd)</li>
+                                <li>• No fishy taste or smell</li>
+                                <li>• Pharmaceutical-grade purity</li>
+                                <li>• Dark glass bottle protection</li>
+                                <li>• No GMO, gluten, preservatives, titanium dioxide</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Clinical Potency -->
-                <div class="bg-white p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-brand-dark mb-3">Clinical Potency</h3>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• <strong>1490mg EPA+DHA</strong> per serving (lab-verified)</li>
-                        <li>• Meets therapeutic threshold (500-1000mg)</li>
-                        <li>• Optimal Omega-3 Index: 8-12%</li>
-                        <li>• Equivalent to 850g fatty fish daily</li>
-                        <li>• Research-backed dosages</li>
-                    </ul>
-                    <p class="text-xs text-gray-500 mt-4 italic">
-                        Exceeds label claim by 24% - independently verified by RAN laboratory.
-                    </p>
-                </div>
+                <!-- Accordions in right cell (aligns with product info above) -->
+                <div>
+                    <div class="space-y-2">
 
-                <!-- Safety Certified -->
-                <div class="bg-white p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-brand-dark mb-3">Safety Certified</h3>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Heavy metals certification (Hg, Pb, Cd)</li>
-                        <li>• No fishy taste or smell</li>
-                        <li>• Pharmaceutical-grade purity</li>
-                        <li>• Dark glass bottle protection</li>
-                        <li>• No GMO, gluten, preservatives, titanium dioxide</li>
-                    </ul>
-                    <p class="text-xs text-gray-500 mt-4 italic">
-                        International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
-                    </p>
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Supplement Facts</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <!-- FDA-Standard Supplement Facts Table -->
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Supplement Facts</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">2 Softgel Capsules</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">30</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Fish Oil MEG-3®</td>
+                            <td class="text-right py-2 font-medium">2000 mg</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 pl-4">PUFA Omega-3</td>
+                            <td class="text-right py-2 font-medium">1280 mg</td>
+                            <td class="text-right py-2">64%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 pl-8">EPA (Eicosapentaenoic Acid)</td>
+                            <td class="text-right py-2 font-medium">720 mg</td>
+                            <td class="text-right py-2">120%</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2 pl-8">DHA (Docosahexaenoic Acid)</td>
+                            <td class="text-right py-2 font-medium">480 mg</td>
+                            <td class="text-right py-2">68%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Other Ingredients & Lab Verification -->
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> Softgel Capsule (gelatin, glycerin, purified water), Natural Tocopherols (antioxidant).</p>
+                    </div>
+
+                    <!-- Lab Verification Box -->
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <p class="text-sm font-semibold text-blue-900 mb-1">✓ Independent Lab Verification:</p>
+                        <p class="text-sm text-blue-700">
+                            Label claim: EPA & DHA 1200mg<br>
+                            <strong>Actual tested potency (RAN lab): EPA & DHA 1490mg</strong><br>
+                            Product exceeds claimed concentration by 24%
+                        </p>
+                    </div>
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.</p>
+                        <p class="mt-2">Natural color variation may occur. Store in cool, dry place after opening.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Composition -->
-    <section id="composition" class="py-16 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">
-                What's Inside
-            </h2>
-
-            <div class="bg-gray-50 rounded-lg p-8">
-                <h3 class="font-semibold text-brand-dark mb-4">Active Ingredients per serving (2 capsules):</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between border-b border-gray-200 pb-2">
-                        <span class="text-gray-700">Total Fish Oil Concentration</span>
-                        <span class="font-medium text-brand-dark">2000mg</span>
-                    </div>
-                    <div class="flex justify-between border-b border-gray-200 pb-2">
-                        <span class="text-gray-700">PUFA Omega-3</span>
-                        <span class="font-medium text-brand-dark">1280mg <span class="text-sm text-gray-500">(64% RDA)</span></span>
-                    </div>
-                    <div class="flex justify-between border-b border-gray-200 pb-2">
-                        <span class="text-gray-700">EPA (Eicosapentaenoic Acid)</span>
-                        <span class="font-medium text-brand-dark">720mg <span class="text-sm text-gray-500">(120% RDA)</span></span>
-                    </div>
-                    <div class="flex justify-between border-b border-gray-200 pb-2">
-                        <span class="text-gray-700">DHA (Docosahexaenoic Acid)</span>
-                        <span class="font-medium text-brand-dark">480mg <span class="text-sm text-gray-500">(68% RDA)</span></span>
-                    </div>
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Research-Backed Health Benefits</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
                 </div>
-
-                <!-- Lab Verification -->
-                <div class="mt-6 p-4 bg-blue-50 rounded border border-blue-200">
-                    <p class="text-sm font-semibold text-blue-900 mb-1">Independent Lab Verification:</p>
-                    <p class="text-sm text-blue-700">
-                        Label claim: EPA & DHA 1200mg<br>
-                        <strong>Actual tested potency (RAN lab): EPA & DHA 1490mg</strong><br>
-                        Product exceeds claimed concentration by 24%
-                    </p>
-                </div>
-
-                <!-- Usage Guidelines -->
-                <div class="mt-6 p-4 bg-white rounded border border-brand-green border-opacity-20">
-                    <p class="text-sm text-gray-600">
-                        <strong>Recommended dosage:</strong> 2 capsules daily with meals<br>
-                        <strong>Course duration:</strong> 1 month minimum (can be repeated)<br>
-                        <strong>Storage:</strong> Keep in dark glass bottle, cool dry place
-                    </p>
-                </div>
-
-                <!-- Package Info -->
-                <div class="mt-4 text-sm text-gray-500">
-                    <p><strong>Package:</strong> 60 capsules per bottle • 1-month supply</p>
-                    <p><strong>Manufactured:</strong> Istanbul, Turkey • SGR № АМ.01.08.01.003.R.000045.04.23</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Health Benefits -->
-    <section class="py-16 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">
-                Research-Backed Health Benefits
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-6">
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
                 <!-- Cardiovascular -->
                 <div class="bg-white p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-brand-dark mb-3">Cardiovascular Health</h3>
@@ -366,11 +491,139 @@
                 </div>
             </div>
         </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Suggested Usage</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">How to Take UNIVERSE OMEGA 3:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Adults: 2 capsules daily with meals</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Take once per day with food to enhance absorption. Can be taken with breakfast, lunch, or dinner.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Minimum 1 month for initial benefits. Continuous supplementation recommended for optimal results. Course can be repeated as needed.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> Omega-3 benefits are cumulative. Consistent daily use over 2-3 months provides maximum cardiovascular, cognitive, and anti-inflammatory effects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Storage & Caution</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Store in a cool, dry place away from children</li>
+                            <li>• Maximum temperature: +25°C (77°F)</li>
+                            <li>• Refrigerate after opening (recommended)</li>
+                            <li>• Keep in dark glass bottle (protects from oxidation)</li>
+                            <li>• Avoid direct sunlight and moisture</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 3 years from manufacturing date
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution & Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Consult doctor if pregnant, nursing, or taking medication</li>
+                            <li>• Individual intolerance to components possible</li>
+                            <li>• Not recommended for children under 3 without medical supervision</li>
+                            <li>• If you have a medical condition, consult physician before use</li>
+                            <li>• Keep out of reach of children</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Package Information</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 60 softgel capsules</p>
+                            <p><strong>Servings:</strong> 30 (2 capsules per serving)</p>
+                            <p><strong>Supply Duration:</strong> 1 month</p>
+                            <p><strong>Net Weight:</strong> 244g</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> 60 mm</p>
+                            <p><strong>Width:</strong> 60 mm</p>
+                            <p><strong>Height:</strong> 112 mm</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Compact bottle design for easy storage</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Turkey</p>
+                            <p><strong>Location:</strong> Istanbul</p>
+                            <p><strong>Certification:</strong> SGR № АМ.01.08.01.003.R.000045.04.23</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Manufactured under GMP, ISO, and FDA standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Certifications & Quality -->
     <section class="py-16 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">
                 Quality & Certifications
             </h2>
@@ -459,7 +712,7 @@
 
     <!-- Who Needs This -->
     <section class="py-16 px-6 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">
                 Who Needs This?
             </h2>
@@ -492,7 +745,7 @@
 
     <!-- CTA Section -->
     <section class="py-16 px-6 bg-brand-green">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
             <h2 class="text-3xl font-light text-white mb-6">
                 Family-First Quality
             </h2>
@@ -512,7 +765,7 @@
 
     <!-- Footer -->
     <footer class="bg-brand-dark text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
@@ -539,67 +792,57 @@
         </div>
     </footer>
 
-    <!-- Carousel JavaScript -->
+    <!-- Image Gallery JavaScript -->
     <script>
         (function() {
-            const carousel = document.getElementById('productCarousel');
-            const carouselInner = carousel.querySelector('.carousel-inner');
-            const dots = carousel.querySelectorAll('.carousel-dots span');
-            const totalSlides = 3;
-            let currentSlide = 0;
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
 
-            function updateCarousel() {
-                carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Image sources for each thumbnail
+            const images = [
+                'assets/universe-vitamins/omega/Omega Front.png',
+                'assets/universe-vitamins/omega/Omega Right.png',
+                'assets/universe-vitamins/omega/Omega Left.png',
+                'assets/universe-vitamins/omega/Omega Front.png' // Placeholder for size chart
+            ];
 
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
+            // Thumbnail click handler
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Switch main image
+                    mainImage.src = images[index];
                 });
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateCarousel();
-            }
-
-            // Click navigation: left 30% = prev, right 30% = next
-            carousel.addEventListener('click', function(e) {
-                const rect = carousel.getBoundingClientRect();
-                const clickX = e.clientX - rect.left;
-                const carouselWidth = rect.width;
-                const leftZone = carouselWidth * 0.3;
-                const rightZone = carouselWidth * 0.7;
-
-                if (clickX < leftZone) {
-                    prevSlide();
-                } else if (clickX > rightZone) {
-                    nextSlide();
-                }
             });
-
-            // Touch navigation for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            carousel.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-
-            carousel.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) nextSlide();
-                if (touchEndX > touchStartX + 50) prevSlide();
-            }
         })();
+
+        // Accordion toggle functionality (NOW Foods pattern)
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+                    // Toggle content
+                    content.classList.toggle('collapsed');
+
+                    // Toggle icon rotation
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
