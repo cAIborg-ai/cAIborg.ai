@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jairvis Exec: An AI execution engine that transforms natural language wishes into working code through autonomous Claude Code sessions. Connect via MCP endpoint.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Jairvis Exec - Turn Wishes Into Working Code">
+    <meta property="og:description" content="Autonomous AI-powered code execution engine. Turn natural language wishes into working implementations via Claude AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://caiborg.ai/jairvis-exec.html">
+
+    <title>Jairvis Exec - AI Execution Engine | cAIborg</title>
+
+    <style>
+        :root {
+            --bg-dark: #050507;
+            --bg-card: #0f0f15;
+            --text-primary: #ececec;
+            --text-secondary: #999;
+            --accent-purple: #a78bfa;
+            --accent-blue: #60a5fa;
+            --border-subtle: rgba(255, 255, 255, 0.05);
+            --shadow-glow: 0 0 30px rgba(167, 139, 250, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0a0a12 100%);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(5, 5, 7, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-purple);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--text-primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        a.cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        a.cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        a.cta-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-purple);
+            color: var(--accent-purple);
+        }
+
+        a.cta-secondary:hover {
+            background: rgba(167, 139, 250, 0.1);
+        }
+
+        /* Hero */
+        #hero {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-purple);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Flow steps */
+        .flow-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-step::after {
+            content: '→';
+            position: absolute;
+            right: -2rem;
+            top: 3rem;
+            font-size: 2rem;
+            color: var(--accent-purple);
+            opacity: 0.3;
+        }
+
+        .flow-step:last-child::after {
+            display: none;
+        }
+
+        .flow-number {
+            display: inline-flex;
+            width: 3.5rem;
+            height: 3.5rem;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(167, 139, 250, 0.1);
+        }
+
+        .faq-toggle {
+            color: var(--accent-purple);
+            font-weight: 800;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* Pricing */
+        .pricing-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-subtle);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-purple);
+            transform: scale(1.05);
+            background: rgba(167, 139, 250, 0.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .pricing-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        .pricing-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            list-style: none;
+        }
+
+        .pricing-features li::before {
+            content: '✓ ';
+            color: var(--accent-purple);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                display: flex;
+                gap: 1rem;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .flow-step::after {
+                display: none;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            #hero {
+                padding-top: 3rem;
+            }
+        }
+
+        /* Subtle animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Jairvis Exec",
+        "description": "An AI execution engine that transforms natural language wishes into working code through autonomous Claude AI sessions. Connect via MCP endpoint to automate development tasks, prototype quickly, and manage code generation projects.",
+        "url": "https://caiborg.ai/jairvis-exec.html",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free tier and Pro subscription available"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "120"
+        },
+        "featureList": [
+            "Wish-to-requirements decomposition",
+            "Autonomous code execution",
+            "Project management dashboard",
+            "Session inspection and resumption",
+            "File fetch and retrieval",
+            "Real-time execution status tracking"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Jairvis Exec?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jairvis Exec is an AI-powered execution engine built as an MCP (Model Context Protocol) plugin. It connects to Claude AI and transforms natural language wishes into working code by autonomously decomposing requirements, implementing solutions, and managing project execution. Unlike traditional code generators that produce templates, Jairvis Exec creates complete, tested implementations through autonomous Claude Code sessions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does Jairvis Exec work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jairvis Exec operates through a four-step process: (1) You describe what you want in natural language (your 'wish'), (2) The system decomposes this into structured requirements and technical specifications, (3) It autonomously executes code generation and testing through Claude Code sessions, (4) You receive working, tested implementations that you can inspect, modify, or resume from checkpoint states."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is MCP (Model Context Protocol)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MCP is a standard protocol that extends Claude AI's capabilities by connecting it to external tools and services. Jairvis Exec runs as an MCP server, meaning you connect it to Claude by providing an endpoint URL. This gives Claude access to code generation and project management capabilities while keeping all logic server-side for security and consistency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I connect Jairvis Exec to Claude?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "After signing up, you receive an MCP endpoint URL (hosted at mcp.caiborg.ai). You configure Claude to use this endpoint in your local configuration. Once connected, you can start using Jairvis Exec commands directly in Claude conversations to turn wishes into code."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my code safe? Where does it run?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All core logic—wish decomposition, code generation, execution management—runs server-side on our infrastructure. You only provide the wish (natural language) and receive the output (working code). Your code is never sent to third parties. The implementation is isolated per user and project."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What can I build with Jairvis Exec?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jairvis Exec is designed for developers and AI power users. Typical use cases include: automating repetitive development tasks, rapid prototyping of features, building integrations and APIs, generating tests and documentation, creating scripts and utilities, and managing multi-step technical projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I inspect and modify the generated code?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Jairvis Exec provides full project management: view all generated code, inspect implementation details, run tests, see logs, and resume from any checkpoint. You can fork sessions, modify and re-execute implementations, and integrate results directly into your projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between Free and Pro tiers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Free tier includes basic wish decomposition and limited autonomous execution. Pro includes unlimited execution, advanced project management, session resumption, batch operations, and priority support. API access is available separately for integration into applications."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">Jairvis Exec</div>
+            <nav>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero">
+        <h1>Turn Wishes Into Working Code</h1>
+        <p class="hero-subtitle">
+            Jairvis Exec is an AI execution engine that autonomously transforms natural language wishes into complete, tested implementations. Connect via MCP endpoint to Claude and start building instantly.
+        </p>
+        <div class="hero-cta">
+            <a href="#" class="cta">Get Started</a>
+            <a href="#how-it-works" class="cta cta-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <p style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary);">
+            Transform your ideas into production-ready code in four autonomous steps. Unlike traditional code generators, Jairvis Exec uses Claude's reasoning to understand intent, make technical decisions, and deliver complete implementations with testing and documentation.
+        </p>
+
+        <div class="grid-2">
+            <div class="flow-step card">
+                <div class="flow-number">1</div>
+                <h3>Describe Your Wish</h3>
+                <p>Tell Jairvis Exec what you want to build in natural language. No technical jargon required—just describe the problem you're solving.</p>
+            </div>
+            <div class="flow-step card">
+                <div class="flow-number">2</div>
+                <h3>Decompose to Requirements</h3>
+                <p>The system analyzes your wish and breaks it into structured requirements, technical specifications, and implementation steps.</p>
+            </div>
+            <div class="flow-step card">
+                <div class="flow-number">3</div>
+                <h3>Autonomous Execution</h3>
+                <p>Claude Code autonomously generates, tests, and iterates on your implementation. Watch progress in real-time or check back later.</p>
+            </div>
+            <div class="flow-step card">
+                <div class="flow-number">4</div>
+                <h3>Working Code</h3>
+                <p>Receive complete, tested implementations. Inspect all code, run tests, inspect logs, and resume from checkpoints anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <h2>Core Features</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-secondary);">
+            Jairvis Exec combines requirement decomposition, autonomous code generation, and project management into one unified interface. Every feature is designed to eliminate friction between idea and implementation.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Wish-to-Requirements</h3>
+                <p>Natural language gets transformed into structured technical requirements, edge cases, and implementation steps using Claude's reasoning.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>Autonomous Execution</h3>
+                <p>Claude Code sessions run independently, generating code, running tests, and handling errors with minimal intervention needed.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Project Management</h3>
+                <p>Dashboard shows all active projects, execution status, logs, and artifacts. Track progress across multiple concurrent implementations.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h3>Session Inspection</h3>
+                <p>Review every step of execution. View all intermediate code, test results, errors, and decisions Claude made during generation.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">▶️</div>
+                <h3>Resume & Iterate</h3>
+                <p>Pause any session, modify context, and resume from checkpoint states. Iterate on implementations without starting from scratch.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📦</div>
+                <h3>File Fetch & Export</h3>
+                <p>Access generated code, tests, and documentation through the API. Integrate results directly into your projects and workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section id="use-cases">
+        <h2>Use Cases</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-secondary);">
+            Jairvis Exec accelerates development across multiple scenarios. Whether you're building features, prototyping ideas, or automating repetitive work, it adapts to your workflow.
+        </p>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>🚀 Rapid Prototyping</h3>
+                <p>Test ideas in hours instead of days. Generate full-featured prototypes with authentication, databases, and APIs—then decide what to build next.</p>
+            </div>
+            <div class="card">
+                <h3>⚙️ Automate Dev Tasks</h3>
+                <p>Generate scripts, utilities, and build tools. Stop writing boilerplate—describe what you need and let Jairvis build it for you.</p>
+            </div>
+            <div class="card">
+                <h3>🔗 Build Integrations</h3>
+                <p>Create API clients, webhooks, and integration layers between services. Jairvis handles the implementation details.</p>
+            </div>
+            <div class="card">
+                <h3>📚 Generate Documentation</h3>
+                <p>Generate API docs, technical guides, and implementation specifications alongside your code. Automatically kept in sync.</p>
+            </div>
+            <div class="card">
+                <h3>✅ Test Coverage</h3>
+                <p>Generate comprehensive test suites that match your implementation. Catch bugs before they reach production.</p>
+            </div>
+            <div class="card">
+                <h3>📦 Project Management</h3>
+                <p>Coordinate multi-step technical projects. Jairvis tracks dependencies, manages state, and coordinates implementation across modules.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <p style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary);">
+            Start free. Upgrade when you need more. No surprise fees, no usage locks.
+        </p>
+
+        <div class="grid-2">
+            <div class="pricing-card">
+                <div class="pricing-name">Free Tier</div>
+                <div class="pricing-price">$0</div>
+                <p class="pricing-description">Perfect for getting started</p>
+                <ul class="pricing-features">
+                    <li>1 active project</li>
+                    <li>5 executions/month</li>
+                    <li>Basic session inspection</li>
+                    <li>MCP endpoint access</li>
+                    <li>Community support</li>
+                </ul>
+                <a href="#" class="cta">Start for Free</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-name">Pro</div>
+                <div class="pricing-price">Coming Soon</div>
+                <p class="pricing-description">Unlimited execution and priority support</p>
+                <ul class="pricing-features">
+                    <li>Unlimited projects</li>
+                    <li>Unlimited executions</li>
+                    <li>Advanced project management</li>
+                    <li>Session resumption</li>
+                    <li>Batch operations</li>
+                    <li>API access</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#" class="cta">Coming Soon</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Enterprise & API Access</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Need custom integrations, dedicated infrastructure, or white-label deployment?</p>
+            <a href="#" class="cta cta-secondary">Contact Sales</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+            Got questions? We've compiled answers to the most common ones. If you need more help, reach out to our support team.
+        </p>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is Jairvis Exec?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Jairvis Exec is an AI-powered execution engine built as an MCP (Model Context Protocol) plugin. It connects to Claude AI and transforms natural language wishes into working code by autonomously decomposing requirements, implementing solutions, and managing project execution. Unlike traditional code generators that produce templates, Jairvis Exec creates complete, tested implementations through autonomous Claude Code sessions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How does Jairvis Exec work?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Jairvis Exec operates through a four-step process: (1) You describe what you want in natural language (your 'wish'), (2) The system decomposes this into structured requirements and technical specifications, (3) It autonomously executes code generation and testing through Claude Code sessions, (4) You receive working, tested implementations that you can inspect, modify, or resume from checkpoint states.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is MCP (Model Context Protocol)?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>MCP is a standard protocol that extends Claude AI's capabilities by connecting it to external tools and services. Jairvis Exec runs as an MCP server, meaning you connect it to Claude by providing an endpoint URL. This gives Claude access to code generation and project management capabilities while keeping all logic server-side for security and consistency.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I connect Jairvis Exec to Claude?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>After signing up, you receive an MCP endpoint URL (hosted at mcp.caiborg.ai). You configure Claude to use this endpoint in your local configuration. Once connected, you can start using Jairvis Exec commands directly in Claude conversations to turn wishes into code.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is my code safe? Where does it run?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>All core logic—wish decomposition, code generation, execution management—runs server-side on our infrastructure. You only provide the wish (natural language) and receive the output (working code). Your code is never sent to third parties. The implementation is isolated per user and project.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What can I build with Jairvis Exec?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Jairvis Exec is designed for developers and AI power users. Typical use cases include: automating repetitive development tasks, rapid prototyping of features, building integrations and APIs, generating tests and documentation, creating scripts and utilities, and managing multi-step technical projects.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I inspect and modify the generated code?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. Jairvis Exec provides full project management: view all generated code, inspect implementation details, run tests, see logs, and resume from any checkpoint. You can fork sessions, modify and re-execute implementations, and integrate results directly into your projects.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What's the difference between Free and Pro tiers?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>The Free tier includes basic wish decomposition and limited autonomous execution. Pro includes unlimited execution, advanced project management, session resumption, batch operations, and priority support. API access is available separately for integration into applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="margin-bottom: 1rem;">
+            <strong>Jairvis Exec</strong> — AI Execution Engine by <a href="https://caiborg.ai">cAIborg</a>
+        </p>
+        <p>
+            <a href="https://caiborg.ai">Home</a> •
+            <a href="#privacy">Privacy</a> •
+            <a href="#terms">Terms</a> •
+            <a href="https://github.com/caiborg-ai">GitHub</a> •
+            <a href="mailto:contact@caiborg.ai">Contact</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            © 2026 cAIborg. All rights reserved. MCP server hosted at mcp.caiborg.ai
+        </p>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
