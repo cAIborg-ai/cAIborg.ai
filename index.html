@@ -1,560 +1,943 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dopamine Reward Timer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Онлайн-курс: научись использовать ИИ в работе с нуля. 6 модулей, практика с первого урока, результат после каждого модуля. Для фрилансеров, психологов, предпринимателей, мам в декрете.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ИИ -- твой новый навык | Онлайн-курс по искусственному интеллекту">
+<meta property="og:description" content="Научись использовать ИИ в работе с нуля -- без технических знаний. 6 модулей, практика на твоих задачах, результат с первого урока.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://caiborg.ai/">
+<meta property="og:locale" content="ru_RU">
+<link rel="canonical" href="https://caiborg.ai/">
+<title>ИИ — твой новый навык | Онлайн-курс</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "ИИ -- твой новый навык",
+  "description": "Научись использовать искусственный интеллект в своей работе с нуля. 6 модулей с практикой на реальных задачах. Автоматизация рутины, новые услуги, экономия 2-3 часов в день.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Нейро Навык"
+  },
+  "inLanguage": "ru",
+  "numberOfCredits": "6",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT6H"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "19",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/LimitedAvailability"
+  },
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "beginner"
+  },
+  "teaches": [
+    "Использование ChatGPT и других ИИ-инструментов",
+    "Формулирование запросов для получения точного результата",
+    "Автоматизация повторяющихся рабочих задач",
+    "Создание новых услуг с помощью ИИ",
+    "Встраивание ИИ в ежедневную работу"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Нужен ли опыт работы с ИИ для прохождения курса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Курс создан для тех, кто никогда не пользовался ИИ. Вы начнете с нуля и получите первый результат уже в первом модуле -- без технических знаний и программирования."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько времени занимает прохождение курса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Курс состоит из 6 коротких модулей. Каждый модуль можно пройти за один присест -- от 15 до 20 минут. Общее время: около 2 часов практической работы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Для каких профессий подходит курс?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Курс подходит фрилансерам, психологам, коучам, энергопрактикам, блогерам, предпринимателям, мамам в декрете и наемным сотрудникам. Все задания адаптированы под разные профессии с конкретными примерами."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой результат я получу после курса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "После курса вы умеете: пользоваться ИИ-инструментами, ставить задачу так чтобы получать нужный результат, автоматизировать рутинные задачи, экономить 2-3 часа в день, предлагать новые услуги клиентам. У вас будет готовый план использования ИИ на каждый день."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "На каком языке проходит курс?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Весь курс на русском языке -- уроки, инструкции, примеры и поддержка в закрытом сообществе."
+      }
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0e;--bg2:#101014;--card:#13131a;--card2:#18181f;
+  --border:#222230;--purple:#7c3aed;--purple2:#9d5cf7;--purple3:#c084fc;
+  --orange:#f97316;--text:#ededf5;--muted:#5c5c7a;--muted2:#8a8aaa;--tag:#1a1a28;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Golos Text',sans-serif;overflow-x:hidden;}
 
-        body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:15px 52px;
+  background:rgba(11,11,14,0.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:2.5px;}
+.nav-fire{font-size:12px;color:var(--orange);font-weight:600;}
+.nav-cta{
+  background:var(--purple);color:#fff;border:none;
+  padding:10px 24px;border-radius:10px;
+  font-family:'Golos Text',sans-serif;font-size:13px;font-weight:700;
+  cursor:pointer;transition:all .2s;
+}
+.nav-cta:hover{background:var(--purple2);box-shadow:0 4px 20px rgba(124,58,237,.4);}
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin-top: 40px;
-        }
+/* HERO */
+.hero{
+  position:relative;max-width:880px;margin:0 auto;
+  padding:90px 48px 72px;text-align:center;
+}
+.hero-glow{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:700px;height:420px;
+  background:radial-gradient(ellipse at center,rgba(124,58,237,.2) 0%,transparent 68%);
+  pointer-events:none;
+}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;position:relative;}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid;
+}
+.pill-fire{background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.3);color:#fb923c;}
+.pill-purple{background:rgba(124,58,237,.12);border-color:rgba(124,58,237,.3);color:var(--purple3);}
+h1{
+  font-family:'Unbounded',sans-serif;
+  font-size:clamp(38px,7vw,74px);font-weight:900;
+  line-height:1.06;letter-spacing:-2px;margin-bottom:20px;position:relative;
+}
+h1 em{font-style:normal;color:var(--purple2);}
+.hero-sub{font-size:17px;color:var(--muted2);line-height:1.7;max-width:540px;margin:0 auto 40px;position:relative;}
+.avs-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:40px;position:relative;}
+.avs{display:flex;}
+.av{
+  width:34px;height:34px;border-radius:50%;border:2.5px solid var(--bg);
+  background:linear-gradient(135deg,var(--purple),var(--purple3));
+  margin-left:-9px;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;color:#fff;
+}
+.av:first-child{margin-left:0;}
+.av-label{font-size:13px;color:var(--muted2);}
+.av-label b{color:var(--text);}
+.btn-hero{
+  background:var(--purple);color:#fff;border:none;
+  padding:18px 48px;border-radius:14px;
+  font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:10px;
+  position:relative;
+}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,58,237,.5);background:var(--purple2);}
+.hero-note{margin-top:14px;font-size:12px;color:var(--muted);position:relative;}
 
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: 300;
-            margin-bottom: 40px;
-            background: linear-gradient(90deg, #00ff88, #00ffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+/* TICKER */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;position:relative;}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;}
+.ticker::before{left:0;background:linear-gradient(to right,var(--bg),transparent);}
+.ticker::after{right:0;background:linear-gradient(to left,var(--bg),transparent);}
+.ticker-inner{display:flex;gap:44px;animation:roll 28s linear infinite;width:max-content;}
+.ticker-inner span{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.5px;white-space:nowrap;}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-        .timer-display {
-            text-align: center;
-            font-size: 5em;
-            font-weight: 100;
-            margin-bottom: 30px;
-            font-variant-numeric: tabular-nums;
-            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-        }
+/* SECTIONS */
+.sec{max-width:940px;margin:0 auto;padding:80px 48px;}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:4px;color:var(--purple2);text-transform:uppercase;text-align:center;margin-bottom:14px;}
+.sec-title{font-family:'Unbounded',sans-serif;font-size:clamp(22px,4vw,40px);font-weight:800;text-align:center;line-height:1.18;margin-bottom:52px;}
+.sec-title em{font-style:normal;color:var(--purple2);}
 
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
+/* PAIN */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.pain-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:all .25s;}
+.pain-card:hover{border-color:rgba(124,58,237,.3);background:var(--card2);transform:translateY(-2px);}
+.pain-ico{font-size:26px;margin-bottom:14px;}
+.pain-card h3{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;}
+.pain-card p{font-size:13px;color:var(--muted2);line-height:1.6;}
 
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
+/* PROMISE */
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.promise-card{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;
+  text-align:center;transition:all .2s;
+}
+.promise-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-2px);}
+.promise-ico{font-size:30px;margin-bottom:14px;}
+.promise-card p{font-size:13px;color:var(--muted2);line-height:1.6;}
+.promise-card p b{color:var(--text);display:block;font-size:14px;margin-bottom:4px;}
 
-        .btn-primary {
-            background: linear-gradient(135deg, #00ff88, #00cc70);
-            color: #000;
-        }
+/* BEFORE AFTER */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.ba-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;}
+.ba-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:8px;display:inline-block;margin-bottom:20px;}
+.ba-label.now{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.2);}
+.ba-label.after{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.2);}
+.ba-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.ba-list li{font-size:14px;color:var(--muted2);line-height:1.5;display:flex;gap:10px;align-items:flex-start;}
+.ba-list li::before{content:'';width:5px;height:5px;border-radius:50%;margin-top:8px;flex-shrink:0;}
+.ba-list.bad li::before{background:#f87171;}
+.ba-list.good li{color:var(--text);}
+.ba-list.good li::before{background:#4ade80;}
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
-        }
+/* WHO */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.who-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;}
+.who-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+.who-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.who-list li{font-size:14px;display:flex;align-items:center;gap:10px;}
+.dot-y{width:7px;height:7px;border-radius:50%;background:var(--purple2);flex-shrink:0;}
+.dot-n{width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0;}
 
-        .btn-secondary {
-            background: #2a2a3e;
-            color: #e0e0e0;
-            border: 1px solid #444;
-        }
+/* MODULES */
+.mods-wrap{max-width:940px;margin:0 auto;padding:0 48px 20px;}
+.mod{margin-bottom:12px;border-radius:16px;overflow:hidden;border:1px solid var(--border);}
+.mod-head{
+  display:flex;align-items:center;gap:16px;padding:20px 24px;
+  background:var(--card);cursor:pointer;transition:background .2s;
+  user-select:none;
+}
+.mod-head:hover{background:var(--card2);}
+.mod-num{
+  width:40px;height:40px;border-radius:12px;flex-shrink:0;
+  background:var(--purple);display:flex;align-items:center;justify-content:center;
+  font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff;
+}
+.mod-info{flex:1;}
+.mod-name{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;margin-bottom:3px;}
+.mod-tagline{font-size:12px;color:var(--muted2);}
+.mod-meta{font-size:12px;color:var(--muted);white-space:nowrap;}
+.mod-arrow{font-size:16px;color:var(--muted);transition:transform .3s;}
+.mod.open .mod-arrow{transform:rotate(180deg);}
+.mod-body{
+  background:var(--bg2);
+  max-height:0;overflow:hidden;transition:max-height .4s ease;
+}
+.mod.open .mod-body{max-height:1000px;}
+.mod-rows{}
+.mod-row{
+  display:grid;grid-template-columns:52px 1fr auto;gap:16px;
+  padding:16px 24px;border-top:1px solid var(--border);
+  align-items:start;
+}
+.row-n{
+  width:34px;height:34px;border-radius:9px;
+  background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.18);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--purple2);
+  flex-shrink:0;
+}
+.row-body{}
+.row-title{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.35;}
+.row-desc{font-size:12px;color:var(--muted2);line-height:1.55;margin-bottom:8px;}
+.row-result{
+  font-size:12px;color:#4ade80;line-height:1.4;
+  padding:6px 10px;background:rgba(34,197,94,.07);
+  border-radius:7px;border:1px solid rgba(34,197,94,.15);
+  display:inline-block;margin-top:4px;
+}
+.badge{font-size:9px;font-weight:700;letter-spacing:.5px;padding:3px 8px;border-radius:5px;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+.b-p{background:rgba(124,58,237,.18);color:var(--purple2);}
+.b-g{background:rgba(34,197,94,.15);color:#4ade80;}
+.b-o{background:rgba(249,115,22,.15);color:#fb923c;}
+.b-b{background:rgba(59,130,246,.15);color:#60a5fa;}
 
-        .btn-secondary:hover {
-            background: #3a3a4e;
-        }
+/* INCLUDES */
+.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.inc-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center;transition:all .2s;}
+.inc-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-2px);}
+.inc-ico{font-size:30px;margin-bottom:14px;}
+.inc-card h4{font-size:14px;font-weight:700;margin-bottom:8px;}
+.inc-card p{font-size:12px;color:var(--muted2);line-height:1.55;}
 
-        .settings {
-            background: rgba(42, 42, 62, 0.5);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;display:flex;gap:16px;transition:all .2s;}
+.why-card:hover{border-color:rgba(124,58,237,.3);background:var(--card2);}
+.why-n{width:36px;height:36px;border-radius:10px;flex-shrink:0;background:var(--purple);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:#fff;}
+.why-card h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.why-card p{font-size:13px;color:var(--muted2);line-height:1.55;}
 
-        .setting-group {
-            margin-bottom: 20px;
-        }
+/* CTA BANNER */
+.cta-banner{
+  max-width:940px;margin:0 auto 100px;padding:0 48px;
+}
+.cta-inner{
+  background:linear-gradient(135deg,rgba(124,58,237,.14),rgba(168,85,247,.06));
+  border:1px solid rgba(124,58,237,.22);border-radius:24px;
+  padding:60px 48px;text-align:center;
+}
+.cta-inner h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:800;line-height:1.18;margin-bottom:12px;}
+.cta-inner h2 em{font-style:normal;color:var(--purple2);}
+.cta-sub{font-size:15px;color:var(--muted2);margin-bottom:44px;line-height:1.6;}
+.btn-cta{
+  background:var(--purple);color:#fff;border:none;
+  padding:18px 52px;border-radius:14px;
+  font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:10px;
+}
+.btn-cta:hover{background:var(--purple2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,58,237,.5);}
+.cta-note{margin-top:14px;font-size:12px;color:var(--muted);}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #aaa;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* STICKY */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:var(--purple);padding:14px 40px;
+  display:flex;align-items:center;justify-content:center;gap:24px;
+}
+.sticky span{font-size:13px;font-weight:600;color:#fff;}
+.sticky-btn{background:#fff;color:#000;border:none;padding:10px 24px;border-radius:9px;font-weight:700;font-size:13px;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.sticky-btn:hover{background:#f0e8ff;}
 
-        input[type="number"], input[type="text"], textarea {
-            width: 100%;
-            padding: 10px;
-            background: #1a1a2e;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: #e0e0e0;
-            font-size: 16px;
-        }
+/* FADE IN */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero>*{animation:fadeUp .65s ease both;}
+.hero>*:nth-child(1){animation-delay:.05s}.hero>*:nth-child(2){animation-delay:.15s}
+.hero>*:nth-child(3){animation-delay:.25s}.hero>*:nth-child(4){animation-delay:.35s}
+.hero>*:nth-child(5){animation-delay:.45s}.hero>*:nth-child(6){animation-delay:.55s}
 
-        input[type="range"] {
-            width: 100%;
-            margin: 10px 0;
-        }
-
-        .probability-display {
-            text-align: center;
-            font-size: 24px;
-            color: #00ff88;
-            margin: 10px 0;
-        }
-
-        textarea {
-            min-height: 100px;
-            font-family: monospace;
-            font-size: 14px;
-        }
-
-        .stats {
-            background: rgba(42, 42, 62, 0.5);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 32px;
-            font-weight: 300;
-            color: #00ff88;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 5px;
-        }
-
-        #youtube-player {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            display: none;
-            width: 80%;
-            max-width: 800px;
-            aspect-ratio: 16/9;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
-        }
-
-        #youtube-player.active {
-            display: block;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -40%);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 999;
-            display: none;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        .reward-notification {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4em;
-            font-weight: bold;
-            color: #00ff88;
-            text-shadow: 0 0 50px rgba(0, 255, 136, 0.8);
-            z-index: 2000;
-            display: none;
-            animation: pulse 0.5s ease-out;
-        }
-
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-        }
-
-        .close-video {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            padding: 10px 20px;
-            background: #ff4444;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .close-video.active {
-            display: block;
-        }
-    </style>
+@media(max-width:700px){
+  nav{padding:13px 20px;}.nav-fire{display:none;}
+  .hero,.sec,.mods-wrap,.cta-banner{padding-left:20px;padding-right:20px;}
+  .hero{padding-top:52px;}
+  .pain-grid,.ba-grid,.who-grid,.why-grid,.inc-grid,.promise-grid{grid-template-columns:1fr;}
+  .mod-row{grid-template-columns:40px 1fr;}.badge{display:none;}
+  .sticky{padding:12px 20px;gap:12px;}
+  .cta-inner{padding:36px 24px;}
+}
+</style>
 </head>
 <body>
-    <div style="position:fixed; top:16px; right:16px; z-index:2001; display:flex; gap:10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="jairvis-exec.html" style="background:linear-gradient(90deg,#a78bfa,#60a5fa); color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(167,139,250,0.3); transition: all 0.3s;">Jairvis Exec →</a>
-        <a href="universe_index.html" style="background:#6B9F3E; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(107,159,62,0.3); transition: all 0.3s;">Universe Pharma →</a>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">НЕЙРО · НАВЫК</div>
+  <div class="nav-fire">🔥 Осталось 12 мест по этой цене</div>
+  <button class="nav-cta" onclick="window.open('https://t.me/alinagranata','_blank')">Получить доступ →</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="pills">
+    <span class="pill pill-fire">🔥 Скидка 50% — только сейчас</span>
+    <span class="pill pill-purple">6 модулей · Практика с первого урока</span>
+  </div>
+  <h1>ИИ —<br><em>твой новый навык</em></h1>
+  <p class="hero-sub">Научись использовать искусственный интеллект в своей работе с нуля — без технических знаний, без опыта.</p>
+  <div class="avs-row">
+    <div class="avs">
+      <div class="av">АН</div><div class="av">МК</div><div class="av">ЕВ</div>
+      <div class="av">ДМ</div><div class="av">СП</div>
     </div>
-    <div class="container">
-        <h1>⚡ DOPAMINE TIMER ⚡</h1>
-        
-        <div class="timer-display" id="timer">25:00</div>
-        
-        <div class="controls">
-            <button class="btn-primary" id="startBtn">START</button>
-            <button class="btn-secondary" id="pauseBtn">PAUSE</button>
-            <button class="btn-secondary" id="resetBtn">RESET</button>
-        </div>
+    <div class="av-label"><b>240+</b> учеников уже используют ИИ в работе</div>
+  </div>
+  <button class="btn-hero" onclick="window.open('https://t.me/alinagranata','_blank')">Получить доступ за $19 →</button>
+  <div class="hero-note">На русском языке · Практика с первого урока</div>
+</section>
 
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-value" id="completedSprints">0</div>
-                <div class="stat-label">Sprints</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="rewardsEarned">0</div>
-                <div class="stat-label">Rewards</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="winRate">0%</div>
-                <div class="stat-label">Win Rate</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="totalTime">0h</div>
-                <div class="stat-label">Total Time</div>
-            </div>
-        </div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>ChatGPT</span><span>Claude</span><span>Midjourney</span><span>Banana.pro</span>
+    <span>ElevenLabs</span><span>Higgsfield</span><span>Magnific</span><span>CapCut AI</span>
+    <span>Freepik AI</span><span>Notion AI</span><span>Runway</span><span>HeyGen</span>
+    <span>ChatGPT</span><span>Claude</span><span>Midjourney</span><span>Banana.pro</span>
+    <span>ElevenLabs</span><span>Higgsfield</span><span>Magnific</span><span>CapCut AI</span>
+    <span>Freepik AI</span><span>Notion AI</span><span>Runway</span><span>HeyGen</span>
+  </div>
+</div>
 
-        <div class="settings">
-            <div class="setting-group">
-                <label for="sprintDuration">Sprint Duration (minutes)</label>
-                <input type="number" id="sprintDuration" min="1" max="120" value="25">
-            </div>
-            
-            <div class="setting-group">
-                <label for="rewardProbability">Reward Probability</label>
-                <input type="range" id="rewardProbability" min="0" max="100" value="33">
-                <div class="probability-display" id="probabilityDisplay">33%</div>
-            </div>
-            
-            <div class="setting-group">
-                <label for="youtubeLinks">YouTube Reward Links (one per line)</label>
-                <textarea id="youtubeLinks" placeholder="Enter YouTube URLs, one per line">https://youtu.be/W50HtcPAeSs
-https://youtu.be/k8tHuoKk6z0
-https://youtu.be/7W-XvNwp2O8
-https://youtu.be/6qbVwVM8vFc
-https://youtu.be/dQw4w9WgXcQ
-                </textarea>
-            </div>
-
-            <button class="btn-secondary" id="saveSettings">Save Settings</button>
-        </div>
+<!-- PAIN -->
+<section class="sec" style="padding-bottom:0">
+  <div class="sec-label">Узнаёшь себя?</div>
+  <h2 class="sec-title">Знакомо?</h2>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-ico">⏳</div>
+      <h3>Рутина съедает весь день</h3>
+      <p>На важное не остаётся времени. Одно и то же каждый день — по несколько часов.</p>
     </div>
+    <div class="pain-card">
+      <div class="pain-ico">💸</div>
+      <h3>Хочется зарабатывать больше — непонятно как</h3>
+      <p>ИИ открывает новые возможности для дохода, но непонятно с чего начать.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-ico">🌐</div>
+      <h3>Все вокруг говорят про ИИ — а ты ещё не пробовал</h3>
+      <p>Кажется, что поезд уже уходит, а ты стоишь на перроне.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-ico">😰</div>
+      <h3>Кажется, что это сложно и не для тебя</h3>
+      <p>Нужны технические знания, программирование, сложные инструменты — это миф.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="overlay" id="overlay"></div>
-    <button class="close-video" id="closeVideo">Close Video</button>
-    <div id="youtube-player"></div>
-    <div class="reward-notification" id="rewardNotification">🎉 REWARD! 🎉</div>
+<!-- PROMISE -->
+<section class="sec">
+  <div class="sec-label">Что ты получишь</div>
+  <h2 class="sec-title">После курса <em>ты умеешь</em></h2>
+  <div class="promise-grid">
+    <div class="promise-card">
+      <div class="promise-ico">🤖</div>
+      <p><b>Пользоваться ИИ-инструментами с нуля</b>Открываешь, пишешь задачу, получаешь результат</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-ico">🎯</div>
+      <p><b>Ставить задачу так, чтобы ИИ делал что нужно</b>Знаешь формулу — получаешь точный результат</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-ico">⚡</div>
+      <p><b>Автоматизировать повторяющиеся задачи</b>Посты, письма, ответы — ИИ делает это за тебя</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-ico">⏰</div>
+      <p><b>Освобождать 2–3 часа в день от рутины</b>Делаешь за час то, на что раньше уходил день</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-ico">🚀</div>
+      <p><b>Делать за час то, на что раньше уходил день</b>Скорость работы вырастает в разы</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-ico">💰</div>
+      <p><b>Предлагать новые услуги клиентам</b>ИИ открывает возможности которых раньше не было</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Timer state
-        let timerInterval = null;
-        let remainingSeconds = 0;
-        let isRunning = false;
-        let totalSeconds = 0;
-        let audioInitialized = false;
+<!-- BEFORE AFTER -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-label">Трансформация</div>
+  <h2 class="sec-title">До и <em>после курса</em></h2>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <span class="ba-label now">СЕЙЧАС</span>
+      <ul class="ba-list bad">
+        <li>Пишешь посты по 2 часа</li>
+        <li>Отвечаешь на одни и те же вопросы клиентов</li>
+        <li>Тратишь день на то, что можно сделать за час</li>
+        <li>Боишься, что ИИ — это сложно</li>
+        <li>Не понимаешь, как зарабатывать больше</li>
+      </ul>
+    </div>
+    <div class="ba-card">
+      <span class="ba-label after">ПОСЛЕ КУРСА</span>
+      <ul class="ba-list good">
+        <li>Пост готов за 15 минут с помощью ИИ</li>
+        <li>ИИ отвечает по твоему шаблону</li>
+        <li>Рутина на автомате — 2–3 свободных часа в день</li>
+        <li>Уверенно используешь ИИ каждый день</li>
+        <li>Предлагаешь новые услуги клиентам</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        // Stats
-        let stats = {
-            completedSprints: 0,
-            rewardsEarned: 0,
-            totalMinutes: 0
-        };
+<!-- FOR WHO -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-label">Аудитория</div>
+  <h2 class="sec-title">Для кого <em>этот курс</em></h2>
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-title">✅ Это для тебя</div>
+      <ul class="who-list">
+        <li><span class="dot-y"></span>Фрилансер</li>
+        <li><span class="dot-y"></span>Мама в декрете</li>
+        <li><span class="dot-y"></span>Психолог, коуч, энергопрактик</li>
+        <li><span class="dot-y"></span>Блогер, инфлюенсер</li>
+        <li><span class="dot-y"></span>Предприниматель</li>
+        <li><span class="dot-y"></span>Наёмный сотрудник</li>
+        <li><span class="dot-y"></span>Никогда не пользовался ИИ</li>
+      </ul>
+    </div>
+    <div class="who-card">
+      <div class="who-title">❌ Не для тебя</div>
+      <ul class="who-list">
+        <li><span class="dot-n"></span>Уже активно используешь ChatGPT каждый день</li>
+        <li><span class="dot-n"></span>Тебе нужен курс по программированию</li>
+        <li><span class="dot-n"></span>Ищешь волшебную кнопку без усилий</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        // YouTube API
-        let player = null;
-        let playerReady = false;
+<!-- MODULES -->
+<section class="sec" style="padding-bottom:24px">
+  <div class="sec-label">Программа</div>
+  <h2 class="sec-title">6 модулей — <em>результат после каждого</em></h2>
+</section>
 
-        // Load YouTube API
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+<div class="mods-wrap">
 
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-player', {
-                height: '100%',
-                width: '100%',
-                videoId: '',
-                playerVars: {
-                    'autoplay': 1,
-                    'controls': 1,
-                    'rel': 0
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
+  <div class="mod open">
+    <div class="mod-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="mod-num">1</div>
+      <div class="mod-info">
+        <div class="mod-name">Первая встреча с ИИ</div>
+        <div class="mod-tagline">Пробуешь прямо сейчас — без теории, без подготовки</div>
+      </div>
+      <div class="mod-meta">6 уроков</div>
+      <div class="mod-arrow">▼</div>
+    </div>
+    <div class="mod-body">
+      <div class="mod-rows">
+        <div class="mod-row">
+          <div class="row-n">01</div>
+          <div class="row-body">
+            <div class="row-title">Что такое ИИ на самом деле — без заумных слов</div>
+            <div class="row-desc">ИИ — умный помощник которому ты пишешь как в мессенджере. Никакого программирования, никаких кнопок. Просто пишешь задачу обычными словами — он отвечает.</div>
+          </div>
+          <span class="badge b-b">ТЕОРИЯ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">02</div>
+          <div class="row-body">
+            <div class="row-title">Что он умеет, а что нет — честно</div>
+            <div class="row-desc">Умеет: написать текст, придумать идеи, составить план. Не умеет: знать тебя лично, гарантировать правильность. Думай о нём как о стажёре — быстрый, но без опыта.</div>
+          </div>
+          <span class="badge b-b">ТЕОРИЯ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">03</div>
+          <div class="row-body">
+            <div class="row-title">Почему это не страшно и не сложно</div>
+            <div class="row-desc">Разбираем главные страхи и мифы про ИИ. После этого урока — только желание попробовать.</div>
+          </div>
+          <span class="badge b-b">ОБЪЯСНЕНИЕ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">04</div>
+          <div class="row-body">
+            <div class="row-title">Открываешь ИИ и даёшь первую задачу</div>
+            <div class="row-desc">Пошаговая инструкция: регистрируешься в ChatGPT → пишешь одну задачу из своей жизни → видишь результат за минуту. Примеры для каждой профессии.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">05</div>
+          <div class="row-body">
+            <div class="row-title">Нажимаешь Enter — читаешь результат</div>
+            <div class="row-desc">Не редактируй, не исправляй — просто прочитай. Это твой первый результат. Результат будет неидеальный — и это нормально.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">06</div>
+          <div class="row-body">
+            <div class="row-title">Результат модуля</div>
+            <div class="row-result">✓ Ты попробовал. Получилось. Страх ушёл.</div>
+          </div>
+          <span class="badge b-p">РЕЗУЛЬТАТ</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function onPlayerReady(event) {
-            playerReady = true;
-        }
+  <div class="mod">
+    <div class="mod-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="mod-num">2</div>
+      <div class="mod-info">
+        <div class="mod-name">Как ставить задачу ИИ</div>
+        <div class="mod-tagline">Чтобы он делал то, что тебе нужно</div>
+      </div>
+      <div class="mod-meta">6 уроков</div>
+      <div class="mod-arrow">▼</div>
+    </div>
+    <div class="mod-body">
+      <div class="mod-rows">
+        <div class="mod-row">
+          <div class="row-n">01</div>
+          <div class="row-body">
+            <div class="row-title">Почему ИИ иногда выдаёт ерунду — и как это исправить</div>
+            <div class="row-desc">"Напиши пост" vs "Напиши пост для Instagram, аудитория мамы 30+, тон дружелюбный". ИИ отвечает ровно на то, что ты написал.</div>
+          </div>
+          <span class="badge b-b">ОБЪЯСНЕНИЕ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">02</div>
+          <div class="row-body">
+            <div class="row-title">Как формулировать запрос, чтобы получить полезный результат</div>
+            <div class="row-desc">5 вопросов перед запросом: Кто я → Что нужно → Для кого → Как звучать → Детали. Формула работает для любой задачи.</div>
+          </div>
+          <span class="badge b-o">КЛЮЧЕВОЙ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">03</div>
+          <div class="row-body">
+            <div class="row-title">Берёшь свою реальную рабочую задачу</div>
+            <div class="row-desc">Формулируешь запрос по формуле. Сравниваешь плохой и хороший промпт на своей же задаче — разница очевидна.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">04</div>
+          <div class="row-body">
+            <div class="row-title">Как проверять и улучшать ответ ИИ</div>
+            <div class="row-desc">ИИ звучит уверенно даже когда ошибается. 3 вопроса для проверки. Правило: ИИ делает черновик — ты редактор.</div>
+          </div>
+          <span class="badge b-b">ВАЖНО</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">05</div>
+          <div class="row-body">
+            <div class="row-title">Результат модуля</div>
+            <div class="row-result">✓ Умеешь получать от ИИ то, что тебе действительно нужно.</div>
+          </div>
+          <span class="badge b-p">РЕЗУЛЬТАТ</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.ENDED) {
-                closeVideoPlayer();
-            }
-        }
+  <div class="mod">
+    <div class="mod-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="mod-num">3</div>
+      <div class="mod-info">
+        <div class="mod-name">Найди свою рутину</div>
+        <div class="mod-tagline">Где именно ИИ сэкономит тебе часы</div>
+      </div>
+      <div class="mod-meta">5 уроков</div>
+      <div class="mod-arrow">▼</div>
+    </div>
+    <div class="mod-body">
+      <div class="mod-rows">
+        <div class="mod-row">
+          <div class="row-n">01</div>
+          <div class="row-body">
+            <div class="row-title">Как увидеть свои повторяющиеся задачи</div>
+            <div class="row-desc">Они незаметны, пока не посмотришь. Упражнение: записываешь 10 задач этой недели и находишь что крадёт время каждый день.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">02</div>
+          <div class="row-body">
+            <div class="row-title">Метод: какие задачи ИИ может взять, а какие нет</div>
+            <div class="row-desc">Критерии выбора задач для автоматизации — не всё подходит, разбираем что даёт максимальную отдачу.</div>
+          </div>
+          <span class="badge b-b">МЕТОД</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">03</div>
+          <div class="row-body">
+            <div class="row-title">Примеры по профессиям</div>
+            <div class="row-desc">Фрилансеры, психологи, предприниматели, мамы — конкретные задачи которые ИИ делает за минуты вместо часов.</div>
+          </div>
+          <span class="badge b-b">ПРИМЕРЫ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">04</div>
+          <div class="row-body">
+            <div class="row-title">Составляешь карту своего рабочего дня</div>
+            <div class="row-desc">Отмечаешь что можно отдать ИИ. Это твой план на следующий модуль.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">05</div>
+          <div class="row-body">
+            <div class="row-title">Результат модуля</div>
+            <div class="row-result">✓ Личный список задач, которые ИИ будет делать за тебя.</div>
+          </div>
+          <span class="badge b-p">РЕЗУЛЬТАТ</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        // Load settings
-        function loadSettings() {
-            const saved = localStorage.getItem('dopamineTimerSettings');
-            if (saved) {
-                const settings = JSON.parse(saved);
-                document.getElementById('sprintDuration').value = settings.sprintDuration || 25;
-                document.getElementById('rewardProbability').value = settings.rewardProbability || 33;
-                document.getElementById('youtubeLinks').value = settings.youtubeLinks || '';
-                updateProbabilityDisplay();
-            }
-            
-            const savedStats = localStorage.getItem('dopamineTimerStats');
-            if (savedStats) {
-                stats = JSON.parse(savedStats);
-                updateStatsDisplay();
-            }
-            
-            resetTimer();
-        }
+  <div class="mod">
+    <div class="mod-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="mod-num">4</div>
+      <div class="mod-info">
+        <div class="mod-name">ИИ делает твою рутину</div>
+        <div class="mod-tagline">Автоматизируешь по-настоящему, на своих задачах</div>
+      </div>
+      <div class="mod-meta">6 уроков</div>
+      <div class="mod-arrow">▼</div>
+    </div>
+    <div class="mod-body">
+      <div class="mod-rows">
+        <div class="mod-row">
+          <div class="row-n">01</div>
+          <div class="row-body">
+            <div class="row-title">Как превратить задачу из списка в готовый процесс с ИИ</div>
+            <div class="row-desc">Было: 5 одинаковых вопросов от клиентов = 1 час. Стало: один шаблон через ИИ = 3 минуты. Один раз сделал — используй всегда.</div>
+          </div>
+          <span class="badge b-b">ДЕМО</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">02</div>
+          <div class="row-body">
+            <div class="row-title">Посты, письма, ответы клиентам, подготовка материалов — на практике</div>
+            <div class="row-desc">Берёшь 1–2 задачи из своего списка и автоматизируешь их прямо на уроке. Готовые шаблоны запросов для каждой профессии.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">03</div>
+          <div class="row-body">
+            <div class="row-title">До/после — сколько времени ты реально экономишь</div>
+            <div class="row-desc">Заполняешь таблицу: задача — раньше (минуты) — с ИИ (минуты). Считаешь реальную экономию за неделю.</div>
+          </div>
+          <span class="badge b-b">ЗАМЕР</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">04</div>
+          <div class="row-body">
+            <div class="row-title">Результат модуля</div>
+            <div class="row-result">✓ Задачи, которые занимали часы, теперь занимают минуты. Ты это видишь сам.</div>
+          </div>
+          <span class="badge b-p">РЕЗУЛЬТАТ</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function saveSettings() {
-            const settings = {
-                sprintDuration: document.getElementById('sprintDuration').value,
-                rewardProbability: document.getElementById('rewardProbability').value,
-                youtubeLinks: document.getElementById('youtubeLinks').value
-            };
-            localStorage.setItem('dopamineTimerSettings', JSON.stringify(settings));
-            resetTimer();
-        }
+  <div class="mod">
+    <div class="mod-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="mod-num">5</div>
+      <div class="mod-info">
+        <div class="mod-name">Новые услуги — новый доход</div>
+        <div class="mod-tagline">То, что раньше не мог предложить, теперь можешь</div>
+      </div>
+      <div class="mod-meta">6 уроков</div>
+      <div class="mod-arrow">▼</div>
+    </div>
+    <div class="mod-body">
+      <div class="mod-rows">
+        <div class="mod-row">
+          <div class="row-n">01</div>
+          <div class="row-body">
+            <div class="row-title">Какие услуги стали доступны благодаря ИИ — по твоей профессии</div>
+            <div class="row-desc">Психолог: программа для клиента за 10 мин. Фрилансер: контент-план за 15 мин. Предприниматель: тексты за 5 мин. Блогер: 30 идей за 2 мин.</div>
+          </div>
+          <span class="badge b-b">ОБЗОР</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">02</div>
+          <div class="row-body">
+            <div class="row-title">Как упаковать результат ИИ в услугу для клиента</div>
+            <div class="row-desc">Формула: задача → ИИ делает основу → ты добавляешь экспертизу → готовый продукт. Программа для клиента: 2 часа → 15 минут.</div>
+          </div>
+          <span class="badge b-o">КЛЮЧЕВОЙ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">03</div>
+          <div class="row-body">
+            <div class="row-title">Примеры: контент-план, программа для клиента, маркетинговые тексты, отчёты</div>
+            <div class="row-desc">Создаёшь один готовый продукт/услугу, которую можешь предложить клиенту уже сегодня.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">04</div>
+          <div class="row-body">
+            <div class="row-title">Результат модуля</div>
+            <div class="row-result">✓ Готовый прототип услуги, сделанный твоими руками с помощью ИИ.</div>
+          </div>
+          <span class="badge b-p">РЕЗУЛЬТАТ</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function saveStats() {
-            localStorage.setItem('dopamineTimerStats', JSON.stringify(stats));
-        }
+  <div class="mod">
+    <div class="mod-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="mod-num">6</div>
+      <div class="mod-info">
+        <div class="mod-name">Твой план с ИИ</div>
+        <div class="mod-tagline">Чтобы навык остался, а не забылся через неделю</div>
+      </div>
+      <div class="mod-meta">7 уроков</div>
+      <div class="mod-arrow">▼</div>
+    </div>
+    <div class="mod-body">
+      <div class="mod-rows">
+        <div class="mod-row">
+          <div class="row-n">01</div>
+          <div class="row-body">
+            <div class="row-title">Как встроить ИИ в свой обычный рабочий день</div>
+            <div class="row-desc">Без системы: неделя 1 — пользуешься, неделя 3 — забыл. С системой: 5 минут каждый день — навык остаётся навсегда.</div>
+          </div>
+          <span class="badge b-b">СИСТЕМА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">02</div>
+          <div class="row-body">
+            <div class="row-title">Какие задачи делать с ИИ каждый день, а какие раз в неделю</div>
+            <div class="row-desc">Таблица по профессиям: фрилансер, психолог, мама, предприниматель, блогер, сотрудник. Ежедневный ритм + еженедельный.</div>
+          </div>
+          <span class="badge b-b">ТАБЛИЦА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">03</div>
+          <div class="row-body">
+            <div class="row-title">Составляешь свой личный план: что, когда и как</div>
+            <div class="row-desc">Шаблон на 7 дней — одна конкретная задача с ИИ на каждый день. Пишешь обязательство и ставишь ежедневное напоминание.</div>
+          </div>
+          <span class="badge b-g">ПРАКТИКА</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">04</div>
+          <div class="row-body">
+            <div class="row-title">Как не потерять навык после окончания курса</div>
+            <div class="row-desc">30 секунд — ставишь напоминание в телефоне. Именно это запускает привычку каждый день.</div>
+          </div>
+          <span class="badge b-o">ДЕЙСТВИЕ</span>
+        </div>
+        <div class="mod-row">
+          <div class="row-n">05</div>
+          <div class="row-body">
+            <div class="row-title">Результат модуля</div>
+            <div class="row-result">✓ Конкретный план на каждый день. ИИ — часть твоей работы, а не разовый эксперимент.</div>
+          </div>
+          <span class="badge b-p">РЕЗУЛЬТАТ</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function updateProbabilityDisplay() {
-            const value = document.getElementById('rewardProbability').value;
-            document.getElementById('probabilityDisplay').textContent = value + '%';
-        }
+</div>
 
-        function updateStatsDisplay() {
-            document.getElementById('completedSprints').textContent = stats.completedSprints;
-            document.getElementById('rewardsEarned').textContent = stats.rewardsEarned;
-            
-            const winRate = stats.completedSprints > 0 
-                ? Math.round((stats.rewardsEarned / stats.completedSprints) * 100) 
-                : 0;
-            document.getElementById('winRate').textContent = winRate + '%';
-            
-            const hours = Math.floor(stats.totalMinutes / 60);
-            const minutes = stats.totalMinutes % 60;
-            document.getElementById('totalTime').textContent = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-        }
+<!-- INCLUDES -->
+<section class="sec">
+  <div class="sec-label">Комплект</div>
+  <h2 class="sec-title">Что <em>входит в курс</em></h2>
+  <div class="inc-grid">
+    <div class="inc-card">
+      <div class="inc-ico">🎓</div>
+      <h4>6 модулей</h4>
+      <p>Короткие уроки — каждый можно пройти за один присест</p>
+    </div>
+    <div class="inc-card">
+      <div class="inc-ico">⚡</div>
+      <h4>Практика в каждом уроке</h4>
+      <p>На твоих реальных задачах — не на абстрактных примерах</p>
+    </div>
+    <div class="inc-card">
+      <div class="inc-ico">👥</div>
+      <h4>Закрытое сообщество</h4>
+      <p>Поддержка и обмен опытом с другими участниками курса</p>
+    </div>
+    <div class="inc-card">
+      <div class="inc-ico">📋</div>
+      <h4>Пошаговые инструкции</h4>
+      <p>На русском языке — всё понятно даже без опыта</p>
+    </div>
+    <div class="inc-card">
+      <div class="inc-ico">✅</div>
+      <h4>Результат после каждого модуля</h4>
+      <p>Ты видишь свой прогресс — не в конце, а после каждого урока</p>
+    </div>
+  </div>
+</section>
 
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
+<!-- WHY -->
+<section class="sec" style="padding-top:0">
+  <div class="sec-label">Методология</div>
+  <h2 class="sec-title">Почему <em>это работает</em></h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-n">1</div>
+      <div>
+        <h4>Пробуешь ИИ с первого урока</h4>
+        <p>Не после недели теории — с первых минут. Первый результат видишь сразу.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-n">2</div>
+      <div>
+        <h4>Каждое задание — на твоей настоящей работе</h4>
+        <p>Не на абстрактных примерах, а на реальных задачах которые у тебя есть прямо сейчас.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-n">3</div>
+      <div>
+        <h4>Видишь результат сразу — в цифрах</h4>
+        <p>Вот задача, вот сколько времени она занимала, вот сколько теперь. Не слова — реальные минуты.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-n">4</div>
+      <div>
+        <h4>После курса — конкретный план</h4>
+        <p>Не общие слова, а твои задачи на каждый день. ИИ встраивается в работу навсегда.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function updateTimerDisplay() {
-            document.getElementById('timer').textContent = formatTime(remainingSeconds);
-        }
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2>Начни сегодня.<br><em>Через неделю ты будешь жалеть,<br>что не начал раньше.</em></h2>
+    <p class="cta-sub">Первый результат — через 15 минут после начала курса</p>
+    <button class="btn-cta" onclick="window.open('https://t.me/alinagranata','_blank')">Получить доступ за $19 →</button>
+    <div class="cta-note">На русском языке · Практика с первого урока · Закрытое сообщество</div>
+  </div>
+</div>
 
-        function startTimer() {
-            if (!isRunning) {
-                isRunning = true;
-                
-                // Initialize audio on first interaction
-                if (!audioInitialized && playerReady) {
-                    player.mute();
-                    player.playVideo();
-                    setTimeout(() => {
-                        player.pauseVideo();
-                        player.unMute();
-                        audioInitialized = true;
-                    }, 100);
-                }
-                
-                if (remainingSeconds === 0) {
-                    resetTimer();
-                }
-                
-                timerInterval = setInterval(() => {
-                    if (remainingSeconds > 0) {
-                        remainingSeconds--;
-                        totalSeconds++;
-                        updateTimerDisplay();
-                    } else {
-                        completeSpring();
-                    }
-                }, 1000);
-            }
-        }
+<div style="height:80px"></div>
 
-        function pauseTimer() {
-            if (isRunning) {
-                isRunning = false;
-                clearInterval(timerInterval);
-            }
-        }
+<!-- STICKY -->
+<div class="sticky">
+  <span>🔥 12 мест по $19 — потом $59</span>
+  <button class="sticky-btn" onclick="window.open('https://t.me/alinagranata','_blank')">Получить доступ →</button>
+</div>
 
-        function resetTimer() {
-            pauseTimer();
-            const minutes = parseInt(document.getElementById('sprintDuration').value);
-            remainingSeconds = minutes * 60;
-            totalSeconds = 0;
-            updateTimerDisplay();
-        }
+<script>
+// Accordion - close others when opening one
+document.querySelectorAll('.mod-head').forEach(head => {
+  head.addEventListener('click', () => {
+    const mod = head.parentElement;
+    const isOpen = mod.classList.contains('open');
+    document.querySelectorAll('.mod').forEach(m => m.classList.remove('open'));
+    if (!isOpen) mod.classList.add('open');
+  });
+});
+</script>
 
-        function completeSpring() {
-            pauseTimer();
-            stats.completedSprints++;
-            stats.totalMinutes += Math.floor(totalSeconds / 60);
-            
-            // Check for reward
-            const probability = parseInt(document.getElementById('rewardProbability').value);
-            const roll = Math.random() * 100;
-            
-            if (roll < probability) {
-                stats.rewardsEarned++;
-                triggerReward();
-            } else {
-                showNoReward();
-            }
-            
-            updateStatsDisplay();
-            saveStats();
-            resetTimer();
-        }
-
-        function getRandomYouTubeId() {
-            const links = document.getElementById('youtubeLinks').value
-                .split('\n')
-                .filter(link => link.trim());
-            
-            if (links.length === 0) return null;
-            
-            const randomLink = links[Math.floor(Math.random() * links.length)];
-            
-            // Extract video ID from various YouTube URL formats
-            const match = randomLink.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=|youtube\.com\/embed\/)([^?&\s]+)/);
-            return match ? match[1] : null;
-        }
-
-        function triggerReward() {
-            // Show notification
-            const notification = document.getElementById('rewardNotification');
-            notification.style.display = 'block';
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-                
-                // Play YouTube video
-                const videoId = getRandomYouTubeId();
-                if (videoId && playerReady) {
-                    player.loadVideoById(videoId);
-                    document.getElementById('youtube-player').classList.add('active');
-                    document.getElementById('overlay').classList.add('active');
-                    document.getElementById('closeVideo').classList.add('active');
-                }
-            }, 2000);
-        }
-
-        function showNoReward() {
-            // Could add a subtle notification here
-            console.log('No reward this time. Keep going!');
-        }
-
-        function closeVideoPlayer() {
-            player.stopVideo();
-            document.getElementById('youtube-player').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
-            document.getElementById('closeVideo').classList.remove('active');
-        }
-
-        // Event listeners
-        document.getElementById('startBtn').addEventListener('click', startTimer);
-        document.getElementById('pauseBtn').addEventListener('click', pauseTimer);
-        document.getElementById('resetBtn').addEventListener('click', resetTimer);
-        document.getElementById('saveSettings').addEventListener('click', saveSettings);
-        document.getElementById('rewardProbability').addEventListener('input', updateProbabilityDisplay);
-        document.getElementById('closeVideo').addEventListener('click', closeVideoPlayer);
-        document.getElementById('overlay').addEventListener('click', closeVideoPlayer);
-
-        // Initialize
-        loadSettings();
-    </script>
 </body>
 </html>
