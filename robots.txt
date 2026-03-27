@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /universe_index.html
+Disallow: /universe_products.html
+Disallow: /universe_product_omega.html
+Disallow: /universe_mission.html
+Disallow: /thorne.html
+Disallow: /nutridyn.html
 
 User-agent: GPTBot
 Allow: /
