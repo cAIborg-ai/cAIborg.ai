@@ -16,6 +16,7 @@
   --bg:#0b0b0e;--bg2:#101014;--card:#13131a;--card2:#18181f;
   --border:#222230;--accent:#7c3aed;--accent2:#9d5cf7;--accent3:#c084fc;
   --text:#ededf5;--muted:#5c5c7a;--muted2:#8a8aaa;
+  --todo:#f97316;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -29,10 +30,17 @@ nav{
   border-bottom:1px solid var(--border);
 }
 .logo{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;}
+.nav-cta{
+  background:var(--accent);color:#fff;border:none;
+  padding:10px 22px;border-radius:10px;
+  font-family:'Golos Text',sans-serif;font-size:13px;font-weight:700;
+  cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;
+}
+.nav-cta:hover{background:var(--accent2);box-shadow:0 4px 20px rgba(124,58,237,.4);}
 
 .hero{
   position:relative;max-width:880px;margin:0 auto;
-  padding:120px 48px 96px;text-align:center;
+  padding:100px 48px 80px;text-align:center;
 }
 .hero-glow{
   position:absolute;top:0;left:50%;transform:translateX(-50%);
@@ -53,10 +61,19 @@ h1{
 }
 h1 em{font-style:normal;color:var(--accent2);}
 .hero-sub{font-size:18px;color:var(--muted2);line-height:1.7;max-width:560px;margin:0 auto 36px;position:relative;}
+.btn-hero{
+  background:var(--accent);color:#fff;border:none;
+  padding:16px 40px;border-radius:14px;
+  font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:10px;
+  position:relative;text-decoration:none;
+}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,58,237,.5);background:var(--accent2);}
 
 .sec{max-width:880px;margin:0 auto;padding:60px 48px;}
 .sec-label{font-size:11px;font-weight:700;letter-spacing:4px;color:var(--accent2);text-transform:uppercase;text-align:center;margin-bottom:14px;}
 .sec-title{font-family:'Unbounded',sans-serif;font-size:clamp(22px,4vw,36px);font-weight:800;text-align:center;line-height:1.2;margin-bottom:40px;}
+.sec-title em{font-style:normal;color:var(--accent2);}
 
 .approach{
   background:var(--card);border:1px solid var(--border);border-radius:18px;
@@ -65,23 +82,81 @@ h1 em{font-style:normal;color:var(--accent2);}
 .approach p{font-size:17px;color:var(--text);line-height:1.6;}
 .approach p b{color:var(--accent3);}
 
+.about-card{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:32px;
+}
+.about-card p{font-size:15px;color:var(--muted2);line-height:1.7;margin-bottom:14px;}
+.about-card p:last-child{margin-bottom:0;}
+.about-card b{color:var(--text);}
+
+.todo{
+  display:inline-block;padding:3px 10px;border-radius:6px;
+  background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);
+  color:var(--todo);font-size:11px;font-weight:700;letter-spacing:.5px;
+}
+.todo-line{color:var(--todo);font-style:italic;font-size:14px;}
+
+.services{display:flex;flex-direction:column;gap:12px;}
+.srv{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px 28px;
+}
+.srv-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
+.srv-name{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;}
+.srv-price{font-size:15px;font-weight:700;color:var(--accent3);white-space:nowrap;}
+.srv-desc{font-size:13px;color:var(--muted2);line-height:1.6;}
+
+.faq{display:flex;flex-direction:column;gap:10px;}
+.faq-item{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:20px 24px;
+}
+.faq-q{font-size:14px;font-weight:700;margin-bottom:8px;}
+.faq-a{font-size:13px;color:var(--muted2);line-height:1.6;}
+
+.cta-banner{
+  max-width:880px;margin:0 auto;padding:20px 48px 80px;
+}
+.cta-inner{
+  background:linear-gradient(135deg,rgba(124,58,237,.14),rgba(168,85,247,.06));
+  border:1px solid rgba(124,58,237,.22);border-radius:24px;
+  padding:52px 40px;text-align:center;
+}
+.cta-inner h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:800;line-height:1.2;margin-bottom:12px;}
+.cta-inner h2 em{font-style:normal;color:var(--accent2);}
+.cta-sub{font-size:15px;color:var(--muted2);margin-bottom:32px;line-height:1.6;}
+
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.contact-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:22px;text-align:center;text-decoration:none;color:inherit;
+  transition:all .2s;
+}
+.contact-card:hover{border-color:rgba(124,58,237,.3);transform:translateY(-2px);}
+.contact-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.contact-val{font-size:14px;font-weight:600;color:var(--text);word-break:break-all;}
+
 footer{
   border-top:1px solid var(--border);
-  padding:40px 48px;text-align:center;
-  color:var(--muted);font-size:12px;
+  padding:32px 48px;text-align:center;
+  color:var(--muted);font-size:12px;line-height:1.8;
 }
+footer .legal{display:flex;flex-direction:column;gap:4px;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero>*{animation:fadeUp .65s ease both;}
 .hero>*:nth-child(2){animation-delay:.1s}
 .hero>*:nth-child(3){animation-delay:.2s}
 .hero>*:nth-child(4){animation-delay:.3s}
+.hero>*:nth-child(5){animation-delay:.4s}
 
 @media(max-width:700px){
   nav{padding:13px 20px;}
-  .hero,.sec{padding-left:20px;padding-right:20px;}
-  .hero{padding-top:70px;padding-bottom:60px;}
-  footer{padding:32px 20px;}
+  .hero,.sec,.cta-banner{padding-left:20px;padding-right:20px;}
+  .hero{padding-top:60px;padding-bottom:50px;}
+  footer{padding:28px 20px;}
+  .cta-inner{padding:36px 24px;}
 }
 </style>
 </head>
@@ -89,6 +164,7 @@ footer{
 
 <nav>
   <div class="logo">И. П. ЗАХАРОВ</div>
+  <a href="#booking" class="nav-cta">Записаться →</a>
 </nav>
 
 <section class="hero">
@@ -98,6 +174,7 @@ footer{
   </div>
   <h1>Илья Петрович<br><em>Захаров</em></h1>
   <p class="hero-sub">Если не получилось похудеть раньше — со мной точно получится.</p>
+  <a href="#booking" class="btn-hero">Записаться на консультацию →</a>
 </section>
 
 <section class="sec">
@@ -108,8 +185,135 @@ footer{
   </div>
 </section>
 
+<section class="sec">
+  <div class="sec-label">Обо мне</div>
+  <h2 class="sec-title">Кто я</h2>
+  <div class="about-card">
+    <p>Я <b>Илья Петрович Захаров</b>, врач-терапевт с <b>8-летним стажем</b>.</p>
+    <p><span class="todo">НУЖНО ДОПОЛНИТЬ</span></p>
+    <p class="todo-line">— образование (ВУЗ, год, специальность)</p>
+    <p class="todo-line">— специализации и курсы повышения квалификации</p>
+    <p class="todo-line">— место работы / клиника</p>
+    <p class="todo-line">— авторский подход (методика, в чём отличие)</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-label">Услуги</div>
+  <h2 class="sec-title">Что предлагаю <em>и сколько стоит</em></h2>
+  <div class="services">
+    <div class="srv">
+      <div class="srv-head">
+        <div class="srv-name">Первичная консультация</div>
+        <div class="srv-price"><span class="todo">ЦЕНА</span></div>
+      </div>
+      <div class="srv-desc">
+        <span class="todo-line">— длительность, формат (онлайн/очно), что входит, что получишь по итогу</span>
+      </div>
+    </div>
+    <div class="srv">
+      <div class="srv-head">
+        <div class="srv-name">Повторная консультация</div>
+        <div class="srv-price"><span class="todo">ЦЕНА</span></div>
+      </div>
+      <div class="srv-desc">
+        <span class="todo-line">— длительность, когда нужна, что входит</span>
+      </div>
+    </div>
+    <div class="srv">
+      <div class="srv-head">
+        <div class="srv-name">Ведение / сопровождение</div>
+        <div class="srv-price"><span class="todo">ЦЕНА</span></div>
+      </div>
+      <div class="srv-desc">
+        <span class="todo-line">— срок (1/3/6 мес), что входит, безлимитный чат, разбор анализов</span>
+      </div>
+    </div>
+    <div class="srv">
+      <div class="srv-head">
+        <div class="srv-name"><span class="todo">ДОБАВИТЬ ПРОЧИЕ УСЛУГИ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-label">FAQ</div>
+  <h2 class="sec-title">Частые вопросы</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Что входит в онлайн-консультацию?</div>
+      <div class="faq-a todo-line">— формат (Zoom/Telemost/Meet), длительность, рекомендации после, остаётся ли связь</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">С какими запросами можно обратиться?</div>
+      <div class="faq-a todo-line">— снижение веса, коррекция питания, работа с физиологией и т.д. (указать конкретику)</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Нужны ли анализы перед консультацией?</div>
+      <div class="faq-a todo-line">— ответ + email для отправки результатов</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Как забронировать и оплатить?</div>
+      <div class="faq-a todo-line">— порядок: бронь → оплата → подтверждение в TG</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Отмена и перенос консультации</div>
+      <div class="faq-a todo-line">— условия возврата, сроки переноса</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" id="booking">
+  <div class="cta-inner">
+    <h2>Записаться <em>на консультацию</em></h2>
+    <p class="cta-sub"><span class="todo">НУЖНО ДОПОЛНИТЬ</span></p>
+    <div class="contacts" style="margin-top:24px;">
+      <div class="contact-card">
+        <div class="contact-label">Оплата первичной</div>
+        <div class="contact-val todo-line">[ссылка payform/lava/ЮKassa]</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Оплата повторной</div>
+        <div class="contact-val todo-line">[ссылка на оплату]</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-label">Связь после оплаты</div>
+        <div class="contact-val todo-line">[@telegram]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-label">Контакты</div>
+  <h2 class="sec-title">Где найти</h2>
+  <div class="contacts">
+    <a href="#" class="contact-card">
+      <div class="contact-label">Telegram</div>
+      <div class="contact-val todo-line">[@username]</div>
+    </a>
+    <a href="#" class="contact-card">
+      <div class="contact-label">Instagram</div>
+      <div class="contact-val todo-line">[@username]</div>
+    </a>
+    <a href="#" class="contact-card">
+      <div class="contact-label">Email</div>
+      <div class="contact-val todo-line">[email]</div>
+    </a>
+    <a href="#" class="contact-card">
+      <div class="contact-label">Очный приём</div>
+      <div class="contact-val todo-line">[адрес клиники]</div>
+    </a>
+  </div>
+</section>
+
 <footer>
-  © Илья Петрович Захаров
+  <div class="legal">
+    <div>ИП Захаров Илья Петрович</div>
+    <div class="todo-line">ИНН [указать] · ОГРНИП [указать]</div>
+    <div class="todo-line">Оферта и политика обработки персональных данных — [ссылка]</div>
+  </div>
 </footer>
 
 </body>
