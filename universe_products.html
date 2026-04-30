@@ -3,20 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Universe Pharma</title>
+    <title>Products | Universe Vitamins</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-green': '#6B9F3E',
-                        'brand-dark': '#1a1a1a',
-                    }
-                }
-            }
-        }
-    </script>
+    <script>tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }</script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -24,150 +13,390 @@
 </head>
 <body class="bg-white text-gray-900">
 
-    <!-- Navigation -->
     <nav class="border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
-                </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
-                    <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
-                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
-                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
-                        <a href="universe_products.html" class="text-brand-green font-medium">EN</a>
-                        <span class="text-gray-400">|</span>
-                        <a href="universe_products_ru.html" class="text-gray-600 hover:text-brand-green transition">RU</a>
-                        <span class="text-gray-400">|</span>
-                        <a href="universe_products_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
-                    </div>
-                </div>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+            <div class="hidden md:flex items-center gap-8">
+                <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+                <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
+                <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
     <section class="pt-16 pb-8 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-light text-brand-dark mb-4">
-                Our Products
-            </h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Each formula crafted from the latest research, using premium European-sourced ingredients. No shortcuts. No fillers. Just science-backed nutrition your body can actually use.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-light text-brand-dark mb-4">Our Products</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">25 formulas crafted from research, using premium European-sourced ingredients. No shortcuts. No fillers. Just science-backed nutrition your body can actually use.</p>
         </div>
     </section>
 
-    <!-- Product Grid -->
     <section class="py-12 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-                <!-- Product 1: IROTON -->
-                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                    <div class="bg-gray-50 p-8 flex items-center justify-center">
-                        <img src="assets/iron.png" alt="Universe IROTON" class="h-80 object-contain">
+                <!-- 1: Omega-3 -->
+                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/omega/Omega Front.png" alt="Omega-3" class="max-h-full object-contain">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-dark mb-2">UNIVERSE IROTON</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Advanced iron complex with cofactors for maximum absorption. Bioavailable forms (iron bisglycinate, methylfolate, P5P) your body recognizes instantly.
-                        </p>
-                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                            <li>• Iron + B-vitamin complex synergy</li>
-                            <li>• L-lysine for enhanced uptake</li>
-                            <li>• Energy & cognitive support</li>
-                        </ul>
-                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
-                            See the Research
-                        </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Cardiovascular</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Brain</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Omega-3 DSM</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Premium Omega-3 from KD Nutra/DSM (USA/Switzerland) to support heart, brain, and overall health.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 желатиновых капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
                     </div>
                 </a>
 
-                <!-- Product 2: OMEGA 3 -->
-                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                    <div class="bg-gray-50 p-8 flex items-center justify-center">
-                        <img src="assets/omega.png" alt="Universe OMEGA 3" class="h-80 object-contain">
+                <!-- 2: Vegan Omega-3 -->
+                <a href="universe_product_vegan-omega3.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vegan Omega-3" class="max-h-full object-contain opacity-60">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-dark mb-2">UNIVERSE OMEGA 3</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Premium MEG-3® from Antarctic cold-water fish. Pharmaceutical-grade purity exceeds all international standards. No fishy taste or heavy metals.
-                        </p>
-                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                            <li>• 1200mg EPA + DHA per serving</li>
-                            <li>• Cardiovascular & brain support</li>
-                            <li>• Swiss-Danish certified sourcing</li>
-                        </ul>
-                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
-                            See the Research
-                        </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Cardiovascular</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Brain</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Omega-3 Vegan MAGomega</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Next-generation vegan Omega-3 from MAGomega® (Solutex, Spain) for brain and heart health.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">флакон 60 порций · разрешен детям и беременным</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
                     </div>
                 </a>
 
-                <!-- Product 3: MULTIBIOTIC -->
-                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                    <div class="bg-gray-50 p-8 flex items-center justify-center">
-                        <img src="assets/probiotic.png" alt="Universe MULTIBIOTIC" class="h-80 object-contain">
+                <!-- 3: Liposomal Magnesium 5-in-1 -->
+                <a href="universe_product_magnesium-5in1.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Liposomal Magnesium 5-in-1" class="max-h-full object-contain opacity-60">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-dark mb-2">UNIVERSE MULTIBIOTIC</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Multi-strain complex combining probiotics, prebiotics, and zinc picolinate. 9 beneficial strains work synergistically for comprehensive gut balance.
-                        </p>
-                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                            <li>• 9 clinically-studied strains</li>
-                            <li>• Prebiotic fiber inclusion</li>
-                            <li>• Digestive & immune support</li>
-                        </ul>
-                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
-                            See the Research
-                        </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Sleep</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Energy</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Magnesium 5-in-1</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Liposomal magnesium complex with 4 bioavailable forms and vitamin B6 for nervous system, energy, and relaxation.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">120 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
                     </div>
                 </a>
 
-                <!-- Product 4: LIPOSOMAL VITAMIN C -->
-                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                    <div class="bg-gray-50 p-8 flex items-center justify-center">
-                        <img src="assets/cai anal.jpg" alt="Universe LIPOSOMAL VITAMIN C" class="h-80 object-contain">
+                <!-- 4: Magnesium Pro -->
+                <a href="universe_product_magnesium-pro.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Magnesium Pro" class="max-h-full object-contain opacity-60">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-dark mb-2">LIPOSOMAL VITAMIN C</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Advanced liposomal delivery protects vitamin C through digestion for superior bioavailability. Phospholipid encapsulation ensures maximum absorption.
-                        </p>
-                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                            <li>• Enhanced absorption technology</li>
-                            <li>• Gentle on digestive system</li>
-                            <li>• Immune & collagen synthesis</li>
-                        </ul>
-                        <div class="w-full bg-brand-green text-white text-center py-3 rounded-lg font-medium">
-                            See the Research
-                        </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Sleep</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Energy</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Magnesium Pro</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Balanced magnesium complex with 3 forms to reduce stress, support muscles, and improve sleep.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 таблеток (30 порций)</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
                     </div>
                 </a>
+
+                <!-- 5: Liposomal Zinc -->
+                <a href="universe_product_zinc-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/Mockup-Zinc/Zinc Front.png" alt="Liposomal Zinc Complex" class="max-h-full object-contain">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Immune</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Zinc Complex</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Highly bioavailable zinc complex with copper and selenium for immune and antioxidant support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 веганских капсул · 3 формы цинка</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 6: Liposomal Vitamin C -->
+                <a href="universe_product_vitamin-c.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/Liposomal Vitamin C/Mockup_VitaminC_Stick.png" alt="Liposomal Vitamin C" class="max-h-full object-contain">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Immune</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Beauty</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Vitamin C</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Sodium ascorbate with bioflavonoids, Quercefit® and rosehip for antioxidant support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">20 флаконов по 25мл</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 7: Bovine Collagen -->
+                <a href="universe_product_collagen-bovine.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Bovine Collagen" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Anti-age</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Beauty</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Bovine Collagen Anti-age</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Verisol® collagen with cofactors for skin, joints, and regeneration.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">30 саше · Verisol® Gelita (Germany)</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 8: Marine Collagen -->
+                <a href="universe_product_collagen-marine.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Marine Collagen" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Anti-age</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Beauty</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Marine Collagen Anti-age</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Naticol® marine collagen with cofactors for skin and joint support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">30 саше · Naticol® (France)</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 9: Bone Longevity -->
+                <a href="universe_product_bone-longevity.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Bone Longevity" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Joint</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Bone Longevity Complex</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">PHOSCALIM® formula with calcium, phosphorus, collagen, silicon, D3 and K2 for bone support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">120 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 10: Multibiotic Forte -->
+                <a href="universe_product_multibiotic-forte.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Front.png" alt="Multibiotic Forte" class="max-h-full object-contain">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Digestive</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Multibiotic Forte</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">18-strain probiotic (50B CFU) with DigeZyme®, inulin, and zinc for gut and immune health.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">30 капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 11: U-10 -->
+                <a href="universe_product_u10.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="U-10" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Vitamins</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">U-10 Core Complex</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Core complex of 10 essential vitamins and minerals for daily support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">30 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 12: Multivitamin Men -->
+                <a href="universe_product_multivit-men.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Multivitamin for Men" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Vitamins</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Multivitamin for Men</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">25 bioavailable nutrients for energy, endurance, and men's health.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 13: Multivitamin Women -->
+                <a href="universe_product_multivit-women.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Multivitamin for Women" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Vitamins</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Multivitamin for Women</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">25 bioavailable nutrients for hormonal balance, energy, and beauty.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 14: Vitamin D3 20ml -->
+                <a href="universe_product_vitamin-d3.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Immune</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Vitamin D3</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Liposomal vitamin D3 (Quali-D®) in MCT oil for enhanced absorption.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">флакон 20 мл</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 15: Vitamin D3+K2 30ml -->
+                <a href="universe_product_vitamin-d3-k2.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3+K2" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Immune</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Joint</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Vitamin D3+K2 (30ml)</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Liposomal D3 (Quali-D®) with K2 (K2VITAL®) in MCT oil for high bioavailability and daily support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">флакон 30 мл</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 16: Vitamin D3+K2 20ml -->
+                <a href="universe_product_vitamin-d3-k2.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3+K2 20ml" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded mr-1">Immune</span><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Joint</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Vitamin D3+K2 (20ml)</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Concentrated liposomal D3+K2 formula in MCT oil for daily support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">флакон 20 мл</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 17: Antioxidant Complex -->
+                <a href="universe_product_antioxidant-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Antioxidant Complex" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Anti-age</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Antioxidant Complex</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Advanced blend of 11 antioxidants for cellular protection and healthy aging.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 18: Iroton Liposomal -->
+                <a href="universe_product_iroton-liposomal.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Liposomal Iroton" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Energy</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Liposomal Iroton</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Liposomal iron complex with cofactors for gentle absorption and blood support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 19: Methylbalance -->
+                <a href="universe_product_methylbalance.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Methylbalance" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Energy</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Methylbalance B-Complex</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Methylation complex with active B-vitamins and TMG for homocysteine, energy, and brain health.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 веганских капсул</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 20: Longevity Complex -->
+                <a href="universe_product_longevity-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Longevity Complex" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Anti-age</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Anti-age &amp; Longevity</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">NAD⁺ and mitochondrial support complex with NMN, PQQ, CoQ10 and antioxidants.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">30 саше</p>
+                        <div class="text-brand-green font-medium text-sm">Learn More →</div>
+                    </div>
+                </a>
+
+                <!-- 21: Iroton Liquid (placeholder, no DOCX page yet) -->
+                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Iroton Liquid" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Energy</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Iroton Liquid</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Bioavailable iron with vitamins for hemoglobin and energy support.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">150 мл · coming soon</p>
+                        <div class="text-gray-400 font-medium text-sm">Page in progress</div>
+                    </div>
+                </div>
+
+                <!-- 22: DadMode (placeholder) -->
+                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="DadMode" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Reproductive</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">DadMode</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Clinically supported formula for male fertility and reproductive health.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 саше · coming soon</p>
+                        <div class="text-gray-400 font-medium text-sm">Page in progress</div>
+                    </div>
+                </div>
+
+                <!-- 23: Kids Multivitamin Gummies (placeholder) -->
+                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Kids Multivitamin Gummies" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Gummies</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Kids Multivitamin Gummies</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Balanced vitamins and minerals for growth and immunity. Sugar-free, pectin-based.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 гамми · coming soon</p>
+                        <div class="text-gray-400 font-medium text-sm">Page in progress</div>
+                    </div>
+                </div>
+
+                <!-- 24: Kids Brain Gummies (placeholder) -->
+                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Kids Brain Gummies" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Gummies</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Kids Brain Gummies</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Brain support with phosphatidylserine, choline, lutein and B-vitamins.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 гамми · coming soon</p>
+                        <div class="text-gray-400 font-medium text-sm">Page in progress</div>
+                    </div>
+                </div>
+
+                <!-- 25: Kids Immunity Gummies (placeholder) -->
+                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                    <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
+                        <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Kids Immunity Gummies" class="max-h-full object-contain opacity-60">
+                    </div>
+                    <div class="p-5">
+                        <div class="mb-2"><span class="inline-block bg-brand-green bg-opacity-10 text-brand-green text-xs px-2 py-1 rounded">Gummies</span></div>
+                        <h3 class="text-lg font-semibold text-brand-dark mb-2 leading-tight">Kids Immunity Gummies</h3>
+                        <p class="text-sm text-gray-600 mb-3 leading-relaxed">Immune support with vitamins A, C, D, zinc and elderberry.</p>
+                        <p class="text-xs text-gray-400 italic mb-3">60 гамми · coming soon</p>
+                        <div class="text-gray-400 font-medium text-sm">Page in progress</div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-16 px-6 bg-gray-50">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-light text-brand-dark mb-4">
-                Questions about our formulas?
-            </h2>
-            <p class="text-gray-600 mb-8">
-                Our team is here to help you find the right supplement for your health goals.
-            </p>
-            <a href="universe_mission.html" class="inline-block border-2 border-brand-green text-brand-green px-8 py-3 rounded-full font-medium hover:bg-brand-green hover:text-white transition">
-                Contact Us
-            </a>
+            <h2 class="text-3xl font-light text-brand-dark mb-4">Questions about our formulas?</h2>
+            <p class="text-gray-600 mb-8">Our team is here to help you find the right supplement for your health goals.</p>
+            <a href="universe_mission.html" class="inline-block border-2 border-brand-green text-brand-green px-8 py-3 rounded-full font-medium hover:bg-brand-green hover:text-white transition">Contact Us</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-brand-dark text-white py-12 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
