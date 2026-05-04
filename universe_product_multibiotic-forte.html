@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multibiotic Forte | Universe Vitamins</title>
+    <title>Multibiotic Forte - 18 Strains, 50B CFU + Digezyme® | Universe Pharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
@@ -11,134 +11,777 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
+    <!-- Navigation -->
     <nav class="border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
-            <div class="hidden md:flex items-center gap-8">
-                <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
-                <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
-                <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+                    <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
+                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Sticky Sub-Nav -->
     <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div class="mx-auto px-6 max-w-7xl">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
             <div class="flex items-center justify-between py-3 overflow-x-auto">
-                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">Multibiotic Forte</h4>
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">MULTIBIOTIC FORTE</h4>
                 <nav class="flex items-center gap-6 text-sm">
-                    <a href="#about" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">About</a>
-                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">What's Inside</a>
                     <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Benefits</a>
-                    <a href="#usage" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Usage</a>
-                    <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">All Products</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">What's Inside</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Label Info</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Resources</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Buy</a>
                 </nav>
             </div>
         </div>
     </div>
 
+    <!-- Product Hero -->
     <section class="py-12 px-6">
-        <div class="mx-auto max-w-7xl">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div class="bg-gray-50 rounded-lg p-12 flex items-center justify-center min-h-96">
-                    <img src="assets/universe-vitamins/prod-images/Multibiotic Forte Front.png" alt="Multibiotic Forte" class="max-h-96 object-contain">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/prod-images/Multibiotic Forte Front.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Right.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Left.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/prod-images/Multibiotic Forte Front.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                    </div>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/prod-images/Multibiotic Forte Front.png" alt="Multibiotic Forte" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        30 Vegan DRcaps® • 1-Month Course
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        Universe Vitamins<sup class="text-base">TM</sup> Multibiotic Forte
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        Not just a probiotic — a complete microbiome support system.
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        18 probiotic strains at 50 billion CFU per capsule, with Digezyme® enzyme blend (Sabinsa, USA), inulin prebiotic, chelated zinc, and DRcaps® acid-resistant capsules.
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">18 Strains</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">50B CFU per cap</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">Digezyme® (Sabinsa)</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">DRcaps® (Lonza)</span>
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm font-semibold text-blue-900">
+                            ✓ 50 billion CFU clinical-grade dose
+                        </p>
+                        <p class="text-xs text-blue-700 mt-1">
+                            Validated probiotic strains · DRcaps® acid-resistant delivery
+                        </p>
+                    </div>
+
+                    <!-- Package Info Box -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">30 Vegan DRcaps®</p>
+                            <p class="text-sm text-gray-600">1-2 capsules/day with meals</p>
+                            <p class="text-sm text-gray-600">1-2 month course recommended</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        Available on <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Free shipping from 3000₽
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">3-Year Shelf Life</p>
+                                <p class="text-xs text-gray-500 leading-tight">Long-term storage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Lab Verified</p>
+                                <p class="text-xs text-gray-500 leading-tight">Two independent labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Key Benefits:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Gut microbiome restoration</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Immune system support</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Improved digestion &amp; reduced bloating</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="universe_products.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        A Complete Microbiome Support System
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">This isn't just a probiotic — it's a comprehensive microbiome support system. What matters isn't just the strains, but their count, stability, protection, and synergy with additional components.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">When it comes to gut health, immunity, overall well-being, and longevity — what matters isn't merely the presence of probiotics, but their dosage, strain diversity, and the ability to reach the gut in active form.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">The microbiome is a key body system influencing digestion, immunity, metabolism, and even cognitive function. Microflora imbalance can lead to weakened immunity, GI problems, and chronic inflammation.</p>
                 </div>
                 <div>
-                    <a href="universe_products.html" class="text-sm text-gray-500 hover:text-brand-green transition mb-4 inline-block">← All Products</a>
-                    <h1 class="text-3xl md:text-4xl font-light text-brand-dark mb-3 leading-tight">Multibiotic Forte</h1>
-                    <p class="text-base text-gray-600 mb-4">18-strain probiotic with digestive enzymes Digezyme® by Sabinsa Corp (USA) · 30 vegan DRcaps</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="bg-green-50 border border-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium">18 Strains</span>
-                        <span class="bg-blue-50 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">50B CFU per capsule</span>
-                        <span class="bg-purple-50 border border-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">Digezyme® (Sabinsa)</span>
-                        <span class="bg-yellow-50 border border-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">DRcaps® (Lonza)</span>
+                    <img src="assets/universe-vitamins/prod-images/Multibiotic Forte Front.png" alt="Multibiotic Forte" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Why This Formula Works</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 18 clinically validated probiotic strains</li>
+                                <li>• Digezyme® enzyme blend (Sabinsa Corp, USA)</li>
+                                <li>• Natural chicory root inulin prebiotic</li>
+                                <li>• DRcaps® by Lonza (Switzerland) acid-resistant</li>
+                                <li>• Chelated zinc for synergy</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Strain diversity matters — single-strain probiotics miss the synergy.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Clinical Potency</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• <strong>50 billion CFU per capsule</strong></li>
+                                <li>• <strong>18 strains</strong> for balanced microbiome</li>
+                                <li>• <strong>150mg inulin</strong> prebiotic for probiotic action</li>
+                                <li>• <strong>50mg Digezyme®</strong> (amylase, protease, lipase, cellulase, lactase)</li>
+                                <li>• DRcaps® delivers actives directly to gut</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Form matters: DRcaps® protects against stomach acid for max delivery.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Safety Certified</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Vegan-friendly DRcaps®</li>
+                                <li>• Heavy metals certification</li>
+                                <li>• No GMO, no titanium dioxide</li>
+                                <li>• Premium European raw materials</li>
+                                <li>• Manufactured under GMP, ISO, FDA standards</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
+                            </p>
+                        </div>
                     </div>
-                    <p class="text-lg text-gray-700 italic mb-4">18-strain probiotic (50B CFU) with DigeZyme®, inulin, and zinc for gut and immune health.</p>
-                    <p class="text-sm text-gray-500 italic mb-6 border-l-2 border-brand-green pl-4">Пробиотический комплекс из 18 штаммов в дозировке 50 млрд CFU, с комплексом ферментов Digezyme (Sabinsa, США), инулином и хелатным цинком для здоровья кишечника, иммунитета и долголетия</p>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Supplement Facts</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <!-- FDA-Standard Supplement Facts Table -->
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Supplement Facts</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">1-2 capsules</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">15-30</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Probiotic Blend (18 strains)</td>
+                            <td class="text-right py-2 font-medium">50B CFU</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Inulin (chicory root prebiotic)</td>
+                            <td class="text-right py-2 font-medium">150 mg</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Digezyme® enzyme blend (Sabinsa)</td>
+                            <td class="text-right py-2 font-medium">50 mg</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2">Zinc (chelated)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Other Ingredients & Lab Verification -->
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> DRcaps® vegan capsule (Lonza, Switzerland) — acid-resistant for direct gut delivery.</p>
+                    </div>
+
+                    
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.</p>
+                        <p class="mt-2">If on antibiotics, take 2-3 hours apart from probiotic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Research-Backed Health Benefits</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Gut Microbiome</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Restores microflora balance</li>
+                        <li>• Increases beneficial bacteria</li>
+                        <li>• Reduces dysbiosis</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Immune System</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• 70% of immune system in gut</li>
+                        <li>• Strain diversity = robust immunity</li>
+                        <li>• Reduces seasonal illness frequency</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Digestion</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Improves nutrient absorption</li>
+                        <li>• Digezyme® enzymes break down food</li>
+                        <li>• Reduces bloating and discomfort</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Anti-Inflammatory</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Reduces gut inflammation</li>
+                        <li>• Lowers chronic inflammation markers</li>
+                        <li>• Supports gut barrier function</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Energy &amp; Well-being</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Better energy from improved absorption</li>
+                        <li>• Improved mood (gut-brain axis)</li>
+                        <li>• Reduced food intolerances</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Long-term Health</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Microbiome shapes long-term health</li>
+                        <li>• Linked to metabolic health</li>
+                        <li>• Linked to cognitive function</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Suggested Usage</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">How to Take Multibiotic Forte:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Adults: 1-2 capsules per day with sufficient water</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Best taken during or after a meal for optimal probiotic survival.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Recommended course — 4-8 weeks. Longer use beneficial for chronic gut issues.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> If on antibiotics, take 2-3 hours apart from this probiotic to avoid killing the active strains.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Storage &amp; Caution</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Store in a cool, dry place away from children</li>
+                            <li>• Refrigeration recommended for max strain viability</li>
+                            <li>• Maximum temperature: +25°C (77°F)</li>
+                            <li>• Avoid direct sunlight and moisture</li>
+                            <li>• Keep tightly closed</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 2 years from manufacturing date
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Consult doctor if pregnant, nursing, or taking medication</li>
+                            <li>• Individual intolerance to components possible</li>
+                            <li>• If immunocompromised, consult physician before use</li>
+                            <li>• Discontinue if severe GI symptoms occur (rare)</li>
+                            <li>• Keep out of reach of children</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Package Information</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 30 vegan capsules</p>
+                            <p><strong>Servings:</strong> 15-30 (1-2 capsules per serving)</p>
+                            <p><strong>Supply Duration:</strong> 1-2 months</p>
+                            <p><strong>Capsule:</strong> DRcaps® acid-resistant (Lonza)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> —</p>
+                            <p><strong>Width:</strong> —</p>
+                            <p><strong>Height:</strong> —</p>
+                            <p class="text-xs text-gray-500 italic mt-2">See product label for exact dimensions</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Turkey</p>
+                            <p><strong>Location:</strong> Istanbul</p>
+                            <p><strong>Certification:</strong> State Registration Certificate (СГР)</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Manufactured under GMP, ISO, and FDA standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 px-6 bg-gray-50">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">About This Formula</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">This isn't just a probiotic — it's a comprehensive microbiome support system. What matters isn't just the strains, but their count, stability, protection, and synergy with additional components.</p>
-            <p class="text-gray-700 leading-relaxed mb-4">When it comes to gut health, immunity, overall well-being, and longevity — what matters isn't merely the presence of probiotics, but their dosage, strain diversity, and the ability to reach the gut in active form.</p>
-            <p class="text-gray-700 leading-relaxed">The microbiome is a key body system influencing digestion, immunity, metabolism, and even cognitive function. Microflora imbalance can lead to weakened immunity, GI problems, and chronic inflammation.</p>
-        </div>
-    </section>
-
+    <!-- What's Inside? -->
     <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">What's Inside</h2>
-            <div class="grid md:grid-cols-2 gap-4">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">What's Inside?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">18 strains, 50 billion CFU, plus Digezyme® enzymes and inulin prebiotic — all delivered through DRcaps® acid-resistant capsules.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-brand-dark mb-2">18 Probiotic Strains</h3>
-                    <p class="text-sm text-gray-700">Thoughtful combination for a balanced and resilient microbiome.</p>
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">18 Probiotic Strains</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Thoughtful combination of bacterial strains for balanced and resilient microbiome diversity.</p>
                 </div>
+
                 <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-brand-dark mb-2">50B CFU per capsule</h3>
-                    <p class="text-sm text-gray-700">Clinically meaningful dose for microbiome support.</p>
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">50B CFU per Capsule</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Clinically meaningful dose for microbiome support — well above the threshold needed for measurable effect.</p>
                 </div>
+
                 <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-brand-dark mb-2">150mg Inulin Prebiotic</h3>
-                    <p class="text-sm text-gray-700">Natural inulin from chicory root — fuels even more effective probiotic action.</p>
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">150mg Inulin + 50mg Digezyme®</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Inulin prebiotic feeds probiotics. Digezyme® (Sabinsa, USA) provides 5 enzymes for digestion (amylase, protease, lipase, cellulase, lactase).</p>
                 </div>
+
                 <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-brand-dark mb-2">50mg Digezyme®</h3>
-                    <p class="text-sm text-gray-700">Clinically validated enzyme blend (amylase, protease, lipase, cellulase, lactase) from Sabinsa Corp (USA).</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-brand-dark mb-2">Chelated Zinc</h3>
-                    <p class="text-sm text-gray-700">Synergy of mineral and probiotics for gut health and immunity.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-brand-dark mb-2">DRcaps® Technology</h3>
-                    <p class="text-sm text-gray-700">Lonza (Switzerland) — protects probiotics from stomach acid for direct delivery to the gut.</p>
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">DRcaps® Technology</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Acid-resistant capsule technology by Lonza (Switzerland). Protects probiotics from stomach acid for delivery to the gut.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="benefits" class="py-16 px-6 bg-gray-50 border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">Benefits &amp; Applications</h2>
-            <ul class="space-y-3 text-gray-700 text-base">
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Restores gut microflora balance</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports immune system</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Improves digestion and nutrient absorption</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Reduces bloating and discomfort</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports overall energy and well-being</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Helps reduce inflammatory processes</span></li>
-            </ul>
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Quality &amp; Certifications</h2>
+
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">International Standards</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">DRcaps®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">DRcaps®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Digezyme®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Digezyme®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">FDA</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">FDA</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">GMP</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">GMP</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">ISO</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">ISO</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">TÜRKAK</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Halal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Halal</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">3rd Party</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Scientific Partnerships</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>University Collaborations:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Quality Control:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="usage" class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">How to Take</h2>
-            <ul class="space-y-3 text-gray-700 text-base">
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Take 1-2 capsules per day with sufficient water</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Best taken during or after a meal</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Course — 4-8 weeks</span></li>
-            </ul>
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Who Needs This?</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Suitable for:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>✓ Adults seeking gut health support</li>
+                        <li>✓ Anyone with digestive issues</li>
+                        <li>✓ Post-antibiotic recovery</li>
+                        <li>✓ Frequent travelers</li>
+                        <li>✓ People with food sensitivities</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">High priority for:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Bloating, gas, irregular digestion</li>
+                        <li>• Frequent infections (immune support)</li>
+                        <li>• Post-antibiotic restoration</li>
+                        <li>• Inflammatory gut conditions (consult doctor)</li>
+                        <li>• Stress-related gut symptoms</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-gray-50 border-t border-gray-200">
-        <div class="mx-auto max-w-7xl text-center">
-            <h2 class="text-2xl font-light text-brand-dark mb-8">Explore More from Universe Vitamins</h2>
-            <a href="universe_products.html" class="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">View All 25 Products</a>
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Resources</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Downloads</h3>
+                    <div class="space-y-3">
+                        <a href="assets/universe-vitamins/Мультибиотик Форте.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-semibold text-brand-dark group-hover:text-brand-green transition">Multibiotic Forte Product Info</h4>
+                                <p class="text-xs text-gray-500">PDF — Detailed strain breakdown and clinical info</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-green transition flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Further Reading</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Our Mission &amp; Approach</h4>
+                                <p class="text-xs text-gray-500 mt-1">Premium ingredients, traceable sourcing, family-first quality</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">All Universe Vitamins™ Products</h4>
+                                <p class="text-xs text-gray-500 mt-1">Browse our full catalog of research-backed supplements</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Shop More Categories</h2>
+            <p class="text-center text-gray-600 mb-10">Discover the rest of the Universe Vitamins™ family.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Immune Health</h3>
+                    <p class="text-sm text-gray-600 mb-4">Vitamin C, Zinc Complex, Vitamin D3+K2</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Anti-age &amp; Longevity</h3>
+                    <p class="text-sm text-gray-600 mb-4">Antioxidant Complex, Longevity Complex</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Energy &amp; Metabolism</h3>
+                    <p class="text-sm text-gray-600 mb-4">Methylbalance, Iroton, U-10 Core</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">Family-First Quality</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                Formulated with standards we demand for our own families. Premium ingredients, no cost-cutting. Every batch tested for purity and potency.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← All Products</a>
+                <a href="universe_mission.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="bg-brand-dark text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
@@ -165,6 +808,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['assets/universe-vitamins/prod-images/Multibiotic Forte Front.png', 'assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Right.png', 'assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Left.png', 'assets/universe-vitamins/prod-images/Multibiotic Forte Front.png'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

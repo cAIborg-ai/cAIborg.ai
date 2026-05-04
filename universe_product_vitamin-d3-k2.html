@@ -3,119 +3,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liposomal Vitamin D3+K2 | Universe Vitamins</title>
+    <title>Liposomal Vitamin D3+K2 Smart Drops - Synergistic Calcium Routing | Universe Pharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }</script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
+    <!-- Navigation -->
     <nav class="border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
-            <div class="hidden md:flex items-center gap-8">
-                <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
-                <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
-                <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+                    <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
+                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Sticky Sub-Nav -->
     <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div class="mx-auto px-6 max-w-7xl">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
             <div class="flex items-center justify-between py-3 overflow-x-auto">
-                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">Liposomal Vitamin D3+K2</h4>
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">D3+K2 DROPS</h4>
                 <nav class="flex items-center gap-6 text-sm">
-                    <a href="#about" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">About</a>
-                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">What's Inside</a>
                     <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Benefits</a>
-                    <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">All Products</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">What's Inside</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Label Info</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Resources</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Buy</a>
                 </nav>
             </div>
         </div>
     </div>
 
+    <!-- Product Hero -->
     <section class="py-12 px-6">
-        <div class="mx-auto max-w-7xl">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div class="bg-gray-50 rounded-lg p-12 flex items-center justify-center min-h-96">
-                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3+K2" class="max-h-96 object-contain opacity-60">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                    </div>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Liposomal Vitamin D3+K2 Smart Drops" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        30ml Bottle (20ml also available)
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        Universe Vitamins<sup class="text-base">TM</sup> Liposomal Vitamin D3+K2 Smart Drops
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        D3 absorbs calcium. K2 directs it to bones. Together they're complete.
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        Liposomal vitamin D3 (Quali-D® DSM) with vitamin K2 MK-7 (K2VITAL® Kappa Bioscience, Norway) in MCT oil. Synergistic immune, bone, and cardiovascular support.
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">Quali-D® (DSM)</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">K2VITAL® MK-7</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">STELLIESTERS® MCT</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">No Titanium Dioxide</span>
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    
+
+                    <!-- Package Info Box -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">30ml or 20ml Bottle</p>
+                            <p class="text-sm text-gray-600">Drops/day per individual need</p>
+                            <p class="text-sm text-gray-600">8-12 week course recommended</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        Available on <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Free shipping from 3000₽
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">3-Year Shelf Life</p>
+                                <p class="text-xs text-gray-500 leading-tight">Long-term storage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Lab Verified</p>
+                                <p class="text-xs text-gray-500 leading-tight">Two independent labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Key Benefits:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Immune system &amp; bone health</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Smart calcium routing (D3+K2 synergy)</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Cardiovascular protection</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="universe_products.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        The D3+K2 Synergy
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Universe Vitamins™ Liposomal Vitamin D3+K2 is a premium formula for immune, bone, and cardiovascular support — with maximum bioavailability.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed"><strong>Vitamin D3 (Quali-D®)</strong> promotes calcium absorption from the gut and supports immunity. <strong>Vitamin K2 (K2VITAL® MK-7)</strong> directs that calcium specifically to bones — and prevents arterial deposition.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Together they work significantly more effectively than separately. Calcium without K2 risks cardiovascular calcification — that's why this synergy matters.</p>
                 </div>
                 <div>
-                    <a href="universe_products.html" class="text-sm text-gray-500 hover:text-brand-green transition mb-4 inline-block">← All Products</a>
-                    <h1 class="text-3xl md:text-4xl font-light text-brand-dark mb-3 leading-tight">Liposomal Vitamin D3+K2 Smart Drops</h1>
-                    <p class="text-base text-gray-600 mb-4">For immune health · 30ml bottle (also available 20ml)</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="bg-green-50 border border-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Quali-D® (DSM)</span>
-                        <span class="bg-blue-50 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">K2VITAL® MK-7</span>
-                        <span class="bg-purple-50 border border-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">STELLIESTERS® MCT</span>
-                        <span class="bg-yellow-50 border border-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">No Titanium Dioxide</span>
-                    </div>
-                    <p class="text-lg text-gray-700 italic mb-4">Liposomal D3 (Quali-D®) with K2 (K2VITAL®) in MCT oil for high bioavailability and daily support.</p>
-                    <p class="text-sm text-gray-500 italic mb-6 border-l-2 border-brand-green pl-4">Липосомальная формула D (Quali-D от DSM, Швейцария) с K2 (K2VITAL® от Kappa Bioscience, Норвегия) на основе масла МСТ с высокой биодоступностью</p>
+                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Liposomal Vitamin D3+K2 Smart Drops" class="w-full max-w-md mx-auto">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 px-6 bg-gray-50">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">About This Formula</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">Universe Vitamins™ Liposomal Vitamin D3+K2 is a premium formula for immune support, bone health, and cardiovascular health — with maximum bioavailability.</p>
-            <p class="text-gray-700 leading-relaxed mb-4">Vitamins are encapsulated in a liposomal matrix — phospholipid microcapsules that:</p>
-            <ul class="space-y-2 text-gray-700 my-4 ml-6">
-                <li>• Protect active substances</li>
-                <li>• Increase bioavailability</li>
-                <li>• Provide more efficient cellular delivery</li>
-            </ul>
-            <div class="bg-white rounded-lg p-6 mt-6 border border-gray-200">
-                <h3 class="font-semibold text-brand-dark mb-3">D3 + K2 Synergy for Proper Calcium Distribution</h3>
-                <p class="text-sm text-gray-700 mb-2">• <strong>Vitamin D3 (Quali-D®)</strong> — promotes calcium absorption and supports immunity</p>
-                <p class="text-sm text-gray-700 mb-2">• <strong>Vitamin K2 (K2VITAL® MK-7)</strong> — directs calcium into bones and prevents arterial deposition</p>
-                <p class="text-sm text-gray-700 italic">Together they work significantly more effectively than separately.</p>
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Why This Formula Works</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Quali-D® vitamin D3 (DSM, Switzerland)</li>
+                                <li>• K2VITAL® MK-7 (Kappa Bioscience, Norway)</li>
+                                <li>• STELLIESTERS® MCT oil (France)</li>
+                                <li>• Liposomal phospholipid matrix</li>
+                                <li>• Precise drops format</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Three patented European premium ingredients in one formula.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Clinical Potency</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Synergistic D3+K2 calcium routing</li>
+                                <li>• MK-7 form has 24h half-life (vs MK-4 1-2h)</li>
+                                <li>• Liposomal delivery into cells</li>
+                                <li>• MCT oil enhances absorption</li>
+                                <li>• 8-12 week course for serum rise</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                MK-7 form lasts 24h in body — vs MK-4 only 1-2h. Worth the premium.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Safety Certified</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• No preservatives</li>
+                                <li>• No flavorings</li>
+                                <li>• No titanium dioxide</li>
+                                <li>• No GMO</li>
+                                <li>• Manufactured under GMP, ISO, FDA standards</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Supplement Facts</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <!-- FDA-Standard Supplement Facts Table -->
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Supplement Facts</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">Drops as directed</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">Variable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Vitamin D3 (Quali-D® cholecalciferol)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2">Vitamin K2 (K2VITAL® MK-7)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Other Ingredients & Lab Verification -->
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> STELLIESTERS® MCT oil (France), liposomal phospholipid matrix.</p>
+                    </div>
+
+                    
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.</p>
+                        <p class="mt-2">If on blood thinners (warfarin, etc.), consult physician before use — K2 affects coagulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Research-Backed Health Benefits</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Immune System</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Supports normal immune function</li>
+                        <li>• Reduces seasonal illness frequency</li>
+                        <li>• D3 immune foundation</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Bone Health</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• D3 enhances calcium absorption</li>
+                        <li>• K2 directs calcium to bones</li>
+                        <li>• Bone density support</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Cardiovascular</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• K2 prevents arterial calcification</li>
+                        <li>• Healthy vascular function</li>
+                        <li>• Reduces calcium-related cardio risk</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Calcium Smart Routing</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• D3 absorbs Ca from gut</li>
+                        <li>• K2 deposits Ca in bones</li>
+                        <li>• Prevents wrong-place calcification</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Hormonal Support</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• D3 supports hormone synthesis</li>
+                        <li>• Anti-age effects</li>
+                        <li>• Reproductive health</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Muscle &amp; Energy</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Vitamin D supports muscle function</li>
+                        <li>• Reduces fatigue</li>
+                        <li>• Mood support (winter especially)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Suggested Usage</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">How to Take Liposomal Vitamin D3+K2:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Adults: drops per individual need (consult product label for specific drop count)</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Best taken with food — both vitamins are fat-soluble.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Recommended course — 8-12 weeks for measurable serum vitamin D rise.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> If on blood thinners, consult physician before use — K2 affects coagulation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Storage &amp; Caution</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Store in a cool, dry place away from children</li>
+                            <li>• Maximum temperature: +25°C (77°F)</li>
+                            <li>• Avoid direct sunlight</li>
+                            <li>• Keep tightly closed after opening</li>
+                            <li>• Refrigerate after opening (recommended)</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 2 years from manufacturing date
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Consult doctor if pregnant, nursing, or taking medication</li>
+                            <li>• Individual intolerance to components possible</li>
+                            <li>• If on blood thinners (warfarin), do NOT start without MD consultation</li>
+                            <li>• Higher doses require medical supervision</li>
+                            <li>• Keep out of reach of children</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Package Information</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 30ml liquid (or 20ml format)</p>
+                            <p><strong>Servings:</strong> Variable (drops format)</p>
+                            <p><strong>Supply Duration:</strong> 2-3 months depending on dose</p>
+                            <p><strong>Form:</strong> Liposomal liquid drops</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> —</p>
+                            <p><strong>Width:</strong> —</p>
+                            <p><strong>Height:</strong> —</p>
+                            <p class="text-xs text-gray-500 italic mt-2">See product label for exact dimensions</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Turkey</p>
+                            <p><strong>Location:</strong> Istanbul</p>
+                            <p><strong>Certification:</strong> СГР D3К2</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Manufactured under GMP, ISO, and FDA standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- What's Inside? -->
     <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">Pure Premium Base</h2>
-            <ul class="space-y-3 text-gray-700 text-base">
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span><strong>STELLIESTERS® MCT oil</strong> (France)</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>No preservatives</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>No flavorings</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>No titanium dioxide</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Suitable for daily use</span></li>
-            </ul>
-            <p class="text-sm text-gray-600 italic mt-6"><strong>Smart Drops format</strong> — precise dosing per drop, easy to adapt to individual needs and convenient for both children and adults.</p>
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">What's Inside?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Three patented European ingredients — Quali-D® D3 from DSM, K2VITAL® MK-7 from Kappa Bioscience, and STELLIESTERS® MCT from France.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Vitamin D3 (Quali-D®)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Cholecalciferol from DSM (Switzerland). Promotes calcium absorption from gut, supports immunity, hormone synthesis.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Vitamin K2 (K2VITAL® MK-7)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Menaquinone-7 form from Kappa Bioscience (Norway). 24h body half-life. Directs calcium to bones, prevents arterial deposition.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">STELLIESTERS® MCT Oil</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Premium medium-chain triglyceride base from France. Enhances absorption of both fat-soluble vitamins.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Liposomal Smart Drops</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Phospholipid matrix delivers vitamins into the cell. Convenient drops format with precise dose adjustment.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="benefits" class="py-16 px-6 bg-gray-50 border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">Benefits &amp; Applications</h2>
-            <ul class="space-y-3 text-gray-700 text-base">
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports immune system</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Bone and dental health</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports cardiovascular system</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>High bioavailability</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Convenient drop format (spray or pipette)</span></li>
-            </ul>
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Quality &amp; Certifications</h2>
+
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">International Standards</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Quali-D®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Quali-D®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">K2VITAL®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">K2VITAL®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">FDA</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">FDA</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">GMP</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">GMP</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">ISO</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">ISO</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">TÜRKAK</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Halal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Halal</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">3rd Party</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Scientific Partnerships</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>University Collaborations:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Quality Control:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-7xl text-center">
-            <h2 class="text-2xl font-light text-brand-dark mb-8">Explore More from Universe Vitamins</h2>
-            <a href="universe_products.html" class="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">View All 25 Products</a>
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Who Needs This?</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Suitable for everyone:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>✓ Adults of all ages</li>
+                        <li>✓ Anyone taking calcium supplements</li>
+                        <li>✓ Postmenopausal women</li>
+                        <li>✓ Northern latitude residents (winter D)</li>
+                        <li>✓ Those with cardiovascular concerns</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">High priority for:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Bone density concerns / osteoporosis</li>
+                        <li>• Vitamin D deficiency confirmed</li>
+                        <li>• On calcium supplements (need K2)</li>
+                        <li>• Postmenopausal women</li>
+                        <li>• Cardiovascular risk + low D status</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Resources</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Downloads</h3>
+                    <div class="space-y-3">
+                        <a href="assets/universe-vitamins/СГР D3К2.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-semibold text-brand-dark group-hover:text-brand-green transition">D3+K2 Certificate</h4>
+                                <p class="text-xs text-gray-500">PDF — Official certification document</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-green transition flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Further Reading</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Our Mission &amp; Approach</h4>
+                                <p class="text-xs text-gray-500 mt-1">Premium ingredients, traceable sourcing, family-first quality</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">All Universe Vitamins™ Products</h4>
+                                <p class="text-xs text-gray-500 mt-1">Browse our full catalog of research-backed supplements</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Shop More Categories</h2>
+            <p class="text-center text-gray-600 mb-10">Discover the rest of the Universe Vitamins™ family.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Immune Health</h3>
+                    <p class="text-sm text-gray-600 mb-4">Vitamin C, Zinc Complex, Multibiotic Forte</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Joint &amp; Mobility</h3>
+                    <p class="text-sm text-gray-600 mb-4">Bone Longevity, Bovine &amp; Marine Collagen</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Cardiovascular</h3>
+                    <p class="text-sm text-gray-600 mb-4">Universe Omega-3, Magnesium 5-in-1, Methylbalance</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">Family-First Quality</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                Formulated with standards we demand for our own families. Premium ingredients, no cost-cutting. Every batch tested for purity and potency.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← All Products</a>
+                <a href="universe_mission.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="bg-brand-dark text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
@@ -142,6 +791,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -3,139 +3,812 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anti-age &amp; Longevity Complex | Universe Vitamins</title>
+    <title>Anti-age &amp; Longevity Complex - NMN, PQQ, CoQ10 Ubiqsome® | Universe Pharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }</script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
+    <!-- Navigation -->
     <nav class="border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
-            <div class="hidden md:flex items-center gap-8">
-                <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
-                <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
-                <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+                    <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
+                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Sticky Sub-Nav -->
     <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div class="mx-auto px-6 max-w-7xl">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
             <div class="flex items-center justify-between py-3 overflow-x-auto">
-                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">Anti-age &amp; Longevity Complex</h4>
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">LONGEVITY COMPLEX</h4>
                 <nav class="flex items-center gap-6 text-sm">
-                    <a href="#about" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">About</a>
-                    <a href="#nad" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">NAD⁺</a>
-                    <a href="#mito" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Mitochondria</a>
-                    <a href="#detox" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Detox</a>
-                    <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">All Products</a>
+                    <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Benefits</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">What's Inside</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Label Info</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Resources</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Buy</a>
                 </nav>
             </div>
         </div>
     </div>
 
+    <!-- Product Hero -->
     <section class="py-12 px-6">
-        <div class="mx-auto max-w-7xl">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div class="bg-gray-50 rounded-lg p-12 flex items-center justify-center min-h-96">
-                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Anti-age &amp; Longevity" class="max-h-96 object-contain opacity-60">
-                </div>
-                <div>
-                    <a href="universe_products.html" class="text-sm text-gray-500 hover:text-brand-green transition mb-4 inline-block">← All Products</a>
-                    <h1 class="text-3xl md:text-4xl font-light text-brand-dark mb-3 leading-tight">Anti-age &amp; Longevity Complex</h1>
-                    <p class="text-base text-gray-600 mb-4">NMN, PQQ, CoQ10 (Ubiqsome®), berberine, antioxidants · 30 sachets</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="bg-green-50 border border-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium">NMN + TMG</span>
-                        <span class="bg-blue-50 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">CoQ10 Ubiqsome®</span>
-                        <span class="bg-purple-50 border border-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">Quercefit®</span>
-                        <span class="bg-yellow-50 border border-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">Spermidine</span>
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
                     </div>
-                    <p class="text-lg text-gray-700 italic mb-4">NAD⁺ and mitochondrial support complex with NMN, PQQ, CoQ10 and antioxidants.</p>
-                    <p class="text-sm text-gray-500 italic mb-6 border-l-2 border-brand-green pl-4">Инновационный комплекс с NMN, PQQ, CoQ10 (Ubiqsome®), берберином и антиоксидантами для повышения уровня NAD⁺, активации митохондрий, снижения воспаления и поддержки метаболизма и аутофагии</p>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Anti-age &amp; Longevity Complex" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        30 Sachets • Multi-Tier System
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        Universe Vitamins<sup class="text-base">TM</sup> Anti-age &amp; Longevity Complex
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        Aging is a multi-system process. So is the solution.
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        Multi-tier anti-age system: NMN + TMG for NAD⁺, CoQ10 Ubiqsome® + PQQ for mitochondria, Quercefit® and oleuropein for inflammation, sulforaphane and spermidine for autophagy.
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">NMN + TMG</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">CoQ10 Ubiqsome®</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">Quercefit®</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">Spermidine</span>
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm font-semibold text-blue-900">
+                            ✓ Multi-pathway anti-age system
+                        </p>
+                        <p class="text-xs text-blue-700 mt-1">
+                            NAD⁺ + mitochondria + inflammation + autophagy + cognition
+                        </p>
+                    </div>
+
+                    <!-- Package Info Box -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">30 Sachets</p>
+                            <p class="text-sm text-gray-600">1 sachet/day</p>
+                            <p class="text-sm text-gray-600">Designed for monthly cycles</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        Available on <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Free shipping from 3000₽
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">3-Year Shelf Life</p>
+                                <p class="text-xs text-gray-500 leading-tight">Long-term storage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Lab Verified</p>
+                                <p class="text-xs text-gray-500 leading-tight">Two independent labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Key Benefits:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>NAD⁺ &amp; mitochondrial support</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Cellular detox &amp; autophagy</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Brain &amp; cognitive longevity</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="universe_products.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 px-6 bg-gray-50">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">About This Formula</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">Aging isn't just time. It's a gradual decline in NAD⁺ levels, deterioration of mitochondrial function, and accumulation of cellular damage.</p>
-            <p class="text-gray-700 leading-relaxed">Universe Vitamins™ Longevity Complex isn't just a supplement. It's a multi-tier youth-extension system, designed to work at the deep cellular level, drawing on the latest scientific data about aging.</p>
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        A Complete Longevity System
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Aging isn't just time. It's a gradual decline in NAD⁺ levels, deterioration of mitochondrial function, and accumulation of cellular damage.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Universe Vitamins™ Longevity Complex isn't just a supplement. It's a multi-tier youth-extension system, designed to work at the deep cellular level, drawing on the latest scientific data about aging.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Five pathways addressed: NAD⁺ restoration, mitochondrial function, inflammation control, detox/autophagy activation, and cognitive support — all in one formula.</p>
+                </div>
+                <div>
+                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Anti-age &amp; Longevity Complex" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="nad" class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-2">NAD⁺ Restoration</h2>
-            <p class="text-gray-600 mb-6">Energy at the cellular level</p>
-            <p class="text-gray-700 leading-relaxed mb-4">The formula's foundation:</p>
-            <ul class="space-y-2 text-gray-700 my-4 ml-6">
-                <li>• <strong>NMN</strong> — direct precursor of NAD⁺</li>
-                <li>• <strong>TMG (Betaine)</strong> — methylation support and NAD⁺ stabilization</li>
-            </ul>
-            <p class="text-gray-700 leading-relaxed mb-2">Together they:</p>
-            <ul class="space-y-2 text-gray-700 ml-6">
-                <li>• Increase cellular energy levels</li>
-                <li>• Support brain function</li>
-                <li>• Slow age-related functional decline</li>
-            </ul>
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Why This Formula Works</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• NMN + TMG for NAD⁺ restoration</li>
+                                <li>• CoQ10 Ubiqsome® (high-bioavailability)</li>
+                                <li>• Quercefit® quercetin (Indena, Italy)</li>
+                                <li>• PQQ + Astaxanthin for mitochondria</li>
+                                <li>• Spermidine + Sulforaphane for autophagy</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Premium patented ingredients across the entire longevity stack.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Clinical Potency</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• NAD⁺ precursor (NMN) + methyl support (TMG)</li>
+                                <li>• Mitochondrial biogenesis (PQQ)</li>
+                                <li>• Quercefit® 7× more bioavailable than ordinary quercetin</li>
+                                <li>• Spermidine triggers autophagy</li>
+                                <li>• Magnesium L-threonate crosses blood-brain barrier</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Multi-pathway approach — each system reinforces the others.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Safety Certified</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Premium European raw materials</li>
+                                <li>• Heavy metals certification</li>
+                                <li>• No GMO, no titanium dioxide</li>
+                                <li>• No artificial colors or preservatives</li>
+                                <li>• Manufactured under GMP, ISO, FDA standards</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Supplement Facts</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <!-- FDA-Standard Supplement Facts Table -->
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Supplement Facts</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">1 sachet</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">30</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">NMN (Nicotinamide Mononucleotide)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">TMG (Trimethylglycine / Betaine)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">CoQ10 (Ubiqsome®)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">PQQ (Pyrroloquinoline Quinone)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Astaxanthin</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Quercefit® quercetin (Indena)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Oleuropein (olive extract)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Hydroxytyrosol</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Sulforaphane</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">R-Alpha Lipoic Acid</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Spermidine</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2">Magnesium L-threonate</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Other Ingredients & Lab Verification -->
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> Natural flavoring, citric acid.</p>
+                    </div>
+
+                    
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.</p>
+                        <p class="mt-2">Designed for adults 25+ engaged in active longevity protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Research-Backed Health Benefits</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">NAD⁺ Restoration</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• NMN — direct NAD⁺ precursor</li>
+                        <li>• TMG stabilizes NAD⁺ pathway</li>
+                        <li>• Cellular energy at age-resistant levels</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Mitochondrial Function</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• CoQ10 + PQQ for mito biogenesis</li>
+                        <li>• Astaxanthin protects mito membranes</li>
+                        <li>• Increased cellular energy production</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Inflammation Control</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Quercefit® quercetin</li>
+                        <li>• Oleuropein cardio-protection</li>
+                        <li>• Hydroxytyrosol — strong antioxidant</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Detox &amp; Autophagy</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Sulforaphane (Nrf2 activation)</li>
+                        <li>• R-ALA cellular detox</li>
+                        <li>• Spermidine triggers autophagy</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Cognitive &amp; Brain</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Magnesium L-threonate crosses BBB</li>
+                        <li>• Memory and concentration support</li>
+                        <li>• Neuroplasticity</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Whole-Body Anti-age</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• DNA protection</li>
+                        <li>• Cell renewal</li>
+                        <li>• Age-related decline mitigation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Suggested Usage</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">How to Take Anti-age &amp; Longevity Complex:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Adults 25+: 1 sachet per day</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Take in the morning or with first meal — formula is energizing.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Recommended use: monthly cycles (30-day course), can be repeated.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> Designed for adults 25+ engaged in active longevity protocols. Best paired with healthy lifestyle (sleep, exercise, balanced nutrition).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Storage &amp; Caution</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Store in a cool, dry place away from children</li>
+                            <li>• Maximum temperature: +25°C (77°F)</li>
+                            <li>• Avoid direct sunlight and moisture</li>
+                            <li>• Keep tightly sealed</li>
+                            <li>• Single-serving sachets — open just before use</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 2 years from manufacturing date
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Consult doctor if pregnant, nursing, or taking medication</li>
+                            <li>• Individual intolerance to components possible</li>
+                            <li>• Not intended for children or adolescents</li>
+                            <li>• If on blood thinners or with cardiac issues, consult physician (CoQ10, K-related interactions)</li>
+                            <li>• Keep out of reach of children</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Package Information</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 30 sachets</p>
+                            <p><strong>Servings:</strong> 30 (1 sachet per serving)</p>
+                            <p><strong>Supply Duration:</strong> 1 month</p>
+                            <p><strong>Form:</strong> Powder sachets</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> —</p>
+                            <p><strong>Width:</strong> —</p>
+                            <p><strong>Height:</strong> —</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Single-serve sachets</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Turkey</p>
+                            <p><strong>Location:</strong> Istanbul</p>
+                            <p><strong>Certification:</strong> State Registration Certificate (СГР)</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Manufactured under GMP, ISO, and FDA standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="mito" class="py-16 px-6 bg-gray-50 border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-2">Mitochondria — The Core of Vital Energy</h2>
-            <p class="text-gray-600 mb-6">The complex enhances mitochondrial function</p>
-            <ul class="space-y-2 text-gray-700 my-4 ml-6">
-                <li>• <strong>CoQ10 (Ubiqsome®)</strong> — energy and mitochondrial protection</li>
-                <li>• <strong>PQQ</strong> — stimulates new mitochondria formation</li>
-                <li>• <strong>Astaxanthin</strong> — powerful antioxidant defense</li>
-            </ul>
-            <p class="text-gray-700 leading-relaxed mt-4">Result: <strong>more energy, higher endurance, slowed cellular aging</strong>.</p>
+    <!-- What's Inside? -->
+    <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">What's Inside?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Twelve premium ingredients across five longevity pathways — NAD⁺, mitochondria, inflammation, autophagy, cognition.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">NAD⁺ Stack (NMN + TMG)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">NMN is the direct precursor of NAD⁺ — the molecule that powers cellular energy and DNA repair. TMG stabilizes the methylation cycle.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Mitochondrial Stack</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">CoQ10 Ubiqsome® for mito energy. PQQ stimulates new mitochondria formation. Astaxanthin protects membranes from oxidative damage.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Inflammation + Autophagy</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Quercefit®, oleuropein, hydroxytyrosol fight inflammation. Sulforaphane (Nrf2), R-ALA, and spermidine activate detox and autophagy.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Cognitive Stack</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Magnesium L-threonate is the only Mg form that crosses the blood-brain barrier. Improves memory, concentration, and neuroplasticity.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="detox" class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-2">Inflammation Control &amp; Cell Defense</h2>
-            <p class="text-gray-600 mb-6">Chronic inflammation is one of the key aging factors</p>
-            <ul class="space-y-2 text-gray-700 my-4 ml-6">
-                <li>• <strong>Quercefit® (quercetin)</strong> — high bioavailability (7× higher than ordinary quercetin)</li>
-                <li>• <strong>Oleuropein (olive extract)</strong> — cardioprotection</li>
-                <li>• <strong>Hydroxytyrosol</strong> — one of the strongest antioxidants</li>
-            </ul>
-            <p class="text-gray-700 leading-relaxed mt-4">Result: reduced oxidative stress and DNA protection.</p>
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Quality &amp; Certifications</h2>
 
-            <h3 class="text-2xl font-light text-brand-dark mt-12 mb-2">Detox &amp; Autophagy Activation</h3>
-            <ul class="space-y-2 text-gray-700 my-4 ml-6">
-                <li>• <strong>Sulforaphane</strong> — Nrf2 activation and detox systems</li>
-                <li>• <strong>R-Alpha Lipoic Acid</strong> — cellular detox and antioxidant</li>
-                <li>• <strong>Spermidine</strong> — triggers autophagy processes</li>
-            </ul>
-            <p class="text-gray-700 leading-relaxed mt-4">Cell renewal and "cleansing" the body from within.</p>
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">International Standards</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Ubiqsome®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Ubiqsome®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Quercefit®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Quercefit®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">FDA</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">FDA</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">GMP</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">GMP</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">ISO</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">ISO</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">TÜRKAK</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Halal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Halal</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">3rd Party</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
+                    </div>
+                </div>
+            </div>
 
-            <h3 class="text-2xl font-light text-brand-dark mt-12 mb-2">Brain &amp; Cognitive Support</h3>
-            <ul class="space-y-2 text-gray-700 my-4 ml-6">
-                <li>• <strong>Magnesium L-threonate</strong> — penetrates the brain, improves memory and concentration, supports neuroplasticity</li>
-            </ul>
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Scientific Partnerships</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>University Collaborations:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Quality Control:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-gray-50 border-t border-gray-200">
-        <div class="mx-auto max-w-7xl text-center">
-            <h2 class="text-2xl font-light text-brand-dark mb-8">Explore More from Universe Vitamins</h2>
-            <a href="universe_products.html" class="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">View All 25 Products</a>
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Who Needs This?</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Suitable for active longevity:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>✓ Adults 25+ engaged in longevity protocols</li>
+                        <li>✓ Anti-age &amp; biohacking enthusiasts</li>
+                        <li>✓ Health-conscious adults</li>
+                        <li>✓ Athletes (cellular energy &amp; recovery)</li>
+                        <li>✓ People interested in healthspan extension</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">High priority for:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Active longevity protocols</li>
+                        <li>• Biohacking and healthspan optimization</li>
+                        <li>• Cognitive performance optimization</li>
+                        <li>• High oxidative stress lifestyles</li>
+                        <li>• Long-term cellular health investment</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Resources</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Downloads</h3>
+                    <div class="space-y-3">
+                        <p class="text-sm text-gray-500 italic">Product datasheet coming soon.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Further Reading</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Our Mission &amp; Approach</h4>
+                                <p class="text-xs text-gray-500 mt-1">Premium ingredients, traceable sourcing, family-first quality</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">All Universe Vitamins™ Products</h4>
+                                <p class="text-xs text-gray-500 mt-1">Browse our full catalog of research-backed supplements</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Shop More Categories</h2>
+            <p class="text-center text-gray-600 mb-10">Discover the rest of the Universe Vitamins™ family.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Anti-age &amp; Longevity</h3>
+                    <p class="text-sm text-gray-600 mb-4">Bovine &amp; Marine Collagen, Antioxidant Complex</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Cognitive &amp; Brain</h3>
+                    <p class="text-sm text-gray-600 mb-4">Universe Omega-3, Methylbalance</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Energy &amp; Metabolism</h3>
+                    <p class="text-sm text-gray-600 mb-4">Methylbalance, Iroton, U-10 Core</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">Family-First Quality</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                Formulated with standards we demand for our own families. Premium ingredients, no cost-cutting. Every batch tested for purity and potency.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← All Products</a>
+                <a href="universe_mission.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="bg-brand-dark text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
@@ -162,6 +835,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
