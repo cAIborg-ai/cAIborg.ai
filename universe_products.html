@@ -33,10 +33,31 @@
 
     <section class="py-12 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid lg:grid-cols-[260px_1fr] gap-8">
+                <aside class="lg:sticky lg:top-4 lg:self-start">
+                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                        <h3 class="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Solutions</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded font-medium text-brand-green bg-brand-green bg-opacity-10" data-cat="all">All Products</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="vitamins">Vitamins &amp; Minerals</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="gummies">Gummies (Sugar-Free)</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="sleep">Sleep &amp; Relaxation</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="immune">Immune Health</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="beauty">Collagen &amp; Beauty</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="cardio">Cardiovascular</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="digestive">Digestive Health</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="brain">Brain &amp; Eye</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="joint">Joint &amp; Mobility</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="anti-age">Anti-age &amp; Longevity</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="energy">Energy &amp; Metabolism</button></li>
+                            <li><button class="cat-btn w-full text-left px-3 py-2 rounded text-gray-700 hover:bg-gray-100 transition" data-cat="reproductive">Reproductive</button></li>
+                        </ul>
+                    </div>
+                </aside>
+                <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
                 <!-- 1: Omega-3 -->
-                <a href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="cardio brain" href="universe_product_omega.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Omega-3" class="max-h-full object-contain">
                     </div>
@@ -50,7 +71,7 @@
                 </a>
 
                 <!-- 2: Vegan Omega-3 -->
-                <a href="universe_product_vegan-omega3.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="cardio brain" href="universe_product_vegan-omega3.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vegan Omega-3" class="max-h-full object-contain opacity-60">
                     </div>
@@ -64,7 +85,7 @@
                 </a>
 
                 <!-- 3: Liposomal Magnesium 5-in-1 -->
-                <a href="universe_product_magnesium-5in1.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="sleep energy" href="universe_product_magnesium-5in1.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/prod-images/Magnesium Front.png" alt="Liposomal Magnesium 5-in-1" class="max-h-full object-contain">
                     </div>
@@ -78,7 +99,7 @@
                 </a>
 
                 <!-- 4: Magnesium Pro -->
-                <a href="universe_product_magnesium-pro.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="sleep energy" href="universe_product_magnesium-pro.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Magnesium Pro" class="max-h-full object-contain opacity-60">
                     </div>
@@ -92,7 +113,7 @@
                 </a>
 
                 <!-- 5: Liposomal Zinc -->
-                <a href="universe_product_zinc-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="immune" href="universe_product_zinc-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/prod-images/Zinc Front.png" alt="Liposomal Zinc Complex" class="max-h-full object-contain">
                     </div>
@@ -106,7 +127,7 @@
                 </a>
 
                 <!-- 6: Liposomal Vitamin C -->
-                <a href="universe_product_vitamin-c.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="immune beauty" href="universe_product_vitamin-c.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/prod-images/Front.png" alt="Liposomal Vitamin C" class="max-h-full object-contain">
                     </div>
@@ -120,7 +141,7 @@
                 </a>
 
                 <!-- 7: Bovine Collagen -->
-                <a href="universe_product_collagen-bovine.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="anti-age beauty" href="universe_product_collagen-bovine.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/prod-images/Tube Apple 1.png" alt="Bovine Collagen" class="max-h-full object-contain">
                     </div>
@@ -134,7 +155,7 @@
                 </a>
 
                 <!-- 8: Marine Collagen -->
-                <a href="universe_product_collagen-marine.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="anti-age beauty" href="universe_product_collagen-marine.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Marine Collagen" class="max-h-full object-contain opacity-60">
                     </div>
@@ -148,7 +169,7 @@
                 </a>
 
                 <!-- 9: Bone Longevity -->
-                <a href="universe_product_bone-longevity.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="joint" href="universe_product_bone-longevity.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Bone Longevity" class="max-h-full object-contain opacity-60">
                     </div>
@@ -162,7 +183,7 @@
                 </a>
 
                 <!-- 10: Multibiotic Forte -->
-                <a href="universe_product_multibiotic-forte.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="digestive" href="universe_product_multibiotic-forte.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/prod-images/Multibiotic Forte Front.png" alt="Multibiotic Forte" class="max-h-full object-contain">
                     </div>
@@ -176,7 +197,7 @@
                 </a>
 
                 <!-- 11: U-10 -->
-                <a href="universe_product_u10.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="vitamins essential" href="universe_product_u10.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="U-10" class="max-h-full object-contain opacity-60">
                     </div>
@@ -190,7 +211,7 @@
                 </a>
 
                 <!-- 12: Multivitamin Men -->
-                <a href="universe_product_multivit-men.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="vitamins reproductive" href="universe_product_multivit-men.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Multivitamin for Men" class="max-h-full object-contain opacity-60">
                     </div>
@@ -204,7 +225,7 @@
                 </a>
 
                 <!-- 13: Multivitamin Women -->
-                <a href="universe_product_multivit-women.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="vitamins beauty" href="universe_product_multivit-women.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Multivitamin for Women" class="max-h-full object-contain opacity-60">
                     </div>
@@ -218,7 +239,7 @@
                 </a>
 
                 <!-- 14: Vitamin D3 20ml -->
-                <a href="universe_product_vitamin-d3.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="immune" href="universe_product_vitamin-d3.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3" class="max-h-full object-contain opacity-60">
                     </div>
@@ -232,7 +253,7 @@
                 </a>
 
                 <!-- 15: Vitamin D3+K2 30ml -->
-                <a href="universe_product_vitamin-d3-k2.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="immune joint" href="universe_product_vitamin-d3-k2.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3+K2" class="max-h-full object-contain opacity-60">
                     </div>
@@ -246,7 +267,7 @@
                 </a>
 
                 <!-- 16: Vitamin D3+K2 20ml -->
-                <a href="universe_product_vitamin-d3-k2.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="immune joint" href="universe_product_vitamin-d3-k2.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vitamin D3+K2 20ml" class="max-h-full object-contain opacity-60">
                     </div>
@@ -260,7 +281,7 @@
                 </a>
 
                 <!-- 17: Antioxidant Complex -->
-                <a href="universe_product_antioxidant-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="anti-age" href="universe_product_antioxidant-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Antioxidant Complex" class="max-h-full object-contain opacity-60">
                     </div>
@@ -274,7 +295,7 @@
                 </a>
 
                 <!-- 18: Iroton Liposomal -->
-                <a href="universe_product_iroton-liposomal.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="energy" href="universe_product_iroton-liposomal.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Liposomal Iroton" class="max-h-full object-contain opacity-60">
                     </div>
@@ -288,7 +309,7 @@
                 </a>
 
                 <!-- 19: Methylbalance -->
-                <a href="universe_product_methylbalance.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="energy brain" href="universe_product_methylbalance.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Methylbalance" class="max-h-full object-contain opacity-60">
                     </div>
@@ -302,7 +323,7 @@
                 </a>
 
                 <!-- 20: Longevity Complex -->
-                <a href="universe_product_longevity-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+                <a data-cats="anti-age" href="universe_product_longevity-complex.html" class="block bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Longevity Complex" class="max-h-full object-contain opacity-60">
                     </div>
@@ -316,7 +337,7 @@
                 </a>
 
                 <!-- 21: Iroton Liquid (placeholder, no DOCX page yet) -->
-                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                <div data-cats="energy" class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Iroton Liquid" class="max-h-full object-contain opacity-60">
                     </div>
@@ -330,7 +351,7 @@
                 </div>
 
                 <!-- 22: DadMode (placeholder) -->
-                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                <div data-cats="reproductive" class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="DadMode" class="max-h-full object-contain opacity-60">
                     </div>
@@ -344,7 +365,7 @@
                 </div>
 
                 <!-- 23: Kids Multivitamin Gummies (placeholder) -->
-                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                <div data-cats="gummies" class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Kids Multivitamin Gummies" class="max-h-full object-contain opacity-60">
                     </div>
@@ -358,7 +379,7 @@
                 </div>
 
                 <!-- 24: Kids Brain Gummies (placeholder) -->
-                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                <div data-cats="gummies" class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Kids Brain Gummies" class="max-h-full object-contain opacity-60">
                     </div>
@@ -372,7 +393,7 @@
                 </div>
 
                 <!-- 25: Kids Immunity Gummies (placeholder) -->
-                <div class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
+                <div data-cats="gummies" class="block bg-white rounded-lg overflow-hidden border border-gray-200 opacity-60">
                     <div class="bg-gray-50 p-6 h-64 flex items-center justify-center">
                         <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Kids Immunity Gummies" class="max-h-full object-contain opacity-60">
                     </div>
@@ -385,6 +406,7 @@
                     </div>
                 </div>
 
+                </div><!-- /#productGrid -->
             </div>
         </div>
     </section>
@@ -417,6 +439,7 @@
                     <p class="text-gray-400 text-sm">info@universevitamins.com</p>
                     <p class="text-gray-400 text-sm mt-2">Russia: +7 (843) 245-62-00</p>
                     <p class="text-gray-400 text-sm">Turkey: +90 (546) 212-33-93</p>
+                    <p class="text-gray-400 text-sm mt-2">USA &middot; Kazakhstan</p>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
@@ -424,6 +447,31 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.cat-btn');
+            const cards = document.querySelectorAll('#productGrid > a, #productGrid > div');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const cat = btn.dataset.cat;
+                    // active state
+                    buttons.forEach(b => {
+                        b.classList.remove('text-brand-green', 'bg-brand-green', 'bg-opacity-10', 'font-medium');
+                        b.classList.add('text-gray-700', 'hover:bg-gray-100');
+                    });
+                    btn.classList.add('text-brand-green', 'bg-brand-green', 'bg-opacity-10', 'font-medium');
+                    btn.classList.remove('text-gray-700', 'hover:bg-gray-100');
+                    // filter
+                    cards.forEach(card => {
+                        const cats = (card.dataset.cats || '').split(/\s+/);
+                        card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
