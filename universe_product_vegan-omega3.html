@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omega-3 Vegan MAGomega | Universe Vitamins</title>
+    <title>Vegan Omega-3 MAGomega® - Bioavailable Plant-Based DHA | Universe Pharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
@@ -11,104 +11,750 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
+    <!-- Navigation -->
     <nav class="border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
-            <div class="hidden md:flex items-center gap-8">
-                <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
-                <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
-                <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+                    <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
+                    <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Sticky Sub-Nav -->
     <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div class="mx-auto px-6 max-w-7xl">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
             <div class="flex items-center justify-between py-3 overflow-x-auto">
-                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">Vegan Omega-3 MAGomega</h4>
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">VEGAN OMEGA-3</h4>
                 <nav class="flex items-center gap-6 text-sm">
-                    <a href="#about" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">About</a>
                     <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Benefits</a>
-                    <a href="#usage" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Usage</a>
-                    <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">All Products</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">What's Inside</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Label Info</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Resources</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Buy</a>
                 </nav>
             </div>
         </div>
     </div>
 
+    <!-- Product Hero -->
     <section class="py-12 px-6">
-        <div class="mx-auto max-w-7xl">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div class="bg-gray-50 rounded-lg p-12 flex items-center justify-center min-h-96">
-                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Vegan Omega-3" class="max-h-96 object-contain opacity-60">
-                </div>
-                <div>
-                    <a href="universe_products.html" class="text-sm text-gray-500 hover:text-brand-green transition mb-4 inline-block">← All Products</a>
-                    <h1 class="text-3xl md:text-4xl font-light text-brand-dark mb-3 leading-tight">Vegan Omega-3 from MAGomega®</h1>
-                    <p class="text-base text-gray-600 mb-4">Innovative monoglyceride form from Solutex (Spain) · 60 servings · Officially approved for children and pregnant women</p>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="bg-green-50 border border-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Vegan</span>
-                        <span class="bg-blue-50 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">MAGomega® Form</span>
-                        <span class="bg-purple-50 border border-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">High DHA</span>
-                        <span class="bg-yellow-50 border border-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">From age 0</span>
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
                     </div>
-                    <p class="text-lg text-gray-700 italic mb-4">Next-generation vegan Omega-3 from MAGomega® (Solutex, Spain) for brain and heart health.</p>
-                    <p class="text-sm text-gray-500 italic mb-6 border-l-2 border-brand-green pl-4">Веганская Омега-3 нового поколения из инновационного сырья MAGomega от компании Solutex (Испания) для здоровья мозга и сердца</p>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Universe Vegan Omega-3" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        60 Servings • Vegan
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        Universe Vitamins<sup class="text-base">TM</sup> Vegan Omega-3
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        Vegan Omega-3 with the highest bioavailability — safe for kids and pregnancy.
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        High-concentration Omega-3 from MAGomega® monoglyceride (Solutex, Spain) with DHA dominance. Officially approved for children and pregnant women.
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">Vegan</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">MAGomega® Form</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">DHA Dominant</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">Approved for Kids 0+</span>
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    
+
+                    <!-- Package Info Box -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">60-Serving Bottle</p>
+                            <p class="text-sm text-gray-600">1-2 capsules per day</p>
+                            <p class="text-sm text-gray-600">Approved for kids and pregnancy</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        Available on <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Free shipping from 3000₽
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">3-Year Shelf Life</p>
+                                <p class="text-xs text-gray-500 leading-tight">Long-term storage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Lab Verified</p>
+                                <p class="text-xs text-gray-500 leading-tight">Two independent labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Key Benefits:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Brain, vision &amp; nervous system development</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Highest bioavailability (4× ethyl esters, 2× triglycerides)</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Safe for children from age 0 and pregnant women</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="universe_products.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 px-6 bg-gray-50">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">About This Formula</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">This isn't just Omega-3 — it's a high-concentration formula based on premium MAGomega® raw material (Solutex, Spain), with emphasis on DHA — the key fatty acid for the brain, vision, and nervous system. Ideal for children, pregnant women, and adults.</p>
-            <p class="text-gray-700 leading-relaxed mb-4">When it comes to cognitive function, brain development, and nervous system support, it's not just the amount of Omega-3 that matters — but the form, the purity, and the DHA-to-EPA ratio.</p>
-            <p class="text-gray-700 leading-relaxed mb-4">MAGomega® from Solutex is a concentrate of Omega-3 in monoglyceride (MAG) form. Compared to standard forms, this delivers significantly higher bioavailability: <strong>4× higher than ethyl esters</strong>, and <strong>2× higher than triglyceride form</strong>.</p>
-            <p class="text-gray-700 leading-relaxed">This form of Omega-3 is maximally safe — the best alternative for pregnant women, children from age 0, and anyone choosing the best for themselves.</p>
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        Next-Generation Vegan Omega-3
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">This isn't just Omega-3 — it's a high-concentration formula based on premium MAGomega® raw material (Solutex, Spain), with emphasis on DHA — the key fatty acid for the brain, vision, and nervous system. Ideal for children, pregnant women, and adults.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">When it comes to cognitive function, brain development, and nervous system support, what matters isn't just the amount of Omega-3 — but the form, the purity, and the DHA-to-EPA ratio.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">MAGomega® from Solutex is a concentrate of Omega-3 in monoglyceride (MAG) form. Compared to standard forms, it delivers significantly higher bioavailability: 4× higher than ethyl esters, and 2× higher than triglyceride form. Maximally safe — the best alternative for pregnant women, children from age 0, and anyone choosing the best for themselves.</p>
+                </div>
+                <div>
+                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Universe Vegan Omega-3" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="benefits" class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">Benefits &amp; Applications</h2>
-            <ul class="space-y-3 text-gray-700 text-base">
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports brain health and cognitive function (high DHA — the key structural component of the brain)</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports normal cardiovascular function</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports vision health and nervous system development</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Provides anti-inflammatory support</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports skin health and slows aging processes</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Supports reproductive health and fetal development during pregnancy</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>High-concentration Omega-3 source with DHA dominance (2× higher than EPA) — maximum effect at lower dosage</span></li>
-            </ul>
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Why This Formula Works</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• MAGomega® raw material (Solutex, Spain)</li>
+                                <li>• Plant-based vegan source</li>
+                                <li>• Monoglyceride (MAG) molecular form</li>
+                                <li>• DHA-dominant ratio (2× higher than EPA)</li>
+                                <li>• Officially approved for kids 0+ and pregnancy</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Highest-bioavailability vegan Omega-3 form on the market today.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Clinical Potency</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• 4× more bioavailable than ethyl ester forms</li>
+                                <li>• 2× more bioavailable than triglyceride forms</li>
+                                <li>• DHA-dominant (2:1 vs EPA) for brain support</li>
+                                <li>• Maximum effect at lower dosage</li>
+                                <li>• Concentrated Omega-3 for cognitive development</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Form, not just dose — that's where bioavailability comes from.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Safety Certified</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Officially approved for children from 0 years</li>
+                                <li>• Officially approved during pregnancy</li>
+                                <li>• Plant-source — no fish allergens</li>
+                                <li>• No heavy metals</li>
+                                <li>• Premium European raw material</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Supplement Facts</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <!-- FDA-Standard Supplement Facts Table -->
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Supplement Facts</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">1-2 capsules</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">60</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Vegan Omega-3 (MAGomega®)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 pl-4">DHA (Docosahexaenoic Acid)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2 pl-4">EPA (Eicosapentaenoic Acid)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Other Ingredients & Lab Verification -->
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> MAGomega® algae-derived Omega-3 monoglyceride concentrate (Solutex, Spain), vegan capsule shell.</p>
+                    </div>
+
+                    
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Consult physician if pregnant or nursing. Keep out of reach of children.</p>
+                        <p class="mt-2">Approved for use during pregnancy and from age 0 under supervision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Research-Backed Health Benefits</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Brain &amp; Cognitive</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• High DHA — key brain structural component</li>
+                        <li>• Supports cognitive function</li>
+                        <li>• Brain development support (kids)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Cardiovascular</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Supports normal heart function</li>
+                        <li>• Cardiovascular protection</li>
+                        <li>• Healthy lipid profile</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Vision &amp; Nervous System</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Supports vision health</li>
+                        <li>• Nervous system development (kids)</li>
+                        <li>• Retinal health</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Anti-Inflammatory</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Reduces inflammatory markers</li>
+                        <li>• Modulates immune response</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Skin &amp; Anti-age</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Supports skin health</li>
+                        <li>• Slows aging processes</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Pregnancy &amp; Reproductive</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Supports fetal development</li>
+                        <li>• Approved during pregnancy</li>
+                        <li>• Reproductive health</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Suggested Usage</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">How to Take Vegan Omega-3:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Adults: 1-2 capsules daily with sufficient water</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Take during or right after a meal — preferably one containing fats — for best Omega-3 absorption.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Recommended course — regular intake for at least 8-12 weeks for cumulative effect.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> Do not take on an empty stomach to avoid GI discomfort.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Storage &amp; Caution</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Store in a cool, dry place away from children</li>
+                            <li>• Maximum temperature: +25°C (77°F)</li>
+                            <li>• Refrigerate after opening (recommended)</li>
+                            <li>• Avoid direct sunlight and moisture</li>
+                            <li>• Keep tightly closed</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 3 years from manufacturing date
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Consult doctor if pregnant, nursing, or taking medication</li>
+                            <li>• Individual intolerance to components possible</li>
+                            <li>• Approved for kids 0+ under medical supervision</li>
+                            <li>• Keep out of reach of children</li>
+                            <li>• If you have a medical condition, consult physician before use</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Package Information</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 60-serving bottle</p>
+                            <p><strong>Servings:</strong> 60 (1-2 capsules per serving)</p>
+                            <p><strong>Supply Duration:</strong> 1-2 months</p>
+                            <p><strong>Form:</strong> Vegan capsule</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> —</p>
+                            <p><strong>Width:</strong> —</p>
+                            <p><strong>Height:</strong> —</p>
+                            <p class="text-xs text-gray-500 italic mt-2">See product label for exact dimensions</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Turkey</p>
+                            <p><strong>Location:</strong> Istanbul</p>
+                            <p><strong>Certification:</strong> State Registration Certificate (СГР)</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Manufactured under GMP, ISO, and FDA standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="usage" class="py-16 px-6 bg-gray-50 border-t border-gray-200">
-        <div class="mx-auto max-w-4xl">
-            <h2 class="text-3xl font-light text-brand-dark mb-8">How to Take</h2>
-            <ul class="space-y-3 text-gray-700 text-base">
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Take 1-2 capsules daily with sufficient water</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Take during or right after a meal — preferably one containing fats — for best Omega-3 absorption</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Do not take on an empty stomach to avoid GI discomfort</span></li>
-                <li class="flex gap-2"><span class="text-brand-green">•</span><span>Recommended course — regular intake for at least 8-12 weeks for cumulative effect</span></li>
-            </ul>
+    <!-- What's Inside? -->
+    <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">What's Inside?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Every ingredient earns its place. Innovative monoglyceride MAGomega® from Solutex (Spain) — the highest-bioavailability Omega-3 form available.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">MAGomega® Source</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Patented monoglyceride concentrate from Solutex (Spain). Plant-based, vegan, sustainably produced.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">DHA Dominant</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">DHA is 2× higher than EPA. The key fatty acid for brain structure, vision, and nervous system development.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Monoglyceride Form</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Pre-digested form bypasses pancreatic enzymes. Bioavailability: 4× higher than ethyl esters, 2× higher than triglycerides.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Approved for Kids &amp; Pregnancy</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Plant source, no fish allergens, no heavy metals. Officially approved for ages 0+ and during pregnancy.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 bg-white border-t border-gray-200">
-        <div class="mx-auto max-w-7xl text-center">
-            <h2 class="text-2xl font-light text-brand-dark mb-8">Explore More from Universe Vitamins</h2>
-            <a href="universe_products.html" class="inline-block bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">View All 25 Products</a>
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Quality &amp; Certifications</h2>
+
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">International Standards</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Solutex</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Solutex</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">FDA</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">FDA</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">GMP</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">GMP</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">ISO</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">ISO</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">TÜRKAK</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Halal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Halal</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Vegan</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Vegan</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">3rd Party</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Scientific Partnerships</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>University Collaborations:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Quality Control:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Who Needs This?</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Suitable for everyone:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>✓ Children from 0 years (under medical supervision)</li>
+                        <li>✓ Pregnant and nursing women</li>
+                        <li>✓ Vegans and vegetarians</li>
+                        <li>✓ Adults seeking cognitive support</li>
+                        <li>✓ People with fish allergies</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">High priority for:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Brain development support (kids)</li>
+                        <li>• Cognitive performance (adults)</li>
+                        <li>• Pregnancy nutrition</li>
+                        <li>• Vision and nervous system support</li>
+                        <li>• Vegan diet without fish</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Resources</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Downloads</h3>
+                    <div class="space-y-3">
+                        <p class="text-sm text-gray-500 italic">Product datasheet coming soon.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Further Reading</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Our Mission &amp; Approach</h4>
+                                <p class="text-xs text-gray-500 mt-1">Premium ingredients, traceable sourcing, family-first quality</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">All Universe Vitamins™ Products</h4>
+                                <p class="text-xs text-gray-500 mt-1">Browse our full catalog of research-backed supplements</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Shop More Categories</h2>
+            <p class="text-center text-gray-600 mb-10">Discover the rest of the Universe Vitamins™ family.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Cardiovascular</h3>
+                    <p class="text-sm text-gray-600 mb-4">Universe Omega-3 (fish-source), Methylbalance</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Brain &amp; Eye</h3>
+                    <p class="text-sm text-gray-600 mb-4">Methylbalance, Liposomal Magnesium 5-in-1</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+                <a href="universe_products.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Reproductive</h3>
+                    <p class="text-sm text-gray-600 mb-4">Iroton, DadMode, Multivitamin for Women</p>
+                    <span class="text-brand-green font-medium text-sm">Shop Now →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">Family-First Quality</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                Formulated with standards we demand for our own families. Premium ingredients, no cost-cutting. Every batch tested for purity and potency.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← All Products</a>
+                <a href="universe_mission.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="bg-brand-dark text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
@@ -135,6 +781,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

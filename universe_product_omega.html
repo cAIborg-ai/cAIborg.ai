@@ -6,133 +6,33 @@
     <title>UNIVERSE OMEGA 3 - Research-Backed Formula | Universe Pharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-green': '#6B9F3E',
-                        'brand-dark': '#1a1a1a',
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
 
-        /* Image Gallery */
-        .thumbnail-btn {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
 
-        .thumbnail-btn.active img {
-            border-color: #6B9F3E !important;
-        }
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
 
-        /* Simple 3x hover zoom (desktop only) */
-        #mainImage {
-            transition: transform 0.3s ease;
-        }
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
 
-        @media (hover: hover) {
-            #mainImage:hover {
-                transform: scale(3);
-                transform-origin: center;
-                cursor: zoom-in;
-            }
-        }
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
 
-        /* Accordion Component (NOW Foods pattern with brand green) */
-        .accordion-header {
-            width: 100%;
-            background: white;
-            color: #1a1a1a;
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            margin-bottom: 2px;
-            transition: all 0.2s;
-            font-size: 1.25rem;
-            font-weight: 600;
-            text-align: left;
-        }
-
-        .accordion-header[aria-expanded="true"] {
-            background: #6B9F3E;
-            color: white;
-            border-color: #6B9F3E;
-        }
-
-        .accordion-header:hover {
-            border-color: #6B9F3E;
-        }
-
-        .accordion-header[aria-expanded="true"]:hover {
-            background: #5a8535;
-            border-color: #5a8535;
-        }
-
-        .accordion-icon {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-            transition: transform 0.3s;
-            color: #6B9F3E;
-        }
-
-        .accordion-header[aria-expanded="true"] .accordion-icon {
-            color: white;
-        }
-
-        .accordion-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .accordion-content {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 16px;
-            max-height: 5000px;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-        }
-
-        .accordion-content.collapsed {
-            max-height: 0;
-            padding: 0 24px;
-            margin-bottom: 0;
-            border: none;
-        }
-
-        /* Touch targets for mobile */
         @media (max-width: 768px) {
-            /* Ensure minimum 44x44px touch targets for buttons */
-            a.inline-block, button {
-                min-height: 44px;
-                min-width: 44px;
-                padding: 12px 24px;
-            }
-
-            /* Thumbnails appear above image on mobile */
-            #imageContainer {
-                min-height: 300px !important;
-            }
-
-            .accordion-header {
-                font-size: 1.125rem;
-                padding: 16px 20px;
-            }
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
         }
     </style>
 </head>
@@ -149,19 +49,12 @@
                     <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
                     <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
                     <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
-                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
-                        <a href="universe_product_omega.html" class="text-brand-green font-medium">EN</a>
-                        <span class="text-gray-400">|</span>
-                        <a href="universe_product_omega_ru.html" class="text-gray-600 hover:text-brand-green transition">RU</a>
-                        <span class="text-gray-400">|</span>
-                        <a href="universe_product_omega_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
-                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Sticky Sub-Nav (LifeVantage Omega+ pattern) -->
+    <!-- Sticky Sub-Nav -->
     <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div class="mx-auto px-6" style="max-width: 1408px;">
             <div class="flex items-center justify-between py-3 overflow-x-auto">
@@ -183,7 +76,6 @@
             <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
                 <!-- Image Gallery -->
                 <div class="flex flex-col md:flex-row gap-4 h-full">
-                    <!-- Thumbnails (LEFT on desktop, TOP on mobile) -->
                     <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
                         <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
                             <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
@@ -199,13 +91,12 @@
                         </button>
                     </div>
 
-                    <!-- Main Image Container (center-crop) -->
                     <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
                         <img id="mainImage" src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Universe OMEGA 3" class="w-full h-full object-cover object-center">
                     </div>
                 </div>
 
-                <!-- Product Info + Accordions -->
+                <!-- Product Info -->
                 <div>
                     <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
                         60 Capsules • 1-Month Supply
@@ -223,12 +114,12 @@
                         Premium Omega-3 from MEG-3® raw material in triglyceride form, sourced by DSM/KD Nutra (Switzerland/USA). Supports brain, cardiovascular, skin, and immune health.
                     </p>
 
-                    <!-- Formulation Badges (LifeVantage Omega+ pattern) -->
+                    <!-- Formulation Badges -->
                     <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="inline-flex items-center gap-1 bg-green-50 border border-green-200 text-green-800 px-3 py-1 rounded-full text-xs font-medium">Halal Certified</span>
-                        <span class="inline-flex items-center gap-1 bg-blue-50 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">No Heavy Metals</span>
-                        <span class="inline-flex items-center gap-1 bg-purple-50 border border-purple-200 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">MEG-3® Sourced</span>
-                        <span class="inline-flex items-center gap-1 bg-yellow-50 border border-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">Triglyceride Form</span>
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">Halal Certified</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">No Heavy Metals</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">MEG-3® Sourced</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">Triglyceride Form</span>
                     </div>
 
                     <!-- Lab Verification Callout -->
@@ -241,7 +132,7 @@
                         </p>
                     </div>
 
-                    <!-- Package Info Box (NOW Foods pattern) -->
+                    <!-- Package Info Box -->
                     <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
                         <div class="text-center">
                             <p class="text-brand-green font-semibold mb-1">60 Softgels</p>
@@ -250,26 +141,20 @@
                         </div>
                     </div>
 
-                    <!-- Buy on OZON Button (Yellow CTA like NOW Foods) -->
-                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
                         Buy on OZON
                     </a>
 
-                    <!-- Shipping Info -->
                     <p class="text-sm text-gray-600 text-center mb-4">
                         Available on <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Free shipping from 3000₽
                     </p>
 
-                    <!-- Trust Signals (LifeVantage Omega+ pattern) -->
+                    <!-- Trust Signals -->
                     <div class="grid grid-cols-2 gap-3 mb-6">
                         <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
                             <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                             <div>
                                 <p class="text-xs font-semibold text-brand-dark leading-tight">3-Year Shelf Life</p>
@@ -278,9 +163,7 @@
                         </div>
                         <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
                             <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                                </svg>
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                             </div>
                             <div>
                                 <p class="text-xs font-semibold text-brand-dark leading-tight">Lab Verified</p>
@@ -289,28 +172,13 @@
                         </div>
                     </div>
 
-                    <!-- Key Benefits (Simplified to 3 points) -->
+                    <!-- Key Benefits -->
                     <div class="mb-6">
                         <h3 class="font-semibold text-brand-dark mb-3 text-sm">Key Benefits:</h3>
                         <ul class="space-y-2 text-sm text-gray-600">
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Cardiovascular health & brain function</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Anti-inflammatory & joint support</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Vision protection & skin health</span>
-                            </li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Cardiovascular health & brain function</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Anti-inflammatory & joint support</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Vision protection & skin health</span></li>
                         </ul>
                     </div>
 
@@ -322,7 +190,7 @@
         </div>
     </section>
 
-    <!-- Narrative Section: Only the Finest Fatty Acids (LifeVantage Omega+ pattern) -->
+    <!-- Narrative Section -->
     <section id="benefits" class="py-16 px-6 bg-gray-50">
         <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -330,32 +198,24 @@
                     <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
                         Only the Finest Fatty Acids
                     </h2>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        There are good fats, and there are great fats. When it comes to your brain, heart, and the health of children, only premium-quality Omega-3 delivers tangible results — and safety.
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Fatty acids form the foundation of cell membranes and fuel muscles, including the heart, brain, and other vital organs. Universe Vitamins™ Omega-3 is sourced from small fish caught in the ecologically pristine waters of Iceland — every bottle traceable, every drop pure MEG-3 fish oil in its highly absorbable triglyceride form.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Produced under sustainability principles, free of heavy metals, and lightly flavored with a natural fish note. Formulated for the entire family — from children to active adults to seniors.
-                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">There are good fats, and there are great fats. When it comes to your brain, heart, and the health of children, only premium-quality Omega-3 delivers tangible results — and safety.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Fatty acids form the foundation of cell membranes and fuel muscles, including the heart, brain, and other vital organs. Universe Vitamins™ Omega-3 is sourced from small fish caught in the ecologically pristine waters of Iceland — every bottle traceable, every drop pure MEG-3 fish oil in its highly absorbable triglyceride form.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Produced under sustainability principles, free of heavy metals, and lightly flavored with a natural fish note. Formulated for the entire family — from children to active adults to seniors.</p>
                 </div>
                 <div>
-                    <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Universe Omega-3 bottle" class="w-full max-w-md mx-auto">
+                    <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Universe OMEGA 3" class="w-full max-w-md mx-auto">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Accordions Section -->
+    <!-- Why This Formula Works + Accordions -->
     <section class="px-6 pb-12 pt-12">
         <div class="mx-auto" style="max-width: 1408px;">
             <div class="grid md:grid-cols-[55fr_45fr] gap-12">
-                <!-- Left column: Content below image -->
                 <div>
                     <h2 class="text-2xl font-light text-brand-dark mb-6">Why This Formula Works</h2>
                     <div class="grid md:grid-cols-1 gap-6">
-                        <!-- Premium Sourcing -->
                         <div class="bg-gray-50 p-6 rounded-lg">
                             <h3 class="text-lg font-semibold text-brand-dark mb-3">Premium Sourcing</h3>
                             <ul class="text-sm text-gray-600 space-y-2">
@@ -370,7 +230,6 @@
                             </p>
                         </div>
 
-                        <!-- Clinical Potency -->
                         <div class="bg-gray-50 p-6 rounded-lg">
                             <h3 class="text-lg font-semibold text-brand-dark mb-3">Clinical Potency</h3>
                             <ul class="text-sm text-gray-600 space-y-2">
@@ -385,7 +244,6 @@
                             </p>
                         </div>
 
-                        <!-- Safety Certified -->
                         <div class="bg-gray-50 p-6 rounded-lg">
                             <h3 class="text-lg font-semibold text-brand-dark mb-3">Safety Certified</h3>
                             <ul class="text-sm text-gray-600 space-y-2">
@@ -402,7 +260,6 @@
                     </div>
                 </div>
 
-                <!-- Accordions in right cell (aligns with product info above) -->
                 <div>
                     <div class="space-y-2">
 
@@ -411,9 +268,7 @@
             <button class="accordion-header" aria-expanded="true">
                 <span>Supplement Facts</span>
                 <div class="accordion-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
             </button>
             <div class="accordion-content">
@@ -498,14 +353,11 @@
             <button class="accordion-header" aria-expanded="false">
                 <span>Research-Backed Health Benefits</span>
                 <div class="accordion-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
             </button>
             <div class="accordion-content collapsed">
                 <div class="grid md:grid-cols-2 gap-6">
-                <!-- Cardiovascular -->
                 <div class="bg-white p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-brand-dark mb-3">Cardiovascular Health</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
@@ -516,18 +368,16 @@
                     </ul>
                 </div>
 
-                <!-- Brain & Cognitive -->
                 <div class="bg-white p-6 rounded-lg">
-                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Brain & Cognitive Function</h3>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Brain &amp; Cognitive Function</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
                         <li>• DHA = 60% of brain fat composition</li>
-                        <li>• Supports neuron function & membrane integrity</li>
+                        <li>• Supports neuron function &amp; membrane integrity</li>
                         <li>• Maintains cognitive performance</li>
                         <li>• May reduce depression risk</li>
                     </ul>
                 </div>
 
-                <!-- Vision Protection -->
                 <div class="bg-white p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-brand-dark mb-3">Vision Protection</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
@@ -538,7 +388,6 @@
                     </ul>
                 </div>
 
-                <!-- Anti-Inflammatory -->
                 <div class="bg-white p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-brand-dark mb-3">Anti-Inflammatory Action</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
@@ -548,7 +397,6 @@
                     </ul>
                 </div>
 
-                <!-- Neurodegenerative Prevention -->
                 <div class="bg-white p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-brand-dark mb-3">Neurodegenerative Prevention</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
@@ -558,13 +406,12 @@
                     </ul>
                 </div>
 
-                <!-- Joint & Beauty -->
                 <div class="bg-white p-6 rounded-lg">
-                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Joint Health & Beauty</h3>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Joint Health &amp; Beauty</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Supports joint flexibility & mobility</li>
+                        <li>• Supports joint flexibility &amp; mobility</li>
                         <li>• Reduces inflammation in joints</li>
-                        <li>• Strengthens hair & nails</li>
+                        <li>• Strengthens hair &amp; nails</li>
                         <li>• Improves skin elasticity</li>
                     </ul>
                 </div>
@@ -576,9 +423,7 @@
             <button class="accordion-header" aria-expanded="false">
                 <span>Suggested Usage</span>
                 <div class="accordion-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
             </button>
             <div class="accordion-content collapsed">
@@ -610,11 +455,9 @@
         <!-- Storage & Caution -->
         <div>
             <button class="accordion-header" aria-expanded="false">
-                <span>Storage & Caution</span>
+                <span>Storage &amp; Caution</span>
                 <div class="accordion-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
             </button>
             <div class="accordion-content collapsed">
@@ -634,7 +477,7 @@
                     </div>
 
                     <div class="bg-white p-6 rounded-lg">
-                        <h3 class="font-semibold text-brand-dark mb-3">Caution & Contraindications:</h3>
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
                         <ul class="text-sm text-gray-700 space-y-2">
                             <li>• Consult doctor if pregnant, nursing, or taking medication</li>
                             <li>• Individual intolerance to components possible</li>
@@ -655,9 +498,7 @@
             <button class="accordion-header" aria-expanded="false">
                 <span>Package Information</span>
                 <div class="accordion-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </div>
             </button>
             <div class="accordion-content collapsed">
@@ -700,13 +541,12 @@
         </div>
     </section>
 
-    <!-- What's Inside? (LifeVantage Omega+ pattern) -->
+    <!-- What's Inside? -->
     <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
         <div class="mx-auto" style="max-width: 1408px;">
             <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">What's Inside?</h2>
             <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Every ingredient earns its place. Premium MEG-3® raw material from cold Icelandic waters, in the form your body recognizes.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Omega-3 Fatty Acids -->
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -717,7 +557,6 @@
                     <p class="text-sm text-gray-600 leading-relaxed">Long-chain polyunsaturated fatty acids from cold-water fish. Help maintain flexible cell membranes for better cellular communication.</p>
                 </div>
 
-                <!-- EPA -->
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -728,7 +567,6 @@
                     <p class="text-sm text-gray-600 leading-relaxed">Eicosapentaenoic acid — the anti-inflammatory Omega-3. Supports cardiovascular health, healthy mood, and the body's inflammation response.</p>
                 </div>
 
-                <!-- DHA -->
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -739,7 +577,6 @@
                     <p class="text-sm text-gray-600 leading-relaxed">Docosahexaenoic acid — makes up ~60% of the brain's structural fat. Supports cognitive function, vision, and nervous system development.</p>
                 </div>
 
-                <!-- MEG-3® Triglyceride Form -->
                 <div class="bg-gray-50 p-6 rounded-lg">
                     <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -753,14 +590,11 @@
         </div>
     </section>
 
-    <!-- Certifications & Quality -->
+    <!-- Quality & Certifications -->
     <section id="label-info" class="py-16 px-6 bg-white">
         <div class="mx-auto" style="max-width: 1408px;">
-            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">
-                Quality & Certifications
-            </h2>
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Quality &amp; Certifications</h2>
 
-            <!-- Certifications Grid -->
             <div class="mb-12">
                 <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">International Standards</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
@@ -810,12 +644,11 @@
                         <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
                             <span class="text-xs text-gray-500">3rd Party</span>
                         </div>
-                        <p class="text-xs text-gray-600 text-center">Tested</p>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
                     </div>
                 </div>
             </div>
 
-            <!-- University Partnerships -->
             <div class="bg-gray-50 rounded-lg p-8">
                 <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Scientific Partnerships</h3>
                 <div class="grid md:grid-cols-2 gap-6">
@@ -845,9 +678,7 @@
     <!-- Who Needs This -->
     <section class="py-16 px-6 bg-gray-50">
         <div class="mx-auto" style="max-width: 1408px;">
-            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">
-                Who Needs This?
-            </h2>
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Who Needs This?</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg">
@@ -863,7 +694,7 @@
                 <div class="bg-white p-6 rounded-lg">
                     <h3 class="font-semibold text-brand-dark mb-3">High priority for:</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Rarely eat fatty fish (< 2 servings/week)</li>
+                        <li>• Rarely eat fatty fish (&lt; 2 servings/week)</li>
                         <li>• Cardiovascular risk factors</li>
                         <li>• People over 65 (macular degeneration prevention)</li>
                         <li>• Inflammatory conditions</li>
@@ -875,12 +706,11 @@
         </div>
     </section>
 
-    <!-- Resources Section (LifeVantage Omega+ pattern) -->
+    <!-- Resources -->
     <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
         <div class="mx-auto" style="max-width: 1408px;">
             <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Resources</h2>
             <div class="grid md:grid-cols-2 gap-12">
-                <!-- Downloads -->
                 <div>
                     <h3 class="text-lg font-semibold text-brand-dark mb-6">Downloads</h3>
                     <div class="space-y-3">
@@ -901,14 +731,13 @@
                     </div>
                 </div>
 
-                <!-- Further Reading -->
                 <div>
                     <h3 class="text-lg font-semibold text-brand-dark mb-6">Further Reading</h3>
                     <ul class="space-y-2">
                         <li>
                             <a href="universe_mission.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
                                 <h4 class="font-semibold text-brand-dark">Our Mission &amp; Approach</h4>
-                                <p class="text-xs text-gray-500 mt-1">Why we source MEG-3® from Iceland and what "premium" really means</p>
+                                <p class="text-xs text-gray-500 mt-1">Premium ingredients, traceable sourcing, family-first quality</p>
                             </a>
                         </li>
                         <li>
@@ -923,7 +752,7 @@
         </div>
     </section>
 
-    <!-- Shop More Categories (LifeVantage + Drift cross-sell pattern) -->
+    <!-- Shop More Categories -->
     <section class="py-16 px-6 bg-gray-50">
         <div class="mx-auto" style="max-width: 1408px;">
             <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Shop More Categories</h2>
@@ -951,19 +780,13 @@
     <!-- CTA Section -->
     <section class="py-16 px-6 bg-brand-green">
         <div class="mx-auto text-center" style="max-width: 1408px;">
-            <h2 class="text-3xl font-light text-white mb-6">
-                Family-First Quality
-            </h2>
+            <h2 class="text-3xl font-light text-white mb-6">Family-First Quality</h2>
             <p class="text-white text-opacity-90 mb-8 text-lg">
                 Formulated with standards we demand for our own families. Premium ingredients, no cost-cutting. Every batch tested for purity and potency.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="universe_products.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">
-                    ← All Products
-                </a>
-                <a href="universe_mission.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">
-                    Our Mission
-                </a>
+                <a href="universe_products.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← All Products</a>
+                <a href="universe_mission.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">Our Mission</a>
             </div>
         </div>
     </section>
@@ -998,47 +821,27 @@
         </div>
     </footer>
 
-    <!-- Image Gallery JavaScript -->
     <script>
         (function() {
             const mainImage = document.getElementById('mainImage');
             const thumbnails = document.querySelectorAll('.thumbnail-btn');
-
-            // Image sources for each thumbnail
-            const images = [
-                'assets/universe-vitamins/prod-images/Omega Front.png',
-                'assets/universe-vitamins/omega/Omega Right.png',
-                'assets/universe-vitamins/omega/Omega Left.png',
-                'assets/universe-vitamins/prod-images/Omega Front.png' // Placeholder for size chart
-            ];
-
-            // Thumbnail click handler
+            const images = ['assets/universe-vitamins/prod-images/Omega Front.png', 'assets/universe-vitamins/omega/Omega Right.png', 'assets/universe-vitamins/omega/Omega Left.png', 'assets/universe-vitamins/prod-images/Omega Front.png'];
             thumbnails.forEach((btn, index) => {
                 btn.addEventListener('click', () => {
-                    // Update active state
                     thumbnails.forEach(t => t.classList.remove('active'));
                     btn.classList.add('active');
-
-                    // Switch main image
                     mainImage.src = images[index];
                 });
             });
         })();
 
-        // Accordion toggle functionality (NOW Foods pattern)
         document.addEventListener('DOMContentLoaded', function() {
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-            accordionHeaders.forEach(header => {
+            document.querySelectorAll('.accordion-header').forEach(header => {
                 header.addEventListener('click', () => {
                     const content = header.nextElementSibling;
                     const icon = header.querySelector('.accordion-icon');
                     const isExpanded = header.getAttribute('aria-expanded') === 'true';
-
-                    // Toggle content
                     content.classList.toggle('collapsed');
-
-                    // Toggle icon rotation
                     if (content.classList.contains('collapsed')) {
                         icon.style.transform = 'rotate(0deg)';
                         header.setAttribute('aria-expanded', 'false');
