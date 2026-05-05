@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE_SEO}} | Universe Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index{{LANG_SUFFIX}}.html" class="text-gray-600 hover:text-brand-green transition">{{UI_NAV_HOME}}</a>
+                    <a href="universe_products{{LANG_SUFFIX}}.html" class="text-brand-dark hover:text-brand-green transition">{{UI_NAV_PRODUCTS}}</a>
+                    <a href="universe_mission{{LANG_SUFFIX}}.html" class="text-gray-600 hover:text-brand-green transition">{{UI_NAV_MISSION}}</a>
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
+                        {{LANG_SWITCHER}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sticky Sub-Nav -->
+    <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
+            <div class="flex items-center justify-between py-3 overflow-x-auto">
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">{{NAME_SHORT}}</h4>
+                <nav class="flex items-center gap-6 text-sm">
+                    <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">{{UI_SUBNAV_BENEFITS}}</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">{{UI_SUBNAV_WHATS_INSIDE}}</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">{{UI_SUBNAV_LABEL_INFO}}</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">{{UI_SUBNAV_RESOURCES}}</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">{{UI_SUBNAV_BUY}}</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Hero -->
+    <section class="py-12 px-6">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="{{IMG_FRONT}}" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="{{IMG_RIGHT}}" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="{{IMG_LEFT}}" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="{{IMG_FRONT}}" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                    </div>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="{{IMG_FRONT}}" alt="{{IMG_ALT}}" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        {{BADGE_TOP}}
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        {{NAME_FULL_HTML}}
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        {{TAGLINE}}
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        {{DESCRIPTION}}
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        {{BADGES_HTML}}
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    {{LAB_CALLOUT_HTML}}
+
+                    <!-- Package Info Box -->
+                    {{PKG_BOX_HTML}}
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        {{UI_SHIPPING_INFO_HTML}}
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">{{UI_TRUST_3YR_TITLE}}</p>
+                                <p class="text-xs text-gray-500 leading-tight">{{UI_TRUST_3YR_SUB}}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">{{UI_TRUST_LAB_TITLE}}</p>
+                                <p class="text-xs text-gray-500 leading-tight">{{UI_TRUST_LAB_SUB}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">{{UI_KEY_BENEFITS_HEADING}}</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            {{KEY_BENEFITS_HTML}}
+                        </ul>
+                    </div>
+
+                    <a href="universe_products{{LANG_SUFFIX}}.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        {{NARRATIVE_H2}}
+                    </h2>
+                    {{NARRATIVE_PARAGRAPHS_HTML}}
+                </div>
+                <div>
+                    <img src="{{IMG_FRONT}}" alt="{{IMG_ALT}}" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">{{UI_SECTION_WHY_WORKS}}</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        {{WHY_WORKS_HTML}}
+                    </div>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>{{UI_SECTION_SUPPLEMENT_FACTS}}</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                {{SF_HTML}}
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>{{UI_SECTION_HEALTH_BENEFITS}}</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                {{HB_HTML}}
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>{{UI_SECTION_SUGGESTED_USAGE}}</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                {{USAGE_HTML}}
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>{{UI_SECTION_STORAGE}}</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    {{STORAGE_CAUTION_HTML}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>{{UI_SECTION_PACKAGE}}</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    {{PKG_INFO_HTML}}
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside? -->
+    <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">{{UI_SECTION_WHATS_INSIDE}}</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">{{WHATS_INSIDE_INTRO}}</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {{WHATS_INSIDE_HTML}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">{{UI_SECTION_QUALITY}}</h2>
+
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">{{UI_SECTION_INTL_STANDARDS}}</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    {{CERTS_HTML}}
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">{{UI_SECTION_PARTNERSHIPS}}</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>{{UI_UNI_COLLAB_TITLE}}</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>{{UI_QC_TITLE}}</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">{{UI_SECTION_WHO_NEEDS}}</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                {{WHO_NEEDS_HTML}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">{{UI_SECTION_RESOURCES}}</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">{{UI_DOWNLOADS_LABEL}}</h3>
+                    <div class="space-y-3">
+                        {{PDF_HTML}}
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">{{UI_FURTHER_READING_LABEL}}</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission{{LANG_SUFFIX}}.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">{{UI_FR_MISSION_TITLE}}</h4>
+                                <p class="text-xs text-gray-500 mt-1">{{UI_FR_MISSION_DESC}}</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products{{LANG_SUFFIX}}.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">{{UI_FR_CATALOG_TITLE}}</h4>
+                                <p class="text-xs text-gray-500 mt-1">{{UI_FR_CATALOG_DESC}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">{{UI_SECTION_SHOP_MORE}}</h2>
+            <p class="text-center text-gray-600 mb-10">{{UI_SHOP_MORE_SUB}}</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                {{SHOP_MORE_HTML}}
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">{{UI_CTA_H2}}</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                {{UI_CTA_P}}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products{{LANG_SUFFIX}}.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">{{UI_CTA_BTN_PRODUCTS}}</a>
+                <a href="universe_mission{{LANG_SUFFIX}}.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">{{UI_CTA_BTN_MISSION}}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12 px-6">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">{{UI_FOOTER_BRAND_TAGLINE}}</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">{{UI_FOOTER_NAVIGATE}}</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="universe_index{{LANG_SUFFIX}}.html" class="text-gray-400 hover:text-brand-green transition">Home</a></li>
+                        <li><a href="universe_products{{LANG_SUFFIX}}.html" class="text-gray-400 hover:text-brand-green transition">Products</a></li>
+                        <li><a href="universe_mission{{LANG_SUFFIX}}.html" class="text-gray-400 hover:text-brand-green transition">{{UI_CTA_BTN_MISSION}}</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">{{UI_FOOTER_CONTACT}}</h4>
+                    <p class="text-gray-400 text-sm">{{CONTACT_EMAIL}}</p>
+                    <p class="text-gray-400 text-sm mt-2">{{CONTACT_RUSSIA}}</p>
+                    <p class="text-gray-400 text-sm">{{CONTACT_TURKEY}}</p>
+                    <p class="text-gray-400 text-sm">{{CONTACT_USA}}</p>
+                    <p class="text-gray-400 text-sm">{{CONTACT_KAZAKHSTAN}}</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>{{UI_FOOTER_COPYRIGHT}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['{{IMG_FRONT}}', '{{IMG_RIGHT}}', '{{IMG_LEFT}}', '{{IMG_FRONT}}'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

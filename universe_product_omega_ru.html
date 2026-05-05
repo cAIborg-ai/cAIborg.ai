@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSE OMEGA 3 — научно обоснованная формула | Universe Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index_ru.html" class="text-gray-600 hover:text-brand-green transition">Главная</a>
+                    <a href="universe_products_ru.html" class="text-brand-dark hover:text-brand-green transition">Продукты</a>
+                    <a href="universe_mission_ru.html" class="text-gray-600 hover:text-brand-green transition">О нас</a>
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
+                        <a href="universe_product_omega.html" class="text-gray-600 hover:text-brand-green transition">EN</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_product_omega_ru.html" class="text-brand-green font-medium">RU</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_product_omega_kz.html" class="text-gray-600 hover:text-brand-green transition">KZ</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_product_omega_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sticky Sub-Nav -->
+    <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
+            <div class="flex items-center justify-between py-3 overflow-x-auto">
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">UNIVERSE OMEGA 3</h4>
+                <nav class="flex items-center gap-6 text-sm">
+                    <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Преимущества</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Что внутри</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Информация на этикетке</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Материалы</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Купить</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Hero -->
+    <section class="py-12 px-6">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/omega/Omega Right.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/omega/Omega Left.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                    </div>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Universe OMEGA 3" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        60 капсул • запас на 1 месяц
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        Universe Vitamins<sup class="text-base">TM</sup> Омега-3
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        Существует хорошая Омега-3 — и есть действительно лучшая.
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        Премиальная Омега-3 из сырья MEG-3® в форме триглицеридов от DSM/KD Nutra (Швейцария/США). Поддерживает здоровье мозга, сердечно-сосудистой системы, кожи и иммунитета.
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">Сертифицировано Халяль</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">Без тяжёлых металлов</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">Сырьё MEG-3®</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">Форма триглицеридов</span>
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm font-semibold text-blue-900">
+                            ✓ Подтверждено независимой лабораторией: 1490 мг EPA+DHA
+                        </p>
+                        <p class="text-xs text-blue-700 mt-1">
+                            На 24% выше заявленного на этикетке (тестирование в лаборатории РАН)
+                        </p>
+                    </div>
+
+                    <!-- Package Info Box -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">60 мягких капсул</p>
+                            <p class="text-sm text-gray-600">30 порций (2 капсулы в день)</p>
+                            <p class="text-sm text-gray-600">Запас на 1 месяц</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        Доступно на <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Бесплатная доставка от 3000₽
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Срок годности 3 года</p>
+                                <p class="text-xs text-gray-500 leading-tight">Длительное хранение</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Лабораторно проверено</p>
+                                <p class="text-xs text-gray-500 leading-tight">Две независимые лаборатории</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Ключевые преимущества:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Здоровье сердечно-сосудистой системы и работа мозга</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Противовоспалительное действие и поддержка суставов</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Защита зрения и здоровье кожи</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="universe_products_ru.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        Только лучшие жирные кислоты
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Существует хорошая Омега-3 — и есть действительно лучшая. Когда речь идёт о здоровье мозга, сердца и всего организма, а особенно когда речь идёт о здоровье детей, только высококачественная Омега-3 даёт ощутимый результат и безопасность.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Жирные кислоты являются основой клеточных мембран и источником энергии для мышц, включая сердце, мозг и другие жизненно важные органы. Universe Vitamins™ Омега-3 — это премиальная Омега-3 из высококачественного сырья MEG-3® в форме триглицеридов от компании KD Nutra/DSM (США/Швейцария). Сырьё получают из мелкой рыбы, выловленной в экологически чистых водах Исландии. В каждой бутылке — только высококачественный рыбный жир MEG-3®.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Формула производится с соблюдением принципов устойчивого развития, не содержит тяжёлых металлов и имеет лёгкий натуральный рыбный вкус. Подходит для всей семьи — от детей до активных взрослых и людей старшего возраста.</p>
+                </div>
+                <div>
+                    <img src="assets/universe-vitamins/prod-images/Omega Front.png" alt="Universe OMEGA 3" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Почему эта формула работает</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Премиальное сырьё</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Сертифицированное MEG-3® из Исландии</li>
+                                <li>• Мелкая глубоководная рыба (анчоусы, сардины)</li>
+                                <li>• Сырьё DSM Nutritional (Швейцария)</li>
+                                <li>• Форма триглицеридов — превосходное усвоение</li>
+                                <li>• Минимальное накопление токсинов</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Почему не крупная рыба? Хищные виды накапливают ртуть. Мелкая рыба = более чистая Омега-3.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Клинически значимая концентрация</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• <strong>1490 мг EPA+DHA</strong> на порцию (подтверждено лабораторно)</li>
+                                <li>• Соответствует терапевтическому уровню (500–1000 мг)</li>
+                                <li>• Оптимальный индекс Омега-3: 8–12%</li>
+                                <li>• Эквивалент 850 г жирной рыбы в день</li>
+                                <li>• Дозировки, подтверждённые исследованиями</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Превышает заявленное на этикетке на 24% — независимая проверка лабораторией РАН.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Сертифицированная безопасность</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Сертификация по тяжёлым металлам (Hg, Pb, Cd)</li>
+                                <li>• Без рыбного вкуса и запаха</li>
+                                <li>• Чистота фармацевтического класса</li>
+                                <li>• Защитная бутылка из тёмного стекла</li>
+                                <li>• Без ГМО, глютена, консервантов и диоксида титана</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Международные сертификаты: FDA, GMP, ISO, TÜRKAK, Халяль, IAS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Состав на порцию</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Состав на порцию</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">2 мягкие капсулы</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">30</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2">Рыбий жир MEG-3®</td>
+                            <td class="text-right py-2 font-medium">2000 мг</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 pl-4">ПНЖК Омега-3</td>
+                            <td class="text-right py-2 font-medium">1280 мг</td>
+                            <td class="text-right py-2">64%</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 pl-8">EPA (эйкозапентаеновая кислота)</td>
+                            <td class="text-right py-2 font-medium">720 мг</td>
+                            <td class="text-right py-2">120%</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2 pl-8">DHA (докозагексаеновая кислота)</td>
+                            <td class="text-right py-2 font-medium">480 мг</td>
+                            <td class="text-right py-2">68%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> Оболочка мягкой капсулы (желатин, глицерин, очищенная вода), натуральные токоферолы (антиоксидант).</p>
+                    </div>
+
+                    <!-- Lab Verification Box -->
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <p class="text-sm font-semibold text-blue-900 mb-1">✓ Independent Lab Verification:</p>
+                        <p class="text-sm text-blue-700">
+                            Label claim: EPA и DHA 1200 мг<br>
+                            <strong>Actual tested potency (RAN lab): EPA и DHA 1490 мг</strong><br>
+                            Product exceeds claimed concentration by 24%
+                        </p>
+                    </div>
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Проконсультируйтесь с врачом при беременности, кормлении грудью, приёме лекарств или наличии заболеваний. Хранить в недоступном для детей месте.</p>
+                        <p class="mt-2">Возможны естественные изменения цвета. После вскрытия хранить в прохладном сухом месте.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Польза для здоровья, подтверждённая исследованиями</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Здоровье сердечно-сосудистой системы</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Датское исследование: на 90% ниже риск сердечных заболеваний</li>
+                        <li>• EPA уменьшает воспаление в сосудах</li>
+                        <li>• Поддержка нормального сердечного ритма</li>
+                        <li>• Контроль уровня холестерина</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Мозг и когнитивные функции</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• DHA = 60% жирового состава мозга</li>
+                        <li>• Поддержка функции нейронов и целостности мембран</li>
+                        <li>• Поддержание когнитивной активности</li>
+                        <li>• Может снижать риск депрессии</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Защита зрения</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Замедляет прогрессирование миопии у детей</li>
+                        <li>• Защита от макулярной дегенерации (1 из 3 после 65 лет)</li>
+                        <li>• Улучшает кровоток в сетчатке</li>
+                        <li>• Укрепляет сосуды сетчатки</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Противовоспалительное действие</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Снижает маркеры хронического воспаления</li>
+                        <li>• Поддерживает регуляцию иммунной системы</li>
+                        <li>• Снижает риск воспалительных заболеваний</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Профилактика нейродегенерации</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Может снижать риск болезни Паркинсона</li>
+                        <li>• Может снижать риск болезни Альцгеймера</li>
+                        <li>• Поддержка здоровья мозга в долгосрочной перспективе</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Здоровье суставов и красота</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Поддержка гибкости и подвижности суставов</li>
+                        <li>• Снижение воспаления в суставах</li>
+                        <li>• Укрепление волос и ногтей</li>
+                        <li>• Улучшение эластичности кожи</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Рекомендации по применению</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">Как принимать UNIVERSE OMEGA 3:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Взрослым: 1–2 капсулы в день, запивая достаточным количеством воды</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Принимать во время или сразу после еды, предпочтительно с приёмом пищи, содержащей жиры — для лучшего усвоения омега-3. Не принимать натощак, чтобы избежать дискомфорта со стороны ЖКТ.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Рекомендуемый курс — регулярный приём не менее 8–12 недель для накопительного эффекта. Курс можно повторять.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> Эффект Омега-3 накопительный. Регулярный ежедневный приём в течение 2–3 месяцев обеспечивает максимальный эффект для сердечно-сосудистой системы, когнитивных функций и противовоспалительный эффект.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Хранение и предостережения</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Хранить в прохладном сухом месте, недоступном для детей</li>
+                            <li>• Максимальная температура: +25°C</li>
+                            <li>• После вскрытия рекомендуется хранить в холодильнике</li>
+                            <li>• Хранить в бутылке из тёмного стекла (защита от окисления)</li>
+                            <li>• Избегать прямого солнечного света и влаги</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 3 года с даты производства
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Проконсультируйтесь с врачом при беременности, кормлении грудью или приёме лекарств</li>
+                            <li>• Возможна индивидуальная непереносимость компонентов</li>
+                            <li>• Не рекомендуется детям до 3 лет без медицинского контроля</li>
+                            <li>• При наличии заболеваний проконсультируйтесь с врачом перед применением</li>
+                            <li>• Хранить в недоступном для детей месте</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> Этот продукт является биологически активной добавкой, а не лекарственным средством. Не предназначен для диагностики, лечения, излечения или профилактики каких-либо заболеваний.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Информация об упаковке</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 60 мягких капсул</p>
+                            <p><strong>Servings:</strong> 30 (2 капсулы на порцию)</p>
+                            <p><strong>Supply Duration:</strong> 1 месяц</p>
+                            <p><strong>Масса нетто:</strong> 244 г</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> 60 мм</p>
+                            <p><strong>Width:</strong> 60 мм</p>
+                            <p><strong>Height:</strong> 112 мм</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Компактный дизайн бутылки для удобного хранения</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Турция</p>
+                            <p><strong>Location:</strong> Стамбул</p>
+                            <p><strong>Certification:</strong> СГР № АМ.01.08.01.003.R.000045.04.23</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Произведено в соответствии со стандартами GMP, ISO и FDA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside? -->
+    <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">Что внутри?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Каждый ингредиент занимает своё место. Премиальное сырьё MEG-3® из холодных вод Исландии в форме, которую распознаёт ваш организм.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Жирные кислоты Омега-3</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Длинноцепочечные полиненасыщенные жирные кислоты из холодноводной рыбы. Помогают поддерживать гибкость клеточных мембран для лучшей межклеточной коммуникации.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">EPA — 720 мг</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Эйкозапентаеновая кислота — противовоспалительная Омега-3. Поддерживает здоровье сердечно-сосудистой системы, настроение и противовоспалительный ответ организма.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">DHA — 480 мг</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Докозагексаеновая кислота — составляет ~60% структурного жира мозга. Поддерживает когнитивные функции, зрение и развитие нервной системы.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Форма триглицеридов MEG-3®</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Премиальное сырьё от KD Nutra/DSM (Швейцария/США). Форма триглицеридов обеспечивает превосходное усвоение по сравнению с этиловыми эфирами, распространёнными в более дешёвых добавках.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Качество и сертификация</h2>
+
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">Международные стандарты</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">MEG-3®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">MEG-3®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">FDA</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">FDA</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">GMP</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">GMP</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">ISO</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">ISO</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">TÜRKAK</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Halal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Halal</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">IAS</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">IAS</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">3rd Party</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Научные партнёрства</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Сотрудничество с университетами:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Контроль качества:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Кому это нужно?</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Подходит всей семье:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>✓ Все возрасты (для детей до 3 лет — консультация врача)</li>
+                        <li>✓ Беременным и кормящим женщинам</li>
+                        <li>✓ Людям старшего возраста</li>
+                        <li>✓ Активным людям и спортсменам</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Особенно важно для:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Редко едят жирную рыбу (&lt; 2 порций в неделю)</li>
+                        <li>• Факторы риска сердечно-сосудистых заболеваний</li>
+                        <li>• Люди старше 65 лет (профилактика макулярной дегенерации)</li>
+                        <li>• Воспалительные состояния</li>
+                        <li>• Опасения по поводу когнитивного снижения</li>
+                        <li>• Риск миопии (дети/подростки)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Материалы</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Загрузки</h3>
+                    <div class="space-y-3">
+                        <a href="assets/universe-vitamins/СГР Omega3.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-semibold text-brand-dark group-hover:text-brand-green transition">Свидетельство о государственной регистрации (СГР)</h4>
+                                <p class="text-xs text-gray-500">PDF — официальный сертификационный документ</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-green transition flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Дополнительные материалы</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission_ru.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Наша миссия и подход</h4>
+                                <p class="text-xs text-gray-500 mt-1">Премиальные ингредиенты, прослеживаемое сырьё, качество как для своей семьи</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products_ru.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Все продукты Universe Vitamins™</h4>
+                                <p class="text-xs text-gray-500 mt-1">Полный каталог наших научно обоснованных добавок</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Другие категории</h2>
+            <p class="text-center text-gray-600 mb-10">Откройте для себя остальные продукты семейства Universe Vitamins™.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="universe_products_ru.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Сон и расслабление</h3>
+                    <p class="text-sm text-gray-600 mb-4">Липосомальный магний 5-в-1, Магнезиум Про</p>
+                    <span class="text-brand-green font-medium text-sm">Купить →</span>
+                </a>
+                <a href="universe_products_ru.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Иммунитет</h3>
+                    <p class="text-sm text-gray-600 mb-4">Липосомальный витамин C, Липосомальный комплекс цинка, Витамин D3+K2</p>
+                    <span class="text-brand-green font-medium text-sm">Купить →</span>
+                </a>
+                <a href="universe_products_ru.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Anti-age и долголетие</h3>
+                    <p class="text-sm text-gray-600 mb-4">Говяжий и морской коллаген, Bone Longevity, Антиоксидантный комплекс</p>
+                    <span class="text-brand-green font-medium text-sm">Купить →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">Качество как для своей семьи</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                Разработано по тем же стандартам, которые мы предъявляем к продуктам для собственных семей. Премиальные ингредиенты без компромиссов. Каждая партия проверяется на чистоту и активность.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products_ru.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← Все продукты</a>
+                <a href="universe_mission_ru.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">О нас</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12 px-6">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">Премиальные биологически активные добавки, основанные на науке, которым доверяют семьи.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="universe_index_ru.html" class="text-gray-400 hover:text-brand-green transition">Home</a></li>
+                        <li><a href="universe_products_ru.html" class="text-gray-400 hover:text-brand-green transition">Products</a></li>
+                        <li><a href="universe_mission_ru.html" class="text-gray-400 hover:text-brand-green transition">О нас</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <p class="text-gray-400 text-sm">info@universevitamins.com</p>
+                    <p class="text-gray-400 text-sm mt-2">Россия: +7 (843) 245-62-00</p>
+                    <p class="text-gray-400 text-sm">Турция: +90 (546) 212-33-93</p>
+                    <p class="text-gray-400 text-sm">США: +1 (385) 507-2075</p>
+                    <p class="text-gray-400 text-sm">Казахстан: +7 (705) 375-3857</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 Universe Pharma. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['assets/universe-vitamins/prod-images/Omega Front.png', 'assets/universe-vitamins/omega/Omega Right.png', 'assets/universe-vitamins/omega/Omega Left.png', 'assets/universe-vitamins/prod-images/Omega Front.png'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

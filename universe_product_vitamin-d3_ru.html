@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Липосомальный Витамин D3 Smart Drops — Quali-D® DSM | Universe Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        .thumbnail-btn { background: none; border: none; padding: 0; cursor: pointer; }
+        .thumbnail-btn.active img { border-color: #6B9F3E !important; }
+
+        #mainImage { transition: transform 0.3s ease; }
+        @media (hover: hover) { #mainImage:hover { transform: scale(3); transform-origin: center; cursor: zoom-in; } }
+
+        .accordion-header { width: 100%; background: white; color: #1a1a1a; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 2px solid #e5e7eb; border-radius: 8px; margin-bottom: 2px; transition: all 0.2s; font-size: 1.25rem; font-weight: 600; text-align: left; }
+        .accordion-header[aria-expanded="true"] { background: #6B9F3E; color: white; border-color: #6B9F3E; }
+        .accordion-header:hover { border-color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"]:hover { background: #5a8535; border-color: #5a8535; }
+        .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; transition: transform 0.3s; color: #6B9F3E; }
+        .accordion-header[aria-expanded="true"] .accordion-icon { color: white; }
+        .accordion-icon svg { width: 100%; height: 100%; }
+
+        .accordion-content { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; max-height: 5000px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease; }
+        .accordion-content.collapsed { max-height: 0; padding: 0 24px; margin-bottom: 0; border: none; }
+
+        @media (max-width: 768px) {
+            a.inline-block, button { min-height: 44px; min-width: 44px; padding: 12px 24px; }
+            #imageContainer { min-height: 300px !important; }
+            .accordion-header { font-size: 1.125rem; padding: 16px 20px; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8">
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="universe_index_ru.html" class="text-gray-600 hover:text-brand-green transition">Главная</a>
+                    <a href="universe_products_ru.html" class="text-brand-dark hover:text-brand-green transition">Продукты</a>
+                    <a href="universe_mission_ru.html" class="text-gray-600 hover:text-brand-green transition">О нас</a>
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
+                        <a href="universe_product_vitamin-d3.html" class="text-gray-600 hover:text-brand-green transition">EN</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_product_vitamin-d3_ru.html" class="text-brand-green font-medium">RU</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_product_vitamin-d3_kz.html" class="text-gray-600 hover:text-brand-green transition">KZ</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="universe_product_vitamin-d3_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sticky Sub-Nav -->
+    <div class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div class="mx-auto px-6" style="max-width: 1408px;">
+            <div class="flex items-center justify-between py-3 overflow-x-auto">
+                <h4 class="text-sm font-semibold text-brand-dark whitespace-nowrap mr-6">ВИТАМИН D3 КАПЛИ</h4>
+                <nav class="flex items-center gap-6 text-sm">
+                    <a href="#benefits" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Преимущества</a>
+                    <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Что внутри</a>
+                    <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Информация на этикетке</a>
+                    <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Материалы</a>
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Купить</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Hero -->
+    <section class="py-12 px-6">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12 items-start">
+                <!-- Image Gallery -->
+                <div class="flex flex-col md:flex-row gap-4 h-full">
+                    <div class="flex md:flex-col gap-3 order-2 md:order-1 justify-center md:justify-start">
+                        <button class="thumbnail-btn active" data-index="0" aria-label="View front image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Front view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-brand-green transition hover:border-opacity-60">
+                        </button>
+                        <button class="thumbnail-btn" data-index="1" aria-label="View right image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Right view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="2" aria-label="View left image">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Left view" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                        <button class="thumbnail-btn" data-index="3" aria-label="View size reference">
+                            <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Size reference" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded border-2 border-gray-300 transition hover:border-brand-green">
+                        </button>
+                    </div>
+
+                    <div class="flex-1 relative overflow-hidden bg-gray-50 rounded-lg order-1 md:order-2 h-full" id="imageContainer">
+                        <img id="mainImage" src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Липосомальный Витамин D3 Smart Drops" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <div class="inline-block bg-brand-green bg-opacity-10 text-brand-green px-3 py-1 rounded-full text-sm font-medium mb-4">
+                        Флакон 20 мл · Smart Drops
+                    </div>
+
+                    <h1 class="text-4xl font-light text-brand-dark mb-3">
+                        Universe Vitamins<sup class="text-base">TM</sup> Липосомальный Витамин D3 Smart Drops
+                    </h1>
+
+                    <p class="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                        Витамин D3 в липосомальной форме — солнце для иммунитета.
+                    </p>
+
+                    <p class="text-base text-gray-600 mb-5">
+                        Липосомальный витамин D3 (Quali-D® от DSM, Швейцария) на основе MCT-масла (STELLIESTERS®, Франция) — премиальный формат капель с точной дозировкой.
+                    </p>
+
+                    <!-- Formulation Badges -->
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="inline-flex items-center gap-1 bg-green-50 border-green-200 text-green-800 border px-3 py-1 rounded-full text-xs font-medium">Quali-D® (DSM)</span>
+                        <span class="inline-flex items-center gap-1 bg-blue-50 border-blue-200 text-blue-800 border px-3 py-1 rounded-full text-xs font-medium">MCT-масло</span>
+                        <span class="inline-flex items-center gap-1 bg-purple-50 border-purple-200 text-purple-800 border px-3 py-1 rounded-full text-xs font-medium">Липосомальная доставка</span>
+                        <span class="inline-flex items-center gap-1 bg-yellow-50 border-yellow-200 text-yellow-800 border px-3 py-1 rounded-full text-xs font-medium">Без ГМО</span>
+                    </div>
+
+                    <!-- Lab Verification Callout -->
+                    
+
+                    <!-- Package Info Box -->
+                    <div class="border-2 border-brand-green rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <p class="text-brand-green font-semibold mb-1">Флакон 20 мл</p>
+                            <p class="text-sm text-gray-600">1–10 капель в день во время еды</p>
+                            <p class="text-sm text-gray-600">Курс 8–12 недель</p>
+                        </div>
+                    </div>
+
+                    <!-- Buy on OZON -->
+                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        Buy on OZON
+                    </a>
+
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        Доступно на <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Бесплатная доставка от 3000₽
+                    </p>
+
+                    <!-- Trust Signals -->
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Срок годности 3 года</p>
+                                <p class="text-xs text-gray-500 leading-tight">Длительное хранение</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-brand-dark leading-tight">Лабораторно проверено</p>
+                                <p class="text-xs text-gray-500 leading-tight">Две независимые лаборатории</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Benefits -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-brand-dark mb-3 text-sm">Ключевые преимущества:</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Поддержка иммунитета</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Здоровье костей и мышц</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Настроение и энергия</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="universe_products_ru.html" class="inline-block text-gray-600 hover:text-brand-green transition text-sm">
+                        ← Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <section id="benefits" class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-light text-brand-dark mb-4 leading-tight">
+                        Солнце во флаконе
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Когда речь идёт об иммунитете, костях, гормональном балансе и общем здоровье, важно не только количество, но и форма доставки активных веществ.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Современный образ жизни, недостаток солнца и высокий уровень стресса приводят к дефициту витамина D, который играет ключевую роль в работе всего организма.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Universe Vitamins™ Липосомальный витамин D3 — премиальная формула с усиленной биодоступностью благодаря липосомальной фосфолипидной технологии, премиальному сырью Quali-D® от DSM (Швейцария) и MCT-маслу STELLIESTERS® из Франции.</p>
+                </div>
+                <div>
+                    <img src="assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png" alt="Липосомальный Витамин D3 Smart Drops" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Formula Works + Accordions -->
+    <section class="px-6 pb-12 pt-12">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-[55fr_45fr] gap-12">
+                <div>
+                    <h2 class="text-2xl font-light text-brand-dark mb-6">Почему эта формула работает</h2>
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Премиальное сырьё</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Quali-D® витамин D3 (DSM, Швейцария)</li>
+                                <li>• STELLIESTERS® MCT-масло (Франция)</li>
+                                <li>• Липосомальная фосфолипидная технология</li>
+                                <li>• Высокая стабильность сырья</li>
+                                <li>• Удобный формат капель с пипеткой</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Quali-D® — мировой стандарт фармацевтического витамина D3.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Клиническая эффективность</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Липосомальная доставка в клетку</li>
+                                <li>• MCT-масло усиливает усвоение жирорастворимого витамина</li>
+                                <li>• Удобные капли — точная дозировка</li>
+                                <li>• Подходит для всех возрастов с титрацией</li>
+                                <li>• 8–12 недель для роста уровня витамина D в крови</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Сублингвально или орально — обе формы эффективны с этой формулой.
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-brand-dark mb-3">Сертифицированная безопасность</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Без искусственных красителей</li>
+                                <li>• Без консервантов</li>
+                                <li>• Без ГМО, без диоксида титана</li>
+                                <li>• Премиальное европейское сырьё</li>
+                                <li>• Производство по стандартам GMP, ISO, FDA</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-4 italic">
+                                Международная сертификация: FDA, GMP, ISO, TÜRKAK, Halal, IAS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="space-y-2">
+
+        <!-- Supplement Facts -->
+        <div>
+            <button class="accordion-header" aria-expanded="true">
+                <span>Состав на порцию</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content">
+                <table class="w-full text-sm mb-6 border-collapse">
+                    <caption class="text-left font-bold mb-4 text-lg text-brand-dark">Состав на порцию</caption>
+                    <tbody>
+                        <tr class="border-b border-gray-300">
+                            <th class="text-left py-2 font-semibold">Serving Size:</th>
+                            <td class="text-right py-2">1–10 капель</td>
+                        </tr>
+                        <tr class="border-b-4 border-black">
+                            <th class="text-left py-2 font-semibold">Servings Per Container:</th>
+                            <td class="text-right py-2">Варьируется</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-black">
+                            <th class="text-left py-2 font-semibold">Active Ingredient</th>
+                            <th class="text-right py-2 font-semibold">Amount per Serving</th>
+                            <th class="text-right py-2 font-semibold">% RDA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b-4 border-black">
+                            <td class="py-2">Витамин D3 (Quali-D® холекальциферол)</td>
+                            <td class="text-right py-2 font-medium">—</td>
+                            <td class="text-right py-2">†</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-xs pt-2 text-gray-600">† Daily Value not established.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="mt-6 space-y-4">
+                    <div class="text-sm text-gray-700">
+                        <p><strong>Other Ingredients:</strong> STELLIESTERS® MCT-масло (Франция), липосомальная фосфолипидная матрица.</p>
+                    </div>
+
+                    
+
+                    <div class="text-sm text-gray-600">
+                        <p><strong>Caution:</strong> Проконсультируйтесь со специалистом при беременности, кормлении, приёме лекарств или наличии заболеваний. Хранить в недоступном для детей месте.</p>
+                        <p class="mt-2">Высокие дозы требуют врачебного контроля.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Benefits -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Польза для здоровья, подтверждённая исследованиями</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Иммунитет</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Поддержка нормальной иммунной функции</li>
+                        <li>• Снижение частоты сезонных простуд</li>
+                        <li>• Основа иммунного здоровья</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Кости и кальций</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Усиливает усвоение кальция</li>
+                        <li>• Поддержка плотности костей</li>
+                        <li>• Особенно важно после менопаузы</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">ССС</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Поддержка сердечно-сосудистой системы</li>
+                        <li>• Сосудистая функция</li>
+                        <li>• Регуляция сердечного ритма</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Гормональный баланс</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Регуляция гормонов</li>
+                        <li>• Синтез стероидных гормонов</li>
+                        <li>• Репродуктивное здоровье</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Мышечная функция</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Поддержка мышечной силы</li>
+                        <li>• Снижение риска падений у пожилых</li>
+                        <li>• Спортивная производительность</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Настроение и энергия</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Поддержка общего самочувствия</li>
+                        <li>• Уровень энергии</li>
+                        <li>• Стабильность настроения (особенно зимой)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Usage -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Рекомендации по применению</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-4">Как принимать Липосомальный Витамин D3:</h3>
+                    <div class="space-y-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Recommended Dosage:</p>
+                            <p>Взрослым по 1–10 капель в день в зависимости от потребности и уровня дефицита</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Best Time to Take:</p>
+                            <p>Лучше принимать с едой — витамин D3 жирорастворимый.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-brand-dark mb-1">Course Duration:</p>
+                            <p>Рекомендуемый курс — 8–12 недель для измеримого роста уровня витамина D в сыворотке.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200 mt-4">
+                            <p class="text-xs text-blue-900">
+                                <strong>Note:</strong> Высокие дозы (5–10 капель) требуют врачебного контроля и желательно тестирования 25-OH витамина D.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Storage & Caution -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Хранение и предостережения</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Storage Instructions:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Хранить в сухом прохладном месте, недоступном для детей</li>
+                            <li>• Максимальная температура: +25°C</li>
+                            <li>• Избегать прямых солнечных лучей</li>
+                            <li>• Плотно закрывать после открытия</li>
+                            <li>• После открытия рекомендуется хранить в холодильнике</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Shelf Life:</strong> 2 года с даты производства
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Caution &amp; Contraindications:</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• Проконсультируйтесь с врачом при беременности, кормлении, приёме лекарств</li>
+                            <li>• Возможна индивидуальная непереносимость компонентов</li>
+                            <li>• Высокие дозы требуют врачебного контроля</li>
+                            <li>• При гиперкальциемии — НЕ принимать без врача</li>
+                            <li>• Хранить в недоступном для детей месте</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4 italic">
+                            <strong>Note:</strong> Этот продукт является биологически активной добавкой, а не лекарством. Не предназначен для диагностики, лечения или профилактики заболеваний.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div>
+            <button class="accordion-header" aria-expanded="false">
+                <span>Информация об упаковке</span>
+                <div class="accordion-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </button>
+            <div class="accordion-content collapsed">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Product Specifications:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Quantity:</strong> 20 мл жидкости</p>
+                            <p><strong>Servings:</strong> Варьируется (формат капель)</p>
+                            <p><strong>Supply Duration:</strong> 1–3 месяца в зависимости от дозы</p>
+                            <p><strong>Форма:</strong> Липосомальные жидкие капли</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Package Dimensions:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Length:</strong> —</p>
+                            <p><strong>Width:</strong> —</p>
+                            <p><strong>Height:</strong> —</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Точные размеры см. на этикетке продукта</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-brand-dark mb-3">Manufacturing:</h3>
+                        <div class="text-sm text-gray-700 space-y-2">
+                            <p><strong>Country:</strong> Турция</p>
+                            <p><strong>Location:</strong> Стамбул</p>
+                            <p><strong>Certification:</strong> Свидетельство о государственной регистрации (СГР)</p>
+                            <p class="text-xs text-gray-500 italic mt-2">Произведено по стандартам GMP, ISO и FDA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside? -->
+    <section id="whats-inside" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-2 text-center">Что внутри?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Quali-D® витамин D3 от DSM (Швейцария) на MCT-масле STELLIESTERS® (Франция) — премиальные европейские ингредиенты в липосомальной доставке.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Витамин D3 (Quali-D®)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Форма холекальциферола — натурального витамина D, синтезируемого кожей под солнцем. От DSM (Швейцария) — мирового фармацевтического стандарта.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">STELLIESTERS® MCT-масло</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Премиальное масло среднецепочечных триглицеридов из Франции. Усиливает усвоение жирорастворимых витаминов.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Липосомальная технология</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Фосфолипидная матрица доставляет витамин D3 непосредственно в клетку, обходя ограничения усвоения стандартного орального витамина D.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-brand-green bg-opacity-10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-2">Smart Drops формат</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Точная титрация дозы пипеткой. Подходит для всех возрастов — корректируйте количество капель под индивидуальную потребность.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Certifications -->
+    <section id="label-info" class="py-16 px-6 bg-white">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Качество и сертификация</h2>
+
+            <div class="mb-12">
+                <h3 class="text-lg font-semibold text-brand-dark mb-6 text-center">Международные стандарты</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Quali-D®</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Quali-D®</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">FDA</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">FDA</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">GMP</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">GMP</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">ISO</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">ISO</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">TÜRKAK</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">TÜRKAK</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">Halal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">Halal</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">IAS</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">IAS</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
+                            <span class="text-xs text-gray-500">3rd Party</span>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center">3rd Party</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-8">
+                <h3 class="text-lg font-semibold text-brand-dark mb-4 text-center">Научные партнёрства</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Сотрудничество с университетами:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Yeditepe University</li>
+                            <li>• Istanbul University Cerrahpasa</li>
+                            <li>• Istinye University Istanbul</li>
+                            <li>• Nanolab (laboratory collaboration)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Контроль качества:</strong></p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Two accredited independent laboratories</li>
+                            <li>• RAN laboratory verification</li>
+                            <li>• Pharmaceutical-grade purification</li>
+                            <li>• Heavy metals certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Needs This -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-8 text-center">Кому это нужно?</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Подходит для всех:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>✓ Взрослых всех возрастов</li>
+                        <li>✓ Людей с низким уровнем солнца</li>
+                        <li>✓ Офисных работников</li>
+                        <li>✓ Женщин в постменопаузе (поддержка костей)</li>
+                        <li>✓ Вегетарианцев и веганов (диета бедна витамином D)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                    <h3 class="font-semibold text-brand-dark mb-3">Особенно важно для:</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Подтверждённый дефицит витамина D</li>
+                        <li>• Частые инфекции / слабый иммунитет</li>
+                        <li>• Беспокойства о плотности костей</li>
+                        <li>• Постменопауза</li>
+                        <li>• Северные широты (мало солнца зимой)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="py-16 px-6 bg-white border-t border-gray-200">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-brand-dark mb-12 text-center">Материалы</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Загрузки</h3>
+                    <div class="space-y-3">
+                        <p class="text-sm text-gray-500 italic">Product datasheet coming soon.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-brand-dark mb-6">Дополнительные материалы</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="universe_mission_ru.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Наша миссия и подход</h4>
+                                <p class="text-xs text-gray-500 mt-1">Премиальные ингредиенты, прослеживаемое сырьё, качество как для своей семьи</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="universe_products_ru.html" class="block p-4 border border-gray-200 rounded-lg hover:border-brand-green hover:bg-gray-50 transition">
+                                <h4 class="font-semibold text-brand-dark">Все продукты Universe Vitamins™</h4>
+                                <p class="text-xs text-gray-500 mt-1">Полный каталог наших научно обоснованных добавок</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop More Categories -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <h2 class="text-2xl font-light text-brand-dark mb-2 text-center">Другие категории</h2>
+            <p class="text-center text-gray-600 mb-10">Откройте для себя остальные продукты семейства Universe Vitamins™.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="universe_products_ru.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Иммунитет</h3>
+                    <p class="text-sm text-gray-600 mb-4">Витамин D3+K2, Витамин C, Комплекс цинка</p>
+                    <span class="text-brand-green font-medium text-sm">Купить →</span>
+                </a>
+                <a href="universe_products_ru.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Поддержка костей</h3>
+                    <p class="text-sm text-gray-600 mb-4">Bone Longevity, Магний 5-в-1</p>
+                    <span class="text-brand-green font-medium text-sm">Купить →</span>
+                </a>
+                <a href="universe_products_ru.html" class="block bg-white p-8 rounded-lg border border-gray-200 hover:border-brand-green transition group">
+                    <h3 class="text-xl font-semibold text-brand-dark mb-2 group-hover:text-brand-green transition">Витамины и минералы</h3>
+                    <p class="text-sm text-gray-600 mb-4">U-10 Core, Мультивитамин для мужчин/женщин</p>
+                    <span class="text-brand-green font-medium text-sm">Купить →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-brand-green">
+        <div class="mx-auto text-center" style="max-width: 1408px;">
+            <h2 class="text-3xl font-light text-white mb-6">Качество как для своей семьи</h2>
+            <p class="text-white text-opacity-90 mb-8 text-lg">
+                Разработано по тем же стандартам, которые мы предъявляем к продуктам для собственных семей. Премиальные ингредиенты без компромиссов. Каждая партия проверяется на чистоту и активность.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="universe_products_ru.html" class="inline-block bg-white text-brand-green px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">← Все продукты</a>
+                <a href="universe_mission_ru.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-brand-green transition">О нас</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12 px-6">
+        <div class="mx-auto" style="max-width: 1408px;">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">Премиальные биологически активные добавки, основанные на науке, которым доверяют семьи.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="universe_index_ru.html" class="text-gray-400 hover:text-brand-green transition">Home</a></li>
+                        <li><a href="universe_products_ru.html" class="text-gray-400 hover:text-brand-green transition">Products</a></li>
+                        <li><a href="universe_mission_ru.html" class="text-gray-400 hover:text-brand-green transition">О нас</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <p class="text-gray-400 text-sm">info@universevitamins.com</p>
+                    <p class="text-gray-400 text-sm mt-2">Россия: +7 (843) 245-62-00</p>
+                    <p class="text-gray-400 text-sm">Турция: +90 (546) 212-33-93</p>
+                    <p class="text-gray-400 text-sm">США: +1 (385) 507-2075</p>
+                    <p class="text-gray-400 text-sm">Казахстан: +7 (705) 375-3857</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 Universe Pharma. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            const images = ['assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png', 'assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png'];
+            thumbnails.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    mainImage.src = images[index];
+                });
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                    content.classList.toggle('collapsed');
+                    if (content.classList.contains('collapsed')) {
+                        icon.style.transform = 'rotate(0deg)';
+                        header.setAttribute('aria-expanded', 'false');
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

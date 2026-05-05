@@ -1,0 +1,1833 @@
+{
+  "_lang": {
+    "code": "en",
+    "name": "English",
+    "url_suffix": ""
+  },
+  "_ui": {
+    "nav_home": "Home",
+    "nav_products": "Products",
+    "nav_mission": "Our Mission",
+    "subnav_benefits": "Benefits",
+    "subnav_whats_inside": "What's Inside",
+    "subnav_label_info": "Label Info",
+    "subnav_resources": "Resources",
+    "subnav_buy": "Buy",
+    "back_to_products": "← Back to Products",
+    "all_products_link": "← All Products",
+    "buy_on_ozon": "Buy on OZON",
+    "shipping_info_html": "Available on <a href=\"https://www.ozon.ru\" target=\"_blank\" class=\"text-brand-green hover:underline\">OZON.ru</a> • Free shipping from 3000₽",
+    "trust_3yr_title": "3-Year Shelf Life",
+    "trust_3yr_sub": "Long-term storage",
+    "trust_lab_title": "Lab Verified",
+    "trust_lab_sub": "Two independent labs",
+    "key_benefits_heading": "Key Benefits:",
+    "section_why_works": "Why This Formula Works",
+    "section_supplement_facts": "Supplement Facts",
+    "section_health_benefits": "Research-Backed Health Benefits",
+    "section_suggested_usage": "Suggested Usage",
+    "section_storage": "Storage & Caution",
+    "section_package": "Package Information",
+    "section_whats_inside": "What's Inside?",
+    "section_quality": "Quality & Certifications",
+    "section_intl_standards": "International Standards",
+    "section_partnerships": "Scientific Partnerships",
+    "uni_collab_title": "University Collaborations:",
+    "uni_collab_items": ["Yeditepe University", "Istanbul University Cerrahpasa", "Istinye University Istanbul", "Nanolab (laboratory collaboration)"],
+    "qc_title": "Quality Control:",
+    "qc_items": ["Two accredited independent laboratories", "RAN laboratory verification", "Pharmaceutical-grade purification", "Heavy metals certification"],
+    "section_who_needs": "Who Needs This?",
+    "high_priority_label": "High priority for:",
+    "section_resources": "Resources",
+    "downloads_label": "Downloads",
+    "further_reading_label": "Further Reading",
+    "fr_mission_title": "Our Mission & Approach",
+    "fr_mission_desc": "Premium ingredients, traceable sourcing, family-first quality",
+    "fr_catalog_title": "All Universe Vitamins™ Products",
+    "fr_catalog_desc": "Browse our full catalog of research-backed supplements",
+    "section_shop_more": "Shop More Categories",
+    "shop_more_sub": "Discover the rest of the Universe Vitamins™ family.",
+    "shop_now": "Shop Now →",
+    "cta_h2": "Family-First Quality",
+    "cta_p": "Formulated with standards we demand for our own families. Premium ingredients, no cost-cutting. Every batch tested for purity and potency.",
+    "cta_btn_products": "← All Products",
+    "cta_btn_mission": "Our Mission",
+    "footer_brand_tagline": "Premium dietary supplements backed by science, trusted by families.",
+    "footer_navigate": "Navigate",
+    "footer_contact": "Contact",
+    "footer_copyright": "© 2025 Universe Pharma. All rights reserved.",
+    "lang_en": "EN",
+    "lang_ru": "RU",
+    "lang_kz": "KZ",
+    "lang_tr": "TR"
+  },
+  "_contact": {
+    "email": "info@universevitamins.com",
+    "russia": "Russia: +7 (843) 245-62-00",
+    "turkey": "Türkiye: +90 (546) 212-33-93",
+    "usa": "USA: +1 (385) 507-2075",
+    "kazakhstan": "Kazakhstan: +7 (705) 375-3857"
+  },
+  "omega": {
+    "title": "UNIVERSE OMEGA 3 - Research-Backed Formula",
+    "name_short": "UNIVERSE OMEGA 3",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Omega-3",
+    "tagline": "There's good Omega-3 — and then there's truly the best.",
+    "description": "Premium Omega-3 from MEG-3® raw material in triglyceride form, sourced by DSM/KD Nutra (Switzerland/USA). Supports brain, cardiovascular, skin, and immune health.",
+    "badge_top": "60 Capsules • 1-Month Supply",
+    "img_front": "assets/universe-vitamins/prod-images/Omega Front.png",
+    "img_right": "assets/universe-vitamins/omega/Omega Right.png",
+    "img_left": "assets/universe-vitamins/omega/Omega Left.png",
+    "img_alt": "Universe OMEGA 3",
+    "badges": [
+      {"color": "green", "label": "Halal Certified"},
+      {"color": "blue", "label": "No Heavy Metals"},
+      {"color": "purple", "label": "MEG-3® Sourced"},
+      {"color": "yellow", "label": "Triglyceride Form"}
+    ],
+    "lab_callout": {"title": "Independent Lab Verified: 1490mg EPA+DHA", "subtitle": "24% above label claim (RAN laboratory testing)"},
+    "pkg_box": {"title": "60 Softgels", "lines": ["30 Servings (2 caps/day)", "1-Month Supply"]},
+    "key_benefits": ["Cardiovascular health & brain function", "Anti-inflammatory & joint support", "Vision protection & skin health"],
+    "narrative_h2": "Only the Finest Fatty Acids",
+    "narrative_paragraphs": [
+      "There are good fats, and there are great fats. When it comes to your brain, heart, and the health of children, only premium-quality Omega-3 delivers tangible results — and safety.",
+      "Fatty acids form the foundation of cell membranes and fuel muscles, including the heart, brain, and other vital organs. Universe Vitamins™ Omega-3 is sourced from small fish caught in the ecologically pristine waters of Iceland — every bottle traceable, every drop pure MEG-3 fish oil in its highly absorbable triglyceride form.",
+      "Produced under sustainability principles, free of heavy metals, and lightly flavored with a natural fish note. Formulated for the entire family — from children to active adults to seniors."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["MEG-3® certified from Iceland", "Small deep-water fish (anchovies, sardines)", "DSM Nutritional raw material (Switzerland)", "Triglyceride form - superior absorption", "Minimal toxin accumulation"], "footnote": "Why not large fish? Predatory fish accumulate mercury. Small fish = cleaner Omega-3."},
+      {"title": "Clinical Potency", "bullets": ["<strong>1490mg EPA+DHA</strong> per serving (lab-verified)", "Meets therapeutic threshold (500-1000mg)", "Optimal Omega-3 Index: 8-12%", "Equivalent to 850g fatty fish daily", "Research-backed dosages"], "footnote": "Exceeds label claim by 24% - independently verified by RAN laboratory."},
+      {"title": "Safety Certified", "bullets": ["Heavy metals certification (Hg, Pb, Cd)", "No fishy taste or smell", "Pharmaceutical-grade purity", "Dark glass bottle protection", "No GMO, gluten, preservatives, titanium dioxide"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "2 Softgel Capsules",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Fish Oil MEG-3®", "amount": "2000 mg", "rda": "†", "indent": 0},
+        {"name": "PUFA Omega-3", "amount": "1280 mg", "rda": "64%", "indent": 1},
+        {"name": "EPA (Eicosapentaenoic Acid)", "amount": "720 mg", "rda": "120%", "indent": 2},
+        {"name": "DHA (Docosahexaenoic Acid)", "amount": "480 mg", "rda": "68%", "indent": 2}
+      ],
+      "other_ingredients": "Softgel Capsule (gelatin, glycerin, purified water), Natural Tocopherols (antioxidant).",
+      "lab_box": {"claim": "EPA & DHA 1200mg", "actual": "EPA & DHA 1490mg", "percent": "24"},
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Natural color variation may occur. Store in cool, dry place after opening."
+    },
+    "health_benefits": [
+      {"title": "Cardiovascular Health", "bullets": ["Danish study: 90% lower heart disease risk", "EPA reduces inflammation in blood vessels", "Supports healthy heart rhythm", "Cholesterol management"]},
+      {"title": "Brain &amp; Cognitive Function", "bullets": ["DHA = 60% of brain fat composition", "Supports neuron function &amp; membrane integrity", "Maintains cognitive performance", "May reduce depression risk"]},
+      {"title": "Vision Protection", "bullets": ["Slows myopia progression in children", "Protects against macular degeneration (1 in 3 over 65)", "Improves blood flow to retina", "Strengthens retinal blood vessels"]},
+      {"title": "Anti-Inflammatory Action", "bullets": ["Reduces chronic inflammation markers", "Supports immune system regulation", "Lowers inflammatory disease risk"]},
+      {"title": "Neurodegenerative Prevention", "bullets": ["May reduce Parkinson's disease risk", "May reduce Alzheimer's disease risk", "Supports long-term brain health"]},
+      {"title": "Joint Health &amp; Beauty", "bullets": ["Supports joint flexibility &amp; mobility", "Reduces inflammation in joints", "Strengthens hair &amp; nails", "Improves skin elasticity"]}
+    ],
+    "usage": {
+      "h3": "How to Take UNIVERSE OMEGA 3:",
+      "dosage": "Adults: 2 capsules daily with meals",
+      "time": "Take once per day with food to enhance absorption. Can be taken with breakfast, lunch, or dinner.",
+      "course": "Minimum 1 month for initial benefits. Continuous supplementation recommended for optimal results. Course can be repeated as needed.",
+      "note": "Omega-3 benefits are cumulative. Consistent daily use over 2-3 months provides maximum cardiovascular, cognitive, and anti-inflammatory effects."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Refrigerate after opening (recommended)", "Keep in dark glass bottle (protects from oxidation)", "Avoid direct sunlight and moisture"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Not recommended for children under 3 without medical supervision", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 softgel capsules", "servings": "30 (2 capsules per serving)", "supply": "1 month", "extra_label": "Net Weight", "extra": "244g"},
+      "dimensions": {"l": "60 mm", "w": "60 mm", "h": "112 mm", "caption": "Compact bottle design for easy storage"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "SGR № АМ.01.08.01.003.R.000045.04.23", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Every ingredient earns its place. Premium MEG-3® raw material from cold Icelandic waters, in the form your body recognizes.",
+    "whats_inside": [
+      {"title": "Omega-3 Fatty Acids", "desc": "Long-chain polyunsaturated fatty acids from cold-water fish. Help maintain flexible cell membranes for better cellular communication.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "EPA — 720mg", "desc": "Eicosapentaenoic acid — the anti-inflammatory Omega-3. Supports cardiovascular health, healthy mood, and the body's inflammation response.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "DHA — 480mg", "desc": "Docosahexaenoic acid — makes up ~60% of the brain's structural fat. Supports cognitive function, vision, and nervous system development.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "MEG-3® Triglyceride Form", "desc": "Premium raw material from KD Nutra/DSM (Switzerland/USA). Triglyceride form delivers superior absorption vs. ethyl ester forms common in cheaper supplements.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["MEG-3®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for the whole family:",
+    "who_suitable": ["All ages (consult doctor for children under 3)", "Pregnant and nursing women", "Elderly individuals", "Active individuals and athletes"],
+    "who_priority": ["Rarely eat fatty fish (&lt; 2 servings/week)", "Cardiovascular risk factors", "People over 65 (macular degeneration prevention)", "Inflammatory conditions", "Cognitive decline concerns", "Myopia risk (children/adolescents)"],
+    "pdf": {"link": "assets/universe-vitamins/СГР Omega3.pdf", "title": "State Registration Certificate (СГР)", "subtitle": "PDF — Official certification document"},
+    "shop_more": [
+      {"title": "Sleep &amp; Relaxation", "desc": "Liposomal Magnesium 5-in-1, Magnesium Pro"},
+      {"title": "Immune Health", "desc": "Liposomal Vitamin C, Liposomal Zinc Complex, Vitamin D3+K2"},
+      {"title": "Anti-age &amp; Longevity", "desc": "Bovine &amp; Marine Collagen, Bone Longevity, Antioxidant Complex"}
+    ]
+  },
+  "vegan-omega3": {
+    "title": "Vegan Omega-3 MAGomega® - Bioavailable Plant-Based DHA",
+    "name_short": "VEGAN OMEGA-3",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Vegan Omega-3",
+    "tagline": "Vegan Omega-3 with the highest bioavailability — safe for kids and pregnancy.",
+    "description": "High-concentration Omega-3 from MAGomega® monoglyceride (Solutex, Spain) with DHA dominance. Officially approved for children and pregnant women.",
+    "badge_top": "60 Servings • Vegan",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Universe Vegan Omega-3",
+    "badges": [
+      {"color": "green", "label": "Vegan"},
+      {"color": "blue", "label": "MAGomega® Form"},
+      {"color": "purple", "label": "DHA Dominant"},
+      {"color": "yellow", "label": "Approved for Kids 0+"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60-Serving Bottle", "lines": ["1-2 capsules per day", "Approved for kids and pregnancy"]},
+    "key_benefits": ["Brain, vision &amp; nervous system development", "Highest bioavailability (4× ethyl esters, 2× triglycerides)", "Safe for children from age 0 and pregnant women"],
+    "narrative_h2": "Next-Generation Vegan Omega-3",
+    "narrative_paragraphs": [
+      "This isn't just Omega-3 — it's a high-concentration formula based on premium MAGomega® raw material (Solutex, Spain), with emphasis on DHA — the key fatty acid for the brain, vision, and nervous system. Ideal for children, pregnant women, and adults.",
+      "When it comes to cognitive function, brain development, and nervous system support, what matters isn't just the amount of Omega-3 — but the form, the purity, and the DHA-to-EPA ratio.",
+      "MAGomega® from Solutex is a concentrate of Omega-3 in monoglyceride (MAG) form. Compared to standard forms, it delivers significantly higher bioavailability: 4× higher than ethyl esters, and 2× higher than triglyceride form. Maximally safe — the best alternative for pregnant women, children from age 0, and anyone choosing the best for themselves."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["MAGomega® raw material (Solutex, Spain)", "Plant-based vegan source", "Monoglyceride (MAG) molecular form", "DHA-dominant ratio (2× higher than EPA)", "Officially approved for kids 0+ and pregnancy"], "footnote": "Highest-bioavailability vegan Omega-3 form on the market today."},
+      {"title": "Clinical Potency", "bullets": ["4× more bioavailable than ethyl ester forms", "2× more bioavailable than triglyceride forms", "DHA-dominant (2:1 vs EPA) for brain support", "Maximum effect at lower dosage", "Concentrated Omega-3 for cognitive development"], "footnote": "Form, not just dose — that's where bioavailability comes from."},
+      {"title": "Safety Certified", "bullets": ["Officially approved for children from 0 years", "Officially approved during pregnancy", "Plant-source — no fish allergens", "No heavy metals", "Premium European raw material"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1-2 capsules",
+      "servings_per_container": "60",
+      "rows": [
+        {"name": "Vegan Omega-3 (MAGomega®)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "DHA (Docosahexaenoic Acid)", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "EPA (Eicosapentaenoic Acid)", "amount": "—", "rda": "†", "indent": 1}
+      ],
+      "other_ingredients": "MAGomega® algae-derived Omega-3 monoglyceride concentrate (Solutex, Spain), vegan capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant or nursing. Keep out of reach of children.",
+      "caution_extra": "Approved for use during pregnancy and from age 0 under supervision."
+    },
+    "health_benefits": [
+      {"title": "Brain &amp; Cognitive", "bullets": ["High DHA — key brain structural component", "Supports cognitive function", "Brain development support (kids)"]},
+      {"title": "Cardiovascular", "bullets": ["Supports normal heart function", "Cardiovascular protection", "Healthy lipid profile"]},
+      {"title": "Vision &amp; Nervous System", "bullets": ["Supports vision health", "Nervous system development (kids)", "Retinal health"]},
+      {"title": "Anti-Inflammatory", "bullets": ["Reduces inflammatory markers", "Modulates immune response"]},
+      {"title": "Skin &amp; Anti-age", "bullets": ["Supports skin health", "Slows aging processes"]},
+      {"title": "Pregnancy &amp; Reproductive", "bullets": ["Supports fetal development", "Approved during pregnancy", "Reproductive health"]}
+    ],
+    "usage": {
+      "h3": "How to Take Vegan Omega-3:",
+      "dosage": "Adults: 1-2 capsules daily with sufficient water",
+      "time": "Take during or right after a meal — preferably one containing fats — for best Omega-3 absorption.",
+      "course": "Recommended course — regular intake for at least 8-12 weeks for cumulative effect.",
+      "note": "Do not take on an empty stomach to avoid GI discomfort."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Refrigerate after opening (recommended)", "Avoid direct sunlight and moisture", "Keep tightly closed"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Approved for kids 0+ under medical supervision", "Keep out of reach of children", "If you have a medical condition, consult physician before use"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60-serving bottle", "servings": "60 (1-2 capsules per serving)", "supply": "1-2 months", "extra_label": "Form", "extra": "Vegan capsule"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Every ingredient earns its place. Innovative monoglyceride MAGomega® from Solutex (Spain) — the highest-bioavailability Omega-3 form available.",
+    "whats_inside": [
+      {"title": "MAGomega® Source", "desc": "Patented monoglyceride concentrate from Solutex (Spain). Plant-based, vegan, sustainably produced.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "DHA Dominant", "desc": "DHA is 2× higher than EPA. The key fatty acid for brain structure, vision, and nervous system development.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Monoglyceride Form", "desc": "Pre-digested form bypasses pancreatic enzymes. Bioavailability: 4× higher than ethyl esters, 2× higher than triglycerides.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Approved for Kids &amp; Pregnancy", "desc": "Plant source, no fish allergens, no heavy metals. Officially approved for ages 0+ and during pregnancy.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Solutex", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "Vegan", "3rd Party"],
+    "who_suitable_title": "Suitable for everyone:",
+    "who_suitable": ["Children from 0 years (under medical supervision)", "Pregnant and nursing women", "Vegans and vegetarians", "Adults seeking cognitive support", "People with fish allergies"],
+    "who_priority": ["Brain development support (kids)", "Cognitive performance (adults)", "Pregnancy nutrition", "Vision and nervous system support", "Vegan diet without fish"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Cardiovascular", "desc": "Universe Omega-3 (fish-source), Methylbalance"},
+      {"title": "Brain &amp; Eye", "desc": "Methylbalance, Liposomal Magnesium 5-in-1"},
+      {"title": "Reproductive", "desc": "Iroton, DadMode, Multivitamin for Women"}
+    ]
+  },
+  "magnesium-5in1": {
+    "title": "Liposomal Magnesium 5-in-1 - 4 Forms + Active B6",
+    "name_short": "MAGNESIUM 5-IN-1",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Liposomal Magnesium 5-in-1",
+    "tagline": "Not just magnesium — synergy that delivers real results.",
+    "description": "Liposomal magnesium complex combining 4 bioavailable forms (citrate, bisglycinate, taurate, malate) with active B6 (P-5-P) and inulin prebiotic for nervous system, energy, and relaxation.",
+    "badge_top": "120 Vegan Vcaps® • 1-Month Supply",
+    "img_front": "assets/universe-vitamins/prod-images/Magnesium Front.png",
+    "img_right": "assets/universe-vitamins/prod-images/Magnesium Front.png",
+    "img_left": "assets/universe-vitamins/prod-images/Magnesium Front.png",
+    "img_alt": "Liposomal Magnesium 5-in-1",
+    "badges": [
+      {"color": "green", "label": "Vegan Vcaps®"},
+      {"color": "blue", "label": "4 Magnesium Forms"},
+      {"color": "purple", "label": "Active B6 (P-5-P)"},
+      {"color": "yellow", "label": "Liposomal Delivery"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "120 Vegan Vcaps®", "lines": ["40 servings (1-3 caps/day)", "1-Month Supply"]},
+    "key_benefits": ["Stress reduction &amp; better sleep quality", "Energy &amp; muscle function", "Cognitive support &amp; concentration"],
+    "narrative_h2": "A Smarter Way to Take Magnesium",
+    "narrative_paragraphs": [
+      "Magnesium participates in <strong>more than 300 biochemical processes</strong> — including energy production, nervous system function, muscle relaxation, and maintaining heart rhythm.",
+      "When it comes to the nervous system, energy, sleep, stress resilience, and heart health, what matters isn't just dosage — it's the form of magnesium and its combination with amino acids.",
+      "Universe Vitamins™ Magnesium 5-in-1 Complex is a synergistic formula combining 4 bioavailable forms of magnesium — citrate, bisglycinate, taurate, malate — with active vitamin B6 (P-5-P) and a liposomal-active phospholipid matrix for delivery into the cell. Enhanced with inulin prebiotic for microbiome support."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["4 bioavailable magnesium forms (citrate, bisglycinate, taurate, malate)", "Active vitamin B6 (P-5-P)", "Liposomal-active phospholipid matrix", "Inulin prebiotic for microbiome", "Vegan Vcaps® capsules"], "footnote": "Each form selected for max bioavailability and synergy."},
+      {"title": "Clinical Potency", "bullets": ["Adults need ~400mg elemental magnesium daily", "1-3 capsules per day", "Multi-form coverage = stable effect", "Liposomal delivery into the cell", "4-8 week course for clinical effect"], "footnote": "Form and absorption matter — that's why we built a complex, not a single ingredient."},
+      {"title": "Safety Certified", "bullets": ["Vegan-friendly Vcaps®", "No GMO, no titanium dioxide", "No artificial colors or preservatives", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1-3 vegan capsules",
+      "servings_per_container": "40-120",
+      "rows": [
+        {"name": "Magnesium Complex (4 forms)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Magnesium citrate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Magnesium bisglycinate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Magnesium taurate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Magnesium malate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Vitamin B6 (P-5-P active form)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Inulin (chicory root prebiotic)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Liposomal-active phospholipid matrix, vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Stress &amp; Nervous System", "bullets": ["Reduces stress levels", "Calms nervous system", "Bisglycinate form for relaxation"]},
+      {"title": "Sleep Quality", "bullets": ["Improves sleep depth", "Promotes muscle relaxation", "Best taken before bed"]},
+      {"title": "Energy &amp; Metabolism", "bullets": ["Reduces fatigue", "Energy production support", "Active B6 for metabolism"]},
+      {"title": "Muscle Function", "bullets": ["Normal muscle function", "Reduces cramping", "Post-workout recovery"]},
+      {"title": "Cardiovascular", "bullets": ["Heart rhythm support", "Taurate form for cardiac health", "Vascular function"]},
+      {"title": "Cognitive Support", "bullets": ["Improves concentration", "Cognitive function support", "Mental clarity"]}
+    ],
+    "usage": {
+      "h3": "How to Take Magnesium 5-in-1:",
+      "dosage": "Adults: 1-3 capsules per day (~400mg elemental magnesium daily)",
+      "time": "Best taken in the evening, 1-2 hours before sleep — for nervous system relaxation and muscle recovery.",
+      "course": "Recommended course — 4-8 weeks. Can be repeated as needed.",
+      "note": "Take with sufficient water. Do not combine with hot beverages during intake."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If you have kidney issues, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "120 vegan capsules", "servings": "40-120 (1-3 capsules per serving)", "supply": "1-4 months", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Every ingredient earns its place. Four bioavailable magnesium forms working in synergy — plus active B6 and a phospholipid matrix that delivers actives into the cell.",
+    "whats_inside": [
+      {"title": "4 Magnesium Forms", "desc": "Citrate, bisglycinate, taurate, malate — multi-form coverage for stable effect, gentle absorption, and prolonged action.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Active B6 (P-5-P)", "desc": "Pyridoxal-5-phosphate — the active form of vitamin B6 that requires no further conversion. Synergistic with magnesium.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Inulin Prebiotic", "desc": "Natural chicory root inulin — supports gut microbiome and improves overall absorption of nutrients.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Liposomal Matrix", "desc": "Phospholipid-active matrix delivers magnesium directly into the cell and protects cell membranes.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Vcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults seeking stress reduction", "Anyone with sleep quality issues", "Athletes and active individuals", "People with high cognitive demands"],
+    "who_priority": ["Chronic stress periods", "Insomnia or poor sleep", "Muscle cramps or tension", "Low energy / fatigue", "Cardiovascular risk factors", "Vegans/vegetarians"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Sleep &amp; Relaxation", "desc": "Magnesium Pro tablets, Methylbalance"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Iroton, U-10 Core"},
+      {"title": "Cardiovascular", "desc": "Universe Omega-3, Methylbalance"}
+    ]
+  },
+  "magnesium-pro": {
+    "title": "Magnesium Pro - 3 Forms + Active B6, Clean Tablet",
+    "name_short": "MAGNESIUM PRO",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Magnesium Pro",
+    "tagline": "Three magnesium forms. No titanium dioxide. No PVP. No PEG.",
+    "description": "Balanced magnesium complex with 3 bioavailable forms (citrate, bisglycinate, taurate) and active B6. Clean tablet without titanium dioxide, PVP, or PEG.",
+    "badge_top": "60 Tablets • 30-Serving Supply",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Magnesium Pro tablets",
+    "badges": [
+      {"color": "green", "label": "No Titanium Dioxide"},
+      {"color": "blue", "label": "No PVP"},
+      {"color": "purple", "label": "No PEG"},
+      {"color": "yellow", "label": "3 Mg Forms"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60 Tablets", "lines": ["30 servings (1-2 tabs/day)", "1-2 Month Supply"]},
+    "key_benefits": ["Stress reduction &amp; sleep support", "Heart health &amp; vascular function", "Energy &amp; muscle function"],
+    "narrative_h2": "Clean Tablet, Premium Forms",
+    "narrative_paragraphs": [
+      "This isn't just magnesium — it's a thoughtful formula where what matters isn't just dosage, but form, composition purity, and physiological absorption.",
+      "When it comes to the nervous system, sleep, heart health, energy, and stress resilience, what matters is not just the amount of magnesium — but its form, and the absence of unnecessary tablet components that can reduce bioavailability and burden the body.",
+      "Universe Vitamins™ Magnesium Pro combines three bioavailable forms (citrate, bisglycinate, taurate) with active B6. Special attention to tablet composition: <strong>no titanium dioxide (TiO₂), no polyvinylpyrrolidone (PVP), no polyethylene glycol (PEG)</strong> — only the necessary components."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["3 bioavailable forms (citrate, bisglycinate, taurate)", "Active vitamin B6 (P-5-P)", "Premium European raw materials", "Tablet form for convenient dosing", "Carefully designed compression"], "footnote": "Magnesium taurate adds cardiovascular support."},
+      {"title": "Clinical Potency", "bullets": ["1-2 tablets per day", "30 servings per bottle", "Active B6 form (no conversion needed)", "4-8 week course for clinical effect", "Increase dosage on specialist recommendation"], "footnote": "Form and absorption matter — that's why we built a complex."},
+      {"title": "Safety Certified", "bullets": ["No titanium dioxide (TiO₂)", "No polyvinylpyrrolidone (PVP)", "No polyethylene glycol (PEG)", "No GMO, no artificial colors", "Manufactured under GMP, ISO, FDA standards"], "footnote": "Only necessary components — no excessive additives."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1-2 tablets",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Magnesium Complex (3 forms)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Magnesium citrate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Magnesium bisglycinate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Magnesium taurate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Vitamin B6 (P-5-P active form)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Plant-based excipients (no TiO₂, no PVP, no PEG).",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Stress &amp; Nervous System", "bullets": ["Reduces stress levels", "Calms nervous system", "Bisglycinate for relaxation"]},
+      {"title": "Sleep Quality", "bullets": ["Better sleep onset", "Muscle relaxation", "Best taken evening"]},
+      {"title": "Heart Health", "bullets": ["Taurate form supports cardiac function", "Heart rhythm regulation", "Vascular health"]},
+      {"title": "Muscle Function", "bullets": ["Normal muscle function", "Reduces cramping", "Recovery support"]},
+      {"title": "Energy", "bullets": ["Reduces fatigue", "Energy production", "Active B6 for metabolism"]},
+      {"title": "Cognitive Support", "bullets": ["Improves concentration", "Mental clarity", "Cognitive function"]}
+    ],
+    "usage": {
+      "h3": "How to Take Magnesium Pro:",
+      "dosage": "Adults: 1-2 tablets per day with sufficient water",
+      "time": "Best taken in the evening for relaxation and sleep support.",
+      "course": "Recommended course — 4-8 weeks. Can be repeated as needed.",
+      "note": "Dosage may be increased on specialist recommendation for therapeutic use."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If you have kidney issues, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 tablets", "servings": "30 (2 tablets per serving)", "supply": "1-2 months", "extra_label": "Form", "extra": "Compressed tablet (clean)"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "СГР Magnesuim Pro", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Three magnesium forms in a clean tablet — no titanium dioxide, no PVP, no PEG. Only what your body needs.",
+    "whats_inside": [
+      {"title": "Magnesium Citrate", "desc": "Quickly absorbed form — supports overall magnesium levels and quick repletion.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Magnesium Bisglycinate", "desc": "Gentle form with high bioavailability — promotes nervous system relaxation and stress reduction.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Magnesium Taurate", "desc": "Specifically supports cardiovascular system and nervous system function. Heart-friendly form.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Active B6 (P-5-P)", "desc": "Pyridoxal-5-phosphate — the active form of vitamin B6 that requires no conversion. Works synergistically with magnesium.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Clean", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults seeking heart-friendly magnesium", "Anyone preferring tablets to capsules", "People sensitive to TiO₂/PVP/PEG", "Stress and sleep support"],
+    "who_priority": ["Cardiovascular risk factors", "Chronic stress", "Sleep issues", "Athletes (post-workout)", "High cognitive demands"],
+    "pdf": {"link": "assets/universe-vitamins/CГР Magnesuim Pro.pdf", "title": "Magnesium Pro Certificate", "subtitle": "PDF — Official certification document"},
+    "shop_more": [
+      {"title": "Sleep &amp; Relaxation", "desc": "Magnesium 5-in-1 capsules, Methylbalance"},
+      {"title": "Cardiovascular", "desc": "Universe Omega-3, Methylbalance"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Iroton, U-10 Core"}
+    ]
+  },
+  "zinc-complex": {
+    "title": "Liposomal Zinc Complex - 3 Forms with Copper &amp; Selenium",
+    "name_short": "ZINC COMPLEX",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Liposomal Zinc Complex",
+    "tagline": "Not just zinc. A formula where each component amplifies the others.",
+    "description": "3 bioavailable zinc forms (picolinate, bisglycinate, citrate) with chelated copper, selenomethionine, and inulin in a liposomal phospholipid matrix.",
+    "badge_top": "60 Vegan DRcaps® • 2-Month Supply",
+    "img_front": "assets/universe-vitamins/prod-images/Zinc Front.png",
+    "img_right": "assets/universe-vitamins/Mockup-Zinc/Zinc Right.png",
+    "img_left": "assets/universe-vitamins/Mockup-Zinc/Zinc Left.png",
+    "img_alt": "Liposomal Zinc Complex",
+    "badges": [
+      {"color": "green", "label": "Vegan DRcaps®"},
+      {"color": "blue", "label": "3 Zinc Forms"},
+      {"color": "purple", "label": "+ Copper + Selenium"},
+      {"color": "yellow", "label": "Liposomal Delivery"}
+    ],
+    "lab_callout": {"title": "Pharmaceutical-grade purity", "subtitle": "Heavy metals certification · Two independent labs verification"},
+    "pkg_box": {"title": "60 Vegan DRcaps®", "lines": ["60 servings (1 cap/day)", "2-Month Supply"]},
+    "key_benefits": ["Strong immune defense &amp; antioxidant protection", "Hormonal balance &amp; reproductive health", "Skin, hair &amp; nail health"],
+    "narrative_h2": "A Smarter Way to Take Zinc",
+    "narrative_paragraphs": [
+      "Modern lifestyle, stress, and nutrition often lead to deficiency of key trace elements that drive immune defense, energy, and overall well-being. Zinc is part of all modern protocols for COVID-19 recovery, fertility planning, men's testosterone support, and Anti-age &amp; Longevity programs.",
+      "Universe Vitamins™ Liposomal Zinc Complex isn't just zinc — it's a thoughtful formula where each component amplifies the others. Three bioavailable zinc forms (picolinate, bisglycinate, citrate) for maximum absorption, stable effect, and prolonged action.",
+      "Enhanced with chelated copper, selenomethionine, inulin prebiotic, and a liposomal phospholipid matrix that delivers actives directly into the cell. Not just a supplement — systemic body support at the cellular level."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Three bioavailable zinc forms (picolinate, bisglycinate, citrate)", "Chelated copper — prevents zinc-induced copper deficiency", "Selenomethionine — bioavailable selenium", "DRcaps® by Lonza (Switzerland) — vegan acid-resistant", "Liposomal-active phospholipid matrix"], "footnote": "Why three forms? Stable effect, prolonged action, multi-route absorption."},
+      {"title": "Clinical Potency", "bullets": ["3 zinc forms for maximum absorption", "Inulin prebiotic for absorption + microbiome support", "Phospholipid matrix delivers actives into the cell", "Validated in COVID-19 recovery, fertility, testosterone protocols", "60-day course for clinical effect"], "footnote": "Form and absorption matter — that's why we built a complex, not a single ingredient."},
+      {"title": "Safety Certified", "bullets": ["Heavy metals certification (Hg, Pb, Cd)", "Vegan-friendly DRcaps® (Lonza tech)", "Pharmaceutical-grade purity", "No GMO, no titanium dioxide, no preservatives", "Premium European raw materials"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 vegan capsule",
+      "servings_per_container": "60",
+      "rows": [
+        {"name": "Zinc Complex (3 forms)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Zinc picolinate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Zinc bisglycinate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Zinc citrate", "amount": "—", "rda": "—", "indent": 1},
+        {"name": "Copper (chelated)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Selenium (selenomethionine)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Inulin (chicory root)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Liposomal-active phospholipid matrix, DRcaps® vegan capsule (Lonza, Switzerland).",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Store in a cool, dry place after opening."
+    },
+    "health_benefits": [
+      {"title": "Immune Defense", "bullets": ["Essential for T-cell function", "Supports antibody production", "Part of COVID-19 recovery protocols", "Modern wellness foundation"]},
+      {"title": "Reproductive Health", "bullets": ["Supports testosterone synthesis in men", "Hormonal regulation in women", "Used in fertility planning protocols", "Sperm quality &amp; egg viability"]},
+      {"title": "Antioxidant Defense", "bullets": ["Zinc + selenium synergy", "Powers glutathione peroxidase enzyme", "Reduces oxidative stress", "Cellular protection"]},
+      {"title": "Skin, Hair &amp; Nails", "bullets": ["Participates in collagen synthesis", "Tissue repair &amp; regeneration", "Improves nail strength", "Supports hair follicle health"]},
+      {"title": "Cognitive Support", "bullets": ["Supports cognitive function", "Maintains nervous system", "Anti-age &amp; Longevity protocols", "Stress resilience"]},
+      {"title": "Whole-Body Cellular Support", "bullets": ["Liposomal delivery into cells", "Inulin supports microbiome", "Copper preserves mineral balance", "Three-form synergy = stable effect"]}
+    ],
+    "usage": {
+      "h3": "How to Take Liposomal Zinc Complex:",
+      "dosage": "Adults: 1 capsule once daily with food",
+      "time": "Take with a meal for optimal absorption. Morning or midday with breakfast or lunch is ideal.",
+      "course": "Recommended course — 60 days. Can be repeated as needed.",
+      "note": "Zinc benefits are cumulative. Consistent daily use over 60 days provides maximum immune, antioxidant, and reproductive support."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Not recommended for children under 3 without medical supervision", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 vegan DRcaps®", "servings": "60 (1 capsule per serving)", "supply": "2 months", "extra_label": "Capsule", "extra": "DRcaps® acid-resistant (Lonza, Switzerland)"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Each component selected to amplify the others — bioavailable forms, premium raw materials, no fillers.",
+    "whats_inside": [
+      {"title": "3 Zinc Forms", "desc": "Picolinate, bisglycinate, and citrate — three highly bioavailable forms for maximum absorption, stable effect, and prolonged action.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Chelated Copper", "desc": "Zinc supplementation can deplete copper. Chelated form prevents this — keeping the body's mineral balance intact.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Selenomethionine", "desc": "Active selenium form — drives antioxidant defense (glutathione peroxidase enzyme) and amplifies zinc's immune action.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Liposomal Matrix + Inulin", "desc": "Phospholipid matrix delivers actives into the cell. Inulin prebiotic improves absorption and supports microbiome.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["DRcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults seeking immune support", "Men supporting testosterone &amp; reproductive health", "Women supporting hormonal balance", "Anyone with skin/hair/nail concerns", "Vegetarians/vegans (zinc-poor diet)"],
+    "who_priority": ["Recovery protocols (post-illness)", "Fertility planning", "Anti-age &amp; Longevity protocols", "High stress periods", "Frequent infections / weak immunity"],
+    "pdf": {"link": "assets/universe-vitamins/Комлекс цинка тройной силы.pdf", "title": "Zinc Triple-Strength Complex", "subtitle": "PDF — Detailed product info"},
+    "shop_more": [
+      {"title": "Immune Health", "desc": "Liposomal Vitamin C, Vitamin D3+K2 drops"},
+      {"title": "Reproductive Health", "desc": "Liposomal Iroton, DadMode, Multivit Men"},
+      {"title": "Anti-age &amp; Longevity", "desc": "Bovine &amp; Marine Collagen, Antioxidant Complex"}
+    ]
+  },
+  "vitamin-c": {
+    "title": "Liposomal Vitamin C - 900mg with Quercefit® &amp; Bioflavonoids",
+    "name_short": "VITAMIN C",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Liposomal Vitamin C",
+    "tagline": "Most vitamin C is wasted. This formula isn't.",
+    "description": "Sodium ascorbate (DSM, Switzerland) with citrus bioflavonoids, Quercefit® quercetin (Indena, Italy), and rosehip extract. Liposomal phospholipid delivery for maximum cellular uptake.",
+    "badge_top": "20 vials × 25ml • 20-Day Supply",
+    "img_front": "assets/universe-vitamins/prod-images/Front.png",
+    "img_right": "assets/universe-vitamins/prod-images/Front.png",
+    "img_left": "assets/universe-vitamins/prod-images/Front.png",
+    "img_alt": "Liposomal Vitamin C",
+    "badges": [
+      {"color": "green", "label": "Sodium Ascorbate"},
+      {"color": "blue", "label": "Quercefit® (Indena)"},
+      {"color": "purple", "label": "Rosehip Extract"},
+      {"color": "yellow", "label": "Liposomal Delivery"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "20 × 25ml vials", "lines": ["1 vial daily · 900mg vitamin C per shot", "20-Day Supply"]},
+    "key_benefits": ["Immune system support &amp; stress resilience", "Antioxidant defense &amp; cellular protection", "Skin health &amp; collagen synthesis"],
+    "narrative_h2": "Vitamin C That Actually Reaches Your Cells",
+    "narrative_paragraphs": [
+      "Most vitamin C is only partially absorbed. The rest passes through unused, providing no benefit. When it comes to immunity, energy, and cellular protection, what matters isn't just dosage — it's the form and how it's delivered to the cell.",
+      "Universe Vitamins™ Liposomal Vitamin C is a high-efficacy formula with enhanced bioavailability via phospholipid delivery system. Each shot contains 900mg vitamin C as sodium ascorbate (gentle bioavailable form) plus citrus bioflavonoids, Quercefit® quercetin from Indena (Italy), and rosehip extract.",
+      "Liposomal technology provides more efficient cellular penetration of vitamin C, amplifying its action. Vitamin C is one of the body's key antioxidants, but its effectiveness depends entirely on form and absorption."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Sodium ascorbate (DSM, Switzerland)", "Quercefit® quercetin (Indena, Italy)", "Citrus bioflavonoids complex (grapefruit, lemon, orange)", "Natural rosehip extract", "Liposomal phospholipid matrix"], "footnote": "Premium European raw materials with patented bioavailability tech."},
+      {"title": "Clinical Potency", "bullets": ["<strong>900mg vitamin C per vial</strong>", "Sodium ascorbate — gentle on stomach", "Liposomal delivery into the cell", "Quercefit® enhances antioxidant effect", "20-day course for cumulative effect"], "footnote": "Form, dose, and delivery method all matter for actual results."},
+      {"title": "Safety Certified", "bullets": ["Heavy metals certification", "No artificial colors or sweeteners", "No GMO", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 vial (25ml)",
+      "servings_per_container": "20",
+      "rows": [
+        {"name": "Vitamin C (sodium ascorbate)", "amount": "900 mg", "rda": "1000%", "indent": 0},
+        {"name": "Citrus bioflavonoids", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Quercefit® quercetin (Indena)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Rosehip extract", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Liposomal-active phospholipid matrix, purified water.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "May be taken on empty stomach if well-tolerated."
+    },
+    "health_benefits": [
+      {"title": "Immune System", "bullets": ["Supports immune system function", "Stress resilience", "Defense against oxidative stress"]},
+      {"title": "Antioxidant Defense", "bullets": ["Protects cells from free radicals", "Quercetin enhances antioxidant effect", "Rosehip natural antioxidants"]},
+      {"title": "Skin &amp; Beauty", "bullets": ["Collagen synthesis support", "Skin health", "Anti-age effects"]},
+      {"title": "Recovery", "bullets": ["Reduces fatigue", "Recovery from physical stress", "Cellular repair"]},
+      {"title": "Bioavailability", "bullets": ["Liposomal cellular delivery", "Sodium ascorbate gentle on GI", "Bioflavonoids enhance uptake"]},
+      {"title": "Daily Wellness", "bullets": ["Energy support", "Mental clarity", "Foundation for whole-body health"]}
+    ],
+    "usage": {
+      "h3": "How to Take Liposomal Vitamin C:",
+      "dosage": "Adults: 1 vial daily with sufficient water",
+      "time": "Take during or right after a meal for comfortable absorption. Can be taken on empty stomach if well-tolerated.",
+      "course": "Recommended course — at least 20 days for sustained vitamin C levels and cumulative antioxidant effect.",
+      "note": "Liposomal form delivers vitamin C directly into cells, bypassing absorption limits of standard oral vitamin C."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Refrigerate after opening (recommended)", "Avoid direct sunlight and moisture", "Use within indicated period after opening"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Not recommended for children under 3 without medical supervision", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "20 vials × 25ml", "servings": "20 (1 vial per serving)", "supply": "20 days", "extra_label": "Volume per vial", "extra": "25ml"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "СГР Liposomal Vitamin C", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Every ingredient earns its place. Premium sodium ascorbate from DSM (Switzerland), enhanced by patented Quercefit® quercetin and rosehip antioxidants in a liposomal matrix.",
+    "whats_inside": [
+      {"title": "Vitamin C 900mg", "desc": "Sodium ascorbate from DSM (Switzerland) — gentle bioavailable form. 1000% RDA per vial.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Citrus Bioflavonoids", "desc": "Grapefruit, lemon, orange — natural complex enhancing vitamin C uptake and antioxidant effect.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Quercefit® Quercetin", "desc": "Patented quercetin from Indena (Italy) — highly bioavailable form (7× higher than ordinary quercetin).", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Rosehip Extract", "desc": "Natural antioxidant source — adds polyphenol diversity and supports cellular protection.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["DSM", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults seeking immune support", "Active individuals (post-stress recovery)", "Anyone with skin concerns", "Smokers (higher vitamin C need)", "Vegans/vegetarians"],
+    "who_priority": ["Frequent infections / weak immunity", "Periods of high stress", "Post-illness recovery", "Skin issues (collagen support)", "Athletes (oxidative stress)"],
+    "pdf": {"link": "assets/universe-vitamins/СГР Liposomal Vitamin C.pdf", "title": "Liposomal Vitamin C Certificate", "subtitle": "PDF — Official certification document"},
+    "shop_more": [
+      {"title": "Immune Health", "desc": "Zinc Complex, Vitamin D3+K2 drops"},
+      {"title": "Anti-age &amp; Longevity", "desc": "Antioxidant Complex, Bovine &amp; Marine Collagen"},
+      {"title": "Energy &amp; Metabolism", "desc": "Iroton, Methylbalance, U-10 Core"}
+    ]
+  },
+  "collagen-bovine": {
+    "title": "Anti-age Bovine Collagen Verisol® - Clinically Proven",
+    "name_short": "BOVINE COLLAGEN",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Anti-age &amp; Longevity Bovine Collagen",
+    "tagline": "Verisol® collagen — clinically proven results in 8 weeks.",
+    "description": "Patented Verisol® bovine collagen (Gelita, Germany) with anti-age cofactors. Halal certified. 30 sachets per pack. 5 flavors available.",
+    "badge_top": "30 Sachets • 5 Flavors • Halal",
+    "img_front": "assets/universe-vitamins/prod-images/Tube Apple 1.png",
+    "img_right": "assets/universe-vitamins/prod-images/Tube Cherry 1.png",
+    "img_left": "assets/universe-vitamins/prod-images/Tube Orange 1.png",
+    "img_alt": "Bovine Collagen — Apple flavor",
+    "badges": [
+      {"color": "green", "label": "Verisol® Gelita (Germany)"},
+      {"color": "blue", "label": "Halal"},
+      {"color": "purple", "label": "Clinically Proven"},
+      {"color": "pink", "label": "5 Flavors"}
+    ],
+    "lab_callout": {"title": "Clinically validated: +65% Procollagen I, −23% wrinkles", "subtitle": "8-week Verisol® clinical trial results"},
+    "pkg_box": {"title": "30 Sachets", "lines": ["1 sachet/day in 250ml water", "3-month course recommended"]},
+    "key_benefits": ["Skin firmness, wrinkle reduction, hydration", "Joint &amp; ligament health", "Hair thickness &amp; nail strength"],
+    "narrative_h2": "Clinically Proven Anti-Age Collagen",
+    "narrative_paragraphs": [
+      "When it comes to skin, joints, and slowing aging, only a comprehensive approach with clinically meaningful dosages and component synergy delivers visible results.",
+      "Collagen is the body's primary structural protein — forming skin, ligaments, joints, and connective tissues. After age 25, natural collagen synthesis declines, leading to loss of skin elasticity and joint deterioration.",
+      "Universe Vitamins™ Anti-age &amp; Longevity Bovine Collagen is a comprehensive formula featuring premium patented German Verisol® collagen, collagen synthesis cofactors, and Anti-age components for comprehensive recovery and body support."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Verisol® patented German collagen (Gelita)", "Halal certified bovine source", "Anti-age cofactors and antioxidants", "Available in 5 natural flavors", "Sugar-free formulation"], "footnote": "Verisol® is the most clinically studied collagen peptide on the market."},
+      {"title": "Clinical Potency", "bullets": ["<strong>+65% Procollagen I</strong> after 8 weeks", "<strong>−23% wrinkle volume</strong>, −32% wrinkle depth", "<strong>+26-29% hydration</strong> after 8 weeks", "<strong>+13% hair thickness</strong> after 16 weeks", "<strong>−42% nail brittleness</strong>, +12% nail growth"], "footnote": "Results from peer-reviewed Verisol® clinical trials."},
+      {"title": "Safety Certified", "bullets": ["Halal certified", "No sugar, no fillers", "Pharmaceutical-grade purity", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 sachet",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Verisol® Bovine Collagen Peptides", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Anti-age cofactors", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Antioxidants", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Natural flavoring (apple/cherry/orange/pineapple/raspberry), citric acid.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Do not mix with hot water — preserves peptide structure."
+    },
+    "health_benefits": [
+      {"title": "Skin Health", "bullets": ["+65% Procollagen I after 8 weeks", "+18% Elastin (dermal regeneration)", "+9% skin elasticity"]},
+      {"title": "Wrinkle Reduction", "bullets": ["−23% wrinkle volume after 8 weeks", "−32% wrinkle depth", "+26-29% hydration"]},
+      {"title": "Hair", "bullets": ["+13% hair shaft thickness (16 weeks)", "Stronger hair follicles", "Reduced hair shedding"]},
+      {"title": "Nails", "bullets": ["−42% nail brittleness", "+12% nail growth speed", "Improved nail strength"]},
+      {"title": "Joints &amp; Ligaments", "bullets": ["Joint flexibility &amp; mobility", "Ligament support", "Reduced post-workout soreness"]},
+      {"title": "Body Composition", "bullets": ["−11% cellulite (6 months)", "Improved skin tone", "Anti-age &amp; longevity effect"]}
+    ],
+    "usage": {
+      "h3": "How to Take Anti-age Bovine Collagen:",
+      "dosage": "Dissolve 1 sachet in 250ml of cold or room-temperature water (also juice or smoothie)",
+      "time": "Take once daily — preferably in the morning on an empty stomach or 1-2 hours after a meal for better amino acid absorption.",
+      "course": "Recommended course — 3 months for visible clinical results.",
+      "note": "Do not mix with hot water — preserves peptide structure. Clinical results manifest from 8 weeks of consistent use."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly sealed", "Single-serving sachets — open just before use"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Not recommended for children under 12", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "30 sachets", "servings": "30 (1 sachet per serving)", "supply": "1 month", "extra_label": "Form", "extra": "Powder sachets"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "Single-serve sachets"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Verisol® patented bovine collagen from Gelita (Germany) — clinically proven across 8-week trials. Plus anti-age cofactors and antioxidants for synergistic effect.",
+    "whats_inside": [
+      {"title": "Verisol® Collagen", "desc": "Patented bioactive collagen peptides from Gelita (Germany). Clinically proven to stimulate procollagen I synthesis (+65%) and elastin production (+18%).", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Anti-age Cofactors", "desc": "Synergistic compounds supporting collagen synthesis and reducing oxidative damage to tissues.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Halal Certified", "desc": "Halal certified bovine source. Premium European supply chain ensuring traceable, ethically sourced collagen.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "5 Natural Flavors", "desc": "Apple, Cherry, Orange, Pineapple, Raspberry. Sugar-free natural flavoring — pleasant taste for daily use.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Verisol®", "Halal", "FDA", "GMP", "ISO", "TÜRKAK", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults 25+ (declining endogenous collagen)", "Anyone with skin firmness/wrinkle concerns", "Athletes (joint &amp; ligament support)", "People with weak hair/nails", "Halal consumers"],
+    "who_priority": ["Visible aging signs (wrinkles, sagging)", "Joint pain or reduced mobility", "Post-pregnancy skin recovery", "Hair thinning concerns", "Sun-damaged skin"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Anti-age &amp; Longevity", "desc": "Marine Collagen, Antioxidant Complex, Longevity Complex"},
+      {"title": "Joint &amp; Mobility", "desc": "Bone Longevity, Marine Collagen, Universe Omega-3"},
+      {"title": "Beauty", "desc": "Liposomal Vitamin C, Multivitamin for Women"}
+    ]
+  },
+  "collagen-marine": {
+    "title": "Anti-age Marine Collagen Naticol® - Ultra-Bioavailable Tripeptides",
+    "name_short": "MARINE COLLAGEN",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Anti-age &amp; Longevity Marine Collagen",
+    "tagline": "Ultra-low molecular weight (300Da tripeptides) — maximum cellular uptake.",
+    "description": "Naticol® premium low-molecular marine collagen (Weishardt Group, France) with anti-age cofactors and phospholipid cell-membrane support. Clinically proven results.",
+    "badge_top": "30 Sachets • 3-Month Course",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Marine Collagen Naticol®",
+    "badges": [
+      {"color": "green", "label": "Naticol® (France)"},
+      {"color": "blue", "label": "300Da Tripeptides"},
+      {"color": "purple", "label": "Sugar-Free"},
+      {"color": "yellow", "label": "Anti-age Cofactors"}
+    ],
+    "lab_callout": {"title": "Clinically validated: −42% wrinkle count, +46% TGF-β", "subtitle": "8-week Naticol® clinical trial results"},
+    "pkg_box": {"title": "30 Sachets", "lines": ["1 sachet/day in 250ml water", "3-month course recommended"]},
+    "key_benefits": ["Skin radiance, hydration &amp; wrinkle reduction", "Joint health &amp; collagen synthesis", "Faster post-workout recovery"],
+    "narrative_h2": "The Most Bioavailable Marine Collagen",
+    "narrative_paragraphs": [
+      "Among the wide variety of marine collagen sources, we chose the best — ultra-bioavailable Naticol®. A premium European low-molecular marine collagen designed for maximum skin rejuvenation, joint health, and connective tissue support. Highly soluble, neutral taste and odor.",
+      "Universe Vitamins™ Marine Collagen is a next-generation complex combining ultra-bioavailable Naticol® with clinically meaningful collagen-synthesis cofactors, powerful antioxidants, and phospholipid cell-membrane support.",
+      "Average molecular weight: 1200 Da. Tripeptide molecular weight: <strong>300 Da</strong> — ultra-low level enabling efficient transport across the intestinal barrier directly into circulation."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Naticol® premium marine collagen (Weishardt, France)", "Average MW 1200Da · tripeptides 300Da", "Anti-age cofactors and antioxidants", "Phospholipid cell-membrane support", "Sugar-free natural formulation"], "footnote": "Naticol® is recognized for its ultra-low molecular weight and maximum bioavailability."},
+      {"title": "Clinical Potency", "bullets": ["<strong>−42% wrinkle count</strong>, −24% wrinkle length", "<strong>+12% hydration</strong>, +31% radiance, +34% brightness", "<strong>+46% TGF-β growth factor</strong> (collagen synthesis)", "<strong>+26% skin collagen</strong>, +11% joint collagen", "<strong>85% participants</strong> reported reduced joint pain"], "footnote": "Results from peer-reviewed Naticol® clinical trials."},
+      {"title": "Safety Certified", "bullets": ["Heavy metals well below international limits", "No sugars or carbohydrates", "Full marine source traceability", "Pharmaceutical-grade purity", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 sachet",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Naticol® Marine Collagen Tripeptides", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Anti-age cofactors", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Antioxidants", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Phospholipid matrix", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Natural flavoring, citric acid.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Do not mix with hot water — preserves peptide structure."
+    },
+    "health_benefits": [
+      {"title": "Wrinkle Reduction", "bullets": ["−42% wrinkle count", "−24% wrinkle length", "−21% wrinkle area"]},
+      {"title": "Skin Quality", "bullets": ["+12% hydration", "+31% radiance, +34% brightness", "+13% tone evenness"]},
+      {"title": "Cellular Markers", "bullets": ["+46% TGF-β growth factor", "+26% skin collagen", "Improved fibroblast activity"]},
+      {"title": "Joints", "bullets": ["+11% joint tissue collagen", "−37% IL-1β inflammation marker", "−27% MMP-9 enzyme"]},
+      {"title": "Recovery", "bullets": ["68% faster post-workout recovery", "77% less muscle pain", "85% reduced joint pain"]},
+      {"title": "Anti-age &amp; Longevity", "bullets": ["Reduced oxidative stress", "Cell membrane protection", "Whole-body anti-age effect"]}
+    ],
+    "usage": {
+      "h3": "How to Take Anti-age Marine Collagen:",
+      "dosage": "Dissolve 1 sachet in 250ml of cold or room-temperature water (also juice or smoothie)",
+      "time": "Take once daily — preferably in the morning on an empty stomach or 1-2 hours after a meal.",
+      "course": "Recommended course — 3 months for visible clinical results.",
+      "note": "Do not mix with hot water — preserves peptide structure. Tripeptides absorb 7-10× more efficiently than standard hydrolyzed collagen."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly sealed", "Single-serving sachets — open just before use"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to fish/seafood possible", "Not recommended for children under 12", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "30 sachets", "servings": "30 (1 sachet per serving)", "supply": "1 month", "extra_label": "Form", "extra": "Powder sachets"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "Single-serve sachets"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Naticol® premium marine collagen from Weishardt Group (France). Ultra-low 300Da tripeptides — maximum bioavailability for skin, joints, and recovery.",
+    "whats_inside": [
+      {"title": "Naticol® Tripeptides", "desc": "Ultra-low 300Da molecular weight enables direct intestinal absorption. 7-10× higher plasma collagen levels post-intake.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Anti-age Cofactors", "desc": "Synergistic compounds supporting endogenous collagen synthesis. Stimulates fibroblasts and increases own collagen by +20-30%.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Powerful Antioxidants", "desc": "Combat oxidative stress that drives skin aging and tissue degradation. Cellular protection.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Phospholipid Support", "desc": "Phospholipid matrix supports cell membrane integrity — adds layer of cellular structural support.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Naticol®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults 25+ (declining endogenous collagen)", "Anyone with skin concerns (wrinkles, hydration, radiance)", "Athletes (joint &amp; muscle recovery)", "People allergic to bovine/dairy", "Beauty &amp; longevity enthusiasts"],
+    "who_priority": ["Visible signs of aging", "Joint pain or stiffness", "Athletic recovery needs", "Post-sun damage skin", "Anti-age &amp; longevity protocols"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Anti-age &amp; Longevity", "desc": "Bovine Collagen, Antioxidant Complex, Longevity Complex"},
+      {"title": "Joint &amp; Mobility", "desc": "Bone Longevity, Bovine Collagen, Universe Omega-3"},
+      {"title": "Beauty", "desc": "Liposomal Vitamin C, Multivitamin for Women"}
+    ]
+  },
+  "bone-longevity": {
+    "title": "Bone Longevity Complex - PHOSCALIM® Marine Hydroxyapatite",
+    "name_short": "BONE LONGEVITY",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Bone Longevity",
+    "tagline": "Marine hydroxyapatite — calcium your bones actually use.",
+    "description": "PHOSCALIM® marine hydroxyapatite (Copalis, France) — natural calcium, phosphorus, and type-1 collagen complex. Plus silicon, vitamin D3 and K2 for full bone support.",
+    "badge_top": "120 Vegan Vcaps® • 8-12 Week Course",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Bone Longevity Complex",
+    "badges": [
+      {"color": "green", "label": "PHOSCALIM® (France)"},
+      {"color": "blue", "label": "Marine Hydroxyapatite"},
+      {"color": "purple", "label": "+ Silicon + D3 + K2"},
+      {"color": "yellow", "label": "Vegan Vcaps®"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "120 Vegan Vcaps®", "lines": ["1-4 caps/day with meals", "8-12 week course recommended"]},
+    "key_benefits": ["Bone density &amp; mineralization support", "Joint &amp; ligament health", "Active longevity &amp; mobility"],
+    "narrative_h2": "Bone Tissue Is Living — Feed It Right",
+    "narrative_paragraphs": [
+      "Bone tissue is a dynamic structure that constantly renews itself. After age 30-35, breakdown processes begin to outpace recovery — leading to reduced bone density, higher injury risk, and decreased joint mobility.",
+      "Universe Vitamins™ Bone Longevity is a premium next-generation formula featuring PHOSCALIM® — a marine hydroxyapatite that's a natural complex of calcium, phosphorus, and type-1 collagen, identical to the mineral structure of bone tissue.",
+      "Enhanced with silicon, vitamin D3, vitamin K2, and additional cofactors for proper calcium distribution — directing minerals to bones and away from arteries."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["PHOSCALIM® marine hydroxyapatite (Copalis, France)", "Natural Ca + P + type-1 collagen complex", "Silicon for bone matrix support", "Vitamin D3 (Quali-D® DSM) for absorption", "Vitamin K2 (K2VITAL®) for proper calcium routing"], "footnote": "PHOSCALIM® is identical to the mineral structure of bone tissue."},
+      {"title": "Clinical Potency", "bullets": ["Bioavailable mineral complex (not isolated calcium)", "Silicon supports collagen cross-linking", "D3 enhances calcium absorption", "K2 directs calcium to bones (not arteries)", "8-12 week course for clinical effect"], "footnote": "Calcium without K2 deposits in arteries. We solved that."},
+      {"title": "Safety Certified", "bullets": ["Vegan Vcaps® capsules", "Pharmaceutical-grade purity", "Heavy metals certification", "No GMO, no titanium dioxide", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1-4 capsules",
+      "servings_per_container": "30-120",
+      "rows": [
+        {"name": "PHOSCALIM® (marine hydroxyapatite)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Calcium (natural marine source)", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "Phosphorus", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "Type-1 collagen", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "Silicon", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin D3", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin K2", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Bone Density", "bullets": ["Supports mineralization", "Reduces age-related bone loss", "Bioavailable calcium delivery"]},
+      {"title": "Joint Health", "bullets": ["Joint flexibility &amp; mobility", "Cartilage support", "Ligament strength"]},
+      {"title": "Anti-Osteoporosis", "bullets": ["Reduces fracture risk", "Supports bone matrix", "Particularly important post-menopause"]},
+      {"title": "Active Longevity", "bullets": ["Maintains mobility with age", "Athletic recovery support", "Postural stability"]},
+      {"title": "Calcium Distribution", "bullets": ["K2 directs calcium to bones", "Prevents arterial calcification", "Smart mineral routing"]},
+      {"title": "Whole-Body Effects", "bullets": ["Cardiovascular support (K2)", "Immune support (D3)", "Connective tissue strength"]}
+    ],
+    "usage": {
+      "h3": "How to Take Bone Longevity:",
+      "dosage": "Adults: 1-4 capsules per day with meals",
+      "time": "Take with meals for better mineral absorption (D3 and K2 are fat-soluble).",
+      "course": "Recommended course — 8-12 weeks or longer for measurable bone density improvements.",
+      "note": "Bone remodeling is slow — consistent long-term use produces the best results."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If you have hyperparathyroidism or kidney issues, consult physician", "If on blood thinners, consult before use (K2 interaction)", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "120 vegan capsules", "servings": "30-120 (1-4 capsules per serving)", "supply": "1-4 months", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "PHOSCALIM® marine hydroxyapatite — identical to bone mineral structure. Plus silicon, D3, and K2 for complete bone support.",
+    "whats_inside": [
+      {"title": "PHOSCALIM® Hydroxyapatite", "desc": "Marine hydroxyapatite from Copalis (France). Natural Ca + P + type-1 collagen complex — identical to bone tissue mineral structure.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Silicon", "desc": "Supports bone matrix and collagen cross-linking. Important for bone strength beyond just calcium.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Vitamin D3 (Quali-D®)", "desc": "From DSM (Switzerland). Essential for calcium absorption — calcium without D3 is poorly absorbed.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Vitamin K2 (K2VITAL®)", "desc": "MK-7 form from Kappa Bioscience (Norway). Directs calcium to bones, prevents arterial deposition.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["PHOSCALIM®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults 30+ (declining bone density)", "Postmenopausal women", "Athletes (high mineral demand)", "Anyone with low calcium dietary intake", "People with low sun exposure"],
+    "who_priority": ["Osteopenia / osteoporosis risk", "Post-fracture recovery", "Joint pain or stiffness", "Vitamin D deficiency", "Active longevity protocols"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Joint &amp; Mobility", "desc": "Bovine &amp; Marine Collagen, Universe Omega-3"},
+      {"title": "Anti-age &amp; Longevity", "desc": "Antioxidant Complex, Longevity Complex"},
+      {"title": "Immune Health", "desc": "Vitamin D3+K2 drops, Vitamin C, Zinc Complex"}
+    ]
+  },
+  "multibiotic-forte": {
+    "title": "Multibiotic Forte - 18 Strains, 50B CFU + Digezyme®",
+    "name_short": "MULTIBIOTIC FORTE",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Multibiotic Forte",
+    "tagline": "Not just a probiotic — a complete microbiome support system.",
+    "description": "18 probiotic strains at 50 billion CFU per capsule, with Digezyme® enzyme blend (Sabinsa, USA), inulin prebiotic, chelated zinc, and DRcaps® acid-resistant capsules.",
+    "badge_top": "30 Vegan DRcaps® • 1-Month Course",
+    "img_front": "assets/universe-vitamins/prod-images/Multibiotic Forte Front.png",
+    "img_right": "assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Right.png",
+    "img_left": "assets/universe-vitamins/Mockup-Multibiotic-Forte/Multibiotic Forte Left.png",
+    "img_alt": "Multibiotic Forte",
+    "badges": [
+      {"color": "green", "label": "18 Strains"},
+      {"color": "blue", "label": "50B CFU per cap"},
+      {"color": "purple", "label": "Digezyme® (Sabinsa)"},
+      {"color": "yellow", "label": "DRcaps® (Lonza)"}
+    ],
+    "lab_callout": {"title": "50 billion CFU clinical-grade dose", "subtitle": "Validated probiotic strains · DRcaps® acid-resistant delivery"},
+    "pkg_box": {"title": "30 Vegan DRcaps®", "lines": ["1-2 capsules/day with meals", "1-2 month course recommended"]},
+    "key_benefits": ["Gut microbiome restoration", "Immune system support", "Improved digestion &amp; reduced bloating"],
+    "narrative_h2": "A Complete Microbiome Support System",
+    "narrative_paragraphs": [
+      "This isn't just a probiotic — it's a comprehensive microbiome support system. What matters isn't just the strains, but their count, stability, protection, and synergy with additional components.",
+      "When it comes to gut health, immunity, overall well-being, and longevity — what matters isn't merely the presence of probiotics, but their dosage, strain diversity, and the ability to reach the gut in active form.",
+      "The microbiome is a key body system influencing digestion, immunity, metabolism, and even cognitive function. Microflora imbalance can lead to weakened immunity, GI problems, and chronic inflammation."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["18 clinically validated probiotic strains", "Digezyme® enzyme blend (Sabinsa Corp, USA)", "Natural chicory root inulin prebiotic", "DRcaps® by Lonza (Switzerland) acid-resistant", "Chelated zinc for synergy"], "footnote": "Strain diversity matters — single-strain probiotics miss the synergy."},
+      {"title": "Clinical Potency", "bullets": ["<strong>50 billion CFU per capsule</strong>", "<strong>18 strains</strong> for balanced microbiome", "<strong>150mg inulin</strong> prebiotic for probiotic action", "<strong>50mg Digezyme®</strong> (amylase, protease, lipase, cellulase, lactase)", "DRcaps® delivers actives directly to gut"], "footnote": "Form matters: DRcaps® protects against stomach acid for max delivery."},
+      {"title": "Safety Certified", "bullets": ["Vegan-friendly DRcaps®", "Heavy metals certification", "No GMO, no titanium dioxide", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1-2 capsules",
+      "servings_per_container": "15-30",
+      "rows": [
+        {"name": "Probiotic Blend (18 strains)", "amount": "50B CFU", "rda": "†", "indent": 0},
+        {"name": "Inulin (chicory root prebiotic)", "amount": "150 mg", "rda": "†", "indent": 0},
+        {"name": "Digezyme® enzyme blend (Sabinsa)", "amount": "50 mg", "rda": "†", "indent": 0},
+        {"name": "Zinc (chelated)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "DRcaps® vegan capsule (Lonza, Switzerland) — acid-resistant for direct gut delivery.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "If on antibiotics, take 2-3 hours apart from probiotic."
+    },
+    "health_benefits": [
+      {"title": "Gut Microbiome", "bullets": ["Restores microflora balance", "Increases beneficial bacteria", "Reduces dysbiosis"]},
+      {"title": "Immune System", "bullets": ["70% of immune system in gut", "Strain diversity = robust immunity", "Reduces seasonal illness frequency"]},
+      {"title": "Digestion", "bullets": ["Improves nutrient absorption", "Digezyme® enzymes break down food", "Reduces bloating and discomfort"]},
+      {"title": "Anti-Inflammatory", "bullets": ["Reduces gut inflammation", "Lowers chronic inflammation markers", "Supports gut barrier function"]},
+      {"title": "Energy &amp; Well-being", "bullets": ["Better energy from improved absorption", "Improved mood (gut-brain axis)", "Reduced food intolerances"]},
+      {"title": "Long-term Health", "bullets": ["Microbiome shapes long-term health", "Linked to metabolic health", "Linked to cognitive function"]}
+    ],
+    "usage": {
+      "h3": "How to Take Multibiotic Forte:",
+      "dosage": "Adults: 1-2 capsules per day with sufficient water",
+      "time": "Best taken during or after a meal for optimal probiotic survival.",
+      "course": "Recommended course — 4-8 weeks. Longer use beneficial for chronic gut issues.",
+      "note": "If on antibiotics, take 2-3 hours apart from this probiotic to avoid killing the active strains."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Refrigeration recommended for max strain viability", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If immunocompromised, consult physician before use", "Discontinue if severe GI symptoms occur (rare)", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "30 vegan capsules", "servings": "15-30 (1-2 capsules per serving)", "supply": "1-2 months", "extra_label": "Capsule", "extra": "DRcaps® acid-resistant (Lonza)"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "18 strains, 50 billion CFU, plus Digezyme® enzymes and inulin prebiotic — all delivered through DRcaps® acid-resistant capsules.",
+    "whats_inside": [
+      {"title": "18 Probiotic Strains", "desc": "Thoughtful combination of bacterial strains for balanced and resilient microbiome diversity.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "50B CFU per Capsule", "desc": "Clinically meaningful dose for microbiome support — well above the threshold needed for measurable effect.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "150mg Inulin + 50mg Digezyme®", "desc": "Inulin prebiotic feeds probiotics. Digezyme® (Sabinsa, USA) provides 5 enzymes for digestion (amylase, protease, lipase, cellulase, lactase).", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "DRcaps® Technology", "desc": "Acid-resistant capsule technology by Lonza (Switzerland). Protects probiotics from stomach acid for delivery to the gut.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["DRcaps®", "Digezyme®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults seeking gut health support", "Anyone with digestive issues", "Post-antibiotic recovery", "Frequent travelers", "People with food sensitivities"],
+    "who_priority": ["Bloating, gas, irregular digestion", "Frequent infections (immune support)", "Post-antibiotic restoration", "Inflammatory gut conditions (consult doctor)", "Stress-related gut symptoms"],
+    "pdf": {"link": "assets/universe-vitamins/Мультибиотик Форте.pdf", "title": "Multibiotic Forte Product Info", "subtitle": "PDF — Detailed strain breakdown and clinical info"},
+    "shop_more": [
+      {"title": "Immune Health", "desc": "Vitamin C, Zinc Complex, Vitamin D3+K2"},
+      {"title": "Anti-age &amp; Longevity", "desc": "Antioxidant Complex, Longevity Complex"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Iroton, U-10 Core"}
+    ]
+  },
+  "antioxidant-complex": {
+    "title": "Antioxidant Complex - 11 Antioxidants for Cellular Defense",
+    "name_short": "ANTIOXIDANT COMPLEX",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Antioxidant Complex",
+    "tagline": "Multi-tier cellular defense — beyond a single antioxidant.",
+    "description": "Advanced blend of 11 antioxidants — vitamins, polyphenols, mitochondrial cofactors, astaxanthin — for cellular protection and healthy aging.",
+    "badge_top": "60 Vegan Vcaps® • 30-Day Supply",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Antioxidant Complex",
+    "badges": [
+      {"color": "green", "label": "11 Antioxidants"},
+      {"color": "blue", "label": "Astaxanthin"},
+      {"color": "purple", "label": "Polyphenols"},
+      {"color": "yellow", "label": "Mitochondrial Support"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60 Vegan Vcaps®", "lines": ["2 capsules/day with meals", "8-12 week course recommended"]},
+    "key_benefits": ["Cellular protection from oxidative stress", "Mitochondrial energy support", "Anti-age &amp; longevity effect"],
+    "narrative_h2": "Multi-Tier Cellular Defense",
+    "narrative_paragraphs": [
+      "This isn't just antioxidants — it's a multi-tier cellular defense system aimed at restoring redox balance and slowing age-related changes. Oxidative stress is a key aging factor that damages cell membranes, mitochondria, and DNA.",
+      "When it comes to health, energy, and longevity — what matters isn't just the presence of antioxidants, but their diversity, dosage, and ability to work synergistically at the cellular and mitochondrial level.",
+      "Universe Vitamins™ Antioxidant Complex combines key antioxidant classes: vitamins, polyphenols, mitochondrial cofactors, carotenoid astaxanthin, and lipid membrane protection — forming a holistic defense system."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["11 clinically validated antioxidants", "Astaxanthin (carotenoid)", "Polyphenols (powerful plant compounds)", "Mitochondrial cofactors", "Lipid membrane protection components"], "footnote": "Diversity beats dose — different antioxidants protect different parts of the cell."},
+      {"title": "Clinical Potency", "bullets": ["Multi-tier defense (water + lipid soluble)", "Vitamins protect cytoplasm", "Polyphenols protect cell membranes", "Mitochondrial cofactors preserve energy", "Astaxanthin crosses blood-brain barrier"], "footnote": "Single antioxidants can't cover everything — complex coverage matters."},
+      {"title": "Safety Certified", "bullets": ["Vegan Vcaps® capsules", "No GMO, no titanium dioxide", "No artificial colors or preservatives", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "2 capsules",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Antioxidant Complex (11 ingredients)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Astaxanthin", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "Polyphenol blend", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "Mitochondrial cofactors", "amount": "—", "rda": "†", "indent": 1},
+        {"name": "Vitamin antioxidants", "amount": "—", "rda": "†", "indent": 1}
+      ],
+      "other_ingredients": "Vegan Vcaps® capsule shell, plant-based excipients.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Cellular Protection", "bullets": ["Reduces oxidative stress", "Protects DNA", "Cellular membrane defense"]},
+      {"title": "Mitochondrial Energy", "bullets": ["Supports mitochondrial function", "Maintains cellular energy production", "Reduces age-related decline"]},
+      {"title": "Anti-Aging", "bullets": ["Slows aging processes", "Healthy longevity support", "Skin and tissue protection"]},
+      {"title": "Cardiovascular", "bullets": ["Vascular protection", "Healthy blood vessel function", "Polyphenol cardio benefits"]},
+      {"title": "Skin Beauty", "bullets": ["Astaxanthin for UV protection", "Reduced oxidative skin damage", "Anti-age skin support"]},
+      {"title": "Cognitive", "bullets": ["Astaxanthin crosses blood-brain barrier", "Brain antioxidant protection", "Neuroprotection"]}
+    ],
+    "usage": {
+      "h3": "How to Take Antioxidant Complex:",
+      "dosage": "Adults: 2 capsules per day with sufficient water",
+      "time": "Take with meals for better absorption of fat-soluble components (astaxanthin, polyphenols).",
+      "course": "Recommended course — 8-12 weeks for cumulative cellular protection effect.",
+      "note": "Antioxidant benefits are cumulative. Long-term consistent use produces the strongest cellular protection."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 vegan capsules", "servings": "30 (2 capsules per serving)", "supply": "1 month", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Eleven complementary antioxidants covering the full spectrum of cellular defense — water-soluble, lipid-soluble, mitochondrial.",
+    "whats_inside": [
+      {"title": "Astaxanthin", "desc": "Powerful carotenoid antioxidant. Crosses blood-brain barrier and protects cell membranes from lipid peroxidation.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Polyphenol Blend", "desc": "Plant-derived compounds providing powerful protection against oxidative stress and supporting cellular longevity.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Mitochondrial Cofactors", "desc": "Specifically protect and stabilize mitochondrial function — the energy plants of every cell.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Lipid Membrane Defense", "desc": "Components specifically supporting cell membrane integrity and amplifying the action of fat-soluble antioxidants.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Vcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults seeking cellular protection", "Active longevity enthusiasts", "People with high oxidative stress (smokers, urban dwellers)", "Athletes (training-induced oxidative stress)", "Anti-age &amp; beauty programs"],
+    "who_priority": ["Anti-age protocols", "Post-illness recovery", "High UV/sun exposure", "Chronic stress periods", "Cardiovascular risk factors"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Anti-age &amp; Longevity", "desc": "Longevity Complex, Bovine &amp; Marine Collagen"},
+      {"title": "Cardiovascular", "desc": "Universe Omega-3, Methylbalance"},
+      {"title": "Immune Health", "desc": "Liposomal Vitamin C, Zinc Complex"}
+    ]
+  },
+  "u10": {
+    "title": "U-10 Core - 10 Essential Vitamins &amp; Minerals",
+    "name_short": "U-10 CORE",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> U-10 Core Complex",
+    "tagline": "The foundation of daily wellness — 10 essentials in bioavailable forms.",
+    "description": "Core complex of 10 essential vitamins and minerals (C, D, zinc, magnesium, iron, B6, B12, calcium, iodine, selenium) in bioavailable forms.",
+    "badge_top": "30 Vegan Vcaps® • 1-3 Month Course",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "U-10 Core Complex",
+    "badges": [
+      {"color": "green", "label": "10 Essentials"},
+      {"color": "blue", "label": "Bioavailable Forms"},
+      {"color": "purple", "label": "Vegan Vcaps®"},
+      {"color": "yellow", "label": "Daily Foundation"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "30 Vegan Vcaps®", "lines": ["1 capsule/day with food", "1-3 month course recommended"]},
+    "key_benefits": ["Comprehensive baseline nutrition", "Energy &amp; metabolism support", "Immune &amp; cognitive function"],
+    "narrative_h2": "The Foundation of Daily Wellness",
+    "narrative_paragraphs": [
+      "U-10 is the foundation of health — 10 of the most important vitamins and minerals in bioavailable forms. The starting point for anyone building a supplement routine.",
+      "Modern diets often lack the full spectrum of essential micronutrients. Even balanced eating doesn't always deliver vitamin D (sun-dependent), B12 (lacking in vegan diets), or selenium (soil-dependent).",
+      "Universe Vitamins™ U-10 Core fills the gaps — providing comprehensive baseline support across immune, nervous, energy, bone, and cognitive systems."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Bioavailable mineral forms (not cheap oxides)", "Active B-vitamin forms (P-5-P, methylcobalamin)", "Quali-D® vitamin D3 (DSM, Switzerland)", "Selenomethionine selenium", "Vegan Vcaps® capsules"], "footnote": "Forms matter — bioavailable beats cheap synthetic every time."},
+      {"title": "Clinical Potency", "bullets": ["Daily nutritional foundation", "Covers 10 most-deficient nutrients", "Single capsule daily — easy compliance", "Synergistic combinations (D3+calcium, etc.)", "1-3 month course for status improvement"], "footnote": "Best paired with diet — supplements support, not replace, real food."},
+      {"title": "Safety Certified", "bullets": ["Vegan-friendly", "No GMO, no titanium dioxide", "No artificial colors or preservatives", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 capsule",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Vitamin C (sodium ascorbate)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin D3 (Quali-D®)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin B6 (P-5-P)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin B12 (methylcobalamin)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Calcium", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Magnesium (bisglycinate)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Zinc (chelated)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Iron (bisglycinate)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Iodine", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Selenium (selenomethionine)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Immune Function", "bullets": ["Vitamin C, D, zinc, selenium", "Comprehensive immune support", "Reduces seasonal illness frequency"]},
+      {"title": "Energy &amp; Metabolism", "bullets": ["B6, B9, B12, magnesium", "Energy production support", "Reduces fatigue"]},
+      {"title": "Nervous System", "bullets": ["Magnesium, B6, B12", "Stress resilience", "Cognitive function"]},
+      {"title": "Bone &amp; Muscle", "bullets": ["Calcium, magnesium, vitamin D", "Bone density support", "Muscle function"]},
+      {"title": "Hormonal &amp; Reproductive", "bullets": ["Zinc, selenium, B9", "Reproductive health", "Hormone synthesis"]},
+      {"title": "Skin, Hair, Nails", "bullets": ["Zinc, selenium, vitamin C", "Tissue regeneration", "Beauty foundation"]}
+    ],
+    "usage": {
+      "h3": "How to Take U-10 Core:",
+      "dosage": "Adults: 1 capsule once daily with food",
+      "time": "Take with a meal for optimal absorption (fat-soluble vitamins need fat).",
+      "course": "Recommended course — 1-3 months. Can be repeated as needed for ongoing baseline support.",
+      "note": "For maximum effect, regular daily intake is recommended. Consistency &gt; perfection."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Not recommended for children under 12 without medical supervision", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "30 vegan capsules", "servings": "30 (1 capsule per serving)", "supply": "1 month", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "10 essential vitamins and minerals — the most clinically meaningful baseline nutrients in bioavailable forms.",
+    "whats_inside": [
+      {"title": "Immune Trio (C, D, Zn)", "desc": "Vitamin C, vitamin D3, and zinc — the three most-studied immune-supporting nutrients in bioavailable forms.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Energy B-Vitamins (B6, B12, Mg)", "desc": "Active B6 (P-5-P), methylcobalamin B12, and bisglycinate magnesium — energy production and nervous system support.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Bone &amp; Muscle (Ca, Fe)", "desc": "Bioavailable calcium and iron bisglycinate — bone density support and oxygen transport.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Thyroid &amp; Antioxidants (I, Se)", "desc": "Iodine and selenomethionine selenium — thyroid function and antioxidant defense.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Vcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for everyone:",
+    "who_suitable": ["Adults of all ages", "Anyone starting a supplement routine", "People with imperfect diets", "Travelers, busy professionals", "Vegetarians/vegans (B12 support)"],
+    "who_priority": ["Suspected micronutrient deficiencies", "Low energy / fatigue", "Frequent infections", "Recovery from illness", "Restrictive diets"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Vitamins &amp; Minerals", "desc": "Multivit Men, Multivit Women, Specific D3+K2"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Iroton, Magnesium 5-in-1"},
+      {"title": "Immune Health", "desc": "Liposomal Vitamin C, Zinc Complex"}
+    ]
+  },
+  "iroton-liposomal": {
+    "title": "Liposomal Iroton - Iron Bisglycinate with Cofactors",
+    "name_short": "LIPOSOMAL IROTON",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Liposomal Iroton",
+    "tagline": "Iron that's gentle on the stomach — and actually absorbed.",
+    "description": "Iron bisglycinate with vitamin C, active B-vitamins (Quatrefolic® B9, P-5-P, R-5-P), L-lysine, and liposomal phospholipid matrix for maximum absorption.",
+    "badge_top": "60 Vegan Vcaps® • 2-Month Supply",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Liposomal Iroton",
+    "badges": [
+      {"color": "green", "label": "Iron Bisglycinate"},
+      {"color": "blue", "label": "Quatrefolic® B9"},
+      {"color": "purple", "label": "Active B6 + B2"},
+      {"color": "yellow", "label": "Liposomal Delivery"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60 Vegan Vcaps®", "lines": ["1 capsule/day with food", "1-3 month course recommended"]},
+    "key_benefits": ["Hemoglobin formation &amp; oxygen transport", "Energy &amp; reduced fatigue", "Cognitive function support"],
+    "narrative_h2": "Iron That Actually Works",
+    "narrative_paragraphs": [
+      "This isn't just iron — it's a thoughtful absorption system that actually works. When it comes to restoring iron levels, energy, and oxygen exchange, what matters isn't just dosage — it's the form of iron, its transport in the body, and combination with cofactors.",
+      "Iron is a key element for hemoglobin synthesis, oxygen transport, brain function, and energy production. Iron deficiency leads to chronic fatigue, reduced concentration, and weakened immunity.",
+      "Universe Vitamins™ Liposomal Iroton uses iron bisglycinate — a form that's gentle on the stomach, has high absorption rate, and doesn't cause the side effects typical of cheaper iron forms. Enhanced with vitamin C, Quatrefolic® methylfolate, active B6 and B2, and L-lysine."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Iron bisglycinate (gentle, high absorption)", "Quatrefolic® methylfolate B9 (active form)", "P-5-P active vitamin B6", "R-5-P active vitamin B2", "L-lysine for iron transport enhancement"], "footnote": "Iron bisglycinate is the gold standard for stomach-friendly iron supplementation."},
+      {"title": "Clinical Potency", "bullets": ["High-bioavailability iron form", "Vitamin C boosts iron absorption", "Active B-forms support hematopoiesis", "L-lysine enhances iron uptake", "Liposomal delivery into the cell"], "footnote": "Form &gt; dose: 1× bisglycinate &gt; 5× ferrous sulfate in usable iron."},
+      {"title": "Safety Certified", "bullets": ["Vegan Vcaps® capsules", "Heavy metals certification", "No GMO, no titanium dioxide", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 capsule",
+      "servings_per_container": "60",
+      "rows": [
+        {"name": "Iron (bisglycinate)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin C (sodium ascorbate)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "L-methylfolate (Quatrefolic® B9)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin B6 (P-5-P)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin B2 (R-5-P)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "L-lysine", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Liposomal-active phospholipid matrix, vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Avoid simultaneous intake with coffee/tea (reduces iron absorption)."
+    },
+    "health_benefits": [
+      {"title": "Hemoglobin &amp; Oxygen", "bullets": ["Hemoglobin formation", "Oxygen transport", "Iron + cofactors synergy"]},
+      {"title": "Energy &amp; Metabolism", "bullets": ["Reduces fatigue (B2, B6, iron)", "Energy metabolism support", "Vitamin C absorption boost"]},
+      {"title": "Cognitive", "bullets": ["Iron supports cognitive function", "B6, B9 for brain health", "Concentration support"]},
+      {"title": "Immune", "bullets": ["Iron for immune function", "Vitamin C immune support", "B6 immune modulation"]},
+      {"title": "Hematopoiesis", "bullets": ["Methylfolate active B9", "B6 for blood formation", "Coordinated iron + B-vitamin uptake"]},
+      {"title": "Stomach Friendly", "bullets": ["Bisglycinate form gentle on GI", "No constipation typical of cheap iron", "Liposomal delivery further reduces GI burden"]}
+    ],
+    "usage": {
+      "h3": "How to Take Liposomal Iroton:",
+      "dosage": "Adults: 1 capsule per day with food",
+      "time": "Best paired with vitamin C-rich foods.",
+      "course": "Recommended course — 1-3 months for sustained iron level improvement.",
+      "note": "Avoid simultaneous intake with coffee/tea/dairy (these reduce iron absorption). Take 2 hours apart from these."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If you have hemochromatosis or iron overload, do NOT use", "If you have GI condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 vegan capsules", "servings": "60 (1 capsule per serving)", "supply": "2 months", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "СГР Iroton", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Iron bisglycinate plus six synergistic cofactors — designed for max absorption and zero stomach upset.",
+    "whats_inside": [
+      {"title": "Iron Bisglycinate", "desc": "Premium chelated form. Gentle on the stomach, high absorption rate, no GI side effects typical of ferrous sulfate.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Quatrefolic® B9", "desc": "Active L-methylfolate form — bypasses MTHFR genetic limitations affecting ~50% of population. Required for hematopoiesis.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Active B6 + B2", "desc": "P-5-P (B6) and R-5-P (B2) — active forms requiring no conversion. Support energy metabolism and blood formation.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Vitamin C + L-Lysine", "desc": "Vitamin C boosts iron absorption. L-lysine improves iron transport. Liposomal matrix delivers everything into cells.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Quatrefolic®", "Vcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults with iron deficiency", "Vegetarians/vegans (low dietary heme iron)", "Women of reproductive age", "Athletes (high iron needs)", "Anyone with stomach sensitivity to traditional iron"],
+    "who_priority": ["Diagnosed iron deficiency anemia", "Low ferritin levels", "Heavy menstrual periods", "Pregnancy (consult doctor)", "Chronic fatigue with low iron"],
+    "pdf": {"link": "assets/universe-vitamins/СГР Iroton.pdf", "title": "Iroton Certificate", "subtitle": "PDF — Official certification document"},
+    "shop_more": [
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, U-10 Core, Magnesium 5-in-1"},
+      {"title": "Reproductive Health", "desc": "Multivit Women, Methylbalance"},
+      {"title": "Cognitive Support", "desc": "Methylbalance, Universe Omega-3, Multivit Men"}
+    ]
+  },
+  "methylbalance": {
+    "title": "Methylbalance - Active B-Vitamins + TMG for Methylation",
+    "name_short": "METHYLBALANCE",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Methylbalance B-Complex",
+    "tagline": "Methylation matters — for energy, brain, heart, and mood.",
+    "description": "Active B-vitamin complex with TMG (betaine), Quatrefolic® B9, Mecobalactive® B12, and synergistic minerals. Supports methylation, homocysteine balance, and cognitive function.",
+    "badge_top": "60 Vegan Vcaps® • 1-3 Month Course",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Methylbalance B-Complex",
+    "badges": [
+      {"color": "green", "label": "Quatrefolic® B9"},
+      {"color": "blue", "label": "Mecobalactive® B12"},
+      {"color": "purple", "label": "TMG (Betaine)"},
+      {"color": "yellow", "label": "Active B-Vitamins"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60 Vegan Vcaps®", "lines": ["2 capsules/day in AM", "1-3 month course recommended"]},
+    "key_benefits": ["Methylation &amp; homocysteine balance", "Energy &amp; cognitive performance", "Cardiovascular &amp; nervous system support"],
+    "narrative_h2": "Methylation Is Where the Magic Happens",
+    "narrative_paragraphs": [
+      "An innovative formula for methylation support, brain function, and energy metabolism — every component clinically validated. When it comes to concentration, energy, stress resilience, nervous system and heart health — what matters isn't just vitamins, but their <strong>active forms</strong> and synergy with amino acids and minerals.",
+      "Methylation is one of the body's key biochemical processes, affecting brain function, neurotransmitter synthesis, energy levels, detoxification, and cellular protection.",
+      "Methylation also plays a critical role in controlling homocysteine levels — an amino acid associated with increased cardiovascular risk, cognitive impairment, and accelerated aging when elevated."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["TMG (betaine) — methyl donor", "Quatrefolic® methylfolate B9 (active)", "Mecobalactive® methylcobalamin B12 (active)", "P-5-P active B6, R-5-P active B2", "L-serine, taurine, magnesium &amp; zinc bisglycinate"], "footnote": "Active forms bypass MTHFR genetic limitations affecting ~50% of population."},
+      {"title": "Clinical Potency", "bullets": ["Methylation support (TMG + B-vitamins)", "Homocysteine reduction", "Energy &amp; cognitive support", "Phosphatidylcholine for memory", "1-3 month course for clinical effect"], "footnote": "Synergy of methyl donors + active B-vitamins is more effective than any one alone."},
+      {"title": "Safety Certified", "bullets": ["Vegan Vcaps® capsules", "Active forms (no synthetic conversion needed)", "No GMO, no titanium dioxide", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "2 capsules",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "TMG (Trimethylglycine / Betaine)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "L-serine", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "L-methylfolate (Quatrefolic® B9)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Methylcobalamin (Mecobalactive® B12)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin B6 (P-5-P)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin B2 (R-5-P)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Taurine", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Magnesium bisglycinate", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Zinc bisglycinate", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Phosphatidylcholine", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Methylation Support", "bullets": ["TMG + active B-vitamins", "Detoxification pathways", "Cellular methylation processes"]},
+      {"title": "Homocysteine Control", "bullets": ["Reduces elevated homocysteine", "Cardiovascular protection", "Slows aging-related damage"]},
+      {"title": "Cognitive Performance", "bullets": ["Phosphatidylcholine for memory", "B12 for neurological function", "Concentration improvement"]},
+      {"title": "Energy &amp; Mood", "bullets": ["B-vitamins for energy metabolism", "Neurotransmitter synthesis (B6, L-serine)", "Stress resilience (taurine, Mg)"]},
+      {"title": "Cardiovascular", "bullets": ["Homocysteine balance", "Vascular protection", "Heart health support"]},
+      {"title": "Hormonal Balance", "bullets": ["Zinc + B6 hormone support", "Reproductive health", "Methylation and hormone regulation"]}
+    ],
+    "usage": {
+      "h3": "How to Take Methylbalance:",
+      "dosage": "Adults: 2 capsules per day with food",
+      "time": "Best taken in the first half of the day, given the energy and cognitive activation effect.",
+      "course": "Course of intake — 1-3 months. Can be repeated as needed.",
+      "note": "Active B-vitamins can produce noticeable energy effect — start with 1 capsule if sensitive."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If on antidepressants/MAOIs, consult physician (B6 interaction)", "If you have a medical condition, consult physician before use", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 vegan capsules", "servings": "30 (2 capsules per serving)", "supply": "1 month", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "TMG plus four active B-vitamins plus synergistic minerals and amino acids — built for the ~50% of people with MTHFR genetic variants.",
+    "whats_inside": [
+      {"title": "TMG (Betaine)", "desc": "Trimethylglycine — methyl group donor. Supports methylation cycle and stabilizes homocysteine levels.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Quatrefolic® + Mecobalactive®", "desc": "Active forms of B9 (methylfolate) and B12 (methylcobalamin). Bypass MTHFR genetic limitations affecting ~50% of population.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Active B6 + L-Serine", "desc": "P-5-P active vitamin B6 plus L-serine — both essential for neurotransmitter synthesis and brain function.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Phosphatidylcholine", "desc": "Choline source for memory, concentration, and cell membrane health. Plus magnesium &amp; zinc bisglycinate for stress and hormonal support.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Quatrefolic®", "Mecobalactive®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "3rd Party"],
+    "who_suitable_title": "Suitable for:",
+    "who_suitable": ["Adults with MTHFR genetic variants (~50% of population)", "Anyone with elevated homocysteine", "People with low energy / brain fog", "Vegetarians/vegans (B12 support)", "Cardiovascular risk profiles"],
+    "who_priority": ["Elevated homocysteine levels", "Cognitive concerns / brain fog", "Cardiovascular risk factors", "Mood and energy issues", "Methylation-related health protocols"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Energy &amp; Metabolism", "desc": "Iroton, U-10 Core, Magnesium 5-in-1"},
+      {"title": "Cardiovascular", "desc": "Universe Omega-3, Magnesium Pro"},
+      {"title": "Cognitive Support", "desc": "Universe Omega-3, Multivit Men/Women"}
+    ]
+  },
+  "multivit-men": {
+    "title": "Multivitamin for Men - 25 Bioavailable Nutrients",
+    "name_short": "MULTIVIT MEN",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Multivitamin for Men",
+    "tagline": "Designed around male physiology — not generic.",
+    "description": "25 bioavailable nutrients with bisglycinate minerals, active B-vitamins, CoQ10, ALCAR, and antioxidants. Supports energy, hormonal balance, and male-specific health.",
+    "badge_top": "60 Vegan Vcaps® • 1-Month Supply",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Multivitamin for Men",
+    "badges": [
+      {"color": "green", "label": "Bisglycinate Minerals"},
+      {"color": "blue", "label": "CoQ10 + ALCAR"},
+      {"color": "purple", "label": "Active B-Vitamins"},
+      {"color": "yellow", "label": "Hormone Support"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60 Vegan Vcaps®", "lines": ["2 capsules/day with meals", "8-12 week course recommended"]},
+    "key_benefits": ["Energy &amp; testosterone support", "Cardiovascular &amp; cognitive health", "Antioxidant protection"],
+    "narrative_h2": "Built for Male Physiology",
+    "narrative_paragraphs": [
+      "When it comes to energy, hormonal balance, endurance, and overall health — what matters isn't just dosage, but the right forms and synergy of components.",
+      "Modern men face high stress, heavy workloads, and deficiency of key micronutrients. That's why baseline support must work at the cellular level — energy, immunity, and protection from oxidative stress.",
+      "Universe Vitamins™ Multivitamin for Men is a complex designed around male physiology and current scientific data — supporting testosterone, cardiovascular function, cognitive performance, and antioxidant defense."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Bisglycinate forms of zinc, magnesium, iron", "Active B-vitamins (P-5-P, methylfolate, methylcobalamin)", "CoQ10 + Acetyl-L-Carnitine for energy", "Antioxidants (vitamin C, selenium, green tea, quercetin)", "Vitamin D3, K2 for bone &amp; cardiac"], "footnote": "Forms designed for max bioavailability — not generic supermarket-grade."},
+      {"title": "Clinical Potency", "bullets": ["25 nutrients in clinical doses", "Testosterone support (zinc, vitamin D, magnesium, selenium)", "Cardiovascular (Mg, B3, CoQ10, K2)", "Energy mitochondrial support (CoQ10 + ALCAR)", "Cognitive (B-vitamins, ALCAR, CoQ10)"], "footnote": "Specifically formulated for male physiology — not unisex."},
+      {"title": "Safety Certified", "bullets": ["Vegan Vcaps® capsules", "No GMO, no titanium dioxide", "No artificial colors or preservatives", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "2 capsules",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Vitamin Complex", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Mineral Complex (bisglycinates)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Active B-vitamins (P-5-P, methylfolate, B12)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "CoQ10", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Acetyl-L-Carnitine (ALCAR)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Antioxidants (Quercetin, Green tea, Selenium)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Lutein, Lycopene, β-Carotene", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Energy &amp; Endurance", "bullets": ["B-vitamins, magnesium", "CoQ10 + Acetyl-L-Carnitine", "Reduces fatigue"]},
+      {"title": "Testosterone Support", "bullets": ["Zinc, vitamin D, magnesium, selenium", "Hormonal balance support", "Reproductive health"]},
+      {"title": "Cardiovascular", "bullets": ["Mg, B3, CoQ10 for heart", "K2 for vascular protection", "Cardiac rhythm support"]},
+      {"title": "Cognitive Performance", "bullets": ["B-vitamins, ALCAR, CoQ10", "Concentration support", "Mental endurance"]},
+      {"title": "Antioxidant Defense", "bullets": ["Vitamin C, selenium, green tea, quercetin, lycopene", "Cellular protection", "Reduces oxidative stress"]},
+      {"title": "Skin &amp; Vision", "bullets": ["Lutein, lycopene, β-carotene", "Skin health support", "Vision protection"]}
+    ],
+    "usage": {
+      "h3": "How to Take Multivitamin for Men:",
+      "dosage": "Adults: 2 capsules per day with meals",
+      "time": "Take during or after a meal — for better absorption of fat-soluble vitamins.",
+      "course": "Recommended course — 8-12 weeks for pronounced effect.",
+      "note": "Do not take on an empty stomach to prevent GI discomfort."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if taking medication or have a medical condition", "Individual intolerance to components possible", "If on blood thinners, consult physician (K2 interaction)", "Designed for adult men 18+", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 vegan capsules", "servings": "30 (2 capsules per serving)", "supply": "1 month", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Twenty-five nutrients designed around male physiology — energy, testosterone, cardiovascular, cognitive support.",
+    "whats_inside": [
+      {"title": "Bisglycinate Minerals", "desc": "Zinc, magnesium, iron in bisglycinate form — gentle absorption, high bioavailability, no GI side effects.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Active B-Complex", "desc": "P-5-P (B6), methylfolate (B9), methylcobalamin (B12). No conversion needed — works for all genetic profiles.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "CoQ10 + ALCAR", "desc": "Mitochondrial energy support. CoQ10 for cellular energy. Acetyl-L-Carnitine crosses blood-brain barrier for mental energy.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Testosterone &amp; Antioxidant Stack", "desc": "Zinc, vitamin D, selenium for testosterone. Plus quercetin, green tea, lycopene, β-carotene for cellular protection.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Vcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for adult men:",
+    "who_suitable": ["Active men 18-65", "Athletes and bodybuilders", "High-stress professionals", "Men with high cognitive demands", "Vegetarians/vegans (B12, iron support)"],
+    "who_priority": ["Low energy / chronic fatigue", "Suspected testosterone decline", "Cardiovascular risk factors", "Cognitive performance optimization", "Pre-conception fertility planning"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Reproductive Health", "desc": "Iroton, DadMode, Zinc Complex"},
+      {"title": "Cardiovascular", "desc": "Universe Omega-3, Methylbalance, Magnesium Pro"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Iroton, U-10 Core"}
+    ]
+  },
+  "multivit-women": {
+    "title": "Multivitamin for Women - 25 Bioavailable Nutrients",
+    "name_short": "MULTIVIT WOMEN",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Multivitamin for Women",
+    "tagline": "Designed around female physiology and hormonal cycles.",
+    "description": "25 bioavailable nutrients with bisglycinate minerals, active B-vitamins, alpha-lipoic acid, resveratrol, myo-inositol, and BioPerine®. Supports hormonal balance, energy, and beauty.",
+    "badge_top": "60 Vegan Vcaps® • 1-Month Supply",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Multivitamin for Women",
+    "badges": [
+      {"color": "green", "label": "Bisglycinate Minerals"},
+      {"color": "blue", "label": "Myo-Inositol"},
+      {"color": "purple", "label": "BioPerine®"},
+      {"color": "yellow", "label": "Resveratrol"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "60 Vegan Vcaps®", "lines": ["2 capsules/day with meals", "8-12 week course recommended"]},
+    "key_benefits": ["Hormonal balance &amp; reproductive health", "Beauty (skin, hair, nails)", "Energy &amp; metabolic support"],
+    "narrative_h2": "Built for Female Physiology",
+    "narrative_paragraphs": [
+      "Modern women face high stress, hormonal fluctuations, heavy demands, and deficiency of key micronutrients. That's why baseline support must work at the cellular level — energy, immunity, hormonal regulation, and protection from oxidative stress.",
+      "Universe Vitamins™ Multivitamin for Women is a complex designed around female physiology and current scientific data — supporting hormonal cycles, beauty (skin/hair/nails), metabolism, and antioxidant defense.",
+      "Enhanced with myo-inositol for hormonal balance, resveratrol for anti-age, alpha-lipoic acid for cellular metabolism, and BioPerine® piperine for absorption boost."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Bisglycinate forms of zinc, magnesium, iron", "Active B-vitamins (P-5-P, methylfolate, methylcobalamin)", "Alpha-lipoic acid for cellular metabolism", "Resveratrol for anti-age", "BioPerine® piperine — enhances absorption"], "footnote": "Forms designed for max bioavailability — not generic."},
+      {"title": "Clinical Potency", "bullets": ["25 nutrients in clinical doses", "Hormonal balance (myo-inositol, B6, zinc)", "Metabolic support (myo-inositol, chromium)", "Beauty stack (biotin, zinc, β-carotene)", "Cardiovascular (magnesium, B3)"], "footnote": "Specifically formulated for female physiology — not unisex."},
+      {"title": "Safety Certified", "bullets": ["Vegan Vcaps® capsules", "No GMO, no titanium dioxide", "No artificial colors or preservatives", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "2 capsules",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "Vitamin Complex", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Mineral Complex (bisglycinates)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Active B-vitamins", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Myo-Inositol", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Alpha-lipoic acid", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Resveratrol", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "BioPerine® (piperine)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Biotin, β-Carotene", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Vegan Vcaps® capsule shell.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": ""
+    },
+    "health_benefits": [
+      {"title": "Hormonal Balance", "bullets": ["Myo-inositol, B6, zinc", "Cycle regulation support", "PCOS protocols (consult MD)"]},
+      {"title": "Beauty (Skin, Hair, Nails)", "bullets": ["Biotin for hair and nails", "Zinc, β-carotene for skin", "Vitamin C for collagen synthesis"]},
+      {"title": "Energy &amp; Metabolism", "bullets": ["B-vitamins, magnesium", "Alpha-lipoic acid for cellular energy", "Insulin sensitivity (myo-inositol, chromium)"]},
+      {"title": "Antioxidant Defense", "bullets": ["Vitamin C, selenium, resveratrol", "Alpha-lipoic acid", "Cellular protection"]},
+      {"title": "Cardiovascular", "bullets": ["Magnesium, B3", "Resveratrol cardio benefits", "Healthy lipid profile"]},
+      {"title": "Reproductive Health", "bullets": ["Myo-inositol fertility support", "B9 methylfolate (preconception)", "Iron and zinc for reproductive cycles"]}
+    ],
+    "usage": {
+      "h3": "How to Take Multivitamin for Women:",
+      "dosage": "Adults: 2 capsules per day with meals",
+      "time": "Take during or after a meal — for better absorption of fat-soluble vitamins.",
+      "course": "Recommended course — 8-12 weeks for pronounced effect.",
+      "note": "Do not take on an empty stomach to prevent GI discomfort."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly closed after opening"],
+      "shelf_life": "3 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If on blood thinners or hormonal therapy, consult physician", "Designed for adult women 18+", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "60 vegan capsules", "servings": "30 (2 capsules per serving)", "supply": "1 month", "extra_label": "Capsule", "extra": "Vegan Vcaps®"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Twenty-five nutrients designed around female physiology — hormonal balance, beauty, metabolism, and reproductive support.",
+    "whats_inside": [
+      {"title": "Myo-Inositol", "desc": "Supports hormonal balance and insulin sensitivity. Particularly relevant for cycle regulation and PCOS protocols.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "BioPerine® Piperine", "desc": "Patented black pepper extract that enhances absorption of nearly all nutrients in the formula by 30-2000%.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Alpha-Lipoic Acid + Resveratrol", "desc": "Cellular metabolism support and anti-age protection. Both water- and fat-soluble antioxidant action.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Beauty Stack (Biotin, Zinc, β-Carotene)", "desc": "Hair, skin, and nail support. Plus active B-vitamins and bisglycinate minerals for energy and absorption.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["BioPerine®", "Vcaps®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "3rd Party"],
+    "who_suitable_title": "Suitable for adult women:",
+    "who_suitable": ["Women 18-65", "Active women", "Working professionals", "Vegetarians/vegans", "Beauty &amp; wellness enthusiasts"],
+    "who_priority": ["Hormonal cycle issues", "PCOS protocols (with MD)", "Skin/hair/nail concerns", "Pre-conception (with iron+B9)", "Energy and stress support"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Beauty &amp; Anti-age", "desc": "Bovine &amp; Marine Collagen, Vitamin C"},
+      {"title": "Reproductive Health", "desc": "Iroton, Zinc Complex, Methylbalance"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Magnesium 5-in-1, U-10 Core"}
+    ]
+  },
+  "vitamin-d3": {
+    "title": "Liposomal Vitamin D3 Smart Drops - Quali-D® DSM",
+    "name_short": "VITAMIN D3 DROPS",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Liposomal Vitamin D3 Smart Drops",
+    "tagline": "Vitamin D3 in liposomal form — sunshine for your immune system.",
+    "description": "Liposomal vitamin D3 (Quali-D® from DSM, Switzerland) in MCT oil base (STELLIESTERS®, France) — premium drops format with precise dosing.",
+    "badge_top": "20ml Bottle • Smart Drops",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Liposomal Vitamin D3 Smart Drops",
+    "badges": [
+      {"color": "green", "label": "Quali-D® (DSM)"},
+      {"color": "blue", "label": "MCT Oil Base"},
+      {"color": "purple", "label": "Liposomal Delivery"},
+      {"color": "yellow", "label": "No GMO"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "20ml Bottle", "lines": ["1-10 drops/day with food", "8-12 week course recommended"]},
+    "key_benefits": ["Immune system support", "Bone &amp; muscle function", "Mood &amp; energy support"],
+    "narrative_h2": "Sunshine in a Bottle",
+    "narrative_paragraphs": [
+      "When it comes to immunity, bones, hormonal balance, and overall health — what matters isn't just dosage, but the form of delivery.",
+      "Modern lifestyle, lack of sun exposure, and high stress lead to vitamin D deficiency — a vitamin that plays a key role in the entire body's function.",
+      "Universe Vitamins™ Liposomal Vitamin D3 is a premium formula with enhanced bioavailability via liposomal phospholipid technology, premium Quali-D® raw material from DSM (Switzerland), and STELLIESTERS® MCT oil base from France."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Quali-D® vitamin D3 (DSM, Switzerland)", "STELLIESTERS® MCT oil base (France)", "Liposomal phospholipid technology", "High-stability raw material", "Convenient drops format with pipette"], "footnote": "Quali-D® is the global gold standard for pharmaceutical-grade vitamin D3."},
+      {"title": "Clinical Potency", "bullets": ["Liposomal delivery into the cell", "MCT oil enhances fat-soluble vitamin uptake", "Convenient drops — precise dose adjustment", "Suitable for all ages with dose titration", "8-12 weeks for serum vitamin D rise"], "footnote": "Sublingual or oral — both routes effective with this formula."},
+      {"title": "Safety Certified", "bullets": ["No artificial colors", "No preservatives", "No GMO, no titanium dioxide", "Premium European raw materials", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1-10 drops",
+      "servings_per_container": "Variable",
+      "rows": [
+        {"name": "Vitamin D3 (Quali-D® cholecalciferol)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "STELLIESTERS® MCT oil (France), liposomal phospholipid matrix.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Higher doses require medical supervision."
+    },
+    "health_benefits": [
+      {"title": "Immune System", "bullets": ["Supports normal immune function", "Reduces seasonal illness frequency", "Foundation of immune wellness"]},
+      {"title": "Bone &amp; Calcium", "bullets": ["Promotes calcium absorption", "Supports bone density", "Critical post-menopause"]},
+      {"title": "Cardiovascular", "bullets": ["Supports cardiovascular health", "Vascular function", "Heart rhythm regulation"]},
+      {"title": "Hormonal Balance", "bullets": ["Hormonal regulation", "Steroid hormone synthesis", "Reproductive health"]},
+      {"title": "Muscle Function", "bullets": ["Supports muscle strength", "Reduces falls in elderly", "Athletic performance"]},
+      {"title": "Mood &amp; Energy", "bullets": ["Supports overall well-being", "Energy levels", "Mood stability (especially winter)"]}
+    ],
+    "usage": {
+      "h3": "How to Take Liposomal Vitamin D3:",
+      "dosage": "Adults: 1-10 drops per day depending on need and deficiency level",
+      "time": "Best taken with food — vitamin D3 is fat-soluble.",
+      "course": "Recommended course — 8-12 weeks for measurable serum vitamin D level rise.",
+      "note": "Higher doses (5-10 drops) require medical supervision and ideally serum 25-OH vitamin D testing."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight", "Keep tightly closed after opening", "Refrigerate after opening (recommended)"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Higher doses require medical supervision", "If you have hypercalcemia, do NOT use without MD", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "20ml liquid", "servings": "Variable (drops format)", "supply": "1-3 months depending on dose", "extra_label": "Form", "extra": "Liposomal liquid drops"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Quali-D® vitamin D3 from DSM (Switzerland) in MCT oil from STELLIESTERS® (France) — premium European raw materials in liposomal delivery.",
+    "whats_inside": [
+      {"title": "Vitamin D3 (Quali-D®)", "desc": "Cholecalciferol form — the natural vitamin D produced by skin in sunlight. From DSM (Switzerland), the global pharmaceutical standard.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "STELLIESTERS® MCT Oil", "desc": "Premium medium-chain triglyceride oil from France. Enhances fat-soluble vitamin uptake.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Liposomal Technology", "desc": "Phospholipid matrix delivers vitamin D3 directly into the cell, bypassing absorption limits of standard oral vitamin D.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Smart Drops Format", "desc": "Precise dose titration with pipette. Suitable for all ages — adjust drops based on individual need.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Quali-D®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "IAS", "3rd Party"],
+    "who_suitable_title": "Suitable for everyone:",
+    "who_suitable": ["Adults of all ages", "Anyone with low sun exposure", "Indoor workers", "Postmenopausal women (bone support)", "Vegetarians/vegans (vitamin D-poor diet)"],
+    "who_priority": ["Confirmed vitamin D deficiency", "Frequent infections / weak immunity", "Bone density concerns", "Postmenopausal women", "Northern latitudes (winter low sun)"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Immune Health", "desc": "Vitamin D3+K2, Vitamin C, Zinc Complex"},
+      {"title": "Bone Support", "desc": "Bone Longevity, Magnesium 5-in-1"},
+      {"title": "Vitamins &amp; Minerals", "desc": "U-10 Core, Multivit Men/Women"}
+    ]
+  },
+  "vitamin-d3-k2": {
+    "title": "Liposomal Vitamin D3+K2 Smart Drops - Synergistic Calcium Routing",
+    "name_short": "D3+K2 DROPS",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Liposomal Vitamin D3+K2 Smart Drops",
+    "tagline": "D3 absorbs calcium. K2 directs it to bones. Together they're complete.",
+    "description": "Liposomal vitamin D3 (Quali-D® DSM) with vitamin K2 MK-7 (K2VITAL® Kappa Bioscience, Norway) in MCT oil. Synergistic immune, bone, and cardiovascular support.",
+    "badge_top": "30ml Bottle (20ml also available)",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Liposomal Vitamin D3+K2 Smart Drops",
+    "badges": [
+      {"color": "green", "label": "Quali-D® (DSM)"},
+      {"color": "blue", "label": "K2VITAL® MK-7"},
+      {"color": "purple", "label": "STELLIESTERS® MCT"},
+      {"color": "yellow", "label": "No Titanium Dioxide"}
+    ],
+    "lab_callout": null,
+    "pkg_box": {"title": "30ml or 20ml Bottle", "lines": ["Drops/day per individual need", "8-12 week course recommended"]},
+    "key_benefits": ["Immune system &amp; bone health", "Smart calcium routing (D3+K2 synergy)", "Cardiovascular protection"],
+    "narrative_h2": "The D3+K2 Synergy",
+    "narrative_paragraphs": [
+      "Universe Vitamins™ Liposomal Vitamin D3+K2 is a premium formula for immune, bone, and cardiovascular support — with maximum bioavailability.",
+      "<strong>Vitamin D3 (Quali-D®)</strong> promotes calcium absorption from the gut and supports immunity. <strong>Vitamin K2 (K2VITAL® MK-7)</strong> directs that calcium specifically to bones — and prevents arterial deposition.",
+      "Together they work significantly more effectively than separately. Calcium without K2 risks cardiovascular calcification — that's why this synergy matters."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["Quali-D® vitamin D3 (DSM, Switzerland)", "K2VITAL® MK-7 (Kappa Bioscience, Norway)", "STELLIESTERS® MCT oil (France)", "Liposomal phospholipid matrix", "Precise drops format"], "footnote": "Three patented European premium ingredients in one formula."},
+      {"title": "Clinical Potency", "bullets": ["Synergistic D3+K2 calcium routing", "MK-7 form has 24h half-life (vs MK-4 1-2h)", "Liposomal delivery into cells", "MCT oil enhances absorption", "8-12 week course for serum rise"], "footnote": "MK-7 form lasts 24h in body — vs MK-4 only 1-2h. Worth the premium."},
+      {"title": "Safety Certified", "bullets": ["No preservatives", "No flavorings", "No titanium dioxide", "No GMO", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "Drops as directed",
+      "servings_per_container": "Variable",
+      "rows": [
+        {"name": "Vitamin D3 (Quali-D® cholecalciferol)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Vitamin K2 (K2VITAL® MK-7)", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "STELLIESTERS® MCT oil (France), liposomal phospholipid matrix.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "If on blood thinners (warfarin, etc.), consult physician before use — K2 affects coagulation."
+    },
+    "health_benefits": [
+      {"title": "Immune System", "bullets": ["Supports normal immune function", "Reduces seasonal illness frequency", "D3 immune foundation"]},
+      {"title": "Bone Health", "bullets": ["D3 enhances calcium absorption", "K2 directs calcium to bones", "Bone density support"]},
+      {"title": "Cardiovascular", "bullets": ["K2 prevents arterial calcification", "Healthy vascular function", "Reduces calcium-related cardio risk"]},
+      {"title": "Calcium Smart Routing", "bullets": ["D3 absorbs Ca from gut", "K2 deposits Ca in bones", "Prevents wrong-place calcification"]},
+      {"title": "Hormonal Support", "bullets": ["D3 supports hormone synthesis", "Anti-age effects", "Reproductive health"]},
+      {"title": "Muscle &amp; Energy", "bullets": ["Vitamin D supports muscle function", "Reduces fatigue", "Mood support (winter especially)"]}
+    ],
+    "usage": {
+      "h3": "How to Take Liposomal Vitamin D3+K2:",
+      "dosage": "Adults: drops per individual need (consult product label for specific drop count)",
+      "time": "Best taken with food — both vitamins are fat-soluble.",
+      "course": "Recommended course — 8-12 weeks for measurable serum vitamin D rise.",
+      "note": "If on blood thinners, consult physician before use — K2 affects coagulation."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight", "Keep tightly closed after opening", "Refrigerate after opening (recommended)"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "If on blood thinners (warfarin), do NOT start without MD consultation", "Higher doses require medical supervision", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "30ml liquid (or 20ml format)", "servings": "Variable (drops format)", "supply": "2-3 months depending on dose", "extra_label": "Form", "extra": "Liposomal liquid drops"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "See product label for exact dimensions"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "СГР D3К2", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Three patented European ingredients — Quali-D® D3 from DSM, K2VITAL® MK-7 from Kappa Bioscience, and STELLIESTERS® MCT from France.",
+    "whats_inside": [
+      {"title": "Vitamin D3 (Quali-D®)", "desc": "Cholecalciferol from DSM (Switzerland). Promotes calcium absorption from gut, supports immunity, hormone synthesis.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Vitamin K2 (K2VITAL® MK-7)", "desc": "Menaquinone-7 form from Kappa Bioscience (Norway). 24h body half-life. Directs calcium to bones, prevents arterial deposition.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "STELLIESTERS® MCT Oil", "desc": "Premium medium-chain triglyceride base from France. Enhances absorption of both fat-soluble vitamins.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Liposomal Smart Drops", "desc": "Phospholipid matrix delivers vitamins into the cell. Convenient drops format with precise dose adjustment.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Quali-D®", "K2VITAL®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "3rd Party"],
+    "who_suitable_title": "Suitable for everyone:",
+    "who_suitable": ["Adults of all ages", "Anyone taking calcium supplements", "Postmenopausal women", "Northern latitude residents (winter D)", "Those with cardiovascular concerns"],
+    "who_priority": ["Bone density concerns / osteoporosis", "Vitamin D deficiency confirmed", "On calcium supplements (need K2)", "Postmenopausal women", "Cardiovascular risk + low D status"],
+    "pdf": {"link": "assets/universe-vitamins/СГР D3К2.pdf", "title": "D3+K2 Certificate", "subtitle": "PDF — Official certification document"},
+    "shop_more": [
+      {"title": "Immune Health", "desc": "Vitamin C, Zinc Complex, Multibiotic Forte"},
+      {"title": "Joint &amp; Mobility", "desc": "Bone Longevity, Bovine &amp; Marine Collagen"},
+      {"title": "Cardiovascular", "desc": "Universe Omega-3, Magnesium 5-in-1, Methylbalance"}
+    ]
+  },
+  "longevity-complex": {
+    "title": "Anti-age &amp; Longevity Complex - NMN, PQQ, CoQ10 Ubiqsome®",
+    "name_short": "LONGEVITY COMPLEX",
+    "name_full_html": "Universe Vitamins<sup class=\"text-base\">TM</sup> Anti-age &amp; Longevity Complex",
+    "tagline": "Aging is a multi-system process. So is the solution.",
+    "description": "Multi-tier anti-age system: NMN + TMG for NAD⁺, CoQ10 Ubiqsome® + PQQ for mitochondria, Quercefit® and oleuropein for inflammation, sulforaphane and spermidine for autophagy.",
+    "badge_top": "30 Sachets • Multi-Tier System",
+    "img_front": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_right": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_left": "assets/universe-vitamins/LOGO_Universe Vitamins/PNG/Universe Vitamins Logo.png",
+    "img_alt": "Anti-age &amp; Longevity Complex",
+    "badges": [
+      {"color": "green", "label": "NMN + TMG"},
+      {"color": "blue", "label": "CoQ10 Ubiqsome®"},
+      {"color": "purple", "label": "Quercefit®"},
+      {"color": "yellow", "label": "Spermidine"}
+    ],
+    "lab_callout": {"title": "Multi-pathway anti-age system", "subtitle": "NAD⁺ + mitochondria + inflammation + autophagy + cognition"},
+    "pkg_box": {"title": "30 Sachets", "lines": ["1 sachet/day", "Designed for monthly cycles"]},
+    "key_benefits": ["NAD⁺ &amp; mitochondrial support", "Cellular detox &amp; autophagy", "Brain &amp; cognitive longevity"],
+    "narrative_h2": "A Complete Longevity System",
+    "narrative_paragraphs": [
+      "Aging isn't just time. It's a gradual decline in NAD⁺ levels, deterioration of mitochondrial function, and accumulation of cellular damage.",
+      "Universe Vitamins™ Longevity Complex isn't just a supplement. It's a multi-tier youth-extension system, designed to work at the deep cellular level, drawing on the latest scientific data about aging.",
+      "Five pathways addressed: NAD⁺ restoration, mitochondrial function, inflammation control, detox/autophagy activation, and cognitive support — all in one formula."
+    ],
+    "why_works": [
+      {"title": "Premium Sourcing", "bullets": ["NMN + TMG for NAD⁺ restoration", "CoQ10 Ubiqsome® (high-bioavailability)", "Quercefit® quercetin (Indena, Italy)", "PQQ + Astaxanthin for mitochondria", "Spermidine + Sulforaphane for autophagy"], "footnote": "Premium patented ingredients across the entire longevity stack."},
+      {"title": "Clinical Potency", "bullets": ["NAD⁺ precursor (NMN) + methyl support (TMG)", "Mitochondrial biogenesis (PQQ)", "Quercefit® 7× more bioavailable than ordinary quercetin", "Spermidine triggers autophagy", "Magnesium L-threonate crosses blood-brain barrier"], "footnote": "Multi-pathway approach — each system reinforces the others."},
+      {"title": "Safety Certified", "bullets": ["Premium European raw materials", "Heavy metals certification", "No GMO, no titanium dioxide", "No artificial colors or preservatives", "Manufactured under GMP, ISO, FDA standards"], "footnote": "International certifications: FDA, GMP, ISO, TÜRKAK, Halal, IAS."}
+    ],
+    "supplement_facts": {
+      "serving_size": "1 sachet",
+      "servings_per_container": "30",
+      "rows": [
+        {"name": "NMN (Nicotinamide Mononucleotide)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "TMG (Trimethylglycine / Betaine)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "CoQ10 (Ubiqsome®)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "PQQ (Pyrroloquinoline Quinone)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Astaxanthin", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Quercefit® quercetin (Indena)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Oleuropein (olive extract)", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Hydroxytyrosol", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Sulforaphane", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "R-Alpha Lipoic Acid", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Spermidine", "amount": "—", "rda": "†", "indent": 0},
+        {"name": "Magnesium L-threonate", "amount": "—", "rda": "†", "indent": 0}
+      ],
+      "other_ingredients": "Natural flavoring, citric acid.",
+      "lab_box": null,
+      "caution": "Consult physician if pregnant, nursing, taking medication, or have a medical condition. Keep out of reach of children.",
+      "caution_extra": "Designed for adults 25+ engaged in active longevity protocols."
+    },
+    "health_benefits": [
+      {"title": "NAD⁺ Restoration", "bullets": ["NMN — direct NAD⁺ precursor", "TMG stabilizes NAD⁺ pathway", "Cellular energy at age-resistant levels"]},
+      {"title": "Mitochondrial Function", "bullets": ["CoQ10 + PQQ for mito biogenesis", "Astaxanthin protects mito membranes", "Increased cellular energy production"]},
+      {"title": "Inflammation Control", "bullets": ["Quercefit® quercetin", "Oleuropein cardio-protection", "Hydroxytyrosol — strong antioxidant"]},
+      {"title": "Detox &amp; Autophagy", "bullets": ["Sulforaphane (Nrf2 activation)", "R-ALA cellular detox", "Spermidine triggers autophagy"]},
+      {"title": "Cognitive &amp; Brain", "bullets": ["Magnesium L-threonate crosses BBB", "Memory and concentration support", "Neuroplasticity"]},
+      {"title": "Whole-Body Anti-age", "bullets": ["DNA protection", "Cell renewal", "Age-related decline mitigation"]}
+    ],
+    "usage": {
+      "h3": "How to Take Anti-age &amp; Longevity Complex:",
+      "dosage": "Adults 25+: 1 sachet per day",
+      "time": "Take in the morning or with first meal — formula is energizing.",
+      "course": "Recommended use: monthly cycles (30-day course), can be repeated.",
+      "note": "Designed for adults 25+ engaged in active longevity protocols. Best paired with healthy lifestyle (sleep, exercise, balanced nutrition)."
+    },
+    "storage": {
+      "bullets": ["Store in a cool, dry place away from children", "Maximum temperature: +25°C (77°F)", "Avoid direct sunlight and moisture", "Keep tightly sealed", "Single-serving sachets — open just before use"],
+      "shelf_life": "2 years from manufacturing date"
+    },
+    "caution": {
+      "bullets": ["Consult doctor if pregnant, nursing, or taking medication", "Individual intolerance to components possible", "Not intended for children or adolescents", "If on blood thinners or with cardiac issues, consult physician (CoQ10, K-related interactions)", "Keep out of reach of children"],
+      "note": "This product is a dietary supplement, not a medicine. Not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    "pkg_info": {
+      "specs": {"quantity": "30 sachets", "servings": "30 (1 sachet per serving)", "supply": "1 month", "extra_label": "Form", "extra": "Powder sachets"},
+      "dimensions": {"l": "—", "w": "—", "h": "—", "caption": "Single-serve sachets"},
+      "manufacturing": {"country": "Turkey", "location": "Istanbul", "cert": "State Registration Certificate (СГР)", "note": "Manufactured under GMP, ISO, and FDA standards"}
+    },
+    "whats_inside_intro": "Twelve premium ingredients across five longevity pathways — NAD⁺, mitochondria, inflammation, autophagy, cognition.",
+    "whats_inside": [
+      {"title": "NAD⁺ Stack (NMN + TMG)", "desc": "NMN is the direct precursor of NAD⁺ — the molecule that powers cellular energy and DNA repair. TMG stabilizes the methylation cycle.", "icon_path": "M13 10V3L4 14h7v7l9-11h-7z"},
+      {"title": "Mitochondrial Stack", "desc": "CoQ10 Ubiqsome® for mito energy. PQQ stimulates new mitochondria formation. Astaxanthin protects membranes from oxidative damage.", "icon_path": "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"},
+      {"title": "Inflammation + Autophagy", "desc": "Quercefit®, oleuropein, hydroxytyrosol fight inflammation. Sulforaphane (Nrf2), R-ALA, and spermidine activate detox and autophagy.", "icon_path": "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"},
+      {"title": "Cognitive Stack", "desc": "Magnesium L-threonate is the only Mg form that crosses the blood-brain barrier. Improves memory, concentration, and neuroplasticity.", "icon_path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"}
+    ],
+    "certifications": ["Ubiqsome®", "Quercefit®", "FDA", "GMP", "ISO", "TÜRKAK", "Halal", "3rd Party"],
+    "who_suitable_title": "Suitable for active longevity:",
+    "who_suitable": ["Adults 25+ engaged in longevity protocols", "Anti-age &amp; biohacking enthusiasts", "Health-conscious adults", "Athletes (cellular energy &amp; recovery)", "People interested in healthspan extension"],
+    "who_priority": ["Active longevity protocols", "Biohacking and healthspan optimization", "Cognitive performance optimization", "High oxidative stress lifestyles", "Long-term cellular health investment"],
+    "pdf": null,
+    "shop_more": [
+      {"title": "Anti-age &amp; Longevity", "desc": "Bovine &amp; Marine Collagen, Antioxidant Complex"},
+      {"title": "Cognitive &amp; Brain", "desc": "Universe Omega-3, Methylbalance"},
+      {"title": "Energy &amp; Metabolism", "desc": "Methylbalance, Iroton, U-10 Core"}
+    ]
+  }
+}
