@@ -850,5 +850,28 @@
         });
     </script>
 
+<script>
+(function(){
+  var m = location.pathname.match(/_(ru|kz|tr)\.html(\?|$|#)/);
+  var c = m ? m[1] : 'en';
+  var s = localStorage.getItem('lang');
+  if (s && s !== c) {
+    var p = location.pathname.replace(/_(ru|kz|tr)\.html$/, '.html');
+    if (s !== 'en') p = p.replace(/\.html$/, '_' + s + '.html');
+    if (p !== location.pathname) {
+      location.replace(p + location.search + location.hash);
+      return;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[data-lang]').forEach(function(e){
+      e.addEventListener('click', function(){
+        localStorage.setItem('lang', this.dataset.lang);
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

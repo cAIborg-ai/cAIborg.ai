@@ -36,13 +36,13 @@
                     <a href="universe_products_kz.html" class="text-gray-600 hover:text-brand-green transition">Products</a>
                     <a href="universe_mission_kz.html" class="text-brand-dark hover:text-brand-green transition">Our Mission</a>
                     <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
-                        <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">EN</a>
+                        <a href="universe_mission.html" data-lang="en" class="text-gray-600 hover:text-brand-green transition">EN</a>
                         <span class="text-gray-400">|</span>
-                        <a href="universe_mission_ru.html" class="text-gray-600 hover:text-brand-green transition">RU</a>
+                        <a href="universe_mission_ru.html" data-lang="ru" class="text-gray-600 hover:text-brand-green transition">RU</a>
                         <span class="text-gray-400">|</span>
-                        <a href="universe_mission_kz.html" class="text-brand-green font-medium">KZ</a>
+                        <a href="universe_mission_kz.html" data-lang="kz" class="text-brand-green font-medium">KZ</a>
                         <span class="text-gray-400">|</span>
-                        <a href="universe_mission_tr.html" class="text-gray-600 hover:text-brand-green transition">TR</a>
+                        <a href="universe_mission_tr.html" data-lang="tr" class="text-gray-600 hover:text-brand-green transition">TR</a>
                     </div>
                 </div>
             </div>
@@ -291,6 +291,29 @@
             </div>
         </div>
     </footer>
+
+<script>
+(function(){
+  var m = location.pathname.match(/_(ru|kz|tr)\.html(\?|$|#)/);
+  var c = m ? m[1] : 'en';
+  var s = localStorage.getItem('lang');
+  if (s && s !== c) {
+    var p = location.pathname.replace(/_(ru|kz|tr)\.html$/, '.html');
+    if (s !== 'en') p = p.replace(/\.html$/, '_' + s + '.html');
+    if (p !== location.pathname) {
+      location.replace(p + location.search + location.hash);
+      return;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[data-lang]').forEach(function(e){
+      e.addEventListener('click', function(){
+        localStorage.setItem('lang', this.dataset.lang);
+      });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
