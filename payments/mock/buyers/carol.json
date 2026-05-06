@@ -1,0 +1,7 @@
+{
+  "name": "carol",
+  "purchases": [
+    {"sku": "collagen-bovine", "quantity": 2},
+    {"sku": "vitamin-c", "quantity": 2}
+  ]
+}

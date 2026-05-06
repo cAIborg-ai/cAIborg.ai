@@ -1,0 +1,7 @@
+{
+  "name": "bob",
+  "purchases": [
+    {"sku": "zinc-complex", "quantity": 3},
+    {"sku": "magnesium-5in1", "quantity": 1}
+  ]
+}

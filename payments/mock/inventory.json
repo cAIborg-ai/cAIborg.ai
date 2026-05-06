@@ -1,0 +1,12 @@
+{
+  "omega": {"price_kopecks": 200000, "stock": 100},
+  "vegan-omega3": {"price_kopecks": 220000, "stock": 100},
+  "magnesium-5in1": {"price_kopecks": 180000, "stock": 100},
+  "magnesium-pro": {"price_kopecks": 190000, "stock": 100},
+  "zinc-complex": {"price_kopecks": 150000, "stock": 100},
+  "vitamin-c": {"price_kopecks": 160000, "stock": 100},
+  "collagen-bovine": {"price_kopecks": 240000, "stock": 100},
+  "collagen-marine": {"price_kopecks": 260000, "stock": 100},
+  "bone-longevity": {"price_kopecks": 230000, "stock": 100},
+  "multibiotic-forte": {"price_kopecks": 210000, "stock": 100}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "eve",
+  "purchases": [
+    {"sku": "vegan-omega3", "quantity": 3},
+    {"sku": "bone-longevity", "quantity": 1},
+    {"sku": "zinc-complex", "quantity": 1}
+  ]
+}

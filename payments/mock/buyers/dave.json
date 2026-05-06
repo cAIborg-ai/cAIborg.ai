@@ -1,0 +1,8 @@
+{
+  "name": "dave",
+  "purchases": [
+    {"sku": "omega", "quantity": 1},
+    {"sku": "multibiotic-forte", "quantity": 1},
+    {"sku": "magnesium-pro", "quantity": 2}
+  ]
+}

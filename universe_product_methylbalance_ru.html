@@ -73,7 +73,7 @@
                     <a href="#whats-inside" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Что внутри</a>
                     <a href="#label-info" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Информация на этикетке</a>
                     <a href="#resources" class="text-gray-600 hover:text-brand-green transition whitespace-nowrap">Материалы</a>
-                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">Купить</a>
+                    <button type="button" data-add-to-cart data-sku="methylbalance" class="bg-brand-green text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition whitespace-nowrap">В корзину</button>
                 </nav>
             </div>
         </div>
@@ -143,10 +143,10 @@
                         </div>
                     </div>
 
-                    <!-- Buy on OZON -->
-                    <a href="https://www.ozon.ru/seller/universe-pharma-1263990/" target="_blank" rel="noopener noreferrer" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-black text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
-                        Buy on OZON
-                    </a>
+                    <!-- Add to Cart -->
+                    <button type="button" data-add-to-cart data-sku="methylbalance" class="block w-full bg-brand-green hover:bg-opacity-90 text-white text-center font-semibold py-4 px-8 rounded-lg transition mb-4">
+                        В корзину
+                    </button>
 
                     <p class="text-sm text-gray-600 text-center mb-4">
                         Доступно на <a href="https://www.ozon.ru" target="_blank" class="text-brand-green hover:underline">OZON.ru</a> • Бесплатная доставка от 3000₽
@@ -876,6 +876,57 @@
     document.querySelectorAll('a[data-lang]').forEach(function(e){
       e.addEventListener('click', function(){
         localStorage.setItem('lang', this.dataset.lang);
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var API_BASE = window.UNIVERSE_API_BASE || '';
+  function uuid(){
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, function(c){
+      return (c ^ (Math.random() * 16) >> (c / 4)).toString(16);
+    });
+  }
+  function getCartId(){
+    var id = localStorage.getItem('cart_id');
+    if (!id) { id = uuid(); localStorage.setItem('cart_id', id); }
+    return id;
+  }
+  function toast(msg, ok){
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:' + (ok ? '#6B9F3E' : '#dc2626') + ';color:#fff;padding:12px 24px;border-radius:999px;font-weight:500;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:Inter,sans-serif;font-size:14px';
+    document.body.appendChild(t);
+    setTimeout(function(){ t.style.transition = 'opacity .3s'; t.style.opacity = '0'; }, 2200);
+    setTimeout(function(){ t.remove(); }, 2600);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-add-to-cart]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var sku = btn.getAttribute('data-sku');
+        if (!sku) { toast('Не удалось добавить — попробуйте ещё раз', false); return; }
+        btn.disabled = true;
+        fetch(API_BASE + '/api/cart/add', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({cart_id: getCartId(), sku: sku, quantity: 1, idempotency_key: uuid()})
+        }).then(function(r){
+          return r.json().then(function(data){ return {ok: r.ok, data: data}; });
+        }).then(function(res){
+          if (res.ok) {
+            toast('Добавлено в корзину (' + res.data.total_items + ')', true);
+          } else {
+            toast((res.data && res.data.error) || 'Не удалось добавить — попробуйте ещё раз', false);
+          }
+        }).catch(function(){
+          toast('Не удалось добавить — попробуйте ещё раз', false);
+        }).then(function(){
+          btn.disabled = false;
+        });
       });
     });
   });
