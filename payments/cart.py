@@ -118,6 +118,13 @@ class Cart:
                 retries INTEGER NOT NULL DEFAULT 0,
                 created_at INTEGER NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS processed_webhooks (
+                payment_id TEXT NOT NULL,
+                status TEXT NOT NULL,
+                processed_at INTEGER NOT NULL,
+                payload_json TEXT NOT NULL,
+                PRIMARY KEY(payment_id, status)
+            );
             """
         )
 
@@ -454,6 +461,161 @@ class Cart:
                 self._idem_put(db, idempotency_key, response, now)
                 db.execute("COMMIT")
                 return response
+            except Exception:
+                db.execute("ROLLBACK")
+                raise
+
+    def record_payment_init(self, order_id: str, tbank_payment_id: str, idempotency_key: str) -> dict:
+        """Persist T-Bank's PaymentId on an order after a successful Init call.
+
+        FSM stays at inventory_reserved until the webhook confirms/rejects.
+        Idempotent on `idempotency_key`.
+        """
+        now = self._now()
+        with self._conn() as db:
+            db.execute("BEGIN IMMEDIATE")
+            try:
+                cached = self._idem_get(db, idempotency_key)
+                if cached is not None:
+                    db.execute("ROLLBACK")
+                    return cached
+                row = db.execute("SELECT state FROM orders WHERE id = ?", (order_id,)).fetchone()
+                if row is None:
+                    raise StateError(f"order {order_id} does not exist")
+                if row[0] != "inventory_reserved":
+                    raise StateError(
+                        f"order {order_id} state is {row[0]}; record_payment_init expects inventory_reserved"
+                    )
+                db.execute("UPDATE orders SET tbank_payment_id = ? WHERE id = ?", (tbank_payment_id, order_id))
+                self._append_event(db, order_id, "tbank_init_recorded", {"tbank_payment_id": tbank_payment_id}, now)
+                response = {"order_id": order_id, "tbank_payment_id": tbank_payment_id}
+                self._idem_put(db, idempotency_key, response, now)
+                db.execute("COMMIT")
+                return response
+            except Exception:
+                db.execute("ROLLBACK")
+                raise
+
+    def apply_webhook(self, notification: dict) -> dict:
+        """Idempotent T-Bank webhook handler.
+
+        Caller MUST verify HMAC signature BEFORE calling this. Invalid signature ->
+        do not call (silent drop per design #5).
+
+        Idempotency key = (PaymentId, Status). Same tuple delivered twice -> no-op.
+        Unknown OrderId -> ignored (logged in event-less manner via return code).
+        Status -> FSM transition:
+          CONFIRMED / AUTHORIZED  -> payment_captured (decrement stock, convert reservations)
+          REJECTED / AUTH_FAIL / CANCELED / DEADLINE_EXPIRED / REVERSED / REFUNDED / PARTIAL_REFUNDED
+                                  -> cancelled (release reservations, no stock decrement)
+          intermediate states     -> recorded only, no FSM change
+        """
+        from tbank import STATUS_FAILURE_TERMINAL, STATUS_SUCCESS_TERMINAL
+        now = self._now()
+        payment_id = str(notification.get("PaymentId", ""))
+        status = notification.get("Status", "")
+        order_id_external = notification.get("OrderId", "")
+        if not payment_id or not status:
+            return {"action": "ignored", "reason": "missing PaymentId or Status"}
+
+        with self._conn() as db:
+            db.execute("BEGIN IMMEDIATE")
+            try:
+                seen = db.execute(
+                    "SELECT 1 FROM processed_webhooks WHERE payment_id = ? AND status = ?",
+                    (payment_id, status),
+                ).fetchone()
+                if seen is not None:
+                    db.execute("ROLLBACK")
+                    return {"action": "duplicate", "payment_id": payment_id, "status": status}
+                # Record processing tuple BEFORE side effects; rolled back together on error.
+                db.execute(
+                    "INSERT INTO processed_webhooks (payment_id, status, processed_at, payload_json) VALUES (?, ?, ?, ?)",
+                    (payment_id, status, now, json.dumps(notification)),
+                )
+                # Locate order by our own OrderId (which we sent during Init).
+                row = db.execute(
+                    "SELECT id, state FROM orders WHERE id = ?",
+                    (order_id_external,),
+                ).fetchone()
+                if row is None:
+                    # Unknown order. Webhook still recorded (so a re-delivery is a duplicate),
+                    # but no FSM action.
+                    db.execute("COMMIT")
+                    return {"action": "no_order", "order_id": order_id_external}
+                order_id, current_state = row
+                action = "recorded"
+                if status in STATUS_SUCCESS_TERMINAL:
+                    if current_state == "payment_captured":
+                        db.execute("COMMIT")
+                        return {"action": "already_captured", "order_id": order_id}
+                    if current_state != "inventory_reserved":
+                        raise StateError(
+                            f"order {order_id} state {current_state}; cannot apply CONFIRMED webhook"
+                        )
+                    # Convert reservations + decrement stock (mirrors mock_payment_success).
+                    expired = db.execute(
+                        """SELECT id FROM inventory_reservations
+                           WHERE order_id = ? AND converted=0 AND cancelled=0 AND expires_at <= ?""",
+                        (order_id, now),
+                    ).fetchall()
+                    if expired:
+                        # Reservation lapsed before T-Bank confirmed. Release; do NOT decrement.
+                        db.execute(
+                            """UPDATE inventory_reservations SET cancelled = 1
+                               WHERE order_id = ? AND converted=0 AND cancelled=0""",
+                            (order_id,),
+                        )
+                        self._enforce(current_state, "cancelled")
+                        db.execute("UPDATE orders SET state = 'cancelled' WHERE id = ?", (order_id,))
+                        self._append_event(db, order_id, "cancelled", {"reason": "reservation_expired_before_capture", "tbank_status": status}, now)
+                        self._enqueue_outbox(db, "order_cancelled", {"order_id": order_id, "reason": "reservation_expired_before_capture"}, now)
+                        action = "cancelled_due_to_expiry"
+                    else:
+                        reservations = db.execute(
+                            """SELECT id, sku, quantity FROM inventory_reservations
+                               WHERE order_id = ? AND converted=0 AND cancelled=0""",
+                            (order_id,),
+                        ).fetchall()
+                        for rid, sku, qty in reservations:
+                            cur = db.execute("SELECT stock FROM products WHERE sku = ?", (sku,)).fetchone()[0]
+                            if cur < qty:
+                                raise StateError(f"corrupt: stock for {sku}={cur} but reservation={qty}")
+                            db.execute("UPDATE products SET stock = stock - ? WHERE sku = ?", (qty, sku))
+                            db.execute("UPDATE inventory_reservations SET converted = 1 WHERE id = ?", (rid,))
+                        self._enforce(current_state, "payment_authorized")
+                        db.execute("UPDATE orders SET state = 'payment_authorized', tbank_payment_id = ? WHERE id = ?", (payment_id, order_id))
+                        self._append_event(db, order_id, "payment_authorized", {"payment_id": payment_id, "tbank_status": status}, now)
+                        self._enforce("payment_authorized", "payment_captured")
+                        db.execute("UPDATE orders SET state = 'payment_captured' WHERE id = ?", (order_id,))
+                        self._append_event(db, order_id, "payment_captured", {"payment_id": payment_id, "tbank_status": status}, now)
+                        self._enqueue_outbox(db, "payment_captured", {"order_id": order_id, "payment_id": payment_id}, now)
+                        action = "captured"
+                elif status in STATUS_FAILURE_TERMINAL:
+                    if current_state == "cancelled":
+                        action = "already_cancelled"
+                    elif current_state in {"payment_captured", "order_fulfilled", "order_delivered"}:
+                        # Refund / reversal after capture would require a separate path. For now,
+                        # log as an alert event but don't blindly cancel a captured order.
+                        self._append_event(db, order_id, "tbank_post_capture_event", {"tbank_status": status, "payment_id": payment_id}, now)
+                        action = "post_capture_alert"
+                    else:
+                        # Release any active reservations.
+                        db.execute(
+                            """UPDATE inventory_reservations SET cancelled = 1
+                               WHERE order_id = ? AND converted=0 AND cancelled=0""",
+                            (order_id,),
+                        )
+                        self._enforce(current_state, "cancelled")
+                        db.execute("UPDATE orders SET state = 'cancelled' WHERE id = ?", (order_id,))
+                        self._append_event(db, order_id, "cancelled", {"reason": "tbank_failure", "tbank_status": status, "payment_id": payment_id}, now)
+                        self._enqueue_outbox(db, "order_cancelled", {"order_id": order_id, "reason": status}, now)
+                        action = "cancelled"
+                else:
+                    # Intermediate state — record event only.
+                    self._append_event(db, order_id, "tbank_intermediate", {"tbank_status": status, "payment_id": payment_id}, now)
+                db.execute("COMMIT")
+                return {"action": action, "order_id": order_id, "status": status}
             except Exception:
                 db.execute("ROLLBACK")
                 raise

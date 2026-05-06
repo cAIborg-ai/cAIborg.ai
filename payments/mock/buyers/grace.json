@@ -1,0 +1,7 @@
+{
+  "name": "grace",
+  "flow": "stale_cart",
+  "purchases": [
+    {"sku": "magnesium-5in1", "quantity": 1}
+  ]
+}

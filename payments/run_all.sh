@@ -4,7 +4,7 @@ set -u
 cd "$(dirname "$0")"
 
 PY="${PY:-python3}"
-TESTS=(test_surge.py test_idempotency.py test_reservation_ttl.py test_state_machine.py test_http.py)
+TESTS=(test_surge.py test_idempotency.py test_reservation_ttl.py test_state_machine.py test_http.py test_tbank_signing.py test_tbank_webhook.py)
 FAILED=0
 
 for t in "${TESTS[@]}"; do

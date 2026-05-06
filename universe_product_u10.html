@@ -49,6 +49,9 @@
                     <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
                     <a href="universe_products.html" class="text-brand-dark hover:text-brand-green transition">Products</a>
                     <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Our Mission</a>
+                    <a href="universe_cart.html" class="text-gray-600 hover:text-brand-green transition relative">
+                        Cart<span data-cart-badge class="hidden absolute -top-2 -right-4 bg-brand-green text-white text-xs px-1.5 py-0.5 rounded-full leading-tight">0</span>
+                    </a>
                     <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-300">
                         <a href="universe_product_u10.html" class="text-brand-green font-medium">EN</a>
                         <span class="text-gray-400">|</span>
@@ -904,7 +907,22 @@
     setTimeout(function(){ t.style.transition = 'opacity .3s'; t.style.opacity = '0'; }, 2200);
     setTimeout(function(){ t.remove(); }, 2600);
   }
+  function updateBadge(count){
+    document.querySelectorAll('[data-cart-badge]').forEach(function(el){
+      el.textContent = count;
+      if (count > 0) el.classList.remove('hidden'); else el.classList.add('hidden');
+    });
+  }
+  function refreshCartCount(){
+    var id = localStorage.getItem('cart_id');
+    if (!id) { updateBadge(0); return; }
+    fetch(API_BASE + '/api/cart?cart_id=' + encodeURIComponent(id))
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){ if (d) updateBadge(d.total_items || 0); })
+      .catch(function(){});
+  }
   document.addEventListener('DOMContentLoaded', function(){
+    refreshCartCount();
     document.querySelectorAll('[data-add-to-cart]').forEach(function(btn){
       btn.addEventListener('click', function(){
         var sku = btn.getAttribute('data-sku');
@@ -918,6 +936,7 @@
           return r.json().then(function(data){ return {ok: r.ok, data: data}; });
         }).then(function(res){
           if (res.ok) {
+            updateBadge(res.data.total_items);
             toast('Added to cart (' + res.data.total_items + ')', true);
           } else {
             toast((res.data && res.data.error) || 'Could not add - please try again', false);

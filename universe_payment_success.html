@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment processing | Universe Pharma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  .spinner { animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body class="bg-white text-gray-900">
+
+<nav class="border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="universe_index.html"><img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8"></a>
+    <div class="flex items-center gap-8 text-sm">
+      <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+      <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition">Products</a>
+      <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Mission</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-2xl mx-auto px-6 py-16 text-center">
+  <div id="processing">
+    <svg class="spinner mx-auto h-16 w-16 text-brand-green mb-6" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="60" stroke-dashoffset="20" fill="none"/></svg>
+    <h1 class="text-3xl font-light text-brand-dark mb-3">Confirming your payment...</h1>
+    <p class="text-gray-600">This usually takes a few seconds. Please do not close this page.</p>
+    <p id="status-line" class="text-xs text-gray-400 mt-6"></p>
+  </div>
+
+  <div id="success" class="hidden">
+    <div class="w-20 h-20 mx-auto bg-brand-green bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+      <svg class="w-10 h-10 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    </div>
+    <h1 class="text-3xl font-light text-brand-dark mb-3">Payment confirmed</h1>
+    <p class="text-gray-600 mb-2">Thank you for your order.</p>
+    <p class="text-sm text-gray-500 mb-8">Order: <code id="order-code" class="font-mono"></code></p>
+    <a href="universe_products.html" class="inline-block bg-brand-green text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Continue shopping</a>
+  </div>
+
+  <div id="failed" class="hidden">
+    <h1 class="text-3xl font-light text-brand-dark mb-3">Payment was not completed</h1>
+    <p class="text-gray-600 mb-8">Your order was cancelled. No funds were taken.</p>
+    <a href="universe_cart.html" class="inline-block bg-brand-green text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Back to cart</a>
+  </div>
+
+  <div id="error" class="hidden">
+    <h1 class="text-3xl font-light text-brand-dark mb-3">We could not check your order status</h1>
+    <p class="text-gray-600 mb-2" id="error-msg"></p>
+    <p class="text-sm text-gray-500 mb-8">If you completed payment, you will still receive a confirmation email.</p>
+    <a href="universe_index.html" class="inline-block bg-brand-green text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Back to home</a>
+  </div>
+</main>
+
+<script>
+(function(){
+  var API_BASE = window.UNIVERSE_API_BASE || '';
+  var qs = new URLSearchParams(window.location.search);
+  var orderId = qs.get('order_id') || qs.get('OrderId') || localStorage.getItem('last_order_id');
+  var devMode = qs.get('dev') === '1';
+
+  if (!orderId) {
+    document.getElementById('processing').classList.add('hidden');
+    document.getElementById('error').classList.remove('hidden');
+    document.getElementById('error-msg').textContent = 'No order id provided.';
+    return;
+  }
+  document.getElementById('order-code').textContent = orderId;
+
+  var attempts = 0;
+  var maxAttempts = 30;  // ~60s total
+  function poll(){
+    attempts++;
+    fetch(API_BASE + '/api/order/' + encodeURIComponent(orderId))
+      .then(function(r){ return r.json().then(function(d){ return {ok: r.ok, data: d}; }); })
+      .then(function(res){
+        if (!res.ok) {
+          showError(res.data.error || 'Could not fetch order');
+          return;
+        }
+        var state = res.data.state;
+        document.getElementById('status-line').textContent = 'state: ' + state + ' (attempt ' + attempts + '/' + maxAttempts + ')';
+        if (state === 'payment_captured' || state === 'payment_authorized' || state === 'order_fulfilled' || state === 'order_delivered') {
+          document.getElementById('processing').classList.add('hidden');
+          document.getElementById('success').classList.remove('hidden');
+          return;
+        }
+        if (state === 'cancelled') {
+          document.getElementById('processing').classList.add('hidden');
+          document.getElementById('failed').classList.remove('hidden');
+          return;
+        }
+        if (devMode && state === 'inventory_reserved') {
+          // No real T-Bank in dev mode — show success after one tick (cart was placed).
+          document.getElementById('processing').classList.add('hidden');
+          document.getElementById('success').classList.remove('hidden');
+          return;
+        }
+        if (attempts >= maxAttempts) {
+          showError('Confirmation is taking longer than expected. Order id: ' + orderId);
+          return;
+        }
+        setTimeout(poll, 2000);
+      })
+      .catch(function(){
+        if (attempts >= maxAttempts) { showError('Network error.'); return; }
+        setTimeout(poll, 2000);
+      });
+  }
+  function showError(msg){
+    document.getElementById('processing').classList.add('hidden');
+    document.getElementById('error').classList.remove('hidden');
+    document.getElementById('error-msg').textContent = msg;
+  }
+  poll();
+})();
+</script>
+</body>
+</html>

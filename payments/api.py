@@ -26,10 +26,23 @@ import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
+import tbank
 from cart import Cart, StateError
 
 
-def make_handler(cart: Cart, allowed_origin: str = "*"):
+def make_handler(
+    cart: Cart,
+    allowed_origin: str = "*",
+    tbank_terminal_key: str = "",
+    tbank_password: str = "",
+    tbank_init_fn=None,  # (terminal_key, password, body) -> response_dict; default: real HTTP
+    notification_url: str = "",
+    success_url: str = "",
+    fail_url: str = "",
+):
+    if tbank_init_fn is None:
+        tbank_init_fn = lambda tk, pw, body: tbank.call_init(terminal_key=tk, password=pw, body=body)
+
     class Handler(BaseHTTPRequestHandler):
         def _json(self, status: int, payload: dict) -> None:
             body = json.dumps(payload).encode()
@@ -82,10 +95,64 @@ def make_handler(cart: Cart, allowed_origin: str = "*"):
                 if not cart_id or not key:
                     return self._json(400, {"error": "cart_id, idempotency_key required"})
                 try:
-                    result = cart.start_checkout(cart_id, key)
+                    order = cart.start_checkout(cart_id, key)
                 except StateError as e:
                     return self._json(409, {"error": str(e)})
-                return self._json(200, result)
+                # If T-Bank credentials configured, call Init and return PaymentURL.
+                # Otherwise return order info only (caller can pay later or dev runs without T-Bank).
+                if tbank_terminal_key and tbank_password:
+                    init_body = tbank.build_init_body(
+                        order_id=order["order_id"],
+                        amount_kopecks=order["total_kopecks"],
+                        description=f"Universe Vitamins order {order['order_id'][:8]}",
+                        notification_url=notification_url,
+                        success_url=success_url,
+                        fail_url=fail_url,
+                    )
+                    try:
+                        tbank_resp = tbank_init_fn(tbank_terminal_key, tbank_password, init_body)
+                    except Exception as e:
+                        return self._json(502, {"error": f"tbank Init failed: {type(e).__name__}: {e}"})
+                    if not tbank_resp.get("Success"):
+                        return self._json(502, {"error": "tbank Init returned Success=false", "tbank": tbank_resp})
+                    cart.record_payment_init(
+                        order["order_id"],
+                        str(tbank_resp.get("PaymentId", "")),
+                        f"init-{order['order_id']}",
+                    )
+                    return self._json(200, {
+                        "order_id": order["order_id"],
+                        "total_kopecks": order["total_kopecks"],
+                        "payment_url": tbank_resp.get("PaymentURL"),
+                        "tbank_payment_id": tbank_resp.get("PaymentId"),
+                    })
+                return self._json(200, order)
+
+            if path == "/api/tbank/webhook":
+                # Per design #5: silent drop on invalid signature; always 200 when valid.
+                if not isinstance(body, dict) or "Token" not in body:
+                    # Body shape wrong. Drop silently to mirror T-Bank tolerance for retries.
+                    return self._json(200, {"ok": True})
+                if not tbank_password:
+                    # No credentials configured -> drop silently. No state mutation.
+                    return self._json(200, {"ok": True})
+                if not tbank.verify_notification(body, tbank_password):
+                    # Bad signature: log to stderr, return 200 OK (no leak about which key wrong).
+                    print(f"tbank webhook: signature mismatch order={body.get('OrderId')} payment={body.get('PaymentId')}", file=sys.stderr)
+                    return self._json(200, {"ok": True})
+                try:
+                    cart.apply_webhook(body)
+                except StateError as e:
+                    # FSM violation. Log; still return 200 so T-Bank does not retry storm.
+                    print(f"tbank webhook: state error: {e}", file=sys.stderr)
+                # T-Bank expects literal "OK" body for successful ack:
+                self.send_response(200)
+                self.send_header("Content-Type", "text/plain")
+                self.send_header("Content-Length", "2")
+                self.send_header("Access-Control-Allow-Origin", allowed_origin)
+                self.end_headers()
+                self.wfile.write(b"OK")
+                return
 
             return self._json(404, {"error": "not found"})
 
@@ -97,6 +164,12 @@ def make_handler(cart: Cart, allowed_origin: str = "*"):
                 if not cart_id:
                     return self._json(400, {"error": "cart_id required"})
                 return self._json(200, cart.get_cart_summary(cart_id))
+            if u.path.startswith("/api/order/"):
+                order_id = u.path[len("/api/order/"):]
+                state = cart.get_order_state(order_id)
+                if state is None:
+                    return self._json(404, {"error": "order not found"})
+                return self._json(200, {"order_id": order_id, "state": state})
             return self._json(404, {"error": "not found"})
 
         def log_message(self, fmt, *args):
@@ -105,8 +178,8 @@ def make_handler(cart: Cart, allowed_origin: str = "*"):
     return Handler
 
 
-def serve(host: str, port: int, cart: Cart, allowed_origin: str = "*") -> None:
-    server = ThreadingHTTPServer((host, port), make_handler(cart, allowed_origin))
+def serve(host: str, port: int, cart: Cart, allowed_origin: str = "*", **handler_kwargs) -> None:
+    server = ThreadingHTTPServer((host, port), make_handler(cart, allowed_origin, **handler_kwargs))
     server.serve_forever()
 
 
@@ -120,7 +193,14 @@ def main() -> None:
     c = Cart(db_path)
     c.load_inventory(inv)
     print(f"cart api listening on :{port}, db={db_path}, origin={origin}", file=sys.stderr)
-    serve("0.0.0.0", port, c, origin)
+    serve(
+        "0.0.0.0", port, c, origin,
+        tbank_terminal_key=os.environ.get("TBANK_TERMINAL_KEY", ""),
+        tbank_password=os.environ.get("TBANK_PASSWORD", ""),
+        notification_url=os.environ.get("TBANK_NOTIFICATION_URL", ""),
+        success_url=os.environ.get("TBANK_SUCCESS_URL", ""),
+        fail_url=os.environ.get("TBANK_FAIL_URL", ""),
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment failed | Universe Pharma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-white text-gray-900">
+
+<nav class="border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="universe_index.html"><img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8"></a>
+    <div class="flex items-center gap-8 text-sm">
+      <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+      <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition">Products</a>
+      <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Mission</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-2xl mx-auto px-6 py-16 text-center">
+  <div class="w-20 h-20 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-6">
+    <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+  </div>
+  <h1 class="text-3xl font-light text-brand-dark mb-3">Payment was not completed</h1>
+  <p class="text-gray-600 mb-2">No funds were taken. Your cart is preserved.</p>
+  <p class="text-sm text-gray-500 mb-8">Common causes: card declined, insufficient funds, 3D Secure timeout.</p>
+  <div class="flex gap-4 justify-center">
+    <a href="universe_cart.html" class="inline-block bg-brand-green text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Back to cart</a>
+    <a href="universe_products.html" class="inline-block border border-gray-300 text-gray-700 px-6 py-3 rounded-full font-medium hover:border-brand-green hover:text-brand-green transition">Browse products</a>
+  </div>
+</main>
+
+</body>
+</html>

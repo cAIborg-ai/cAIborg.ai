@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Universe Pharma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+  input, textarea { font-family: inherit; }
+</style>
+</head>
+<body class="bg-white text-gray-900">
+
+<nav class="border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="universe_index.html"><img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8"></a>
+    <div class="flex items-center gap-8 text-sm">
+      <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+      <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition">Products</a>
+      <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Mission</a>
+      <a href="universe_cart.html" class="text-gray-600 hover:text-brand-green transition">Cart</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-3xl mx-auto px-6 py-12">
+  <h1 class="text-4xl font-light text-brand-dark mb-2">Checkout</h1>
+  <p class="text-gray-600 mb-8">Enter your details. You will be redirected to T-Bank for secure payment.</p>
+
+  <div id="summary" class="bg-gray-50 rounded-lg p-6 mb-8">
+    <p class="text-gray-500 text-sm">Loading order summary...</p>
+  </div>
+
+  <form id="checkout-form" class="space-y-5">
+    <div>
+      <label for="name" class="block text-sm font-medium text-brand-dark mb-2">Full name *</label>
+      <input id="name" name="name" type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green">
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-brand-dark mb-2">Email *</label>
+      <input id="email" name="email" type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green">
+    </div>
+    <div>
+      <label for="phone" class="block text-sm font-medium text-brand-dark mb-2">Phone *</label>
+      <input id="phone" name="phone" type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green">
+    </div>
+    <div>
+      <label for="address" class="block text-sm font-medium text-brand-dark mb-2">Shipping address *</label>
+      <textarea id="address" name="address" rows="3" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-green"></textarea>
+    </div>
+
+    <button id="pay-btn" type="submit" class="w-full bg-brand-green text-white font-semibold py-4 rounded-lg hover:bg-opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed">
+      Pay
+    </button>
+  </form>
+
+  <div id="processing" class="hidden mt-8 text-center">
+    <p class="text-gray-700">Creating payment session...</p>
+  </div>
+
+  <div id="error" class="hidden mt-6 bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg"></div>
+</main>
+
+<script>
+(function(){
+  var API_BASE = window.UNIVERSE_API_BASE || '';
+  var cartId = localStorage.getItem('cart_id');
+  var summary = document.getElementById('summary');
+  var errEl = document.getElementById('error');
+
+  function showError(msg){ errEl.textContent = msg; errEl.classList.remove('hidden'); }
+  function fmtPrice(k){ return (k/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' RUB'; }
+
+  if (!cartId) {
+    summary.innerHTML = '<p class="text-gray-700">Cart is empty. <a href="universe_products.html" class="text-brand-green underline">Browse products</a>.</p>';
+    document.getElementById('checkout-form').classList.add('hidden');
+    return;
+  }
+
+  fetch(API_BASE + '/api/cart?cart_id=' + encodeURIComponent(cartId))
+    .then(function(r){ return r.json().then(function(d){ return {ok: r.ok, data: d}; }); })
+    .then(function(res){
+      if (!res.ok || !res.data.items || res.data.items.length === 0) {
+        summary.innerHTML = '<p class="text-gray-700">Cart is empty. <a href="universe_products.html" class="text-brand-green underline">Browse products</a>.</p>';
+        document.getElementById('checkout-form').classList.add('hidden');
+        return;
+      }
+      var rows = res.data.items.map(function(it){
+        return '<div class="flex justify-between text-sm"><span>' + it.sku + ' x ' + it.quantity + '</span><span>' + fmtPrice(it.price_kopecks * it.quantity) + '</span></div>';
+      }).join('');
+      summary.innerHTML = rows + '<div class="border-t border-gray-300 mt-3 pt-3 flex justify-between font-semibold"><span>Total</span><span>' + fmtPrice(res.data.total_kopecks) + '</span></div>';
+    })
+    .catch(function(){
+      summary.innerHTML = '<p class="text-red-700">Could not reach API. Start `python api.py` and set window.UNIVERSE_API_BASE.</p>';
+    });
+
+  document.getElementById('checkout-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var btn = document.getElementById('pay-btn');
+    btn.disabled = true;
+    document.getElementById('processing').classList.remove('hidden');
+    errEl.classList.add('hidden');
+
+    var key = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random());
+    fetch(API_BASE + '/api/cart/checkout', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({cart_id: cartId, idempotency_key: key})
+    })
+      .then(function(r){ return r.json().then(function(d){ return {ok: r.ok, data: d}; }); })
+      .then(function(res){
+        if (!res.ok) { showError(res.data.error || 'Checkout failed'); btn.disabled = false; document.getElementById('processing').classList.add('hidden'); return; }
+        if (res.data.payment_url) {
+          // Persist order_id for the success page to poll.
+          localStorage.setItem('last_order_id', res.data.order_id);
+          // Clear cart_id so a fresh cart begins next time.
+          localStorage.removeItem('cart_id');
+          window.location.href = res.data.payment_url;
+        } else {
+          // No T-Bank configured — show confirmation locally.
+          localStorage.setItem('last_order_id', res.data.order_id);
+          localStorage.removeItem('cart_id');
+          window.location.href = 'universe_payment_success.html?order_id=' + encodeURIComponent(res.data.order_id) + '&dev=1';
+        }
+      })
+      .catch(function(){
+        showError('Network error. Please try again.');
+        btn.disabled = false;
+        document.getElementById('processing').classList.add('hidden');
+      });
+  });
+})();
+</script>
+</body>
+</html>

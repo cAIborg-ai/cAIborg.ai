@@ -1,0 +1,7 @@
+{
+  "name": "hank",
+  "flow": "two_devices",
+  "purchases": [
+    {"sku": "bone-longevity", "quantity": 1}
+  ]
+}

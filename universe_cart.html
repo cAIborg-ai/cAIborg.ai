@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart | Universe Pharma</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: { 'brand-green': '#6B9F3E', 'brand-dark': '#1a1a1a' } } } }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-white text-gray-900">
+
+<nav class="border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="universe_index.html"><img src="assets/universe_pharma.png" alt="Universe Pharma" class="h-8"></a>
+    <div class="flex items-center gap-8 text-sm">
+      <a href="universe_index.html" class="text-gray-600 hover:text-brand-green transition">Home</a>
+      <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition">Products</a>
+      <a href="universe_mission.html" class="text-gray-600 hover:text-brand-green transition">Mission</a>
+      <span class="text-brand-green font-medium">Cart</span>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-12">
+  <h1 class="text-4xl font-light text-brand-dark mb-8">Your Cart</h1>
+
+  <div id="loading" class="text-gray-500">Loading...</div>
+
+  <div id="empty" class="hidden text-center py-16">
+    <p class="text-gray-600 text-lg mb-6">Your cart is empty.</p>
+    <a href="universe_products.html" class="inline-block bg-brand-green text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Browse Products</a>
+  </div>
+
+  <div id="content" class="hidden">
+    <table class="w-full text-sm">
+      <thead class="border-b-2 border-black">
+        <tr>
+          <th class="text-left py-3 font-semibold">Product</th>
+          <th class="text-right py-3 font-semibold">Qty</th>
+          <th class="text-right py-3 font-semibold">Unit Price</th>
+          <th class="text-right py-3 font-semibold">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="items-body"></tbody>
+      <tfoot class="border-t-2 border-black">
+        <tr>
+          <td colspan="3" class="text-right py-4 font-semibold">Total:</td>
+          <td id="total-cell" class="text-right py-4 text-2xl font-semibold text-brand-dark"></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="flex justify-between items-center mt-8">
+      <a href="universe_products.html" class="text-gray-600 hover:text-brand-green transition">← Continue shopping</a>
+      <a href="universe_checkout.html" id="checkout-link" class="bg-brand-green text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Proceed to Checkout →</a>
+    </div>
+  </div>
+
+  <div id="error" class="hidden bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg"></div>
+</main>
+
+<script>
+(function(){
+  var API_BASE = window.UNIVERSE_API_BASE || '';
+  var cartId = localStorage.getItem('cart_id');
+  if (!cartId) { showEmpty(); return; }
+
+  fetch(API_BASE + '/api/cart?cart_id=' + encodeURIComponent(cartId))
+    .then(function(r){ return r.json().then(function(d){ return {ok: r.ok, data: d}; }); })
+    .then(function(res){
+      document.getElementById('loading').classList.add('hidden');
+      if (!res.ok) { showError(res.data.error || 'Failed to load cart'); return; }
+      if (!res.data.items || res.data.items.length === 0) { showEmpty(); return; }
+      render(res.data);
+    })
+    .catch(function(e){
+      document.getElementById('loading').classList.add('hidden');
+      showError('Could not reach API. Run `python api.py` and set window.UNIVERSE_API_BASE.');
+    });
+
+  function showEmpty(){
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('empty').classList.remove('hidden');
+  }
+  function showError(msg){
+    var el = document.getElementById('error');
+    el.textContent = msg;
+    el.classList.remove('hidden');
+  }
+  function fmtPrice(kopecks){
+    return (kopecks / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' RUB';
+  }
+  function render(data){
+    var tbody = document.getElementById('items-body');
+    data.items.forEach(function(it){
+      var tr = document.createElement('tr');
+      tr.className = 'border-b border-gray-200';
+      tr.innerHTML =
+        '<td class="py-3"><a href="universe_product_' + it.sku + '.html" class="text-brand-dark hover:text-brand-green transition">' + it.sku + '</a></td>' +
+        '<td class="text-right py-3">' + it.quantity + '</td>' +
+        '<td class="text-right py-3">' + fmtPrice(it.price_kopecks) + '</td>' +
+        '<td class="text-right py-3 font-medium">' + fmtPrice(it.price_kopecks * it.quantity) + '</td>';
+      tbody.appendChild(tr);
+    });
+    document.getElementById('total-cell').textContent = fmtPrice(data.total_kopecks);
+    document.getElementById('content').classList.remove('hidden');
+  }
+})();
+</script>
+</body>
+</html>

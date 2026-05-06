@@ -1,0 +1,7 @@
+{
+  "name": "frank",
+  "flow": "abandon_add",
+  "purchases": [
+    {"sku": "collagen-marine", "quantity": 1}
+  ]
+}
